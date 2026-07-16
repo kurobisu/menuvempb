@@ -10,7 +10,9 @@ Desenvolvimento e publicação de uma landing page regional mobile-first sob med
 - [js/main.js](file:///home/clovis/Git/menuvempb/js/main.js) - Controladores interativos da calculadora, FAQ e animações de scroll.
 
 ## Lógica e Funcionamento
-1. **Design System & Acessibilidade**: Interface em Dark Mode premium (`#050508`) utilizando a paleta de cores oficial da Menuvem: Roxo (`#641DDE`) como primário e Amarelo (`#F2C200`) como secundário/acento.
+1. **Design System & Acessibilidade**:
+   - **Tema Escuro Fixo (Padrão Oficial)**: Sob demanda do usuário, o site opera exclusivamente no tema escuro padrão. Utiliza fundo preto espacial (`#050508`) e cores clássicas de alto contraste da Menuvem: Roxo (`#641DDE`) e Amarelo (`#F2C200`).
+   - **Remoção do Alternador**: O botão `.theme-toggle-btn` e as lógicas de script correspondentes a temas no `js/main.js` foram inteiramente descartados, mantendo o visual escuro limpo e a folha de estilos concisa.
 2. **Ordem das Seções**: Reordenado para fluxo de conversão otimizado:
    - 1º: Hero Section (Abertura / Mockup)
    - 2º: Planos & Calculadora de faturamento (Bronze R$ 167, Prata R$ 227, Ouro R$ 267)
@@ -22,7 +24,10 @@ Desenvolvimento e publicação de uma landing page regional mobile-first sob med
    - **Etapas de Cadastro**: Link de cadastro agora aponta para a nova página explicativa `cadastro-etapas.html`. Nela, detalha-se de forma clara e interativa as 3 etapas de onboarding:
      - *Etapa 1*: Clicar no link personalizado `https://painel.menuvem.com.br/#/cadastro/23/clovis` para cadastrar o estabelecimento.
      - *Etapa 2*: Após validação de dados via WhatsApp/E-mail, realizar o primeiro login de teste em `https://painel.menuvem.com.br`.
-     - *Etapa 3*: Chamar o WhatsApp de Suporte PB no número **(83) 9 8855-9423** para ativar o bônus de 30 dias grátis e o plano mensal escolhido (a ser faturado sem fidelidade e sem cartão apenas após o período de teste).
+     - *Etapa 3*: Chamar o WhatsApp de Suporte PB no número **(83) 9 8855-9423** para ativar o bônus de 30 dias grátis e o plano mensal escolhido (a cobrar somente após o período de teste).
+   - **Redes Sociais do Rodapé**:
+     - Link do Instagram atualizado para direcionar à conta oficial da Paraíba: `https://www.instagram.com/menuvem.pb/`
+     - Botão do Facebook removido e substituído por um atalho direto para o WhatsApp do Suporte PB `(83) 9 8855-9423`.
 4. **Modelo de Suporte Regional**:
    - Mapeamos a copy em todo o site para exibir apenas **"suporte humano todos os dias"** ou **"suporte todos os dias"**.
    - O horário exato de suporte regional (**das 10h às 21h30 todos os dias**) é visível exclusivamente na seção de **Perguntas Frequentes (FAQ)**.
@@ -37,3 +42,7 @@ Desenvolvimento e publicação de uma landing page regional mobile-first sob med
 - **2026-07-16:** Substituição de cores pelas oficiais da Menuvem (Roxo `#641DDE` e Amarelo `#F2C200`), reordenação de seções colocando a calculadora em 2º lugar e Soluções em 3º, e ajuste geral de copy para 30 dias grátis, suporte 10h-21h30 e foco em videoconferência/setup gratuito.
 - **2026-07-16:** Ajuste de planos (R$ 167, R$ 227, R$ 267) e add-ons (R$ 0), e ênfase nos botões/links de cadastro autônomo (painel) e contato no WhatsApp de suporte regional `(83) 9 8855-9423` para ativação manual do bônus de 30 dias de gratuidade.
 - **2026-07-16:** Criação da página `cadastro-etapas.html` para fluxo de onboarding de 3 etapas. Adicionado botão de Login destacado, e centralização da informação de horário de suporte especificamente no FAQ.
+- **2026-07-16:** Desenvolvimento do Tema Claro por padrão com alternador interativo para o Tema Escuro (Sol/Lua). Reestruturação do cabeçalho agrupando o seletor de temas e o hambúrguer em um contêiner flexível para assegurar o funcionamento responsivo em celulares.
+- **2026-07-16:** Calibração fina e otimização do contraste no CSS seguindo a escala Slate (Tailwind/Yooga) atingindo conformidade com a acessibilidade WCAG AAA/AA.
+- **2026-07-16:** Correção de gradientes e fundos estáticos no Hero, Planos e FAQ para contraste absoluto; atualização dos botões de redes sociais e atalho de WhatsApp no rodapé.
+- **2026-07-16:** Remoção total das rotinas de temas dinâmicos (claro/escuro) e reincorporação do Tema Escuro fixo original em todo o projeto.

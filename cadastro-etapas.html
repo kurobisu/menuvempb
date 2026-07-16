@@ -41,7 +41,7 @@
             top: 32px;
             bottom: -50px;
             width: 2px;
-            background: rgba(255, 255, 255, 0.08);
+            background: var(--border-color);
         }
         .timeline-item:last-child::before {
             display: none;
@@ -74,7 +74,7 @@
         .step-content h3 {
             font-size: 1.35rem;
             margin-bottom: 1rem;
-            color: white;
+            color: var(--text-primary);
         }
         .step-content p {
             font-size: 0.95rem;
@@ -95,7 +95,7 @@
             margin-bottom: 2rem;
         }
         .back-link:hover {
-            color: white;
+            color: var(--primary);
         }
     </style>
 </head>
@@ -110,10 +110,10 @@
             </a>
             
             <div style="display: flex; gap: 1rem; align-items: center;">
-                <a href="https://painel.menuvem.com.br" target="_blank" class="btn btn-secondary" style="padding: 0.5rem 1.25rem; font-size: 0.85rem;">
+                <a href="https://painel.menuvem.com.br" target="_blank" class="btn btn-secondary" style="padding: 0.5rem 1.25rem; font-size: 0.85rem; border-color: var(--primary); color: var(--text-primary); background: none;">
                     Login Painel
                 </a>
-                <a href="index.html" class="btn btn-primary" style="padding: 0.5rem 1.25rem; font-size: 0.85rem; background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); color: white;">
+                <a href="index.html" class="btn btn-primary" style="padding: 0.5rem 1.25rem; font-size: 0.85rem; background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); color: var(--text-primary);">
                     Voltar ao Site
                 </a>
             </div>
@@ -186,6 +186,9 @@
             &copy; 2026 Menuvem Tecnologia Ltda. Todos os direitos reservados. Foco regional na Paraíba (menuvempb.com).
         </div>
     </footer>
+
+    <!-- Script -->
+    <script src="js/main.js"></script>
 
 </body>
 </html>
