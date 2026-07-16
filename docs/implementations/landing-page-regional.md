@@ -17,13 +17,16 @@ Desenvolvimento e publicação de uma landing page regional mobile-first sob med
    - 3º: Bento Grid de Soluções (Detalhes das funcionalidades principais)
    - 4º: O Fator Local (Particularidades do suporte regional)
    - 5º: Prova Social & FAQ
-4. **O Fator Local**: Seção com mapa da Paraíba redesenhado em SVG inline. A copy foi ajustada para destacar o suporte regional dedicado das **10h às 21h30 todos os dias** (incluindo fins de semana). Explicita-se que apresentações, treinamentos e setups são 100% online por videoconferência (custo de setup zero / R$ 0), e suporte presencial é restrito a casos muito especiais na região da Grande João Pessoa (João Pessoa, Bayeux, Cabedelo, Conde e Santa Rita).
+4. **Fluxos de Entrada & Ativação de Gratuidade**:
+   - **Cadastro Autônomo**: Link direto enfatizado (`https://painel.menuvem.com.br/#/cadastro/23/clovis`) para clientes que desejam criar suas contas de forma independente.
+   - **Ativação da Gratuidade de 30 Dias**: Ênfase no contato obrigatório com o **WhatsApp do Suporte PB (83) 9 8855-9423**. A copy deixa explícito que o bônus de 30 dias grátis só pode ser ativado e configurado sob demanda pela equipe regional de suporte.
 5. **Calculadora Dinâmica de Planos**: Slider interativo de faturamento mensal acoplado a add-ons. 
-   - Se faturamento <= R$ 8.000: O Plano Bronze (R$ 149/mês) é destacado.
-   - Se faturamento de R$ 8.001 a R$ 25.000: O Plano Prata (R$ 249/mês) é destacado.
-   - Se faturamento > R$ 25.000: O Plano Ouro (R$ 349/mês) é destacado.
-   - Ativação de add-ons (Chatbot +R$99, TEF +R$79, Fiscal +R$49) soma o valor ao plano e executa uma animação de contagem numérica fluida em JS.
-   - Todo o site comunica a oferta de **30 dias de teste gratuito** sem investimento inicial.
+   - **Preços dos Planos**:
+     - Plano 1 (Bronze): R$ 167/mês
+     - Plano 2 (Prata): R$ 227/mês
+     - Plano 3 (Ouro): R$ 267/mês
+   - **Add-ons Inclusos (Custo R$ 00)**: Atendente IA (WhatsApp), Integração TEF e Emissão Fiscal Ilimitada aparecem com valor original cortado para indicar que agora já fazem parte dos planos básicos sem custos extras. O código JS foi ajustado para somar R$ 0 por estes módulos (COST_CHATBOT, COST_TEF, COST_FISCAL = 0).
+6. **O Fator Local**: Seção com mapa da Paraíba redesenhado em SVG inline. A copy destaca o suporte regional dedicado das **10h às 21h30 todos os dias** da semana. Explicita-se que apresentações, treinamentos e setups são 100% online por videoconferência, e suporte presencial é restrito a casos muito especiais e limitado apenas a João Pessoa, Bayeux, Cabedelo, Conde e Santa Rita.
 
 ## Dependências
 - Google Fonts (Outfit e Inter) - Carregadas remotamente de forma assíncrona.
@@ -32,3 +35,4 @@ Desenvolvimento e publicação de uma landing page regional mobile-first sob med
 ## Histórico de Modificações
 - **2026-07-15:** Implementação e documentação iniciais criadas por Antigravity.
 - **2026-07-16:** Substituição de cores pelas oficiais da Menuvem (Roxo `#641DDE` e Amarelo `#F2C200`), reordenação de seções colocando a calculadora em 2º lugar e Soluções em 3º, e ajuste geral de copy para 30 dias grátis, suporte 10h-21h30 e foco em videoconferência/setup gratuito.
+- **2026-07-16:** Ajuste de planos (R$ 167, R$ 227, R$ 267) e add-ons (R$ 0), e ênfase nos botões/links de cadastro autônomo (painel) e contato no WhatsApp de suporte regional `(83) 9 8855-9423` para ativação manual do bônus de 30 dias de gratuidade.

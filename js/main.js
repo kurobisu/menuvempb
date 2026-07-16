@@ -112,14 +112,14 @@ function initPlansCalculator() {
     if (!slider || !display) return;
 
     // Valores Base dos Planos
-    const BASE_BRONZE = 149;
-    const BASE_PRATA = 249;
-    const BASE_OURO = 349;
+    const BASE_BRONZE = 167;
+    const BASE_PRATA = 227;
+    const BASE_OURO = 267;
     
-    // Custos dos Add-ons
-    const COST_CHATBOT = 99;
-    const COST_TEF = 79;
-    const COST_FISCAL = 49;
+    // Custos dos Add-ons (Atualmente inclusos: R$ 0)
+    const COST_CHATBOT = 0;
+    const COST_TEF = 0;
+    const COST_FISCAL = 0;
 
     // Atualizar cálculo e estados
     function updateCalculator() {
