@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Menuvem PB - O sistema de gestão de pedidos e cardápio digital líder de vendas, com suporte presencial e plantão de fim de semana em João Pessoa e toda a Paraíba.">
+    <meta name="keywords" content="cardápio digital, gestor de pedidos, automação de restaurantes, paraíba, joão pessoa, campina grande, ifood, sistema para restaurantes, nfc-e paraíba">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://menuvempb.com/">
+    <meta property="og:title" content="Menuvem PB | Cardápio Digital e Gestor de Pedidos com Suporte Local">
+    <meta property="og:description" content="Aumente o faturamento do seu restaurante na Paraíba com cardápio próprio sem taxas de comissão e suporte local humanizado que resolve nos finais de semana de pico.">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://menuvempb.com/">
+    <meta property="twitter:title" content="Menuvem PB | Cardápio Digital e Gestor de Pedidos com Suporte Local">
+    <meta property="twitter:description" content="Aumente o faturamento do seu restaurante na Paraíba com cardápio próprio sem taxas de comissão e suporte local humanizado que resolve nos finais de semana de pico.">
+
+    <title>Menuvem PB | Cardápio Digital e Gestor de Pedidos com Suporte Local</title>
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Header / Nav -->
+    <header class="header">
+        <div class="container">
+            <a href="#" class="logo" id="header-logo">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color: #8b5cf6;"><path d="M17.5 19A3.5 3.5 0 0 0 21 15.5c0-2.79-2.54-4.5-5-4.5-.42 0-.83.04-1.24.12A7 7 0 0 0 2 9a7 7 0 0 0 7 7h8.5Z"/></svg>
+                Menuvem<span class="logo-dot">.</span>PB
+            </a>
+            
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#solucoes">Soluções</a></li>
+                    <li><a href="#fator-local">O Fator Local</a></li>
+                    <li><a href="#planos">Planos</a></li>
+                    <li><a href="#faq">Dúvidas</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-cta">
+                <a href="https://wa.me/5583999999999?text=Ol%C3%A1,%20gostaria%20de%20testar%20o%20sistema%20Menuvem%20na%20minha%20regi%C3%A3o." target="_blank" class="btn btn-primary" id="nav-btn-whatsapp">
+                    Testar Grátis
+                </a>
+            </div>
+
+            <button class="menu-toggle" aria-label="Abrir Menu">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Menu -->
+    <div class="mobile-menu">
+        <ul class="mobile-menu-links">
+            <li><a href="#solucoes">Soluções</a></li>
+            <li><a href="#fator-local">O Fator Local</a></li>
+            <li><a href="#planos">Planos</a></li>
+            <li><a href="#faq">Dúvidas</a></li>
+            <li><a href="https://wa.me/5583999999999?text=Ol%C3%A1,%20gostaria%20de%20testar%20o%20sistema%20Menuvem%20na%20minha%20regi%C3%A3o." target="_blank" class="btn btn-primary" style="padding: 0.75rem 2rem;">Falar com Consultor</a></li>
+        </ul>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-glow-bg"></div>
+        <div class="container hero-content">
+            <span class="badge reveal">Parceiro Exclusivo Paraíba</span>
+            <h1 class="hero-title reveal delay-100">
+                O gestor de vendas preferido do Nordeste, agora com <span>suporte local</span> dedicado.
+            </h1>
+            <p class="hero-description reveal delay-200">
+                Cardápio digital próprio sem cobrança de comissões por pedido, gestão centralizada com iFood, e equipe técnica em João Pessoa pronta para resolver suas dúvidas presenciais ou remotas em minutos.
+            </p>
+            <div class="hero-ctas reveal delay-300">
+                <a href="https://wa.me/5583999999999?text=Ol%C3%A1,%20gostaria%20de%20conhecer%20os%20planos%20da%20Menuvem%20na%20Para%C3%ADba." target="_blank" class="btn btn-primary" id="hero-btn-primary">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 0.25rem;"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.504-5.727-1.465L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.967C16.588 2.022 14.12 1 11.66 1c-5.456 0-9.9 4.398-9.905 9.829-.001 1.765.485 3.488 1.408 5.093l-.999 3.648 3.843-.984zm11.23-6.842c-.303-.151-1.793-.884-2.071-.985-.278-.101-.48-.151-.681.151-.202.303-.781.985-.957 1.186-.177.202-.353.227-.656.075-.303-.151-1.28-.472-2.438-1.503-.9-.8-1.507-1.787-1.684-2.09-.177-.302-.018-.465.133-.614.136-.134.303-.353.454-.528.152-.177.202-.303.303-.505.101-.202.051-.378-.025-.528-.076-.151-.681-1.641-.933-2.246-.247-.591-.497-.512-.681-.512-.177-.008-.379-.008-.581-.008-.202 0-.531.075-.809.378-.278.302-1.061 1.037-1.061 2.531 0 1.493 1.087 2.936 1.238 3.138.152.202 2.138 3.262 5.177 4.57.722.311 1.286.497 1.726.637.725.23 1.385.197 1.906.12.581-.087 1.793-.73 2.046-1.437.252-.705.252-1.31.177-1.437-.076-.127-.278-.202-.581-.353z"/></svg>
+                    Falar no WhatsApp
+                </a>
+                <a href="#solucoes" class="btn btn-secondary">
+                    Conhecer Recursos
+                </a>
+            </div>
+            
+            <!-- Dashboard Mockup Frame (Framer Style) -->
+            <div class="hero-visual-wrapper reveal delay-400">
+                <div class="hero-mockup">
+                    <svg viewBox="0 0 1000 580" fill="none" xmlns="http://www.w3.org/2000/svg" style="background:#0c0c16; border-radius: 12px; overflow: hidden; width: 100%; height: auto;">
+                        <!-- Sidebar -->
+                        <rect x="0" y="0" width="80" height="580" fill="#06060c"/>
+                        <circle cx="40" cy="40" r="16" fill="#8b5cf6" fill-opacity="0.3"/>
+                        <circle cx="40" cy="40" r="8" fill="#8b5cf6"/>
+                        <!-- Nav Icons -->
+                        <rect x="25" y="110" width="30" height="6" rx="3" fill="#ffffff" fill-opacity="0.8"/>
+                        <rect x="25" y="130" width="20" height="6" rx="3" fill="#ffffff" fill-opacity="0.4"/>
+                        <rect x="25" y="180" width="30" height="6" rx="3" fill="#ffffff" fill-opacity="0.4"/>
+                        <rect x="25" y="230" width="30" height="6" rx="3" fill="#ffffff" fill-opacity="0.4"/>
+                        <rect x="25" y="280" width="30" height="6" rx="3" fill="#ffffff" fill-opacity="0.4"/>
+                        <!-- Active Indicator -->
+                        <rect x="0" y="102" width="4" height="22" rx="2" fill="#8b5cf6"/>
+                        
+                        <!-- Top Navbar -->
+                        <rect x="80" y="0" width="920" height="70" fill="#08080f"/>
+                        <line x1="80" y1="70" x2="1000" y2="70" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+                        <text x="110" y="42" fill="#ffffff" font-family="Outfit" font-size="18" font-weight="600">Gestor de Pedidos Menuvem</text>
+                        
+                        <!-- Status Badge Local -->
+                        <rect x="830" y="20" width="140" height="30" rx="15" fill="rgba(16,185,129,0.1)" stroke="rgba(16,185,129,0.2)"/>
+                        <circle cx="850" cy="35" r="5" fill="#10b981"/>
+                        <text x="865" y="40" fill="#10b981" font-family="Inter" font-size="12" font-weight="600">Suporte PB Ativo</text>
+                        
+                        <!-- Main Content Grid -->
+                        <!-- Box 1: Resumo do dia -->
+                        <rect x="110" y="100" width="265" height="120" rx="16" fill="#0d0d16" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+                        <text x="135" y="140" fill="#9ca3af" font-family="Inter" font-size="13">Faturamento Hoje</text>
+                        <text x="135" y="180" fill="#ffffff" font-family="Outfit" font-size="28" font-weight="700">R$ 2.450,80</text>
+                        <text x="135" y="202" fill="#10b981" font-family="Inter" font-size="12" font-weight="600">↑ 18.5% que ontem</text>
+                        
+                        <rect x="395" y="100" width="265" height="120" rx="16" fill="#0d0d16" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+                        <text x="420" y="140" fill="#9ca3af" font-family="Inter" font-size="13">Pedidos Realizados</text>
+                        <text x="420" y="180" fill="#ffffff" font-family="Outfit" font-size="28" font-weight="700">48</text>
+                        <text x="420" y="202" fill="#10b981" font-family="Inter" font-size="12" font-weight="600">↑ 8 novos nos últimos 15 min</text>
+
+                        <rect x="680" y="100" width="290" height="120" rx="16" fill="#0d0d16" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+                        <text x="705" y="140" fill="#9ca3af" font-family="Inter" font-size="13">Tempo Médio Preparo</text>
+                        <text x="705" y="180" fill="#0ea5e9" font-family="Outfit" font-size="28" font-weight="700">14 min</text>
+                        <text x="705" y="202" fill="#0ea5e9" font-family="Inter" font-size="12" font-weight="600">Excelente desempenho</text>
+
+                        <!-- Box 2: Feed de Pedidos em tempo real -->
+                        <rect x="110" y="245" width="550" height="305" rx="16" fill="#0d0d16" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+                        <text x="135" y="285" fill="#ffffff" font-family="Outfit" font-size="16" font-weight="600">Pedidos Recentes</text>
+                        
+                        <!-- Linha Pedido 1: iFood -->
+                        <rect x="135" y="310" width="500" height="60" rx="10" fill="rgba(255,255,255,0.02)"/>
+                        <rect x="150" y="325" width="30" height="30" rx="6" fill="#ea1b2c" fill-opacity="0.1"/>
+                        <text x="157" y="344" fill="#ea1b2c" font-family="Outfit" font-size="12" font-weight="800">iF</text>
+                        <text x="195" y="337" fill="#ffffff" font-family="Inter" font-size="13" font-weight="600">#4812 - Carlos Silva</text>
+                        <text x="195" y="354" fill="#9ca3af" font-family="Inter" font-size="11">1x Pizza Calabresa Grande + Coca 2L</text>
+                        <text x="560" y="345" fill="#ffffff" font-family="Outfit" font-size="14" font-weight="700">R$ 68,90</text>
+                        <rect x="470" y="330" width="70" height="20" rx="10" fill="rgba(16,185,129,0.1)"/>
+                        <text x="483" y="344" fill="#10b981" font-family="Inter" font-size="10" font-weight="600">Na Cozinha</text>
+
+                        <!-- Linha Pedido 2: WhatsApp -->
+                        <rect x="135" y="385" width="500" height="60" rx="10" fill="rgba(255,255,255,0.02)"/>
+                        <rect x="150" y="400" width="30" height="30" rx="6" fill="#25d366" fill-opacity="0.1"/>
+                        <text x="158" y="419" fill="#25d366" font-family="Outfit" font-size="12" font-weight="800">WA</text>
+                        <text x="195" y="412" fill="#ffffff" font-family="Inter" font-size="13" font-weight="600">#4811 - Mariana Lins</text>
+                        <text x="195" y="429" fill="#9ca3af" font-family="Inter" font-size="11">2x Burger Classic + Batata Rústica</text>
+                        <text x="560" y="420" fill="#ffffff" font-family="Outfit" font-size="14" font-weight="700">R$ 54,00</text>
+                        <rect x="470" y="405" width="70" height="20" rx="10" fill="rgba(245,158,11,0.1)"/>
+                        <text x="483" y="419" fill="#f59e0b" font-family="Inter" font-size="10" font-weight="600">Pendente</text>
+
+                        <!-- Linha Pedido 3: Balcão QR Code -->
+                        <rect x="135" y="460" width="500" height="60" rx="10" fill="rgba(255,255,255,0.02)"/>
+                        <rect x="150" y="475" width="30" height="30" rx="6" fill="#8b5cf6" fill-opacity="0.1"/>
+                        <text x="157" y="494" fill="#8b5cf6" font-family="Outfit" font-size="12" font-weight="800">QR</text>
+                        <text x="195" y="487" fill="#ffffff" font-family="Inter" font-size="13" font-weight="600">Mesa 08 - Pedido Local</text>
+                        <text x="195" y="504" fill="#9ca3af" font-family="Inter" font-size="11">1x Temaki Filadélfia + Guaraná</text>
+                        <text x="560" y="495" fill="#ffffff" font-family="Outfit" font-size="14" font-weight="700">R$ 38,00</text>
+                        <rect x="470" y="480" width="70" height="20" rx="10" fill="rgba(16,185,129,0.1)"/>
+                        <text x="483" y="494" fill="#10b981" font-family="Inter" font-size="10" font-weight="600">Entregue</text>
+
+                        <!-- Box 3: Canais de Venda e Integrações -->
+                        <rect x="680" y="245" width="290" height="305" rx="16" fill="#0d0d16" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+                        <text x="705" y="285" fill="#ffffff" font-family="Outfit" font-size="16" font-weight="600">Origem das Vendas</text>
+                        
+                        <!-- Círculos de canais com barras -->
+                        <text x="705" y="330" fill="#9ca3af" font-family="Inter" font-size="12">Delivery Próprio (WhatsApp/QR)</text>
+                        <text x="920" y="330" fill="#ffffff" font-family="Outfit" font-size="12" font-weight="600">62%</text>
+                        <rect x="705" y="340" width="240" height="6" rx="3" fill="rgba(255,255,255,0.05)"/>
+                        <rect x="705" y="340" width="150" height="6" rx="3" fill="#8b5cf6"/>
+
+                        <text x="705" y="390" fill="#9ca3af" font-family="Inter" font-size="12">Marketplace (iFood/Outros)</text>
+                        <text x="920" y="390" fill="#ffffff" font-family="Outfit" font-size="12" font-weight="600">28%</text>
+                        <rect x="705" y="400" width="240" height="6" rx="3" fill="rgba(255,255,255,0.05)"/>
+                        <rect x="705" y="400" width="70" height="6" rx="3" fill="#ea1b2c"/>
+
+                        <text x="705" y="450" fill="#9ca3af" font-family="Inter" font-size="12">Balcão & Mesas</text>
+                        <text x="920" y="450" fill="#ffffff" font-family="Outfit" font-size="12" font-weight="600">10%</text>
+                        <rect x="705" y="460" width="240" height="6" rx="3" fill="rgba(255,255,255,0.05)"/>
+                        <rect x="705" y="460" width="24" height="6" rx="3" fill="#0ea5e9"/>
+
+                        <!-- Suporte Garantido Info -->
+                        <rect x="705" y="495" width="240" height="40" rx="8" fill="rgba(14,165,233,0.05)" stroke="rgba(14,165,233,0.1)"/>
+                        <text x="720" y="519" fill="#0ea5e9" font-family="Inter" font-size="11" font-weight="600">Impressora de Cozinha Conectada</text>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bento Grid of Solutions -->
+    <section class="section" id="solucoes">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="badge">Funcionalidades</span>
+                <h2 class="section-title">O ecossistema completo para o seu <span>restaurante decolar</span>.</h2>
+                <p>Tudo o que você precisa para gerenciar pedidos, automatizar o atendimento e fidelizar clientes em uma única plataforma potente e rápida.</p>
+            </div>
+            
+            <div class="bento-grid">
+                <!-- Card 1: Gestor de Pedidos Unificado -->
+                <div class="bento-card col-8 reveal">
+                    <div class="card-info">
+                        <div class="card-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="3" x2="9" y2="21"></line><line x1="15" y1="3" x2="15" y2="21"></line><line x1="3" y1="9" x2="21" y2="9"></line><line x1="3" y1="15" x2="21" y2="15"></line></svg>
+                        </div>
+                        <h3 class="card-title">Gestor de Pedidos Unificado</h3>
+                        <p class="card-desc">Esqueça a loucura de várias telas abertas. Centralize os pedidos do seu delivery próprio, mesas, balcão e iFood em um único painel ágil e intuitivo, otimizando o fluxo de produção da sua cozinha.</p>
+                    </div>
+                    <div class="card-visual" style="height: 100px; display: flex; align-items: center; justify-content: space-around; padding: 1rem; background: rgba(0,0,0,0.3);">
+                        <span class="menuvem-badge" style="font-size: 0.8rem;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> WhatsApp</span>
+                        <span class="sync-arrow">⇆</span>
+                        <span style="background:rgba(14,165,233,0.1); border:1px solid rgba(14,165,233,0.3); color:#0ea5e9; padding: 0.5rem 1rem; border-radius: 12px; font-weight:700; font-size: 0.8rem;">Mesa/QR</span>
+                        <span class="sync-arrow">⇆</span>
+                        <span class="ifood-badge" style="font-size: 0.8rem;">iFood Integrado</span>
+                    </div>
+                </div>
+
+                <!-- Card 2: Impressão Silenciosa -->
+                <div class="bento-card col-4 reveal delay-100">
+                    <div class="card-info">
+                        <div class="card-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+                        </div>
+                        <h3 class="card-title">Impressão Silenciosa</h3>
+                        <p class="card-desc">Integração nativa com impressoras térmicas (Elgin, Bematech). O pedido chega no gestor e imprime automaticamente na cozinha ou bar, sem necessidade de cliques.</p>
+                    </div>
+                    <div class="card-visual visual-print">
+                        <div class="print-line print-line-anim">** NOVO PEDIDO #4812 **</div>
+                        <div class="print-line" style="animation-delay: 0.5s;">1x Pizza Calabresa G... R$ 68,90</div>
+                        <div class="print-line" style="animation-delay: 1s;">------------------------------</div>
+                        <div class="print-line" style="animation-delay: 1.5s;">Envio: Delivery (Moto)</div>
+                    </div>
+                </div>
+
+                <!-- Card 3: Cardápio Digital QR & Link -->
+                <div class="bento-card col-4 reveal">
+                    <div class="card-info">
+                        <div class="card-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+                        </div>
+                        <h3 class="card-title">Cardápio Digital Próprio</h3>
+                        <p class="card-desc">Crie um link exclusivo para seu estabelecimento. Seus clientes pedem pelo celular sem baixar aplicativos, gerando economia real e base de dados qualificada para marketing.</p>
+                    </div>
+                    <div class="card-visual" style="height: 150px; display:flex; align-items:center; justify-content:center; background:rgba(0,0,0,0.3); padding: 1.5rem;">
+                        <!-- QR Code Mockup in SVG -->
+                        <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="80" height="80" rx="12" fill="#0d0d16" stroke="rgba(255,255,255,0.08)"/>
+                            <rect x="12" y="12" width="18" height="18" stroke="#0ea5e9" stroke-width="3" fill="none"/>
+                            <rect x="16" y="16" width="10" height="10" fill="#0ea5e9"/>
+                            <rect x="50" y="12" width="18" height="18" stroke="#0ea5e9" stroke-width="3" fill="none"/>
+                            <rect x="54" y="16" width="10" height="10" fill="#0ea5e9"/>
+                            <rect x="12" y="50" width="18" height="18" stroke="#0ea5e9" stroke-width="3" fill="none"/>
+                            <rect x="16" y="54" width="10" height="10" fill="#0ea5e9"/>
+                            <!-- Random QR pixels -->
+                            <rect x="36" y="16" width="6" height="6" fill="#8b5cf6"/>
+                            <rect x="42" y="26" width="6" height="6" fill="#8b5cf6"/>
+                            <rect x="36" y="36" width="12" height="6" fill="#8b5cf6"/>
+                            <rect x="16" y="36" width="6" height="10" fill="#8b5cf6"/>
+                            <rect x="50" y="36" width="6" height="12" fill="#8b5cf6"/>
+                            <rect x="58" y="50" width="10" height="6" fill="#8b5cf6"/>
+                            <rect x="36" y="56" width="18" height="6" fill="#8b5cf6"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Card 4: Fator Fiscal SEFAZ Paraíba -->
+                <div class="bento-card col-8 reveal delay-100">
+                    <div class="card-info">
+                        <div class="card-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                        </div>
+                        <h3 class="card-title">Módulo Fiscal SEFAZ-PB Incluso</h3>
+                        <p class="card-desc">Evite dores de cabeça regulatórias. Nosso sistema está 100% atualizado para as normas da SEFAZ da Paraíba. Emissão rápida de NFC-e de forma simplificada no momento do fechamento da venda, com suporte a instabilidades e envio automático para o e-mail do cliente.</p>
+                    </div>
+                    <div class="card-visual" style="height: 150px; display: flex; align-items: center; justify-content: center; background: rgba(16,185,129,0.02); border-color: rgba(16,185,129,0.1); padding: 1.5rem;">
+                        <svg width="220" height="80" viewBox="0 0 220 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="220" height="80" rx="16" fill="#0d0d16" stroke="rgba(16,185,129,0.2)"/>
+                            <!-- Shield Icon -->
+                            <path d="M40 25C40 25 55 20 70 25C70 45 60 55 40 60C20 55 10 45 10 25C25 20 40 25 40 25Z" fill="rgba(16,185,129,0.1)" stroke="#10b981" stroke-width="2"/>
+                            <path d="M30 40L37 47L50 32" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <text x="80" y="37" fill="#ffffff" font-family="Outfit" font-size="14" font-weight="600">NFC-e Autorizada</text>
+                            <text x="80" y="55" fill="#9ca3af" font-family="Inter" font-size="11">Integração SEFAZ-PB ativa</text>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Local Factor Section (PB regionalization) -->
+    <section class="section local-section" id="fator-local">
+        <div class="container local-grid">
+            <div class="local-info reveal-left">
+                <span class="badge" style="background:rgba(14,165,233,0.1); border-color:rgba(14,165,233,0.2); color:#38bdf8;">O Fator Local</span>
+                <h2>Por que ter um parceiro por perto faz a diferença?</h2>
+                <p>Muitos sistemas de restaurante são operados por empresas de fora que oferecem apenas atendimentos frios via chat e robôs que demoram horas para responder. Nós somos diferentes: estamos na Paraíba.</p>
+                
+                <ul class="local-bullets">
+                    <li>
+                        <div class="bullet-icon">✓</div>
+                        <div class="bullet-text">
+                            <h4>Plantão de Final de Semana</h4>
+                            <p>Seu sistema de impressão parou de funcionar na noite de sábado? Nossa equipe local fica de plantão pronta para fazer acesso remoto ou visita imediata.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="bullet-icon">✓</div>
+                        <div class="bullet-text">
+                            <h4>Atendimento Humanizado</h4>
+                            <p>Fale diretamente com profissionais locais que conhecem o seu negócio e as particularidades fiscais da Paraíba. Sem filas infinitas de atendimento.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="bullet-icon">✓</div>
+                        <div class="bullet-text">
+                            <h4>Migração Pronta em 24 Horas</h4>
+                            <p>Nós cuidamos de toda a configuração. Cadastramos seu cardápio, importamos do iFood, configuramos suas impressoras e treinamos sua equipe sem custo adicional.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="local-visual reveal-right">
+                <h3 style="z-index:2; margin-bottom: 2rem; text-align:center; font-size: 1.25rem;">Cobertura Completa com Suporte Presencial</h3>
+                
+                <!-- SVG map of Paraíba, simplified and styled neon -->
+                <svg viewBox="0 0 600 300" class="pb-map-svg">
+                    <defs>
+                        <linearGradient id="pbGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#8b5cf6" stop-opacity="0.3"/>
+                            <stop offset="100%" stop-color="#0ea5e9" stop-opacity="0.3"/>
+                        </linearGradient>
+                    </defs>
+                    <!-- Simulated outline of Paraíba State -->
+                    <path class="pb-path pb-path-active" d="M 540,150 L 530,130 L 510,120 L 490,125 L 460,110 L 440,120 L 410,110 L 380,120 L 360,105 L 340,115 L 300,100 L 260,110 L 220,95 L 180,105 L 150,90 L 120,100 L 90,85 L 60,95 L 50,110 L 40,130 L 30,150 L 50,170 L 70,165 L 100,180 L 130,170 L 160,185 L 190,175 L 220,190 L 250,180 L 290,195 L 330,180 L 370,195 L 410,185 L 450,195 L 490,180 L 515,190 L 530,175 L 545,180 Z" />
+                    
+                    <!-- Joao Pessoa Glowing point -->
+                    <circle cx="510" cy="155" r="8" fill="#d946ef" fill-opacity="0.4" style="animation: pulseSync 1.5s infinite;"/>
+                    <circle cx="510" cy="155" r="4" fill="#d946ef"/>
+                    <text x="515" y="145" fill="#ffffff" font-family="Outfit" font-size="11" font-weight="600">João Pessoa</text>
+                    
+                    <!-- Campina Grande Glowing point -->
+                    <circle cx="430" cy="158" r="8" fill="#0ea5e9" fill-opacity="0.4" style="animation: pulseSync 2s infinite;"/>
+                    <circle cx="430" cy="158" r="4" fill="#0ea5e9"/>
+                    <text x="390" y="148" fill="#ffffff" font-family="Outfit" font-size="11" font-weight="600">Campina Grande</text>
+
+                    <!-- Patos Point -->
+                    <circle cx="300" cy="148" r="5" fill="#8b5cf6" fill-opacity="0.4" style="animation: pulseSync 2.5s infinite;"/>
+                    <circle cx="300" cy="148" r="2.5" fill="#8b5cf6"/>
+                    <text x="290" y="138" fill="#9ca3af" font-family="Inter" font-size="9">Patos</text>
+
+                    <!-- Cajazeiras Point -->
+                    <circle cx="120" cy="140" r="5" fill="#8b5cf6" fill-opacity="0.4"/>
+                    <circle cx="120" cy="140" r="2.5" fill="#8b5cf6"/>
+                    <text x="100" y="130" fill="#9ca3af" font-family="Inter" font-size="9">Cajazeiras</text>
+                </svg>
+                
+                <div style="z-index: 2; margin-top: 1.5rem; text-align: center; font-size: 0.85rem; color: var(--text-secondary);">
+                    Atendimento presencial cobrindo a região metropolitana de João Pessoa, Campina Grande, Patos e Cajazeiras.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof Section (Infinite Marquee) -->
+    <section class="section" style="padding-bottom: 2rem;">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="badge" style="background:rgba(217,70,239,0.1); border-color:rgba(217,70,239,0.2); color:#f472b6;">Depoimentos</span>
+                <h2 class="section-title">Quem usa a Menuvem na <span>Paraíba</span></h2>
+                <p>Bares, restaurantes e lanchonetes locais que trocaram a comissão por vendas diretas e aceleraram seus negócios.</p>
+            </div>
+        </div>
+        
+        <!-- Marquee Row 1 -->
+        <div class="marquee-container">
+            <div class="marquee">
+                <div class="marquee-content">
+                    <div class="marquee-card">
+                        <div class="marquee-stars">★★★★★</div>
+                        <p class="marquee-text">"O suporte é impecável. Nossa impressora travou na sexta-feira de noite e em 10 minutos a equipe local resolveu por acesso remoto. Não ficamos na mão."</p>
+                        <div class="marquee-author">
+                            <div class="author-avatar">MC</div>
+                            <div class="author-details">
+                                <h5>Mangai Cabo Branco</h5>
+                                <p>João Pessoa - PB</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="marquee-card">
+                        <div class="marquee-stars">★★★★★</div>
+                        <p class="marquee-text">"Reduzimos nosso custo de comissão no delivery próprio para zero. O cardápio digital é muito fácil de usar e as fotos carregam instantaneamente."</p>
+                        <div class="marquee-author">
+                            <div class="author-avatar">PC</div>
+                            <div class="author-details">
+                                <h5>Pizzaria Cantina</h5>
+                                <p>Campina Grande - PB</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="marquee-card">
+                        <div class="marquee-stars">★★★★★</div>
+                        <p class="marquee-text">"O fechamento de caixa que levava quase 1 hora agora é automático. O módulo de emissão fiscal integrado na SEFAZ-PB economiza muito tempo."</p>
+                        <div class="marquee-author">
+                            <div class="author-avatar">HB</div>
+                            <div class="author-details">
+                                <h5>Hamburgueria Bessa</h5>
+                                <p>João Pessoa - PB</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="marquee-card">
+                        <div class="marquee-stars">★★★★★</div>
+                        <p class="marquee-text">"Nossos clientes adoram a velocidade do cardápio pelo WhatsApp. Pedir pelo QR Code na mesa ajudou muito a reduzir o estresse dos garçons."</p>
+                        <div class="marquee-author">
+                            <div class="author-avatar">SA</div>
+                            <div class="author-details">
+                                <h5>Sushi Altiplano</h5>
+                                <p>João Pessoa - PB</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Duplicate for continuous marquee -->
+                <div class="marquee-content" aria-hidden="true">
+                    <div class="marquee-card">
+                        <div class="marquee-stars">★★★★★</div>
+                        <p class="marquee-text">"O suporte é impecável. Nossa impressora travou na sexta-feira de noite e em 10 minutos a equipe local resolveu por acesso remoto. Não ficamos na mão."</p>
+                        <div class="marquee-author">
+                            <div class="author-avatar">MC</div>
+                            <div class="author-details">
+                                <h5>Mangai Cabo Branco</h5>
+                                <p>João Pessoa - PB</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="marquee-card">
+                        <div class="marquee-stars">★★★★★</div>
+                        <p class="marquee-text">"Reduzimos nosso custo de comissão no delivery próprio para zero. O cardápio digital é muito fácil de usar e as fotos carregam instantaneamente."</p>
+                        <div class="marquee-author">
+                            <div class="author-avatar">PC</div>
+                            <div class="author-details">
+                                <h5>Pizzaria Cantina</h5>
+                                <p>Campina Grande - PB</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="marquee-card">
+                        <div class="marquee-stars">★★★★★</div>
+                        <p class="marquee-text">"O fechamento de caixa que levava quase 1 hora agora é automático. O módulo de emissão fiscal integrado na SEFAZ-PB economiza muito tempo."</p>
+                        <div class="marquee-author">
+                            <div class="author-avatar">HB</div>
+                            <div class="author-details">
+                                <h5>Hamburgueria Bessa</h5>
+                                <p>João Pessoa - PB</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="marquee-card">
+                        <div class="marquee-stars">★★★★★</div>
+                        <p class="marquee-text">"Nossos clientes adoram a velocidade do cardápio pelo WhatsApp. Pedir pelo QR Code na mesa ajudou muito a reduzir o estresse dos garçons."</p>
+                        <div class="marquee-author">
+                            <div class="author-avatar">SA</div>
+                            <div class="author-details">
+                                <h5>Sushi Altiplano</h5>
+                                <p>João Pessoa - PB</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Plan Section & Calculator -->
+    <section class="section plans-section" id="planos">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="badge">Preços Claros</span>
+                <h2 class="section-title">Preços justos que se <span>adaptam ao seu tamanho</span></h2>
+                <p>Utilize a calculadora abaixo simulando seu faturamento mensal aproximado para ver qual plano é o mais recomendado para a sua operação.</p>
+            </div>
+            
+            <!-- Calculadora Box -->
+            <div class="calc-container reveal">
+                <div class="calc-header">
+                    <h3>Qual o seu faturamento mensal atual no delivery/restaurante?</h3>
+                    <div class="calc-faturamento-display" id="faturamento-val">R$ 15.000</div>
+                </div>
+                
+                <div class="calc-slider-box">
+                    <input type="range" id="faturamento-slider" class="range-slider" min="1000" max="50000" step="1000" value="15000" aria-label="Faturamento Mensal">
+                    <div class="slider-labels">
+                        <span>R$ 1.000</span>
+                        <span>R$ 15.000</span>
+                        <span>R$ 30.000</span>
+                        <span>R$ 50.000+</span>
+                    </div>
+                </div>
+                
+                <!-- Grid de Planos -->
+                <div class="plans-grid">
+                    <!-- Plano Bronze -->
+                    <div class="plan-card" id="plan-bronze">
+                        <div>
+                            <h4 class="plan-name">Plano Bronze</h4>
+                            <p style="font-size: 0.8rem; color: var(--text-muted);">Ideal para negócios iniciantes.</p>
+                            <div class="plan-price-box">
+                                <span class="plan-price">R$ <span id="price-bronze">149</span><span>/mês</span></span>
+                            </div>
+                            <ul class="plan-features">
+                                <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Cardápio Digital (Link / WhatsApp)</li>
+                                <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Gestor de Pedidos Básico</li>
+                                <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Suporte Remoto Comercial</li>
+                                <li class="disabled"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg> Integração iFood nativa</li>
+                                <li class="disabled"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg> Pedidos QR Code nas Mesas</li>
+                            </ul>
+                        </div>
+                        <a href="https://wa.me/5583999999999?text=Ol%C3%A1,%20gostaria%20de%20contratar%20o%20Plano%20Bronze%20da%20Menuvem." target="_blank" class="btn btn-secondary" style="width: 100%;">Selecionar Bronze</a>
+                    </div>
+                    
+                    <!-- Plano Prata -->
+                    <div class="plan-card" id="plan-prata">
+                        <div>
+                            <h4 class="plan-name">Plano Prata</h4>
+                            <p style="font-size: 0.8rem; color: var(--text-muted);">Perfeito para operações consolidadas.</p>
+                            <div class="plan-price-box">
+                                <span class="plan-price">R$ <span id="price-prata">249</span><span>/mês</span></span>
+                            </div>
+                            <ul class="plan-features">
+                                <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Cardápio Digital (Link / WhatsApp)</li>
+                                <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Gestor de Pedidos Completo</li>
+                                <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Integração iFood Nativa</li>
+                                <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Suporte Plantão 24/7 (PB)</li>
+                                <li class="disabled"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg> Pedidos QR Code nas Mesas</li>
+                            </ul>
+                        </div>
+                        <a href="https://wa.me/5583999999999?text=Ol%C3%A1,%20gostaria%20de%20contratar%20o%20Plano%20Prata%20da%20Menuvem." target="_blank" class="btn btn-primary" style="width: 100%;">Selecionar Prata</a>
+                    </div>
+                    
+                    <!-- Plano Ouro -->
+                    <div class="plan-card" id="plan-ouro">
+                        <div>
+                            <h4 class="plan-name">Plano Ouro</h4>
+                            <p style="font-size: 0.8rem; color: var(--text-muted);">Para restaurantes de alta performance.</p>
+                            <div class="plan-price-box">
+                                <span class="plan-price">R$ <span id="price-ouro">349</span><span>/mês</span></span>
+                            </div>
+                            <ul class="plan-features">
+                                <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Tudo do Plano Prata</li>
+                                <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Pedidos QR Code nas Mesas</li>
+                                <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Painel de Relatórios Avançados</li>
+                                <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Suporte Presencial Prioritário</li>
+                                <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Treinamento Ilimitado de Garçons</li>
+                            </ul>
+                        </div>
+                        <a href="https://wa.me/5583999999999?text=Ol%C3%A1,%20gostaria%20de%20contratar%20o%20Plano%20Ouro%20da%20Menuvem." target="_blank" class="btn btn-secondary" style="width: 100%;">Selecionar Ouro</a>
+                    </div>
+                </div>
+
+                <!-- Add-ons Selector Section -->
+                <div class="addons-section">
+                    <h4 class="addons-title">Personalize sua experiência com Add-ons:</h4>
+                    <div class="addons-grid">
+                        <div class="addon-card" id="add-chatbot">
+                            <div class="addon-checkbox">✓</div>
+                            <div class="addon-info">
+                                <h5>Atendente IA (WhatsApp)</h5>
+                                <p>Chatbot inteligente no WhatsApp para tirar dúvidas e realizar vendas inteiras.</p>
+                                <span class="addon-price">+ R$ 99/mês</span>
+                            </div>
+                        </div>
+                        
+                        <div class="addon-card" id="add-tef">
+                            <div class="addon-checkbox">✓</div>
+                            <div class="addon-info">
+                                <h5>Integração TEF</h5>
+                                <p>Conecte o caixa à maquininha de cartão de forma automatizada sem erros de digitação.</p>
+                                <span class="addon-price">+ R$ 79/mês</span>
+                            </div>
+                        </div>
+
+                        <div class="addon-card" id="add-fiscal">
+                            <div class="addon-checkbox">✓</div>
+                            <div class="addon-info">
+                                <h5>Emissão Fiscal Ilimitada</h5>
+                                <p>Notas fiscais ilimitadas (NFC-e e NF-e) com transmissão direta no caixa.</p>
+                                <span class="addon-price">+ R$ 49/mês</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section" id="faq">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="badge">Perguntas Frequentes</span>
+                <h2 class="section-title">Suas dúvidas, <span>respondidas</span>.</h2>
+                <p>Ficou com alguma dúvida sobre a contratação ou funcionamento da Menuvem? Confira as respostas rápidas abaixo.</p>
+            </div>
+            
+            <div class="faq-grid reveal">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>O sistema possui fidelidade ou multa se eu quiser cancelar?</span>
+                        <span class="faq-icon">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Não. Todos os nossos planos são mensais recorrentes, sem qualquer fidelidade ou taxas de cancelamento. Você utiliza enquanto fizer sentido para o seu negócio e pode cancelar a qualquer momento.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>A Menuvem cobra comissão pelas minhas vendas?</span>
+                        <span class="faq-icon">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Absolutamente não. Ao contrário de plataformas como o iFood que cobram altas porcentagens em cada pedido, na Menuvem você paga apenas uma mensalidade fixa de acordo com seu plano. Todo o seu lucro fica com você.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Como funciona o suporte aos sábados e domingos?</span>
+                        <span class="faq-icon">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Sabemos que o final de semana é o período mais corrido para bares e restaurantes. Por isso, nossa equipe local mantém um plantão especial para urgências técnicas aos sábados e domingos no horário de almoço e jantar. A prioridade é manter sua operação no ar.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Vocês ajudam a cadastrar o cardápio e instalar as impressoras?</span>
+                        <span class="faq-icon">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Sim! Ao assinar qualquer plano da Menuvem, nossa equipe de onboarding realiza todo o cadastro inicial do seu cardápio com base nas suas fotos e preços. Também configuramos suas impressoras e oferecemos treinamento completo para seus funcionários ficarem prontos.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Eu posso utilizar o meu próprio domínio (Ex: meusite.com.br)?</span>
+                        <span class="faq-icon">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Sim. É possível apontar seu domínio personalizado diretamente para o seu cardápio digital da Menuvem, garantindo uma marca ainda mais forte perante seus clientes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="section cta-final">
+        <div class="container cta-final-box reveal">
+            <h2>Pronto para revolucionar as vendas do seu restaurante?</h2>
+            <p>Converse com nosso especialista local na Paraíba e inicie seu teste gratuito de 15 dias sem compromisso e sem precisar de cartão de crédito.</p>
+            <a href="https://wa.me/5583999999999?text=Ol%C3%A1,%20gostaria%20de%20solicitar%20o%20teste%20de%2015%20dias%20gr%C3%A1tis." target="_blank" class="btn btn-primary" id="cta-btn-final">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 0.25rem;"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.504-5.727-1.465L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.967C16.588 2.022 14.12 1 11.66 1c-5.456 0-9.9 4.398-9.905 9.829-.001 1.765.485 3.488 1.408 5.093l-.999 3.648 3.843-.984zm11.23-6.842c-.303-.151-1.793-.884-2.071-.985-.278-.101-.48-.151-.681.151-.202.303-.781.985-.957 1.186-.177.202-.353.227-.656.075-.303-.151-1.28-.472-2.438-1.503-.9-.8-1.507-1.787-1.684-2.09-.177-.302-.018-.465.133-.614.136-.134.303-.353.454-.528.152-.177.202-.303.303-.505.101-.202.051-.378-.025-.528-.076-.151-.681-1.641-.933-2.246-.247-.591-.497-.512-.681-.512-.177-.008-.379-.008-.581-.008-.202 0-.531.075-.809.378-.278.302-1.061 1.037-1.061 2.531 0 1.493 1.087 2.936 1.238 3.138.152.202 2.138 3.262 5.177 4.57.722.311 1.286.497 1.726.637.725.23 1.385.197 1.906.12.581-.087 1.793-.73 2.046-1.437.252-.705.252-1.31.177-1.437-.076-.127-.278-.202-.581-.353z"/></svg>
+                Começar Teste Grátis
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="#" class="logo" style="margin-bottom: 1rem;" id="footer-logo">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color: #8b5cf6;"><path d="M17.5 19A3.5 3.5 0 0 0 21 15.5c0-2.79-2.54-4.5-5-4.5-.42 0-.83.04-1.24.12A7 7 0 0 0 2 9a7 7 0 0 0 7 7h8.5Z"/></svg>
+                    Menuvem<span class="logo-dot">.</span>PB
+                </a>
+                <p>O sistema de automação e cardápio digital mais completo e estável do Nordeste, focado em trazer autonomia e lucros reais para bares e restaurantes.</p>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Menuvem</h4>
+                <ul>
+                    <li><a href="#solucoes">Soluções</a></li>
+                    <li><a href="#fator-local">O Fator Local</a></li>
+                    <li><a href="#planos">Planos & Preços</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Suporte PB</h4>
+                <ul>
+                    <li><a href="https://wa.me/5583999999999?text=Ol%C3%A1,%20preciso%20de%20suporte." target="_blank">WhatsApp Plantão</a></li>
+                    <li><a href="#faq">Dúvidas Frequentes</a></li>
+                    <li><a href="https://wa.me/5583999999999?text=Ol%C3%A1,%20gostaria%20de%20agendar%20uma%20visita." target="_blank">Agendar Visita</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="container footer-bottom">
+            <div>
+                &copy; 2026 Menuvem Tecnologia Ltda. Todos os direitos reservados. Foco regional na Paraíba (menuvempb.com).
+            </div>
+            <div class="footer-socials">
+                <a href="#" aria-label="Instagram">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                </a>
+                <a href="#" aria-label="Facebook">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script -->
+    <script src="js/main.js"></script>
+</body>
+</html>
