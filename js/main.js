@@ -1,0 +1,243 @@
+document.addEventListener('DOMContentLoaded', () => {
+    initHeader();
+    initMobileMenu();
+    initScrollAnimations();
+    initBentoSpotlight();
+    initPlansCalculator();
+    initFaq();
+});
+
+/* --- Cabeçalho Dinâmico --- */
+function initHeader() {
+    const header = document.querySelector('.header');
+    if (!header) return;
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            header.classList.add('header-scrolled');
+        } else {
+            header.classList.remove('header-scrolled');
+        }
+    });
+}
+
+/* --- Menu Mobile --- */
+function initMobileMenu() {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    
+    if (!menuToggle || !mobileMenu) return;
+
+    menuToggle.addEventListener('click', () => {
+        const isActive = mobileMenu.classList.toggle('mobile-menu-active');
+        
+        // Altera o ícone de hambúrguer para fechar (X)
+        if (isActive) {
+            menuToggle.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>';
+        } else {
+            menuToggle.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>';
+        }
+    });
+
+    // Fechar ao clicar em um link
+    const links = mobileMenu.querySelectorAll('a');
+    links.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.remove('mobile-menu-active');
+            menuToggle.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>';
+        });
+    });
+}
+
+/* --- Animações de Entrada no Scroll --- */
+function initScrollAnimations() {
+    const reveals = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+    
+    if (reveals.length === 0) return;
+
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.15
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('revealed');
+                // Para elementos que só devem animar uma vez
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    reveals.forEach(reveal => {
+        observer.observe(reveal);
+    });
+}
+
+/* --- Efeito Spotlight (Brilho do Mouse nas Bento Cards) --- */
+function initBentoSpotlight() {
+    const cards = document.querySelectorAll('.bento-card');
+    
+    cards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            card.style.setProperty('--mouse-x', `${x}px`);
+            card.style.setProperty('--mouse-y', `${y}px`);
+        });
+    });
+}
+
+/* --- Calculadora de Planos Interativa --- */
+function initPlansCalculator() {
+    const slider = document.getElementById('faturamento-slider');
+    const display = document.getElementById('faturamento-val');
+    
+    const cardBronze = document.getElementById('plan-bronze');
+    const cardPrata = document.getElementById('plan-prata');
+    const cardOuro = document.getElementById('plan-ouro');
+    
+    const priceBronze = document.getElementById('price-bronze');
+    const pricePrata = document.getElementById('price-prata');
+    const priceOuro = document.getElementById('price-ouro');
+    
+    const addChatbot = document.getElementById('add-chatbot');
+    const addTef = document.getElementById('add-tef');
+    const addFiscal = document.getElementById('add-fiscal');
+    
+    if (!slider || !display) return;
+
+    // Valores Base dos Planos
+    const BASE_BRONZE = 149;
+    const BASE_PRATA = 249;
+    const BASE_OURO = 349;
+    
+    // Custos dos Add-ons
+    const COST_CHATBOT = 99;
+    const COST_TEF = 79;
+    const COST_FISCAL = 49;
+
+    // Atualizar cálculo e estados
+    function updateCalculator() {
+        const faturamento = parseInt(slider.value, 10);
+        
+        // Atualiza o texto do faturamento no display formatado como moeda
+        if (faturamento >= 50000) {
+            display.textContent = 'Mais de R$ 50.000';
+        } else {
+            display.textContent = `R$ ${faturamento.toLocaleString('pt-BR')}`;
+        }
+        
+        // Calcula o custo dos add-ons ativos
+        let totalAddons = 0;
+        if (addChatbot && addChatbot.classList.contains('addon-active')) totalAddons += COST_CHATBOT;
+        if (addTef && addTef.classList.contains('addon-active')) totalAddons += COST_TEF;
+        if (addFiscal && addFiscal.classList.contains('addon-active')) totalAddons += COST_FISCAL;
+        
+        // Preço final dos planos (Base + Add-ons)
+        const finalBronze = BASE_BRONZE + totalAddons;
+        const finalPrata = BASE_PRATA + totalAddons;
+        const finalOuro = BASE_OURO + totalAddons;
+        
+        // Renderizar preços com transição de números
+        animateValue(priceBronze, parseInt(priceBronze.textContent) || BASE_BRONZE, finalBronze, 300);
+        animateValue(pricePrata, parseInt(pricePrata.textContent) || BASE_PRATA, finalPrata, 300);
+        animateValue(priceOuro, parseInt(priceOuro.textContent) || BASE_OURO, finalOuro, 300);
+        
+        // Decidir recomendação baseada na faixa de faturamento
+        // Até R$ 8.000 -> Bronze recomendado
+        // De R$ 8.001 a R$ 25.000 -> Prata recomendado
+        // Acima de R$ 25.000 -> Ouro recomendado
+        if (faturamento <= 8000) {
+            setFeaturedPlan(cardBronze, [cardPrata, cardOuro]);
+        } else if (faturamento > 8000 && faturamento <= 25000) {
+            setFeaturedPlan(cardPrata, [cardBronze, cardOuro]);
+        } else {
+            setFeaturedPlan(cardOuro, [cardBronze, cardPrata]);
+        }
+    }
+    
+    // Função auxiliar para gerenciar os estilos dos planos recomendados
+    function setFeaturedPlan(featuredCard, secondaryCards) {
+        if (!featuredCard) return;
+        
+        featuredCard.classList.remove('plan-card-hidden');
+        featuredCard.classList.add('plan-card-featured');
+        
+        const badge = featuredCard.querySelector('.badge');
+        
+        secondaryCards.forEach(card => {
+            if (!card) return;
+            card.classList.remove('plan-card-featured');
+            card.classList.add('plan-card-hidden');
+        });
+    }
+
+    // Animação de contagem numérica suave para o preço
+    function animateValue(obj, start, end, duration) {
+        if (!obj) return;
+        if (start === end) {
+            obj.textContent = end;
+            return;
+        }
+        let startTimestamp = null;
+        const step = (timestamp) => {
+            if (!startTimestamp) startTimestamp = timestamp;
+            const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+            obj.textContent = Math.floor(progress * (end - start) + start);
+            if (progress < 1) {
+                window.requestAnimationFrame(step);
+            } else {
+                obj.textContent = end;
+            }
+        };
+        window.requestAnimationFrame(step);
+    }
+
+    // Listeners do Slider
+    slider.addEventListener('input', updateCalculator);
+    
+    // Listeners dos Add-ons
+    const addonCards = [
+        { el: addChatbot, checkbox: document.getElementById('chk-chatbot') },
+        { el: addTef, checkbox: document.getElementById('chk-tef') },
+        { el: addFiscal, checkbox: document.getElementById('chk-fiscal') }
+    ];
+    
+    addonCards.forEach(item => {
+        if (!item.el) return;
+        item.el.addEventListener('click', () => {
+            item.el.classList.toggle('addon-active');
+            updateCalculator();
+        });
+    });
+
+    // Setup Inicial
+    updateCalculator();
+}
+
+/* --- FAQ Acordeão --- */
+function initFaq() {
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    
+    faqQuestions.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const faqItem = btn.parentElement;
+            const isActive = faqItem.classList.contains('faq-item-active');
+            
+            // Fecha todas as outras perguntas abertas
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('faq-item-active');
+            });
+            
+            // Alterna o estado da pergunta atual
+            if (!isActive) {
+                faqItem.classList.add('faq-item-active');
+            }
+        });
+    });
+}
