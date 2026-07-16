@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Menuvem PB - Passo a passo para cadastrar seu restaurante, lanchonete ou bar e ativar seu bônus de 30 dias gratuitos.">
+    <title>Como Funciona o Cadastro | Menuvem PB</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .steps-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 4rem 1.5rem;
+        }
+        .steps-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        .steps-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .steps-header h1 span {
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .timeline {
+            position: relative;
+            margin: 0 auto;
+        }
+        .timeline-item {
+            position: relative;
+            padding-left: 3.5rem;
+            margin-bottom: 3.5rem;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 14px;
+            top: 32px;
+            bottom: -50px;
+            width: 2px;
+            background: rgba(255, 255, 255, 0.08);
+        }
+        .timeline-item:last-child::before {
+            display: none;
+        }
+        .step-number {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            font-weight: 700;
+            font-family: var(--font-title);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid var(--bg-color);
+            box-shadow: 0 0 10px rgba(100, 29, 222, 0.4);
+        }
+        .step-content {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 2rem;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .step-content h3 {
+            font-size: 1.35rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+        .step-content p {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+        .step-cta-box {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+        }
+        .back-link:hover {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Nav -->
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo" id="header-logo">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color: #641DDE;"><path d="M17.5 19A3.5 3.5 0 0 0 21 15.5c0-2.79-2.54-4.5-5-4.5-.42 0-.83.04-1.24.12A7 7 0 0 0 2 9a7 7 0 0 0 7 7h8.5Z"/></svg>
+                Menuvem<span class="logo-dot">.</span>PB
+            </a>
+            
+            <div style="display: flex; gap: 1rem; align-items: center;">
+                <a href="https://painel.menuvem.com.br" target="_blank" class="btn btn-secondary" style="padding: 0.5rem 1.25rem; font-size: 0.85rem;">
+                    Login Painel
+                </a>
+                <a href="index.html" class="btn btn-primary" style="padding: 0.5rem 1.25rem; font-size: 0.85rem; background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); color: white;">
+                    Voltar ao Site
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <div style="height: 70px;"></div>
+
+    <main class="steps-container">
+        <a href="index.html" class="back-link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+            Voltar para o site
+        </a>
+
+        <div class="steps-header">
+            <span class="badge">Passo a Passo</span>
+            <h1>Como ativar sua conta <span>Menuvem PB</span></h1>
+            <p>Siga as 3 etapas abaixo para configurar seu estabelecimento e usufruir de 30 dias de gratuidade completa sem cadastrar cartão de crédito.</p>
+        </div>
+
+        <div class="timeline">
+            <!-- Etapa 1 -->
+            <div class="timeline-item">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h3>Etapa 1: Cadastre os dados do seu Estabelecimento</h3>
+                    <p>Preencha as informações básicas do seu negócio (como nome da lanchonete, restaurante ou bar, telefone e endereço). Este cadastro servirá para criar o banco de dados inicial e o seu link provisório de cardápio digital.</p>
+                    <div class="step-cta-box">
+                        <a href="https://painel.menuvem.com.br/#/cadastro/23/clovis" target="_blank" class="btn btn-primary" style="font-size: 0.9rem; padding: 0.75rem 1.5rem;">
+                            Iniciar Cadastro do Estabelecimento
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Etapa 2 -->
+            <div class="timeline-item">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h3>Etapa 2: Validação e Primeiro Login</h3>
+                    <p>Após preencher os dados, você receberá uma confirmação de conta por e-mail ou WhatsApp. O próximo passo é realizar o login no painel administrativo para verificar se o seu acesso está ativo e configurado corretamente.</p>
+                    <div class="step-cta-box">
+                        <a href="https://painel.menuvem.com.br" target="_blank" class="btn btn-secondary" style="font-size: 0.9rem; padding: 0.75rem 1.5rem;">
+                            Fazer Login no Painel
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Etapa 3 -->
+            <div class="timeline-item">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h3>Etapa 3: Liberação dos 30 Dias Gratuitos & Plano</h3>
+                    <p>Com o cadastro feito e o painel validado, entre em contato imediatamente com o nosso WhatsApp de Suporte PB. Nossa equipe irá aplicar o bônus de <strong>30 dias de gratuidade</strong> na sua conta e configurar o plano mensal de sua preferência (Plano 1, 2 ou 3) para começar a tarifar apenas após o período de teste, sem qualquer compromisso.</p>
+                    <div class="step-cta-box">
+                        <a href="https://wa.me/5583988559423?text=Ol%C3%A1!%20Realizei%20meu%20cadastro%20inicial%20e%20gostaria%20de%20ativar%20meu%20b%C3%B4nus%20de%2030%20dias%20gr%C3%A1tis%20da%20Menuvem." target="_blank" class="btn btn-primary" style="font-size: 0.9rem; padding: 0.75rem 1.5rem;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 0.25rem;"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.504-5.727-1.465L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.967C16.588 2.022 14.12 1 11.66 1c-5.456 0-9.9 4.398-9.905 9.829-.001 1.765.485 3.488 1.408 5.093l-.999 3.648 3.843-.984zm11.23-6.842c-.303-.151-1.793-.884-2.071-.985-.278-.101-.48-.151-.681.151-.202.303-.781.985-.957 1.186-.177.202-.353.227-.656.075-.303-.151-1.28-.472-2.438-1.503-.9-.8-1.507-1.787-1.684-2.09-.177-.302-.018-.465.133-.614.136-.134.303-.353.454-.528.152-.177.202-.303.303-.505.101-.202.051-.378-.025-.528-.076-.151-.681-1.641-.933-2.246-.247-.591-.497-.512-.681-.512-.177-.008-.379-.008-.581-.008-.202 0-.531.075-.809.378-.278.302-1.061 1.037-1.061 2.531 0 1.493 1.087 2.936 1.238 3.138.152.202 2.138 3.262 5.177 4.57.722.311 1.286.497 1.726.637.725.23 1.385.197 1.906.12.581-.087 1.793-.73 2.046-1.437.252-.705.252-1.31.177-1.437-.076-.127-.278-.202-.581-.353z"/></svg>
+                            Falar com o Suporte e Ativar Gratuidade
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-bottom" style="border-top: none; padding-top: 0; justify-content: center;">
+            &copy; 2026 Menuvem Tecnologia Ltda. Todos os direitos reservados. Foco regional na Paraíba (menuvempb.com).
+        </div>
+    </footer>
+
+</body>
+</html>
