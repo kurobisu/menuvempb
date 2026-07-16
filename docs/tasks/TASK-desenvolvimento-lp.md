@@ -18,3 +18,6 @@
 - **2026-07-16:** Alteração de preços básicos (R$ 167, R$ 227, R$ 267), add-ons gratuitos (R$ 0) e inclusão dos fluxos com ênfase de cadastro autônomo (link dedicado) e contato com o WhatsApp (83) 9 8855-9423 do Suporte PB para aplicar bônus de 30 dias.
 - **2026-07-16:** Criação da página de etapas de cadastro (`cadastro-etapas.html`), ênfase no botão de Login do painel administrativo, e centralização da informação de horário de suporte especificamente no FAQ (deixando suporte "todos os dias" em outras seções).
 - **2026-07-16:** Remoção das lógicas de Tema Claro/Escuro do CSS e do JS. Exclusão dos botões de alternância de tema no cabeçalho em `index.html` e `cadastro-etapas.html`.
+- **2026-07-16 (Backup antes dos Ajustes Manuais):** Commit de segurança realizado (`45b2df6`) para congelar o estado antes das modificações manuais do usuário.
+  * *Comando de gatilho para relatório posterior:* `"faça um levantamento do que foi alterado e registre como parte oficial do site essas novas informações"`.
+
