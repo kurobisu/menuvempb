@@ -101,27 +101,6 @@
             flex-wrap: wrap;
             gap: 1rem;
         }
-
-        .back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--text-primary);
-            font-size: 0.95rem;
-            margin-bottom: 2rem;
-            padding: 0.6rem 1.2rem;
-            background: rgba(255,255,255,0.05);
-            border: 1px solid var(--border-color);
-            border-radius: 2rem;
-            transition: all 0.3s;
-        }
-
-        .back-link:hover {
-            color: white;
-            background: rgba(255,255,255,0.1);
-            border-color: rgba(255,255,255,0.2);
-            transform: translateX(-3px);
-        }
     </style>
 </head>
 
@@ -146,7 +125,7 @@
     <div style="height: 70px;"></div>
 
     <main class="steps-container">
-        <a href="index.html" class="back-link">
+        <a href="index.html" class="back-link" style="margin-bottom: 2rem;">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <line x1="19" y1="12" x2="5" y2="12"></line>
