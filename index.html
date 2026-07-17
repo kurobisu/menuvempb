@@ -653,187 +653,220 @@
                 <p>Selecione um módulo e explore as ferramentas projetadas para acelerar a sua operação diária.</p>
             </div>
             
-            <!-- Abas de Navegação (Módulos) -->
-            <div class="func-tabs reveal delay-100" role="tablist" aria-label="Módulos do Sistema">
-                <button class="func-tab-btn active" role="tab" aria-selected="true" aria-controls="tab-delivery" id="tab-btn-delivery" data-tab="delivery">
-                    Cardápio & Delivery
-                </button>
-                <button class="func-tab-btn" role="tab" aria-selected="false" aria-controls="tab-pdv" id="tab-btn-pdv" data-tab="pdv">
-                    Frente de Caixa (PDV)
-                </button>
-                <button class="func-tab-btn" role="tab" aria-selected="false" aria-controls="tab-estoque" id="tab-btn-estoque" data-tab="estoque">
-                    Controle de Estoque
-                </button>
-                <button class="func-tab-btn" role="tab" aria-selected="false" aria-controls="tab-financeiro" id="tab-btn-financeiro" data-tab="financeiro">
-                    Financeiro & Fiscal
-                </button>
+            <!-- Main Category Tabs -->
+            <div class="yooga-tabs reveal delay-100" role="tablist">
+                <button class="yooga-tab-btn active" data-target="delivery">Cardápio & Delivery</button>
+                <button class="yooga-tab-btn" data-target="pdv">Frente de Caixa (PDV)</button>
+                <button class="yooga-tab-btn" data-target="estoque">Controle de Estoque</button>
+                <button class="yooga-tab-btn" data-target="financeiro">Financeiro & Fiscal</button>
             </div>
 
-            <!-- Conteúdo das Abas -->
-            <div class="func-content reveal delay-200">
-                <!-- Aba 1: Cardápio & Delivery -->
-                <div class="func-pane active" id="tab-delivery" role="tabpanel" aria-labelledby="tab-btn-delivery">
-                    <div class="func-grid">
-                        <div class="func-card">
-                            <div class="func-icon-wrapper" style="color: var(--primary);">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><rect x="7" y="7" width="3" height="3"></rect><rect x="14" y="7" width="3" height="3"></rect><rect x="7" y="14" width="3" height="3"></rect><rect x="14" y="14" width="3" height="3"></rect></svg>
-                            </div>
-                            <div class="func-info">
-                                <h4>QR Code na Mesa & Balcão</h4>
-                                <p>Seus clientes escaneiam na mesa, fazem o pedido sem fila e com redução no tempo de atendimento dos garçons.</p>
-                            </div>
+            <div class="yooga-content reveal delay-200">
+                <!-- Delivery Pane -->
+                <div class="yooga-pane active" id="pane-delivery">
+                    <div class="yooga-layout">
+                        <!-- Sidebar -->
+                        <div class="yooga-sidebar">
+                            <button class="yooga-sub-btn active" data-index="0">QR Code na Mesa & Balcão</button>
+                            <button class="yooga-sub-btn" data-index="1">Delivery Próprio Taxa R$ 0</button>
+                            <button class="yooga-sub-btn" data-index="2">Automação no WhatsApp</button>
+                            <button class="yooga-sub-btn" data-index="3">Fidelidade & Cupons</button>
                         </div>
-                        <div class="func-card">
-                            <div class="func-icon-wrapper" style="color: var(--secondary);">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                        <!-- Carousel -->
+                        <div class="yooga-carousel">
+                            <div class="yooga-carousel-track">
+                                <div class="yooga-card active">
+                                    <div class="yooga-card-bg" style="background-image: url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80');"></div>
+                                    <div class="yooga-card-overlay"></div>
+                                    <div class="yooga-card-content">
+                                        <h3>QR Code na Mesa & Balcão</h3>
+                                        <p>Seus clientes escaneiam na mesa, fazem o pedido sem fila e com redução no tempo de atendimento dos garçons.</p>
+                                    </div>
+                                </div>
+                                <div class="yooga-card">
+                                    <div class="yooga-card-bg" style="background-image: url('https://images.unsplash.com/photo-1621245052951-b8f411ba845a?auto=format&fit=crop&w=800&q=80');"></div>
+                                    <div class="yooga-card-overlay"></div>
+                                    <div class="yooga-card-content">
+                                        <h3>Delivery Próprio Taxa R$ 0</h3>
+                                        <p>Receba pedidos ilimitados pelo seu próprio link e pare de pagar comissão por venda para marketplaces.</p>
+                                    </div>
+                                </div>
+                                <div class="yooga-card">
+                                    <div class="yooga-card-bg" style="background-image: url('https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=800&q=80');"></div>
+                                    <div class="yooga-card-overlay"></div>
+                                    <div class="yooga-card-content">
+                                        <h3>Automação no WhatsApp</h3>
+                                        <p>Envio automático de confirmação de pedidos, status e atualizações em tempo real diretamente no WhatsApp do cliente.</p>
+                                    </div>
+                                </div>
+                                <div class="yooga-card">
+                                    <div class="yooga-card-bg" style="background-image: url('https://images.unsplash.com/photo-1556740714-a8395b3bf30f?auto=format&fit=crop&w=800&q=80');"></div>
+                                    <div class="yooga-card-overlay"></div>
+                                    <div class="yooga-card-content">
+                                        <h3>Fidelidade & Cupons</h3>
+                                        <p>Crie campanhas de fidelidade com acúmulo de pontos e ofereça cupons promocionais para engajar e reter clientes.</p>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="func-info">
-                                <h4>Delivery Próprio Taxa R$ 0</h4>
-                                <p>Receba pedidos ilimitados pelo seu próprio link e pare de pagar comissão por venda para marketplaces.</p>
-                            </div>
-                        </div>
-                        <div class="func-card">
-                            <div class="func-icon-wrapper" style="color: #25D366;">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
-                            </div>
-                            <div class="func-info">
-                                <h4>Automação no WhatsApp</h4>
-                                <p>Envio automático de confirmação de pedidos, status e atualizações em tempo real diretamente no WhatsApp do cliente.</p>
-                            </div>
-                        </div>
-                        <div class="func-card">
-                            <div class="func-icon-wrapper" style="color: var(--accent);">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
-                            </div>
-                            <div class="func-info">
-                                <h4>Fidelidade & Cupons</h4>
-                                <p>Crie campanhas de fidelidade com acúmulo de pontos e ofereça cupons promocionais para engajar e reter clientes.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Aba 2: Frente de Caixa (PDV) -->
-                <div class="func-pane" id="tab-pdv" role="tabpanel" aria-labelledby="tab-btn-pdv">
-                    <div class="func-grid">
-                        <div class="func-card">
-                            <div class="func-icon-wrapper" style="color: var(--primary);">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
-                            </div>
-                            <div class="func-info">
-                                <h4>PDV e Vendas Rápidas</h4>
-                                <p>Lançamento de pedidos, pagamentos e controle de caixa em poucos cliques na mesma tela central.</p>
-                            </div>
-                        </div>
-                        <div class="func-card">
-                            <div class="func-icon-wrapper" style="color: var(--secondary);">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9"></rect><rect x="14" y="3" width="7" height="5"></rect><rect x="14" y="12" width="7" height="9"></rect><rect x="3" y="16" width="7" height="5"></rect></svg>
-                            </div>
-                            <div class="func-info">
-                                <h4>Mapa de Mesas & Comandas</h4>
-                                <p>Visualize o status das mesas (abertas, fechadas, pedindo a conta) e divida contas com facilidade.</p>
-                            </div>
-                        </div>
-                        <div class="func-card">
-                            <div class="func-icon-wrapper" style="color: #ef4444;">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><polyline points="9 11 12 14 22 4"></polyline></svg>
-                            </div>
-                            <div class="func-info">
-                                <h4>Tela KDS para Cozinha</h4>
-                                <p>Substitua papéis por telas intuitivas na cozinha, organizando pedidos em ordem cronológica de preparo.</p>
-                            </div>
-                        </div>
-                        <div class="func-card">
-                            <div class="func-icon-wrapper" style="color: var(--accent);">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
-                            </div>
-                            <div class="func-info">
-                                <h4>Direcionamento de Impressão</h4>
-                                <p>Envie pedidos de bebidas para o bar e de pratos para a cozinha automaticamente em impressoras separadas.</p>
+                            <div class="yooga-carousel-controls">
+                                <button class="yooga-arrow prev" aria-label="Anterior">&lt;</button>
+                                <button class="yooga-arrow next" aria-label="Próximo">&gt;</button>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Aba 3: Controle de Estoque -->
-                <div class="func-pane" id="tab-estoque" role="tabpanel" aria-labelledby="tab-btn-estoque">
-                    <div class="func-grid">
-                        <div class="func-card">
-                            <div class="func-icon-wrapper" style="color: var(--primary);">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path><path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"></path></svg>
-                            </div>
-                            <div class="func-info">
-                                <h4>Baixa Automática de Insumos</h4>
-                                <p>O estoque é atualizado automaticamente a cada venda efetuada no PDV ou no cardápio de delivery.</p>
-                            </div>
+                <!-- PDV Pane -->
+                <div class="yooga-pane" id="pane-pdv">
+                    <div class="yooga-layout">
+                        <div class="yooga-sidebar">
+                            <button class="yooga-sub-btn active" data-index="0">PDV e Vendas Rápidas</button>
+                            <button class="yooga-sub-btn" data-index="1">Mapa de Mesas & Comandas</button>
+                            <button class="yooga-sub-btn" data-index="2">Tela KDS para Cozinha</button>
+                            <button class="yooga-sub-btn" data-index="3">Direcionamento de Impressão</button>
                         </div>
-                        <div class="func-card">
-                            <div class="func-icon-wrapper" style="color: var(--secondary);">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                        <div class="yooga-carousel">
+                            <div class="yooga-carousel-track">
+                                <div class="yooga-card active">
+                                    <div class="yooga-card-bg" style="background-image: url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=800&q=80');"></div>
+                                    <div class="yooga-card-overlay"></div>
+                                    <div class="yooga-card-content">
+                                        <h3>PDV e Vendas Rápidas</h3>
+                                        <p>Lançamento de pedidos, pagamentos e controle de caixa em poucos cliques na mesma tela central.</p>
+                                    </div>
+                                </div>
+                                <div class="yooga-card">
+                                    <div class="yooga-card-bg" style="background-image: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80');"></div>
+                                    <div class="yooga-card-overlay"></div>
+                                    <div class="yooga-card-content">
+                                        <h3>Mapa de Mesas & Comandas</h3>
+                                        <p>Visualize o status das mesas (abertas, fechadas, pedindo a conta) e divida contas com facilidade.</p>
+                                    </div>
+                                </div>
+                                <div class="yooga-card">
+                                    <div class="yooga-card-bg" style="background-image: url('https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&fit=crop&w=800&q=80');"></div>
+                                    <div class="yooga-card-overlay"></div>
+                                    <div class="yooga-card-content">
+                                        <h3>Tela KDS para Cozinha</h3>
+                                        <p>Substitua papéis por telas intuitivas na cozinha, organizando pedidos em ordem cronológica de preparo.</p>
+                                    </div>
+                                </div>
+                                <div class="yooga-card">
+                                    <div class="yooga-card-bg" style="background-image: url('https://images.unsplash.com/photo-1556740758-90de374c12ad?auto=format&fit=crop&w=800&q=80');"></div>
+                                    <div class="yooga-card-overlay"></div>
+                                    <div class="yooga-card-content">
+                                        <h3>Direcionamento de Impressão</h3>
+                                        <p>Envie pedidos de bebidas para o bar e de pratos para a cozinha automaticamente em impressoras separadas.</p>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="func-info">
-                                <h4>Ficha Técnica por Produto</h4>
-                                <p>Defina a quantidade exata de insumos (ex: gramas de carne) por prato e saiba sua margem de lucro real.</p>
-                            </div>
-                        </div>
-                        <div class="func-card">
-                            <div class="func-icon-wrapper" style="color: #f59e0b;">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
-                            </div>
-                            <div class="func-info">
-                                <h4>Alertas de Estoque Mínimo</h4>
-                                <p>Receba avisos inteligentes quando o estoque de ingredientes estratégicos estiver abaixo do nível mínimo.</p>
-                            </div>
-                        </div>
-                        <div class="func-card">
-                            <div class="func-icon-wrapper" style="color: var(--accent);">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="12" y1="18" x2="12" y2="12"></line><line x1="9" y1="15" x2="15" y2="15"></line></svg>
-                            </div>
-                            <div class="func-info">
-                                <h4>Entrada Automatizada (XML)</h4>
-                                <p>Importe arquivos XML das notas dos seus fornecedores para atualizar custos e quantidades sem digitação manual.</p>
+                            <div class="yooga-carousel-controls">
+                                <button class="yooga-arrow prev" aria-label="Anterior">&lt;</button>
+                                <button class="yooga-arrow next" aria-label="Próximo">&gt;</button>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Aba 4: Financeiro & Fiscal -->
-                <div class="func-pane" id="tab-financeiro" role="tabpanel" aria-labelledby="tab-btn-financeiro">
-                    <div class="func-grid">
-                        <div class="func-card">
-                            <div class="func-icon-wrapper" style="color: var(--primary);">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                <!-- Estoque Pane -->
+                <div class="yooga-pane" id="pane-estoque">
+                    <div class="yooga-layout">
+                        <div class="yooga-sidebar">
+                            <button class="yooga-sub-btn active" data-index="0">Baixa Automática de Insumos</button>
+                            <button class="yooga-sub-btn" data-index="1">Ficha Técnica por Produto</button>
+                            <button class="yooga-sub-btn" data-index="2">Alertas de Estoque Mínimo</button>
+                            <button class="yooga-sub-btn" data-index="3">Entrada Automatizada (XML)</button>
+                        </div>
+                        <div class="yooga-carousel">
+                            <div class="yooga-carousel-track">
+                                <div class="yooga-card active">
+                                    <div class="yooga-card-bg" style="background-image: url('https://images.unsplash.com/photo-1586528116311-ad8ed7c663c0?auto=format&fit=crop&w=800&q=80');"></div>
+                                    <div class="yooga-card-overlay"></div>
+                                    <div class="yooga-card-content">
+                                        <h3>Baixa Automática de Insumos</h3>
+                                        <p>O estoque é atualizado automaticamente a cada venda efetuada no PDV ou no cardápio de delivery.</p>
+                                    </div>
+                                </div>
+                                <div class="yooga-card">
+                                    <div class="yooga-card-bg" style="background-image: url('https://images.unsplash.com/photo-1507914464562-6ff4ac29692f?auto=format&fit=crop&w=800&q=80');"></div>
+                                    <div class="yooga-card-overlay"></div>
+                                    <div class="yooga-card-content">
+                                        <h3>Ficha Técnica por Produto</h3>
+                                        <p>Defina a quantidade exata de insumos (ex: gramas de carne) por prato e saiba sua margem de lucro real.</p>
+                                    </div>
+                                </div>
+                                <div class="yooga-card">
+                                    <div class="yooga-card-bg" style="background-image: url('https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?auto=format&fit=crop&w=800&q=80');"></div>
+                                    <div class="yooga-card-overlay"></div>
+                                    <div class="yooga-card-content">
+                                        <h3>Alertas de Estoque Mínimo</h3>
+                                        <p>Receba avisos inteligentes quando o estoque de ingredientes estratégicos estiver abaixo do nível mínimo.</p>
+                                    </div>
+                                </div>
+                                <div class="yooga-card">
+                                    <div class="yooga-card-bg" style="background-image: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80');"></div>
+                                    <div class="yooga-card-overlay"></div>
+                                    <div class="yooga-card-content">
+                                        <h3>Entrada Automatizada (XML)</h3>
+                                        <p>Importe arquivos XML das notas dos seus fornecedores para atualizar custos e quantidades sem digitação manual.</p>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="func-info">
-                                <h4>Fluxo de Caixa Consolidado</h4>
-                                <p>Monitore contas a pagar, a receber e conciliação de cartões em um painel visual unificado.</p>
+                            <div class="yooga-carousel-controls">
+                                <button class="yooga-arrow prev" aria-label="Anterior">&lt;</button>
+                                <button class="yooga-arrow next" aria-label="Próximo">&gt;</button>
                             </div>
                         </div>
-                        <div class="func-card">
-                            <div class="func-icon-wrapper" style="color: var(--secondary);">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><polyline points="9 15 11 17 15 13"></polyline></svg>
-                            </div>
-                            <div class="func-info">
-                                <h4>Emissor NFC-e / NF-e</h4>
-                                <p>Emissão fiscal nativa simplificada homologada pela SEFAZ-PB com contingência para instabilidades de sinal.</p>
-                            </div>
+                    </div>
+                </div>
+
+                <!-- Financeiro Pane -->
+                <div class="yooga-pane" id="pane-financeiro">
+                    <div class="yooga-layout">
+                        <div class="yooga-sidebar">
+                            <button class="yooga-sub-btn active" data-index="0">Fluxo de Caixa Consolidado</button>
+                            <button class="yooga-sub-btn" data-index="1">Emissor NFC-e / NF-e</button>
+                            <button class="yooga-sub-btn" data-index="2">Relatórios de Faturamento</button>
+                            <button class="yooga-sub-btn" data-index="3">Conciliador de Adquirentes</button>
                         </div>
-                        <div class="func-card">
-                            <div class="func-icon-wrapper" style="color: #06b6d4;">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+                        <div class="yooga-carousel">
+                            <div class="yooga-carousel-track">
+                                <div class="yooga-card active">
+                                    <div class="yooga-card-bg" style="background-image: url('https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80');"></div>
+                                    <div class="yooga-card-overlay"></div>
+                                    <div class="yooga-card-content">
+                                        <h3>Fluxo de Caixa Consolidado</h3>
+                                        <p>Monitore contas a pagar, a receber e conciliação de cartões em um painel visual unificado.</p>
+                                    </div>
+                                </div>
+                                <div class="yooga-card">
+                                    <div class="yooga-card-bg" style="background-image: url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=800&q=80');"></div>
+                                    <div class="yooga-card-overlay"></div>
+                                    <div class="yooga-card-content">
+                                        <h3>Emissor NFC-e / NF-e</h3>
+                                        <p>Emissão fiscal nativa simplificada homologada pela SEFAZ-PB com contingência para instabilidades de sinal.</p>
+                                    </div>
+                                </div>
+                                <div class="yooga-card">
+                                    <div class="yooga-card-bg" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80');"></div>
+                                    <div class="yooga-card-overlay"></div>
+                                    <div class="yooga-card-content">
+                                        <h3>Relatórios de Faturamento</h3>
+                                        <p>Dados ricos de produtos mais vendidos, margens de lucro, horários de pico e ticket médio diário.</p>
+                                    </div>
+                                </div>
+                                <div class="yooga-card">
+                                    <div class="yooga-card-bg" style="background-image: url('https://images.unsplash.com/photo-1601597111158-2fceff292cdc?auto=format&fit=crop&w=800&q=80');"></div>
+                                    <div class="yooga-card-overlay"></div>
+                                    <div class="yooga-card-content">
+                                        <h3>Conciliador de Adquirentes</h3>
+                                        <p>Acompanhe as taxas de cartão cobradas pelas maquininhas e evite cobranças indevidas de operadoras.</p>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="func-info">
-                                <h4>Relatórios de Faturamento</h4>
-                                <p>Dados ricos de produtos mais vendidos, margens de lucro, horários de pico e ticket médio diário.</p>
-                            </div>
-                        </div>
-                        <div class="func-card">
-                            <div class="func-icon-wrapper" style="color: var(--accent);">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
-                            </div>
-                            <div class="func-info">
-                                <h4>Conciliador de Adquirentes</h4>
-                                <p>Acompanhe as taxas de cartão cobradas pelas maquininhas e evite cobranças indevidas de operadoras.</p>
+                            <div class="yooga-carousel-controls">
+                                <button class="yooga-arrow prev" aria-label="Anterior">&lt;</button>
+                                <button class="yooga-arrow next" aria-label="Próximo">&gt;</button>
                             </div>
                         </div>
                     </div>
