@@ -169,14 +169,14 @@
                         hasVisible = true;
                         
                         // Automatically open if there's a search term
-                        if (term.length > 2 && !item.classList.contains('active')) {
-                            item.classList.add('active');
+                        if (term.length > 2 && !item.classList.contains('faq-item-active')) {
+                            item.classList.add('faq-item-active');
                             const answer = item.querySelector('.faq-answer');
                             if(answer) answer.style.maxHeight = answer.scrollHeight + "px";
                         }
                     } else {
                         item.style.display = 'none';
-                        item.classList.remove('active');
+                        item.classList.remove('faq-item-active');
                         const answer = item.querySelector('.faq-answer');
                         if(answer) answer.style.maxHeight = null;
                     }
