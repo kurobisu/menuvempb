@@ -98,10 +98,12 @@ function initPlansCalculator() {
     const slider = document.getElementById('faturamento-slider');
     const display = document.getElementById('faturamento-val');
     
+    const cardSecreto = document.getElementById('plan-secreto');
     const cardBronze = document.getElementById('plan-bronze');
     const cardPrata = document.getElementById('plan-prata');
     const cardOuro = document.getElementById('plan-ouro');
     
+    const priceSecreto = document.getElementById('price-secreto');
     const priceBronze = document.getElementById('price-bronze');
     const pricePrata = document.getElementById('price-prata');
     const priceOuro = document.getElementById('price-ouro');
@@ -113,6 +115,7 @@ function initPlansCalculator() {
     if (!slider || !display) return;
 
     // Valores Base dos Planos
+    const BASE_SECRETO = 100;
     const BASE_BRONZE = 167;
     const BASE_PRATA = 227;
     const BASE_OURO = 267;
@@ -140,11 +143,13 @@ function initPlansCalculator() {
         if (addFiscal && addFiscal.classList.contains('addon-active')) totalAddons += COST_FISCAL;
         
         // Preço final dos planos (Base + Add-ons)
+        const finalSecreto = BASE_SECRETO + totalAddons;
         const finalBronze = BASE_BRONZE + totalAddons;
         const finalPrata = BASE_PRATA + totalAddons;
         const finalOuro = BASE_OURO + totalAddons;
         
         // Renderizar preços com transição de números
+        if(priceSecreto) animateValue(priceSecreto, parseInt(priceSecreto.textContent) || BASE_SECRETO, finalSecreto, 300);
         animateValue(priceBronze, parseInt(priceBronze.textContent) || BASE_BRONZE, finalBronze, 300);
         animateValue(pricePrata, parseInt(pricePrata.textContent) || BASE_PRATA, finalPrata, 300);
         animateValue(priceOuro, parseInt(priceOuro.textContent) || BASE_OURO, finalOuro, 300);
@@ -157,12 +162,14 @@ function initPlansCalculator() {
             grid.style.alignItems = 'center';
         }
 
-        if (faturamento <= 20000) {
-            setFeaturedPlan(cardBronze, 'Plano 1', [cardPrata, cardOuro]);
+        if (faturamento === 1000) {
+            setFeaturedPlan(cardSecreto, 'Plano Secreto 🕵️‍♂️', [cardBronze, cardPrata, cardOuro]);
+        } else if (faturamento > 1000 && faturamento <= 20000) {
+            setFeaturedPlan(cardBronze, 'Plano 1', [cardSecreto, cardPrata, cardOuro]);
         } else if (faturamento > 20000 && faturamento <= 35000) {
-            setFeaturedPlan(cardPrata, 'Plano 2', [cardBronze, cardOuro]);
+            setFeaturedPlan(cardPrata, 'Plano 2', [cardSecreto, cardBronze, cardOuro]);
         } else {
-            setFeaturedPlan(cardOuro, 'Plano 3', [cardBronze, cardPrata]);
+            setFeaturedPlan(cardOuro, 'Plano 3', [cardSecreto, cardBronze, cardPrata]);
         }
     }
     

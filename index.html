@@ -329,9 +329,65 @@
                 </div>
 
                 <!-- Grid de Planos -->
+                
                 <div class="plans-grid">
+                    <!-- Plano Bronze/0 Secreto -->
+                    <div class="plan-card plan-secret-border" id="plan-secreto" style="display:none;">
+                        <div>
+                            <h4 class="plan-name">Plano 0</h4>
+                            <p style="font-size: 0.8rem; color: var(--text-muted);">Acesso básico para lojistas 100% autônomos.</p>
+                            <div class="plan-price-box">
+                                <span class="plan-price">R$ <span id="price-secreto">100</span><span>/mês</span></span>
+                            </div>
+                            <ul class="plan-features-secreto" style="list-style: none; padding: 0; margin: 1.5rem 0 0 0; text-align: left; display: flex; flex-direction: column; gap: 0.75rem;">
+                                <li style="display: flex; align-items: center; gap: 0.5rem; color: var(--text-primary); font-size: 0.85rem;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                    Acesso total na Plataforma (+Mesas)
+                                </li>
+                                <li style="display: flex; align-items: center; gap: 0.5rem; color: var(--text-primary); font-size: 0.85rem;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                    Cardápio Online
+                                </li>
+                                <li style="display: flex; align-items: center; gap: 0.5rem; color: var(--text-primary); font-size: 0.85rem;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                    14 dias de gratuidade
+                                </li>
+                                <li style="display: flex; align-items: center; gap: 0.5rem; color: var(--text-muted); font-size: 0.85rem; opacity: 0.6;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                                    Sem Suporte remoto
+                                    <div class="tooltip-container" style="margin-left: 4px;">
+                                        <span class="tooltip-icon" tabindex="0" aria-haspopup="true">i</span>
+                                        <div class="tooltip-text" style="width: 220px; font-weight: normal; text-transform: none; white-space: normal; color: var(--text-primary);">Plano sem suporte remoto, feito para lojistas autônomos. É necessário solicitar ativação com o suporte.</div>
+                                    </div>
+                                </li>
+                                <li style="display: flex; align-items: center; gap: 0.5rem; color: var(--text-muted); font-size: 0.85rem; opacity: 0.6;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                                    Sem Cadastro de Cardápio
+                                    <div class="tooltip-container" style="margin-left: 4px;">
+                                        <span class="tooltip-icon" tabindex="0" aria-haspopup="true">i</span>
+                                        <div class="tooltip-text" style="width: 220px; font-weight: normal; text-transform: none; white-space: normal; color: var(--text-primary);">Fazemos apenas a configuração básica de planos, taxas de entrega e métodos de pagamentos; o cardápio é cadastrado pelo próprio lojista.</div>
+                                    </div>
+                                </li>
+                                <li style="display: flex; align-items: center; gap: 0.5rem; color: var(--text-muted); font-size: 0.85rem; opacity: 0.6;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                                    Sem Emissão fiscal ilimitada
+                                </li>
+                                <li style="display: flex; align-items: center; gap: 0.5rem; color: var(--text-muted); font-size: 0.85rem; opacity: 0.6;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                                    Sem Chatbot WhatsApp
+                                </li>
+                            </ul>
+                        </div>
+                        <div style="display:flex; flex-direction:column; gap:0.5rem; margin-top:1.5rem;">
+                            <a href="https://wa.me/5583988559423?text=Oi%2C%20encontrei%20o%20Plano%20secreto%20e%20desejo%20ativar%20ele%20para%20minha%20loja%2C%20estou%20ciente%20dos%20detalhes%21"
+                                target="_blank" class="btn btn-primary"
+                                style="width: 100%; font-size: 0.85rem; padding: 0.65rem 1rem;">Solicitar Plano Secreto 🕵️‍♂️</a>
+                            <a href="plano-secreto.html" class="btn btn-outline"
+                                style="width: 100%; font-size: 0.8rem; padding: 0.5rem 1rem;">+ Info Detalhada</a>
+                        </div>
+                    </div>
                     <!-- Plano Bronze -->
-                    <div class="plan-card" id="plan-bronze" plan-wood">
+                    <div class="plan-card plan-wood" id="plan-bronze">
                         <div>
                             <h4 class="plan-name">Plano 1</h4>
                             <p style="font-size: 0.8rem; color: var(--text-muted);">Ideal para negócios iniciantes.</p>
@@ -350,7 +406,7 @@
                     </div>
 
                     <!-- Plano Prata -->
-                    <div class="plan-card" id="plan-prata" plan-gold">
+                    <div class="plan-card plan-gold" id="plan-prata">
                         <div>
                             <h4 class="plan-name">Plano 2</h4>
                             <p style="font-size: 0.8rem; color: var(--text-muted);">Perfeito para operações
@@ -370,7 +426,7 @@
                     </div>
 
                     <!-- Plano Ouro -->
-                    <div class="plan-card" id="plan-ouro" plan-diamond">
+                    <div class="plan-card plan-diamond" id="plan-ouro">
                         <div>
                             <h4 class="plan-name">Plano 3</h4>
                             <p style="font-size: 0.8rem; color: var(--text-muted);">Para restaurantes de alta
