@@ -328,8 +328,67 @@
                     </div>
                 </div>
 
-                
-                
+                <!-- Grid de Planos -->
+                <div class="plans-grid">
+                    <!-- Plano Bronze -->
+                    <div class="plan-card" id="plan-bronze">
+                        <div>
+                            <h4 class="plan-name">Plano 1</h4>
+                            <p style="font-size: 0.8rem; color: var(--text-muted);">Ideal para negócios iniciantes.</p>
+                            <div class="plan-price-box">
+                                <span class="plan-price">R$ <span id="price-bronze">167</span><span>/mês</span></span>
+                            </div>
+                        </div>
+                        <div style="display:flex; flex-direction:column; gap:0.5rem; margin-top:1.5rem;">
+                            <a href="https://wa.me/5583988559423?text=Ol%C3%A1!%20Gostaria%20de%20ativar%20meu%20b%C3%B4nus%20de%2030%20dias%20gr%C3%A1tis%20no%20Plano%201%20da%20Menuvem."
+                                target="_blank" class="btn btn-primary"
+                                style="width: 100%; font-size: 0.85rem; padding: 0.65rem 1rem;">Ativar 30 Dias
+                                Grátis</a>
+                            <a href="planos.html?plano=1" class="btn btn-outline"
+                                style="width: 100%; font-size: 0.8rem; padding: 0.5rem 1rem;">+ Info Detalhada</a>
+                        </div>
+                    </div>
+
+                    <!-- Plano Prata -->
+                    <div class="plan-card" id="plan-prata">
+                        <div>
+                            <h4 class="plan-name">Plano 2</h4>
+                            <p style="font-size: 0.8rem; color: var(--text-muted);">Perfeito para operações
+                                consolidadas.</p>
+                            <div class="plan-price-box">
+                                <span class="plan-price">R$ <span id="price-prata">227</span><span>/mês</span></span>
+                            </div>
+                        </div>
+                        <div style="display:flex; flex-direction:column; gap:0.5rem; margin-top:1.5rem;">
+                            <a href="https://wa.me/5583988559423?text=Ol%C3%A1!%20Gostaria%20de%20ativar%20meu%20b%C3%B4nus%20de%2030%20dias%20gr%C3%A1tis%20no%20Plano%202%20da%20Menuvem."
+                                target="_blank" class="btn btn-primary"
+                                style="width: 100%; font-size: 0.85rem; padding: 0.65rem 1rem;">Ativar 30 Dias
+                                Grátis</a>
+                            <a href="planos.html?plano=2" class="btn btn-outline"
+                                style="width: 100%; font-size: 0.8rem; padding: 0.5rem 1rem;">+ Info Detalhada</a>
+                        </div>
+                    </div>
+
+                    <!-- Plano Ouro -->
+                    <div class="plan-card" id="plan-ouro">
+                        <div>
+                            <h4 class="plan-name">Plano 3</h4>
+                            <p style="font-size: 0.8rem; color: var(--text-muted);">Para restaurantes de alta
+                                performance.</p>
+                            <div class="plan-price-box">
+                                <span class="plan-price">R$ <span id="price-ouro">267</span><span>/mês</span></span>
+                            </div>
+                        </div>
+                        <div style="display:flex; flex-direction:column; gap:0.5rem; margin-top:1.5rem;">
+                            <a href="https://wa.me/5583988559423?text=Ol%C3%A1!%20Gostaria%20de%20ativar%20meu%20b%C3%B4nus%20de%2030%20dias%20gr%C3%A1tis%20no%20Plano%203%20da%20Menuvem."
+                                target="_blank" class="btn btn-primary"
+                                style="width: 100%; font-size: 0.85rem; padding: 0.65rem 1rem;">Ativar 30 Dias
+                                Grátis</a>
+                            <a href="planos.html?plano=3" class="btn btn-outline"
+                                style="width: 100%; font-size: 0.8rem; padding: 0.5rem 1rem;">+ Info Detalhada</a>
+                        </div>
+                    </div>
+                </div>
 
                 <!-- Add-ons Selector Section -->
                 <div class="addons-section">
@@ -1138,6 +1197,14 @@ document.addEventListener('DOMContentLoaded', () => {
             grid.style.alignItems = 'center';
         }
 
+        // Apply a clean width to cards
+        if(p1) p1.style.width = '100%';
+        if(p1) p1.style.maxWidth = '400px';
+        if(p2) p2.style.width = '100%';
+        if(p2) p2.style.maxWidth = '400px';
+        if(p3) p3.style.width = '100%';
+        if(p3) p3.style.maxWidth = '400px';
+
         function updatePlans(val) {
             if(p1) p1.style.display = 'none';
             if(p2) p2.style.display = 'none';
@@ -1156,12 +1223,11 @@ document.addEventListener('DOMContentLoaded', () => {
             updatePlans(parseInt(e.target.value));
         });
         
-        // Initialize
+        // Initialize based on the default value of the slider (R$ 15.000)
         updatePlans(parseInt(slider.value));
     }
 });
 </script>
 </body>
-
 
 </html>
