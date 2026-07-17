@@ -21,7 +21,7 @@
         }
         .search-input {
             width: 100%;
-            padding: 1rem 1rem 1rem 3rem;
+            padding: 1rem 3rem 1rem 3rem;
             font-size: 1.1rem;
             background: var(--bg-card);
             border: 1px solid var(--border-color);
@@ -57,14 +57,18 @@
             right: 1rem;
             top: 50%;
             transform: translateY(-50%);
-            color: var(--text-muted);
+            color: rgba(255, 255, 255, 0.7);
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
             cursor: pointer;
             display: none;
             transition: all 0.2s;
-            padding: 5px;
+            padding: 4px;
+            z-index: 10;
         }
         .clear-icon:hover {
             color: white;
+            background: rgba(255, 255, 255, 0.2);
             transform: translateY(-50%) scale(1.1);
         }
     </style>
