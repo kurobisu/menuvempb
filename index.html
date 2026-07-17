@@ -30,24 +30,25 @@
     <style>
         .faq-search-link {
             display: none !important;
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             font-weight: 500;
-            background: rgba(139,92,246,0.1);
-            color: #a78bfa;
-            padding: 4px 10px;
-            border-radius: 6px;
+            background: transparent;
+            color: #ef4444; /* red text */
+            padding: 4px 12px;
+            border-radius: 4px;
             text-decoration: none;
-            transition: background 0.2s;
-            border: 1px solid rgba(139,92,246,0.2);
+            transition: all 0.2s;
+            border: 1px solid #ef4444; /* red border */
             font-family: var(--font-body);
+            margin-right: 1rem;
+            white-space: nowrap;
         }
         .faq-search-link:hover {
-            background: rgba(139,92,246,0.3) !important;
-            color: #fff;
+            background: rgba(239, 68, 68, 0.1) !important;
+            color: #ef4444;
         }
         .faq-item.active .faq-search-link {
-            display: inline-flex !important;
-            align-items: center;
+            display: inline-block !important;
         }
     </style>
 </head>
@@ -1101,10 +1102,8 @@
             <div class="faq-grid reveal">
                 <div class="faq-item">
                     <button class="faq-question">
-                        <span class="faq-title-wrapper" style="display:flex; align-items:center; flex-wrap:wrap; gap:0.5rem; flex:1; text-align:left;">
-                            <span>O sistema possui fidelidade ou multa se eu quiser cancelar?</span>
-                            <a href="duvidas.html?q=O%20sistema%20possui%20fidelidade%20ou%20multa%20se%20eu%20quiser%20cancelar%3F" class="faq-search-link" onclick="event.stopPropagation()" title="Pesquisar esta dúvida isoladamente">🔍 Aprofundar</a>
-                        </span>
+                        <span style="flex:1; text-align:left; padding-right:1rem;">O sistema possui fidelidade ou multa se eu quiser cancelar?</span>
+                        <a href="duvidas.html?q=O%20sistema%20possui%20fidelidade%20ou%20multa%20se%20eu%20quiser%20cancelar%3F" class="faq-search-link" onclick="event.stopPropagation()" title="Ver mais sobre esta dúvida">+ Dúvidas</a>
                         <span class="faq-icon">▼</span>
                     </button>
                     <div class="faq-answer">
@@ -1116,10 +1115,8 @@
 
                 <div class="faq-item">
                     <button class="faq-question">
-                        <span class="faq-title-wrapper" style="display:flex; align-items:center; flex-wrap:wrap; gap:0.5rem; flex:1; text-align:left;">
-                            <span>A Menuvem cobra comissão pelas minhas vendas?</span>
-                            <a href="duvidas.html?q=A%20Menuvem%20cobra%20comiss%C3%A3o%20pelas%20minhas%20vendas%3F" class="faq-search-link" onclick="event.stopPropagation()" title="Pesquisar esta dúvida isoladamente">🔍 Aprofundar</a>
-                        </span>
+                        <span style="flex:1; text-align:left; padding-right:1rem;">A Menuvem cobra comissão pelas minhas vendas?</span>
+                        <a href="duvidas.html?q=A%20Menuvem%20cobra%20comiss%C3%A3o%20pelas%20minhas%20vendas%3F" class="faq-search-link" onclick="event.stopPropagation()" title="Ver mais sobre esta dúvida">+ Dúvidas</a>
                         <span class="faq-icon">▼</span>
                     </button>
                     <div class="faq-answer">
@@ -1131,10 +1128,8 @@
 
                 <div class="faq-item">
                     <button class="faq-question">
-                        <span class="faq-title-wrapper" style="display:flex; align-items:center; flex-wrap:wrap; gap:0.5rem; flex:1; text-align:left;">
-                            <span>Como funciona o suporte técnico regional?</span>
-                            <a href="duvidas.html?q=Como%20funciona%20o%20suporte%20t%C3%A9cnico%20regional%3F" class="faq-search-link" onclick="event.stopPropagation()" title="Pesquisar esta dúvida isoladamente">🔍 Aprofundar</a>
-                        </span>
+                        <span style="flex:1; text-align:left; padding-right:1rem;">Como funciona o suporte técnico regional?</span>
+                        <a href="duvidas.html?q=Como%20funciona%20o%20suporte%20t%C3%A9cnico%20regional%3F" class="faq-search-link" onclick="event.stopPropagation()" title="Ver mais sobre esta dúvida">+ Dúvidas</a>
                         <span class="faq-icon">▼</span>
                     </button>
                     <div class="faq-answer">
@@ -1145,10 +1140,8 @@
 
                 <div class="faq-item">
                     <button class="faq-question">
-                        <span class="faq-title-wrapper" style="display:flex; align-items:center; flex-wrap:wrap; gap:0.5rem; flex:1; text-align:left;">
-                            <span>Vocês ajudam a cadastrar o cardápio e personalizar o sistema?</span>
-                            <a href="duvidas.html?q=Voc%C3%AAs%20ajudam%20a%20cadastrar%20o%20card%C3%A1pio%20e%20personalizar%20o%20sistema%3F" class="faq-search-link" onclick="event.stopPropagation()" title="Pesquisar esta dúvida isoladamente">🔍 Aprofundar</a>
-                        </span>
+                        <span style="flex:1; text-align:left; padding-right:1rem;">Vocês ajudam a cadastrar o cardápio e personalizar o sistema?</span>
+                        <a href="duvidas.html?q=Voc%C3%AAs%20ajudam%20a%20cadastrar%20o%20card%C3%A1pio%20e%20personalizar%20o%20sistema%3F" class="faq-search-link" onclick="event.stopPropagation()" title="Ver mais sobre esta dúvida">+ Dúvidas</a>
                         <span class="faq-icon">▼</span>
                     </button>
                     <div class="faq-answer">
@@ -1162,10 +1155,8 @@
 
                 <div class="faq-item">
                     <button class="faq-question">
-                        <span class="faq-title-wrapper" style="display:flex; align-items:center; flex-wrap:wrap; gap:0.5rem; flex:1; text-align:left;">
-                            <span>Como eu faço para obter os 30 dias de teste grátis?</span>
-                            <a href="duvidas.html?q=Como%20eu%20fa%C3%A7o%20para%20obter%20os%2030%20dias%20de%20teste%20gr%C3%A1tis%3F" class="faq-search-link" onclick="event.stopPropagation()" title="Pesquisar esta dúvida isoladamente">🔍 Aprofundar</a>
-                        </span>
+                        <span style="flex:1; text-align:left; padding-right:1rem;">Como eu faço para obter os 30 dias de teste grátis?</span>
+                        <a href="duvidas.html?q=Como%20eu%20fa%C3%A7o%20para%20obter%20os%2030%20dias%20de%20teste%20gr%C3%A1tis%3F" class="faq-search-link" onclick="event.stopPropagation()" title="Ver mais sobre esta dúvida">+ Dúvidas</a>
                         <span class="faq-icon">▼</span>
                     </button>
                     <div class="faq-answer">
