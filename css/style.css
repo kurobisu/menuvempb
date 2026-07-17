@@ -239,15 +239,9 @@ a {
     color: var(--primary);
 }
 
-.nav-cta {
-    display: none;
-}
 
-@media (min-width: 768px) {
-    .nav-cta {
-        display: block;
-    }
-}
+
+
 
 .menu-toggle {
     background: none;
@@ -1820,4 +1814,49 @@ a {
     border: 8px solid transparent;
     border-image: linear-gradient(135deg, #1f2937, #111827, #374151) 30 stretch;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+}
+
+/* FIX LOGO GAP */
+.logo-text {
+    display: flex;
+    align-items: baseline;
+}
+.logo {
+    gap: 0; /* Override the 0.5rem gap */
+}
+
+/* HEADER AUTH MOBILE FIXES */
+.nav-cta {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.btn-login {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+    border-color: var(--primary);
+    color: #fff;
+    background: rgba(100, 29, 222, 0.2);
+    white-space: nowrap;
+}
+
+.btn-signup {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+    white-space: nowrap;
+}
+
+@media (min-width: 768px) {
+    .nav-cta {
+        gap: 0.75rem;
+    }
+    .btn-login, .btn-signup {
+        padding: 0.55rem 1.25rem;
+        font-size: 0.85rem;
+    }
+    .btn-login {
+        background: none;
+        color: var(--text-primary);
+    }
 }
