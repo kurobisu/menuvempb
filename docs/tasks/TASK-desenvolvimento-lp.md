@@ -3,7 +3,7 @@
 ## Objetivos e Checklist
 - [x] Criação do Design System em `css/style.css` (Cores, Fontes, Grid, Efeitos Globais)
 - [x] Estrutura HTML semântica em `index.html` (Header, Hero, Bento Grid, Fator Local, Planos, FAQ, Footer)
-- [x] Implementação de animações baseadas em Scroll com `IntersectionObserver` em `js/main.js`
+- [x] Implementação de animações baseadas em Scroll com `IntersectionObserver` in `js/main.js`
 - [x] Implementação da Calculadora Dinâmica de Planos com add-ons em `js/main.js`
 - [x] Implementação do Carrossel Marquee infinito e interações do FAQ em `css/style.css` e `js/main.js`
 - [x] Ajustes finos de responsividade mobile-first e acessibilidade (a11y)
@@ -12,6 +12,7 @@
 - [x] Remoção de temas claro/escuro e fixação de Tema Escuro padrão da marca no CSS e HTML
 - [x] Levantamento de ajustes manuais de conteúdo (depoimentos da PB, direitos autorais e descrições)
 - [x] Implementação de tooltip (i) na Etapa 3 de cadastro-etapas.html com acessibilidade (tabindex) e responsividade móvel
+- [x] Criação e publicação da Seção Interativa de Funcionalidades (Benchmark Yooga) com abas dinâmicas, cards responsivos e acessibilidade WCAG (Tab/Enter/Espaço)
 
 ## Histórico de Modificações
 - **2026-07-15:** Criação da tarefa no Obsidian.
@@ -22,11 +23,8 @@
 - **2026-07-16:** Remoção das lógicas de Tema Claro/Escuro do CSS e do JS. Exclusão dos botões de alternância de tema no cabeçalho em `index.html` e `cadastro-etapas.html`.
 - **2026-07-16 (Ajustes Manuais do Usuário - Commit 47689f7):**
   * *Hero*: Badge alterada para "Representante Oficial da Menuvem na Paraíba" e CTA alterado para "Experimente 30 Dias Grátis".
-  * *Depoimentos*: Clientes locais atualizados para "Ponto Burgers" (João Pessoa), "Rancho" (Santa Rita), "Weel Pizza" (João Pessoa) e "Jaguaribe Espetos" (João Pessoa) com os respectivos depoimentos reais da operação.
-  * *FAQ*: Remoção de detalhamento geográfico do suporte e ajuste nas respostas de gratuidade e montagem de cardápio para cobrir treinamento gratuito.
-  * *Footer*: Razão social atualizada para "NUC Tecnologia - MenuvemPB" e domínio ajustado para "menuvempb.com.br".
-- **2026-07-16 (Ajustes de Acessibilidade - Commit 71bbaa1):**
-  * Criação do tooltip explicativo `(i)` na Etapa 3 de cadastro para alertar contra contratação autônoma de plano.
-  * Estilização de contraste WCAG no balão explicativo (`#0d0d16` sólido e texto claro) com suporte a `focus-within`.
-  * Adicionado `tabindex="0"` e suporte a leitores de tela no ícone.
-  * Otimização de flexbox mobile para evitar a quebra do ícone.
+  * *Depoimentos*: Clientes locais atualizados para "Ponto Burgers" (João Pessoa), "Rancho" (Santa Rita), "Weel Pizza" (João Pessoa) e "Jaguaribe Espetos" (João Pessoa) com os depoimentos de faturamento/impressão reais.
+  * *FAQ*: Remoção de detalhamento do suporte presencial e inclusão de treinamento gratuito e suporte de plantão via WhatsApp.
+  * *Footer*: Razão social e domínio regional atualizados para `NUC Tecnologia - MenuvemPB` e `menuvempb.com.br`.
+- **2026-07-16 (Ajustes de Acessibilidade - Commit 71bbaa1):** Tooltip explicativo `(i)` na timeline de cadastro de etapas integrado com flexbox e `tabindex` para teclado.
+- **2026-07-17 (Mapeamento de Funcionalidades - Commit 4ec30e8):** Inserção de abas interativas no CSS, JS e HTML para navegação fluida de recursos e transbordo móvel otimizado com arraste horizontal suave.

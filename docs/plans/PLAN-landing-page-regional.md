@@ -15,6 +15,7 @@ Desenvolver do zero uma landing page regional sob medida e altamente performáti
 3. **Animações Fluidas:** Ativação de classes de entrada via scroll usando o `IntersectionObserver` em JavaScript, acelerando via propriedades de renderização de GPU.
 4. **Calculadora Dinâmica:** Slider de faturamento mensal e seletores de add-ons que recalculam e renderizam os preços dinamicamente em JS puro.
 5. **Fluxo de Cadastro Guiado:** Nova página de etapas (`cadastro-etapas.html`) detalhando as 3 etapas essenciais para novos clientes criarem suas contas e ativarem a gratuidade de forma guiada e sem fricção.
+6. **Seção de Recursos Interativa (Aba de Módulos):** Novo componente dinâmico que alterna grids de cartões contendo recursos do sistema de acordo com a aba de gestão selecionada (Cardápio, PDV, Estoque ou Financeiro).
 
 ## Dependências
 - Google Fonts (Outfit e Inter)
@@ -29,3 +30,4 @@ Desenvolver do zero uma landing page regional sob medida e altamente performáti
 - **2026-07-16:** Restauração total das cores do Tema Escuro fixo original sob demanda e remoção do botão de alternância de tema no cabeçalho das páginas `index.html` e `cadastro-etapas.html`.
 - **2026-07-16 (Ajustes Manuais do Usuário):** Levantamento e registro das alterações textuais e de depoimentos feitas pelo usuário no commit `47689f7` (veja `TASK-desenvolvimento-lp.md`).
 - **2026-07-16 (Ajustes de Acessibilidade):** Implementação de um tooltip interativo e acessível na Etapa 3 de cadastro para alertar sobre o plano correto (commit `71bbaa1`).
+- **2026-07-17 (Seção de Funcionalidades Yooga Style):** Desenvolvimento e publicação de abas interativas no CSS, JS e HTML de `index.html` (commit `4ec30e8`), atestando transbordo lateral elegante no mobile e suporte WCAG para teclado.
