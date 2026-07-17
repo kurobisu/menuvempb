@@ -328,146 +328,81 @@
                     </div>
                 </div>
 
+                
+                <!-- Revenue Slider -->
+                <div class="revenue-slider-wrapper reveal" style="max-width: 600px; margin: 0 auto 3rem auto; text-align: center; background: var(--bg-card); padding: 2rem; border-radius: 16px; border: 1px solid var(--border-color);">
+                    <label for="revenueSlider" style="display:block; font-size: 1.1rem; font-weight: 500; margin-bottom: 1.5rem; color: var(--text-primary);">Qual o seu faturamento mensal aproximado?</label>
+                    <input type="range" id="revenueSlider" min="1" max="3" value="1" step="1" style="width: 100%; accent-color: var(--primary); height: 8px; border-radius: 4px; outline: none; transition: background 450ms ease-in;">
+                    <div style="display: flex; justify-content: space-between; margin-top: 1rem; color: var(--text-muted); font-size: 0.85rem; font-weight: 500;">
+                        <span id="label-1" style="color: var(--primary); transition: 0.3s;">Até 20 mil</span>
+                        <span id="label-2" style="transition: 0.3s;">20 mil a 35 mil</span>
+                        <span id="label-3" style="transition: 0.3s;">Acima de 35 mil</span>
+                    </div>
+                </div>
+
                 <!-- Grid de Planos -->
                 <div class="plans-grid">
                     <!-- Plano Bronze -->
-                    <div class="plan-card" id="plan-bronze">
+                    <div class="plan-card" id="plan-bronze" style="width: 100%; max-width: 400px; margin: 0 auto;">
                         <div>
                             <h4 class="plan-name">Plano 1</h4>
                             <p style="font-size: 0.8rem; color: var(--text-muted);">Ideal para negócios iniciantes.</p>
                             <div class="plan-price-box">
                                 <span class="plan-price">R$ <span id="price-bronze">167</span><span>/mês</span></span>
                             </div>
-                            <ul class="plan-features">
-                                <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                                        stroke-linejoin="round">
-                                        <polyline points="20 6 9 17 4 12"></polyline>
-                                    </svg> Cardápio Digital (Link / WhatsApp)</li>
-                                <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                                        stroke-linejoin="round">
-                                        <polyline points="20 6 9 17 4 12"></polyline>
-                                    </svg> Gestor de Pedidos Completo</li>
-                                <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                                        stroke-linejoin="round">
-                                        <polyline points="20 6 9 17 4 12"></polyline>
-                                    </svg> Suporte Remoto Dedicado</li>
-                                <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                                        stroke-linejoin="round">
-                                        <polyline points="20 6 9 17 4 12"></polyline>
-                                    </svg> Integração iFood nativa</li>
-                                <!-- O plano 167 tem todas integrações, mas não tem algumas funcionalidades-->
-                                <li class="disabled"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                                        stroke-linecap="round" stroke-linejoin="round">
-                                        <line x1="18" y1="6" x2="6" y2="18"></line>
-                                        <line x1="6" y1="6" x2="18" y2="18"></line>
-                                    </svg> Pedidos QR Code nas Mesas</li>
-                            </ul>
+
                         </div>
                         <div style="display:flex; flex-direction:column; gap:0.5rem; margin-top:1.5rem;">
                             <a href="https://wa.me/5583988559423?text=Ol%C3%A1!%20Gostaria%20de%20ativar%20meu%20b%C3%B4nus%20de%2030%20dias%20gr%C3%A1tis%20no%20Plano%201%20da%20Menuvem."
                                 target="_blank" class="btn btn-primary"
                                 style="width: 100%; font-size: 0.85rem; padding: 0.65rem 1rem;">Ativar 30 Dias
                                 Grátis</a>
+                            <a href="planos.html?plano=1" class="btn btn-outline"
+                                style="width: 100%; font-size: 0.8rem; padding: 0.5rem 1rem;">+ Info Detalhada</a>
                             <a href="cadastro-etapas.html" class="btn btn-secondary"
                                 style="width: 100%; font-size: 0.8rem; padding: 0.5rem 1rem;">Cadastre-se</a>
                         </div>
                     </div>
 
                     <!-- Plano Prata -->
-                    <div class="plan-card" id="plan-prata">
+                    <div class="plan-card" id="plan-prata" style="width: 100%; max-width: 400px; margin: 0 auto;">
                         <div>
                             <h4 class="plan-name">Plano 2</h4>
-                            <p style="font-size: 0.8rem; color: var(--text-muted);">Perfeito para operações
-                                consolidadas.</p>
+                            <p style="font-size: 0.8rem; color: var(--text-muted);">Perfeito para operações consolidadas.</p>
                             <div class="plan-price-box">
                                 <span class="plan-price">R$ <span id="price-prata">227</span><span>/mês</span></span>
                             </div>
-                            <ul class="plan-features">
-                                <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                                        stroke-linejoin="round">
-                                        <polyline points="20 6 9 17 4 12"></polyline>
-                                    </svg> Tudo do Plano 1 e muito mais</li>
-                                <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                                        stroke-linejoin="round">
-                                        <polyline points="20 6 9 17 4 12"></polyline>
-                                    </svg> Gerenciamento de Mesas e Garçons</li>
-                                <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                                        stroke-linejoin="round">
-                                        <polyline points="20 6 9 17 4 12"></polyline>
-                                    </svg> Emissão de Notas Fiscais ilimitadas</li>
-                                <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                                        stroke-linejoin="round">
-                                        <polyline points="20 6 9 17 4 12"></polyline>
-                                    </svg> Integração com Whatsapp Oficial da META para Status dos Pedidos</li>
-                                <li class="disabled"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                                        stroke-linecap="round" stroke-linejoin="round">
-                                        <line x1="18" y1="6" x2="6" y2="18"></line>
-                                        <line x1="6" y1="6" x2="18" y2="18"></line>
-                                    </svg> Pedidos por QR Code nas Mesas</li>
-                            </ul>
+
                         </div>
                         <div style="display:flex; flex-direction:column; gap:0.5rem; margin-top:1.5rem;">
                             <a href="https://wa.me/5583988559423?text=Ol%C3%A1!%20Gostaria%20de%20ativar%20meu%20b%C3%B4nus%20de%2030%20dias%20gr%C3%A1tis%20no%20Plano%202%20da%20Menuvem."
                                 target="_blank" class="btn btn-primary"
                                 style="width: 100%; font-size: 0.85rem; padding: 0.65rem 1rem;">Ativar 30 Dias
                                 Grátis</a>
+                            <a href="planos.html?plano=2" class="btn btn-outline"
+                                style="width: 100%; font-size: 0.8rem; padding: 0.5rem 1rem;">+ Info Detalhada</a>
                             <a href="cadastro-etapas.html" class="btn btn-secondary"
                                 style="width: 100%; font-size: 0.8rem; padding: 0.5rem 1rem;">Cadastre-se</a>
                         </div>
                     </div>
 
                     <!-- Plano Ouro -->
-                    <div class="plan-card" id="plan-ouro">
+                    <div class="plan-card" id="plan-ouro" style="width: 100%; max-width: 400px; margin: 0 auto;">
                         <div>
                             <h4 class="plan-name">Plano 3</h4>
-                            <p style="font-size: 0.8rem; color: var(--text-muted);">Para restaurantes de alta
-                                performance.</p>
+                            <p style="font-size: 0.8rem; color: var(--text-muted);">Para restaurantes de alta performance.</p>
                             <div class="plan-price-box">
                                 <span class="plan-price">R$ <span id="price-ouro">267</span><span>/mês</span></span>
                             </div>
-                            <ul class="plan-features">
-                                <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                                        stroke-linejoin="round">
-                                        <polyline points="20 6 9 17 4 12"></polyline>
-                                    </svg> Todos os recursos da Plataforma Disponíveis!</li>
-                                <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                                        stroke-linejoin="round">
-                                        <polyline points="20 6 9 17 4 12"></polyline>
-                                    </svg> Gerenciamento de comissões multi-colaboradores</li>
-                                <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                                        stroke-linejoin="round">
-                                        <polyline points="20 6 9 17 4 12"></polyline>
-                                    </svg> Emissões fiscais NFC-e & NF-e ilimitadas</li>
-                                <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                                        stroke-linejoin="round">
-                                        <polyline points="20 6 9 17 4 12"></polyline>
-                                    </svg> Entregas por Geolocalização Premium do Google Maps + App de Motoboy</li>
-                                <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                                        stroke-linejoin="round">
-                                        <polyline points="20 6 9 17 4 12"></polyline>
-                                    </svg> Dezenas de funcionalidades exclusivas!</li>
-                            </ul>
+
                         </div>
                         <div style="display:flex; flex-direction:column; gap:0.5rem; margin-top:1.5rem;">
                             <a href="https://wa.me/5583988559423?text=Ol%C3%A1!%20Gostaria%20de%20ativar%20meu%20b%C3%B4nus%20de%2030%20dias%20gr%C3%A1tis%20no%20Plano%203%20da%20Menuvem."
                                 target="_blank" class="btn btn-primary"
                                 style="width: 100%; font-size: 0.85rem; padding: 0.65rem 1rem;">Ativar 30 Dias
                                 Grátis</a>
+                            <a href="planos.html?plano=3" class="btn btn-outline"
+                                style="width: 100%; font-size: 0.8rem; padding: 0.5rem 1rem;">+ Info Detalhada</a>
                             <a href="cadastro-etapas.html" class="btn btn-secondary"
                                 style="width: 100%; font-size: 0.8rem; padding: 0.5rem 1rem;">Cadastre-se</a>
                         </div>
@@ -1265,6 +1200,56 @@
 
     <!-- Script -->
     <script src="js/main.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const slider = document.getElementById('revenueSlider');
+    if(slider) {
+        const p1 = document.getElementById('plan-bronze');
+        const p2 = document.getElementById('plan-prata');
+        const p3 = document.getElementById('plan-ouro');
+        const l1 = document.getElementById('label-1');
+        const l2 = document.getElementById('label-2');
+        const l3 = document.getElementById('label-3');
+        
+        // Ajustar layout da grid para exibir apenas 1 no centro
+        const grid = document.querySelector('.plans-grid');
+        if(grid) {
+            grid.style.display = 'flex';
+            grid.style.justifyContent = 'center';
+            grid.style.alignItems = 'center';
+        }
+
+        function updatePlans(val) {
+            p1.style.display = 'none';
+            p2.style.display = 'none';
+            p3.style.display = 'none';
+            l1.style.color = 'var(--text-muted)';
+            l2.style.color = 'var(--text-muted)';
+            l3.style.color = 'var(--text-muted)';
+
+            if(val == 1) {
+                p1.style.display = 'block';
+                l1.style.color = 'var(--primary)';
+            } else if(val == 2) {
+                p2.style.display = 'block';
+                l2.style.color = 'var(--primary)';
+            } else if(val == 3) {
+                p3.style.display = 'block';
+                l3.style.color = 'var(--primary)';
+            }
+        }
+        
+        slider.addEventListener('input', (e) => {
+            updatePlans(e.target.value);
+        });
+        
+        // Initialize
+        updatePlans(slider.value);
+    }
+});
+</script>
 </body>
+
 
 </html>
