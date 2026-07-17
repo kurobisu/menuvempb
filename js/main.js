@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initBentoSpotlight();
     initPlansCalculator();
     initFaq();
-    initFunctionalityTabs();
+    initYoogaFunctionalities();
 });
 
 /* --- Cabeçalho Dinâmico --- */
@@ -243,45 +243,77 @@ function initFaq() {
     });
 }
 
-/* --- Seção de Funcionalidades Interativas (Abas) --- */
-function initFunctionalityTabs() {
-    const tabButtons = document.querySelectorAll('.func-tab-btn');
-    const panes = document.querySelectorAll('.func-pane');
+/* --- Seção de Funcionalidades Interativas (Estilo Yooga) --- */
+function initYoogaFunctionalities() {
+    const tabButtons = document.querySelectorAll('.yooga-tab-btn');
+    const panes = document.querySelectorAll('.yooga-pane');
     
     if (tabButtons.length === 0 || panes.length === 0) return;
 
     tabButtons.forEach(btn => {
         btn.addEventListener('click', () => {
-            const targetTab = btn.getAttribute('data-tab');
-            const targetPane = document.getElementById(`tab-${targetTab}`);
+            const targetId = btn.getAttribute('data-target');
+            const targetPane = document.getElementById(`pane-${targetId}`);
 
             if (!targetPane) return;
 
-            // Desativa todos os botões e remove acessibilidade ativa
-            tabButtons.forEach(button => {
-                button.classList.remove('active');
-                button.setAttribute('aria-selected', 'false');
-            });
-
+            // Desativa todos os botões principais
+            tabButtons.forEach(button => button.classList.remove('active'));
             // Oculta todos os painéis
-            panes.forEach(pane => {
-                pane.classList.remove('active');
-            });
+            panes.forEach(pane => pane.classList.remove('active'));
 
-            // Ativa o botão atual
+            // Ativa o botão e o painel atual
             btn.classList.add('active');
-            btn.setAttribute('aria-selected', 'true');
-
-            // Exibe o painel atual
             targetPane.classList.add('active');
-        });
-
-        // Suporte a acessibilidade via teclado (Enter / Espaço)
-        btn.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                btn.click();
+            
+            // Reseta o carrossel da nova aba para o primeiro slide
+            const firstSubBtn = targetPane.querySelector('.yooga-sub-btn');
+            if (firstSubBtn) {
+                firstSubBtn.click();
             }
         });
+    });
+
+    // Lógica para cada Painel (Sidebar + Carrossel)
+    panes.forEach(pane => {
+        const subBtns = pane.querySelectorAll('.yooga-sub-btn');
+        const cards = pane.querySelectorAll('.yooga-card');
+        const prevBtn = pane.querySelector('.yooga-arrow.prev');
+        const nextBtn = pane.querySelector('.yooga-arrow.next');
+
+        if (subBtns.length === 0 || cards.length === 0) return;
+
+        let currentIndex = 0;
+
+        function updateCarousel(index) {
+            subBtns.forEach(btn => btn.classList.remove('active'));
+            cards.forEach(card => card.classList.remove('active'));
+
+            if (subBtns[index]) subBtns[index].classList.add('active');
+            if (cards[index]) cards[index].classList.add('active');
+            currentIndex = index;
+        }
+
+        subBtns.forEach((btn, index) => {
+            btn.addEventListener('click', () => {
+                updateCarousel(index);
+            });
+        });
+
+        if (prevBtn) {
+            prevBtn.addEventListener('click', () => {
+                let newIndex = currentIndex - 1;
+                if (newIndex < 0) newIndex = cards.length - 1;
+                updateCarousel(newIndex);
+            });
+        }
+
+        if (nextBtn) {
+            nextBtn.addEventListener('click', () => {
+                let newIndex = currentIndex + 1;
+                if (newIndex >= cards.length) newIndex = 0;
+                updateCarousel(newIndex);
+            });
+        }
     });
 }
