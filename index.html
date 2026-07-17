@@ -314,12 +314,12 @@
             <div class="calc-container reveal">
                 <div class="calc-header">
                     <h3>Qual o seu faturamento mensal atual no delivery/restaurante?</h3>
-                    <div class="calc-faturamento-display" id="faturamento-val">R$ 15.000</div>
+                    <div class="calc-faturamento-display" id="faturamento-val">R$ 20.000</div>
                 </div>
 
                 <div class="calc-slider-box">
                     <input type="range" id="faturamento-slider" class="range-slider" min="1000" max="50000" step="1000"
-                        value="15000" aria-label="Faturamento Mensal">
+                        value="20000" aria-label="Faturamento Mensal">
                     <div class="slider-labels">
                         <span>R$ 1.000</span>
                         <span>R$ 15.000</span>
@@ -331,7 +331,7 @@
                 <!-- Grid de Planos -->
                 <div class="plans-grid">
                     <!-- Plano Bronze -->
-                    <div class="plan-card" id="plan-bronze" class="plan-card plan-wood">
+                    <div class="plan-card" id="plan-bronze" plan-wood">
                         <div>
                             <h4 class="plan-name">Plano 1</h4>
                             <p style="font-size: 0.8rem; color: var(--text-muted);">Ideal para negócios iniciantes.</p>
@@ -350,7 +350,7 @@
                     </div>
 
                     <!-- Plano Prata -->
-                    <div class="plan-card" id="plan-prata" class="plan-card plan-gold">
+                    <div class="plan-card" id="plan-prata" plan-gold">
                         <div>
                             <h4 class="plan-name">Plano 2</h4>
                             <p style="font-size: 0.8rem; color: var(--text-muted);">Perfeito para operações
@@ -370,7 +370,7 @@
                     </div>
 
                     <!-- Plano Ouro -->
-                    <div class="plan-card" id="plan-ouro" class="plan-card plan-diamond">
+                    <div class="plan-card" id="plan-ouro" plan-diamond">
                         <div>
                             <h4 class="plan-name">Plano 3</h4>
                             <p style="font-size: 0.8rem; color: var(--text-muted);">Para restaurantes de alta
@@ -1182,52 +1182,7 @@
     <!-- Script -->
     <script src="js/main.js"></script>
 
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-    const slider = document.getElementById('faturamento-slider');
-    if(slider) {
-        const p1 = document.getElementById('plan-bronze');
-        const p2 = document.getElementById('plan-prata');
-        const p3 = document.getElementById('plan-ouro');
-        
-        const grid = document.querySelector('.plans-grid');
-        if(grid) {
-            grid.style.display = 'flex';
-            grid.style.justifyContent = 'center';
-            grid.style.alignItems = 'center';
-        }
 
-        // Apply a clean width to cards
-        if(p1) p1.style.width = '100%';
-        if(p1) p1.style.maxWidth = '400px';
-        if(p2) p2.style.width = '100%';
-        if(p2) p2.style.maxWidth = '400px';
-        if(p3) p3.style.width = '100%';
-        if(p3) p3.style.maxWidth = '400px';
-
-        function updatePlans(val) {
-            if(p1) { p1.classList.remove('plan-card-featured'); p1.removeAttribute('data-badge'); }
-            if(p2) { p2.classList.remove('plan-card-featured'); p2.removeAttribute('data-badge'); }
-            if(p3) { p3.classList.remove('plan-card-featured'); p3.removeAttribute('data-badge'); }
-
-            if(val <= 20000) {
-                if(p1) { p1.classList.add('plan-card-featured'); p1.setAttribute('data-badge', 'Plano 1'); }
-            } else if(val > 20000 && val <= 35000) {
-                if(p2) { p2.classList.add('plan-card-featured'); p2.setAttribute('data-badge', 'Plano 2'); }
-            } else if(val > 35000) {
-                if(p3) { p3.classList.add('plan-card-featured'); p3.setAttribute('data-badge', 'Plano 3'); }
-            }
-        }
-        
-        slider.addEventListener('input', (e) => {
-            updatePlans(parseInt(e.target.value));
-        });
-        
-        // Initialize based on the default value of the slider (R$ 15.000)
-        updatePlans(parseInt(slider.value));
-    }
-});
-</script>
 </body>
 
 </html>

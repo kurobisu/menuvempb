@@ -149,32 +149,38 @@ function initPlansCalculator() {
         animateValue(pricePrata, parseInt(pricePrata.textContent) || BASE_PRATA, finalPrata, 300);
         animateValue(priceOuro, parseInt(priceOuro.textContent) || BASE_OURO, finalOuro, 300);
         
-        // Decidir recomendação baseada na faixa de faturamento
-        // Até R$ 8.000 -> Bronze recomendado
-        // De R$ 8.001 a R$ 25.000 -> Prata recomendado
-        // Acima de R$ 25.000 -> Ouro recomendado
-        if (faturamento <= 8000) {
-            setFeaturedPlan(cardBronze, [cardPrata, cardOuro]);
-        } else if (faturamento > 8000 && faturamento <= 25000) {
-            setFeaturedPlan(cardPrata, [cardBronze, cardOuro]);
+        // Ajuste layout do grid para centralizar o card único
+        const grid = document.querySelector('.plans-grid');
+        if(grid) {
+            grid.style.display = 'flex';
+            grid.style.justifyContent = 'center';
+            grid.style.alignItems = 'center';
+        }
+
+        if (faturamento <= 20000) {
+            setFeaturedPlan(cardBronze, 'Plano 1', [cardPrata, cardOuro]);
+        } else if (faturamento > 20000 && faturamento <= 35000) {
+            setFeaturedPlan(cardPrata, 'Plano 2', [cardBronze, cardOuro]);
         } else {
-            setFeaturedPlan(cardOuro, [cardBronze, cardPrata]);
+            setFeaturedPlan(cardOuro, 'Plano 3', [cardBronze, cardPrata]);
         }
     }
     
-    // Função auxiliar para gerenciar os estilos dos planos recomendados
-    function setFeaturedPlan(featuredCard, secondaryCards) {
+    function setFeaturedPlan(featuredCard, badgeText, secondaryCards) {
         if (!featuredCard) return;
         
+        featuredCard.style.display = 'flex';
+        featuredCard.style.width = '100%';
+        featuredCard.style.maxWidth = '400px';
         featuredCard.classList.remove('plan-card-hidden');
         featuredCard.classList.add('plan-card-featured');
-        
-        const badge = featuredCard.querySelector('.badge');
+        featuredCard.setAttribute('data-badge', badgeText);
         
         secondaryCards.forEach(card => {
             if (!card) return;
+            card.style.display = 'none';
             card.classList.remove('plan-card-featured');
-            card.classList.add('plan-card-hidden');
+            card.removeAttribute('data-badge');
         });
     }
 
