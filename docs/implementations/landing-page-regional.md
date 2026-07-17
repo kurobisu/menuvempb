@@ -11,8 +11,8 @@ Desenvolvimento e publicação de uma landing page regional mobile-first sob med
 
 ## Lógica e Funcionamento
 1. **Design System & Acessibilidade**:
-   - **Tema Escuro Fixo (Padrão Oficial)**: Sob demanda do usuário, o site opera exclusivamente no tema escuro padrão. Utiliza fundo preto espacial (`#050508`) e cores clássicas de alto contraste da Menuvem: Roxo (`#641DDE`) e Amarelo (`#F2C200`).
-   - **Remoção do Alternador**: O botão `.theme-toggle-btn` e as lógicas de script correspondentes a temas no `js/main.js` foram inteiramente descartados, mantendo o visual escuro limpo e a folha de estilos concisa.
+   - **Tema Escuro Fixo (Padrão Oficial)**: O site opera exclusivamente no tema escuro padrão. Utiliza fundo preto espacial (`#050508`) e cores clássicas de alto contraste da Menuvem: Roxo (`#641DDE`) e Amarelo (`#F2C200`).
+   - **Tooltip Informativo Acessível**: Inserido ao lado do botão de WhatsApp na Etapa 3 de cadastro para alertar contra a contratação autônoma de plano. O elemento possui `tabindex="0"`, suporta navegação por teclado via `:focus-within` e exibe alto contraste sob fundo sólido escuro `#0d0d16` e texto em `var(--text-primary)`. No mobile, o layout flexbox assegura que o ícone permaneça posicionado ao lado do botão sem quebras de linha soltas.
 2. **Ordem das Seções**: Reordenado para fluxo de conversão otimizado:
    - 1º: Hero Section (Abertura / Mockup)
    - 2º: Planos & Calculadora de faturamento (Bronze R$ 167, Prata R$ 227, Ouro R$ 267)
@@ -46,3 +46,5 @@ Desenvolvimento e publicação de uma landing page regional mobile-first sob med
 - **2026-07-16:** Calibração fina e otimização do contraste no CSS seguindo a escala Slate (Tailwind/Yooga) atingindo conformidade com a acessibilidade WCAG AAA/AA.
 - **2026-07-16:** Correção de gradientes e fundos estáticos no Hero, Planos e FAQ para contraste absoluto; atualização dos botões de redes sociais e atalho de WhatsApp no rodapé.
 - **2026-07-16:** Remoção total das rotinas de temas dinâmicos (claro/escuro) e reincorporação do Tema Escuro fixo original em todo o projeto.
+- **2026-07-16 (Ajustes de Copy e Prova Social pelo Usuário - Commit 47689f7):** Atualização dos depoimentos para Ponto Burgers, Rancho, Weel Pizza e Jaguaribe Espetos; alteração do domínio oficial do footer para `menuvempb.com.br` e razão social para `NUC Tecnologia - MenuvemPB`.
+- **2026-07-16 (Ajustes de Acessibilidade - Commit 71bbaa1):** Criação e refinamento de tooltip interativo (i) na timeline de cadastro de etapas.

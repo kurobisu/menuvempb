@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initBentoSpotlight();
     initPlansCalculator();
     initFaq();
+    initFunctionalityTabs();
 });
 
 /* --- Cabeçalho Dinâmico --- */
@@ -237,6 +238,49 @@ function initFaq() {
             // Alterna o estado da pergunta atual
             if (!isActive) {
                 faqItem.classList.add('faq-item-active');
+            }
+        });
+    });
+}
+
+/* --- Seção de Funcionalidades Interativas (Abas) --- */
+function initFunctionalityTabs() {
+    const tabButtons = document.querySelectorAll('.func-tab-btn');
+    const panes = document.querySelectorAll('.func-pane');
+    
+    if (tabButtons.length === 0 || panes.length === 0) return;
+
+    tabButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const targetTab = btn.getAttribute('data-tab');
+            const targetPane = document.getElementById(`tab-${targetTab}`);
+
+            if (!targetPane) return;
+
+            // Desativa todos os botões e remove acessibilidade ativa
+            tabButtons.forEach(button => {
+                button.classList.remove('active');
+                button.setAttribute('aria-selected', 'false');
+            });
+
+            // Oculta todos os painéis
+            panes.forEach(pane => {
+                pane.classList.remove('active');
+            });
+
+            // Ativa o botão atual
+            btn.classList.add('active');
+            btn.setAttribute('aria-selected', 'true');
+
+            // Exibe o painel atual
+            targetPane.classList.add('active');
+        });
+
+        // Suporte a acessibilidade via teclado (Enter / Espaço)
+        btn.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                btn.click();
             }
         });
     });
