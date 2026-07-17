@@ -113,7 +113,7 @@
         <div class="container hero-content">
             <span class="badge reveal">Representante Oficial da Menuvem na Paraíba</span>
             <h1 class="hero-title reveal delay-100">
-                O gestor de vendas preferido do Nordeste com <span>30 dias grátis</span>.
+                O gestor de vendas preferido do Nordeste com <span id="animated-days">30 dias grátis</span>.
             </h1>
             <p class="hero-description reveal delay-200">
                 Cardápio digital sem taxas de comissão por pedido. Nós personalizamos a plataforma e montamos o seu
@@ -441,7 +441,7 @@
                 </div>
 
                 <!-- Add-ons Selector Section -->
-                <div class="addons-section">
+                <div class="addons-section" style="display: none;">
                     <h4 class="addons-title">Personalize sua experiência com Add-ons inclusos (Custo R$ 00):</h4>
                     <div class="addons-grid">
                         <div class="addon-card addon-active" id="add-chatbot">
@@ -750,7 +750,7 @@
                 </ul>
             </div>
 
-            <div class="local-visual reveal-right">
+            <div class="local-visual reveal-right" style="display: none;">
                 <h3 style="z-index:2; margin-bottom: 2rem; text-align:center; font-size: 1.25rem;">Atendimento Regional
                     Dedicado</h3>
 
@@ -1228,6 +1228,50 @@
     <script src="js/main.js?v=4"></script>
 
 
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const el = document.getElementById("animated-days");
+        if(!el) return;
+        
+        const words = ["7 dias", "14 dias", "30 dias grátis"];
+        let wordIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        
+        function type() {
+            const currentWord = words[wordIndex];
+            
+            if (isDeleting) {
+                charIndex--;
+            } else {
+                charIndex++;
+            }
+            
+            el.textContent = currentWord.substring(0, charIndex);
+            
+            let typeSpeed = isDeleting ? 30 : 50; 
+            
+            if (!isDeleting && charIndex === currentWord.length) {
+                if (wordIndex === words.length - 1) {
+                    return; // Stop at the last word
+                }
+                typeSpeed = 400; // Pause before deleting
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                wordIndex++;
+                typeSpeed = 100; // Pause before typing next word
+            }
+            
+            setTimeout(type, typeSpeed);
+        }
+        
+        el.textContent = "";
+        setTimeout(type, 300);
+    });
+    </script>
 </body>
+
 
 </html>
