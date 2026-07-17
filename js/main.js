@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initBentoSpotlight();
     initPlansCalculator();
     initFaq();
-    initYoogaFunctionalities();
+    initMenuvemFunctionalities();
 });
 
 /* --- Cabeçalho Dinâmico --- */
@@ -243,10 +243,10 @@ function initFaq() {
     });
 }
 
-/* --- Seção de Funcionalidades Interativas (Estilo Yooga) --- */
-function initYoogaFunctionalities() {
-    const tabButtons = document.querySelectorAll('.yooga-tab-btn');
-    const panes = document.querySelectorAll('.yooga-pane');
+/* --- Seção de Funcionalidades Interativas (Estilo Menuvem) --- */
+function initMenuvemFunctionalities() {
+    const tabButtons = document.querySelectorAll('.menuvem-tab-btn');
+    const panes = document.querySelectorAll('.menuvem-pane');
     
     if (tabButtons.length === 0 || panes.length === 0) return;
 
@@ -267,7 +267,7 @@ function initYoogaFunctionalities() {
             targetPane.classList.add('active');
             
             // Reseta o carrossel da nova aba para o primeiro slide
-            const firstSubBtn = targetPane.querySelector('.yooga-sub-btn');
+            const firstSubBtn = targetPane.querySelector('.menuvem-sub-btn');
             if (firstSubBtn) {
                 firstSubBtn.click();
             }
@@ -276,10 +276,10 @@ function initYoogaFunctionalities() {
 
     // Lógica para cada Painel (Sidebar + Carrossel)
     panes.forEach(pane => {
-        const subBtns = pane.querySelectorAll('.yooga-sub-btn');
-        const cards = pane.querySelectorAll('.yooga-card');
-        const prevBtn = pane.querySelector('.yooga-arrow.prev');
-        const nextBtn = pane.querySelector('.yooga-arrow.next');
+        const subBtns = pane.querySelectorAll('.menuvem-sub-btn');
+        const cards = pane.querySelectorAll('.menuvem-card');
+        const prevBtn = pane.querySelector('.menuvem-arrow.prev');
+        const nextBtn = pane.querySelector('.menuvem-arrow.next');
 
         if (subBtns.length === 0 || cards.length === 0) return;
 

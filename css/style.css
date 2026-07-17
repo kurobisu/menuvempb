@@ -1229,14 +1229,14 @@ a {
 }
 
 
-/* --- Seção de Funcionalidades Interativas (Estilo Yooga) --- */
+/* --- Seção de Funcionalidades Interativas (Estilo Menuvem) --- */
 .functionalities {
     background: radial-gradient(circle at 50% 50%, rgba(100, 29, 222, 0.05) 0%, rgba(5, 5, 8, 0) 80%);
     border-top: 1px solid var(--border-color);
     padding: 5rem 0;
 }
 
-.yooga-tabs {
+.menuvem-tabs {
     display: flex;
     justify-content: flex-start;
     gap: 0.75rem;
@@ -1246,19 +1246,19 @@ a {
     scrollbar-width: none; /* Firefox */
 }
 
-.yooga-tabs::-webkit-scrollbar {
+.menuvem-tabs::-webkit-scrollbar {
     display: none; /* Chrome/Safari */
 }
 
 @media (min-width: 768px) {
-    .yooga-tabs {
+    .menuvem-tabs {
         justify-content: center;
         overflow: visible;
         padding-bottom: 0;
     }
 }
 
-.yooga-tab-btn {
+.menuvem-tab-btn {
     background: rgba(255, 255, 255, 0.02);
     border: 1px solid var(--border-color);
     color: var(--text-secondary);
@@ -1272,26 +1272,26 @@ a {
     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.yooga-tab-btn:hover {
+.menuvem-tab-btn:hover {
     border-color: rgba(100, 29, 222, 0.4);
     color: var(--text-primary);
     background: rgba(100, 29, 222, 0.05);
 }
 
-.yooga-tab-btn.active {
+.menuvem-tab-btn.active {
     background: var(--primary);
     border-color: var(--primary);
     color: var(--text-primary);
     box-shadow: 0 0 20px rgba(100, 29, 222, 0.4);
 }
 
-.yooga-pane {
+.menuvem-pane {
     display: none;
     opacity: 0;
     animation: fadeInPane 0.4s ease forwards;
 }
 
-.yooga-pane.active {
+.menuvem-pane.active {
     display: block;
 }
 
@@ -1300,14 +1300,14 @@ a {
     to { opacity: 1; transform: translateY(0); }
 }
 
-.yooga-layout {
+.menuvem-layout {
     display: flex;
     flex-direction: column;
     gap: 2rem;
 }
 
 @media (min-width: 992px) {
-    .yooga-layout {
+    .menuvem-layout {
         flex-direction: row;
         gap: 3rem;
         align-items: flex-start;
@@ -1315,7 +1315,7 @@ a {
 }
 
 /* Sidebar (Left) */
-.yooga-sidebar {
+.menuvem-sidebar {
     display: flex;
     flex-direction: row;
     gap: 1rem;
@@ -1325,20 +1325,20 @@ a {
     scrollbar-color: var(--primary) var(--bg-card);
 }
 
-.yooga-sidebar::-webkit-scrollbar {
+.menuvem-sidebar::-webkit-scrollbar {
     height: 6px;
 }
-.yooga-sidebar::-webkit-scrollbar-track {
+.menuvem-sidebar::-webkit-scrollbar-track {
     background: var(--bg-card);
     border-radius: 10px;
 }
-.yooga-sidebar::-webkit-scrollbar-thumb {
+.menuvem-sidebar::-webkit-scrollbar-thumb {
     background: var(--primary);
     border-radius: 10px;
 }
 
 @media (min-width: 992px) {
-    .yooga-sidebar {
+    .menuvem-sidebar {
         flex: 0 0 320px;
         flex-direction: column;
         overflow-x: visible;
@@ -1346,7 +1346,7 @@ a {
     }
 }
 
-.yooga-sub-btn {
+.menuvem-sub-btn {
     background: var(--bg-card);
     border: 1px solid var(--border-color);
     color: var(--text-secondary);
@@ -1363,27 +1363,27 @@ a {
 }
 
 @media (min-width: 992px) {
-    .yooga-sub-btn {
+    .menuvem-sub-btn {
         min-width: 100%;
         padding: 1.25rem 1.5rem;
         font-size: 1rem;
     }
 }
 
-.yooga-sub-btn:hover {
+.menuvem-sub-btn:hover {
     background: rgba(255,255,255,0.02);
     color: var(--text-primary);
     border-color: rgba(255,255,255,0.15);
 }
 
-.yooga-sub-btn.active {
+.menuvem-sub-btn.active {
     background: rgba(100, 29, 222, 0.1);
     border-color: var(--primary);
     color: var(--text-primary);
     font-weight: 600;
 }
 
-.yooga-sub-btn.active::before {
+.menuvem-sub-btn.active::before {
     content: '';
     position: absolute;
     left: 0;
@@ -1394,7 +1394,7 @@ a {
 }
 
 /* Carousel (Right) */
-.yooga-carousel {
+.menuvem-carousel {
     flex: 1;
     position: relative;
     border-radius: 20px;
@@ -1406,18 +1406,18 @@ a {
 }
 
 @media (min-width: 992px) {
-    .yooga-carousel {
+    .menuvem-carousel {
         aspect-ratio: 16/9;
     }
 }
 
-.yooga-carousel-track {
+.menuvem-carousel-track {
     position: relative;
     width: 100%;
     height: 100%;
 }
 
-.yooga-card {
+.menuvem-card {
     position: absolute;
     top: 0;
     left: 0;
@@ -1430,12 +1430,12 @@ a {
     align-items: flex-end;
 }
 
-.yooga-card.active {
+.menuvem-card.active {
     opacity: 1;
     visibility: visible;
 }
 
-.yooga-card-bg {
+.menuvem-card-bg {
     position: absolute;
     top: 0;
     left: 0;
@@ -1446,17 +1446,17 @@ a {
     transition: transform 6s ease;
 }
 
-.yooga-card.active .yooga-card-bg {
+.menuvem-card.active .menuvem-card-bg {
     transform: scale(1.05);
 }
 
-.yooga-card-overlay {
+.menuvem-card-overlay {
     position: absolute;
     inset: 0;
     background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0) 100%);
 }
 
-.yooga-card-content {
+.menuvem-card-content {
     position: relative;
     z-index: 2;
     padding: 2rem;
@@ -1464,13 +1464,13 @@ a {
 }
 
 @media (min-width: 768px) {
-    .yooga-card-content {
+    .menuvem-card-content {
         padding: 3rem;
         max-width: 60%;
     }
 }
 
-.yooga-card-content h3 {
+.menuvem-card-content h3 {
     color: #fff;
     font-size: 1.5rem;
     margin-bottom: 0.75rem;
@@ -1479,12 +1479,12 @@ a {
 }
 
 @media (min-width: 768px) {
-    .yooga-card-content h3 {
+    .menuvem-card-content h3 {
         font-size: 2rem;
     }
 }
 
-.yooga-card-content p {
+.menuvem-card-content p {
     color: rgba(255,255,255,0.9);
     font-size: 0.95rem;
     line-height: 1.6;
@@ -1492,13 +1492,13 @@ a {
 }
 
 @media (min-width: 768px) {
-    .yooga-card-content p {
+    .menuvem-card-content p {
         font-size: 1.05rem;
     }
 }
 
 /* Controls */
-.yooga-carousel-controls {
+.menuvem-carousel-controls {
     position: absolute;
     bottom: 2rem;
     right: 2rem;
@@ -1508,13 +1508,13 @@ a {
 }
 
 @media (max-width: 767px) {
-    .yooga-carousel-controls {
+    .menuvem-carousel-controls {
         bottom: 1.5rem;
         right: 1.5rem;
     }
 }
 
-.yooga-arrow {
+.menuvem-arrow {
     background: rgba(255,255,255,0.1);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
@@ -1533,7 +1533,7 @@ a {
     font-weight: bold;
 }
 
-.yooga-arrow:hover {
+.menuvem-arrow:hover {
     background: var(--primary);
     border-color: var(--primary);
     transform: scale(1.1);
