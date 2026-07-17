@@ -1734,56 +1734,54 @@ a {
 }
 
 /* Tooltip Styles */
+/* Tooltip Styles */
 .tooltip-container {
     position: relative;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    vertical-align: middle;
 }
 .tooltip-icon {
-    width: 14px;
-    height: 14px;
+    width: 24px;
+    height: 24px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.6);
-    color: #fff;
-    background: rgba(255, 255, 255, 0.1);
-    font-family: inherit;
-    font-weight: bold;
-    font-size: 0.65rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: var(--text-secondary);
+    font-family: var(--font-title);
+    font-weight: 700;
+    font-size: 0.85rem;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     transition: all 0.3s;
-    line-height: 1;
 }
 .tooltip-icon:hover, .tooltip-icon:focus {
     border-color: var(--primary);
-    color: #fff;
-    background: var(--primary);
+    color: var(--primary);
+    background: rgba(100, 29, 222, 0.05);
     outline: none;
 }
 .tooltip-text {
     visibility: hidden;
-    width: 200px;
-    background: #1a1a2e; /* solid dark background for contrast */
-    border: 1px solid var(--primary); /* highlight border */
-    color: #fff;
+    width: 280px;
+    background: #0d0d16;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: var(--text-primary);
     text-align: left;
-    border-radius: 8px;
-    padding: 0.85rem;
+    border-radius: 12px;
+    padding: 1rem;
     position: absolute;
-    z-index: 999; /* ensure it stays on top */
+    z-index: 999;
     bottom: 125%;
     left: 50%;
     transform: translateX(-50%);
     opacity: 0;
     transition: opacity 0.3s, visibility 0.3s;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.8);
-    font-size: 0.8rem;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.8), 0 8px 10px -6px rgba(0, 0, 0, 0.8);
+    font-size: 0.85rem;
     line-height: 1.4;
     font-weight: normal;
     text-transform: none;
@@ -1797,7 +1795,7 @@ a {
     transform: translateX(-50%);
     border-width: 6px;
     border-style: solid;
-    border-color: var(--primary) transparent transparent transparent;
+    border-color: #0d0d16 transparent transparent transparent;
 }
 .tooltip-container:hover .tooltip-text,
 .tooltip-container:focus-within .tooltip-text {
