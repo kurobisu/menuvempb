@@ -1860,3 +1860,12 @@ a {
         color: var(--text-primary);
     }
 }
+
+/* ENLARGE PLAN PRICES */
+.plan-card:not(#plan-secreto) .plan-price {
+    font-size: 3.8rem;
+    text-shadow: 0 0 15px rgba(255,255,255,0.25);
+    color: #fff;
+    display: inline-block;
+    transform: scale(1.05);
+}
