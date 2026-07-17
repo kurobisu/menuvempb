@@ -51,6 +51,22 @@
             border-radius: 12px;
             border: 1px dashed var(--border-color);
         }
+    
+        .clear-icon {
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+            cursor: pointer;
+            display: none;
+            transition: all 0.2s;
+            padding: 5px;
+        }
+        .clear-icon:hover {
+            color: white;
+            transform: translateY(-50%) scale(1.1);
+        }
     </style>
 </head>
 
@@ -81,6 +97,10 @@
         <div class="search-container reveal delay-100">
             <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
             <input type="text" id="faqSearchInput" class="search-input" placeholder="Ex: fidelidade, comissão, suporte...">
+            <svg class="clear-icon" id="clearSearchBtn" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
         </div>
 
         <div class="faq-grid" id="faqList">
@@ -149,6 +169,15 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const searchInput = document.getElementById('faqSearchInput');
+            const clearBtn = document.getElementById('clearSearchBtn');
+            
+            clearBtn.addEventListener('click', () => {
+                searchInput.value = '';
+                searchInput.focus();
+                clearBtn.style.display = 'none';
+                filterFaqs('');
+            });
+
             const faqItems = document.querySelectorAll('.faq-item');
             const noResults = document.getElementById('noResults');
 
@@ -157,11 +186,18 @@
             const q = urlParams.get('q');
             if (q) {
                 searchInput.value = q;
+                clearBtn.style.display = 'block';
                 filterFaqs(q.toLowerCase());
             }
 
             searchInput.addEventListener('input', (e) => {
-                filterFaqs(e.target.value.toLowerCase());
+                const val = e.target.value;
+                if (val.trim().length > 0) {
+                    clearBtn.style.display = 'block';
+                } else {
+                    clearBtn.style.display = 'none';
+                }
+                filterFaqs(val.toLowerCase());
             });
 
             function filterFaqs(term) {
