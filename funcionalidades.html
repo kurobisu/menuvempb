@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funcionalidades | Menuvem PB</title>
+    <link rel="stylesheet" href="css/style.css?v=2">
+    <link rel="stylesheet" href="css/funcionalidades.css">
+    <style>
+        /* Funcionalidades Page Specific Layout */
+        body { background-color: var(--bg-color); color: var(--text-primary); }
+        .func-layout {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            min-height: calc(100vh - 80px);
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 100px;
+        }
+
+        /* Sidebar Dropdown Menu */
+        .func-sidebar {
+            border-right: 1px solid var(--border-color);
+            padding: 2rem;
+            position: sticky;
+            top: 80px;
+            height: calc(100vh - 80px);
+            overflow-y: auto;
+            background: var(--bg-color);
+        }
+
+        .category-group { margin-bottom: 1.5rem; }
+        
+        .category-title {
+            font-family: var(--font-title);
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            transition: color 0.2s;
+        }
+
+        .category-title:hover { color: var(--primary); }
+
+        .subcategory-list {
+            list-style: none;
+            padding-top: 0.5rem;
+            display: none;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .category-group.open .subcategory-list { display: flex; }
+        .category-group.open .category-title svg { transform: rotate(180deg); }
+
+        .subcategory-item {
+            padding: 0.5rem 0.5rem 0.5rem 1rem;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            cursor: pointer;
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
+
+        .subcategory-item:hover, .subcategory-item.active {
+            background: rgba(139, 92, 246, 0.1);
+            color: var(--primary);
+        }
+
+        /* Main Content Area */
+        .func-main {
+            padding: 3rem 4rem;
+        }
+
+        .func-detail {
+            display: none;
+            animation: fadeIn 0.4s ease-out forwards;
+        }
+
+        .func-detail.active {
+            display: block;
+        }
+
+        .func-detail h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .func-detail .badge { margin-bottom: 1rem; }
+
+        .func-detail p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+
+        .func-feature-list {
+            list-style: none;
+            margin-top: 2rem;
+        }
+
+        .func-feature-list li {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+        }
+
+        .func-feature-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        /* Mobile Sidebar Overlay */
+        .mobile-menu-toggle {
+            display: none;
+            width: 100%;
+            padding: 1rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            color: white;
+            font-family: var(--font-title);
+            font-size: 1.1rem;
+            text-align: left;
+            position: sticky;
+            top: 70px;
+            z-index: 90;
+            border-radius: 8px;
+            margin: 1rem 0;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        @media (max-width: 992px) {
+            .func-layout { display: block; padding: 80px 1rem 2rem 1rem; }
+            .func-main { padding: 1.5rem 0; }
+            .mobile-menu-toggle { display: flex; }
+            .func-sidebar {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 280px;
+                height: 100vh;
+                z-index: 100;
+                transition: left 0.3s ease;
+                background: var(--bg-color);
+                box-shadow: 2px 0 10px rgba(0,0,0,0.5);
+            }
+            .func-sidebar.open { left: 0; }
+            .sidebar-overlay {
+                display: none;
+                position: fixed;
+                inset: 0;
+                background: rgba(0,0,0,0.7);
+                z-index: 99;
+                backdrop-filter: blur(4px);
+            }
+            .sidebar-overlay.active { display: block; }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar (Simplified for this page) -->
+    <nav class="navbar" style="background: rgba(2, 2, 4, 0.95);">
+        <div class="container navbar-container">
+            <a href="index.html" class="logo">
+                Menuvem <span style="color:var(--primary);">. PB</span>
+            </a>
+            <a href="index.html" class="btn btn-outline" style="font-size: 0.9rem; padding: 0.5rem 1rem;">Voltar ao Início</a>
+        </div>
+    </nav>
+
+    <button class="mobile-menu-toggle" id="mobileToggle">
+        <span>Selecione uma Funcionalidade</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"></path></svg>
+    </button>
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <div class="func-layout">
+        <!-- Sidebar Navigation -->
+        <aside class="func-sidebar" id="funcSidebar">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 2rem;">
+                <h3 style="font-family: var(--font-title); font-size: 1.2rem;">Módulos</h3>
+                <button id="closeSidebar" style="background:none; border:none; color:white; font-size:1.5rem; display:none; cursor:pointer;">&times;</button>
+            </div>
+
+            <!-- Category 1 -->
+            <div class="category-group open">
+                <div class="category-title">
+                    Delivery & Cardápio
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="transition: transform 0.2s;"><path d="M6 9l6 6 6-6"></path></svg>
+                </div>
+                <ul class="subcategory-list">
+                    <li class="subcategory-item active" data-target="delivery-proprio">Delivery Próprio Taxa R$ 0</li>
+                    <li class="subcategory-item" data-target="fidelidade">Fidelidade & Cupons</li>
+                    <li class="subcategory-item" data-target="integracao-ifood">Integração iFood & Aiqfome</li>
+                    <li class="subcategory-item" data-target="pagamento-online">Pagamento Online Integrado</li>
+                </ul>
+            </div>
+
+            <!-- Category 2 -->
+            <div class="category-group">
+                <div class="category-title">
+                    Frente de Caixa (PDV)
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="transition: transform 0.2s;"><path d="M6 9l6 6 6-6"></path></svg>
+                </div>
+                <ul class="subcategory-list">
+                    <li class="subcategory-item" data-target="pdv-agil">PDV Ágil (Balcão)</li>
+                    <li class="subcategory-item" data-target="mesas">Controle de Mesas e Comandas</li>
+                    <li class="subcategory-item" data-target="kds">KDS (Tela de Produção)</li>
+                    <li class="subcategory-item" data-target="cardapio-qr">Cardápio QR Code na Mesa</li>
+                </ul>
+            </div>
+            
+            <!-- Category 3 -->
+            <div class="category-group">
+                <div class="category-title">
+                    Controle de Estoque
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="transition: transform 0.2s;"><path d="M6 9l6 6 6-6"></path></svg>
+                </div>
+                <ul class="subcategory-list">
+                    <li class="subcategory-item" data-target="ficha-tecnica">Ficha Técnica e Baixa Automática</li>
+                    <li class="subcategory-item" data-target="estoque-minimo">Alerta de Estoque Mínimo</li>
+                    <li class="subcategory-item" data-target="inventario">Relatórios de Inventário</li>
+                </ul>
+            </div>
+
+            <!-- Category 4 -->
+            <div class="category-group">
+                <div class="category-title">
+                    Financeiro & Fiscal
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="transition: transform 0.2s;"><path d="M6 9l6 6 6-6"></path></svg>
+                </div>
+                <ul class="subcategory-list">
+                    <li class="subcategory-item" data-target="emissao-fiscal">Emissão NFC-e Automática</li>
+                    <li class="subcategory-item" data-target="fechamento-caixa">Fechamento de Caixa Cego</li>
+                    <li class="subcategory-item" data-target="dre">Relatórios de DRE e Vendas</li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="func-main" id="funcMain">
+            <!-- Content 1 -->
+            <div class="func-detail active" id="delivery-proprio">
+                <span class="badge" style="background:rgba(217,70,239,0.1); border-color:rgba(217,70,239,0.2); color:#f472b6;">Cardápio & Delivery</span>
+                <h1>Delivery Próprio Taxa R$ 0</h1>
+                <p>Tenha o seu próprio cardápio digital profissional, totalmente livre de taxas e comissões abusivas por pedido. Você vende mais e o lucro fica 100% no seu caixa.</p>
+                <ul class="func-feature-list">
+                    <li>Link exclusivo com o nome do seu restaurante (ex: seunome.pedir.online).</li>
+                    <li>Cardápio intuitivo otimizado para aumentar a conversão no celular.</li>
+                    <li>Atualização de preços, pausas de itens e promoções em tempo real.</li>
+                    <li>Notificações automáticas no WhatsApp do cliente sobre o status do pedido.</li>
+                </ul>
+            </div>
+
+            <div class="func-detail" id="fidelidade">
+                <span class="badge" style="background:rgba(217,70,239,0.1); border-color:rgba(217,70,239,0.2); color:#f472b6;">Cardápio & Delivery</span>
+                <h1>Fidelidade & Cupons</h1>
+                <p>Mantenha seus clientes comprando sempre de você com nosso sistema automático de fidelização.</p>
+                <ul class="func-feature-list">
+                    <li>Cashback automático (ex: 5% de volta na próxima compra).</li>
+                    <li>Criação de cupons promocionais (Desconto fixo, % ou Frete Grátis).</li>
+                    <li>Avisos via WhatsApp para recuperar clientes inativos há mais de 30 dias.</li>
+                </ul>
+            </div>
+            
+            <div class="func-detail" id="integracao-ifood">
+                <span class="badge" style="background:rgba(217,70,239,0.1); border-color:rgba(217,70,239,0.2); color:#f472b6;">Cardápio & Delivery</span>
+                <h1>Integração iFood & Aiqfome</h1>
+                <p>Centralize todas as suas vendas em uma única tela. Não perca mais tempo copiando pedidos manualmente.</p>
+                <ul class="func-feature-list">
+                    <li>Pedidos do iFood e Aiqfome caem direto no PDV Menuvem.</li>
+                    <li>Impressão automática nas comandas da cozinha.</li>
+                    <li>Sincronização de cardápio e preços diretamente do sistema para o app de terceiro.</li>
+                </ul>
+            </div>
+
+            <!-- Add more generic blocks for the others just to flesh out the page -->
+            <div class="func-detail" id="pdv-agil">
+                <span class="badge" style="background:rgba(100, 29, 222, 0.1); border-color:rgba(100, 29, 222, 0.2); color:#a78bfa;">Frente de Caixa (PDV)</span>
+                <h1>PDV Ágil (Balcão)</h1>
+                <p>Um sistema de vendas ultrarrápido projetado para não gerar filas. Faça pedidos com 3 cliques.</p>
+                <ul class="func-feature-list">
+                    <li>Busca rápida de produtos por código, nome ou categoria.</li>
+                    <li>Fechamento rápido em dinheiro, PIX integrado ou cartão.</li>
+                    <li>Integração total com balanças e gavetas de dinheiro.</li>
+                </ul>
+            </div>
+
+            <div class="func-detail" id="mesas">
+                <span class="badge" style="background:rgba(100, 29, 222, 0.1); border-color:rgba(100, 29, 222, 0.2); color:#a78bfa;">Frente de Caixa (PDV)</span>
+                <h1>Controle de Mesas e Comandas</h1>
+                <p>Elimine o papel e evite erros no salão. Acompanhe o consumo de cada cliente em tempo real.</p>
+                <ul class="func-feature-list">
+                    <li>Mapa visual do salão com status de tempo de mesa.</li>
+                    <li>Divisão de conta exata entre os clientes da mesa.</li>
+                    <li>Transferência de itens entre comandas de forma simplificada.</li>
+                </ul>
+            </div>
+            
+            <!-- Default fallback for others -->
+            <div class="func-detail" id="default-info">
+                <span class="badge">Funcionalidade</span>
+                <h1>Mais detalhes</h1>
+                <p>Esta funcionalidade ajuda você a operar de forma mais ágil, garantindo que o tempo gasto seja investido na estratégia do seu negócio.</p>
+                <ul class="func-feature-list">
+                    <li>Fácil implementação e uso imediato.</li>
+                    <li>Sincronizado automaticamente com os demais módulos.</li>
+                    <li>Acesso remoto de qualquer lugar pelo celular do gestor.</li>
+                </ul>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const categories = document.querySelectorAll('.category-title');
+            const items = document.querySelectorAll('.subcategory-item');
+            const details = document.querySelectorAll('.func-detail');
+            const mobileToggle = document.getElementById('mobileToggle');
+            const sidebar = document.getElementById('funcSidebar');
+            const overlay = document.getElementById('sidebarOverlay');
+            const closeSidebar = document.getElementById('closeSidebar');
+
+            // Open/Close Categories
+            categories.forEach(cat => {
+                cat.addEventListener('click', () => {
+                    cat.parentElement.classList.toggle('open');
+                });
+            });
+
+            // Select item logic
+            items.forEach(item => {
+                item.addEventListener('click', () => {
+                    // Update active state in menu
+                    items.forEach(i => i.classList.remove('active'));
+                    item.classList.add('active');
+
+                    // Show corresponding detail
+                    const targetId = item.getAttribute('data-target');
+                    let found = false;
+                    
+                    details.forEach(detail => {
+                        detail.classList.remove('active');
+                        if(detail.id === targetId) {
+                            detail.classList.add('active');
+                            found = true;
+                        }
+                    });
+
+                    // fallback if content not filled yet
+                    if(!found) {
+                        const def = document.getElementById('default-info');
+                        def.classList.add('active');
+                        def.querySelector('h1').textContent = item.textContent;
+                    }
+
+                    // Update mobile toggle text
+                    mobileToggle.querySelector('span').textContent = item.textContent;
+
+                    // Close mobile sidebar
+                    if(window.innerWidth <= 992) {
+                        sidebar.classList.remove('open');
+                        overlay.classList.remove('active');
+                    }
+                });
+            });
+
+            // Mobile sidebar toggles
+            mobileToggle.addEventListener('click', () => {
+                sidebar.classList.add('open');
+                overlay.classList.add('active');
+                closeSidebar.style.display = 'block';
+            });
+
+            overlay.addEventListener('click', () => {
+                sidebar.classList.remove('open');
+                overlay.classList.remove('active');
+            });
+
+            closeSidebar.addEventListener('click', () => {
+                sidebar.classList.remove('open');
+                overlay.classList.remove('active');
+            });
+
+            // Check URL hash on load
+            if(window.location.hash) {
+                const targetId = window.location.hash.substring(1); // remove '#'
+                const targetItem = document.querySelector(`.subcategory-item[data-target="${targetId}"]`);
+                if(targetItem) {
+                    targetItem.click();
+                    // Ensure parent is open
+                    targetItem.closest('.category-group').classList.add('open');
+                }
+            }
+        });
+    </script>
+</body>
+</html>
