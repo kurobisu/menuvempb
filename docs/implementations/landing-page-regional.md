@@ -40,4 +40,4 @@ Desenvolvimento e publicação de uma landing page regional mobile-first sob med
 - **2026-07-16:** Adaptação de copy regional, precificação de planos, fluxo guiado em `cadastro-etapas.html` e exclusão de temas claros para retorno ao visual escuro original da marca.
 - **2026-07-16 (Ajustes de Copy e Prova Social pelo Usuário - Commit 47689f7):** Depoimentos reais de estabelecimentos da Paraíba e dados oficiais corporativos atualizados no footer.
 - **2026-07-16 (Ajustes de Acessibilidade - Commit 71bbaa1):** Criação e refinamento de tooltip interativo (i) na timeline de cadastro de etapas.
-- **2026-07-17 (Seção de Recursos Yooga Style - Commit 4ec30e8):** Inclusão e estilização de abas e grids dinâmicos para visualização de 16 recursos detalhados do sistema.
+- **2026-07-17 (Seção de Recursos Menuvem Style - Commit 4ec30e8):** Inclusão e estilização de abas e grids dinâmicos para visualização de 16 recursos detalhados do sistema.

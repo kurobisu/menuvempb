@@ -12,7 +12,7 @@
 - [x] Remoção de temas claro/escuro e fixação de Tema Escuro padrão da marca no CSS e HTML
 - [x] Levantamento de ajustes manuais de conteúdo (depoimentos da PB, direitos autorais e descrições)
 - [x] Implementação de tooltip (i) na Etapa 3 de cadastro-etapas.html com acessibilidade (tabindex) e responsividade móvel
-- [x] Criação e publicação da Seção Interativa de Funcionalidades (Benchmark Yooga) com abas dinâmicas, cards responsivos e acessibilidade WCAG (Tab/Enter/Espaço)
+- [x] Criação e publicação da Seção Interativa de Funcionalidades (Benchmark Menuvem) com abas dinâmicas, cards responsivos e acessibilidade WCAG (Tab/Enter/Espaço)
 
 ## Histórico de Modificações
 - **2026-07-15:** Criação da tarefa no Obsidian.

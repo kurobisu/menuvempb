@@ -1,7 +1,7 @@
 # PLAN-landing-page-regional: Reconstrução da Landing Page Regional (menuvempb.com)
 
 ## Objetivo
-Desenvolver do zero uma landing page regional sob medida e altamente performática para a Menuvem no mercado da Paraíba. O foco é uma interface premium (estilo Framer/Yooga/SaaS), mobile-first, contendo um Bento Grid de soluções, prova social dinâmica de clientes locais, seção do Fator Local e uma calculadora de planos interativa baseada no faturamento mensal com opcionais adicionais.
+Desenvolver do zero uma landing page regional sob medida e altamente performática para a Menuvem no mercado da Paraíba. O foco é uma interface premium (estilo Framer/Menuvem/SaaS), mobile-first, contendo um Bento Grid de soluções, prova social dinâmica de clientes locais, seção do Fator Local e uma calculadora de planos interativa baseada no faturamento mensal com opcionais adicionais.
 
 ## Arquivos Afetados
 - `index.html` (Client)
@@ -30,4 +30,4 @@ Desenvolver do zero uma landing page regional sob medida e altamente performáti
 - **2026-07-16:** Restauração total das cores do Tema Escuro fixo original sob demanda e remoção do botão de alternância de tema no cabeçalho das páginas `index.html` e `cadastro-etapas.html`.
 - **2026-07-16 (Ajustes Manuais do Usuário):** Levantamento e registro das alterações textuais e de depoimentos feitas pelo usuário no commit `47689f7` (veja `TASK-desenvolvimento-lp.md`).
 - **2026-07-16 (Ajustes de Acessibilidade):** Implementação de um tooltip interativo e acessível na Etapa 3 de cadastro para alertar sobre o plano correto (commit `71bbaa1`).
-- **2026-07-17 (Seção de Funcionalidades Yooga Style):** Desenvolvimento e publicação de abas interativas no CSS, JS e HTML de `index.html` (commit `4ec30e8`), atestando transbordo lateral elegante no mobile e suporte WCAG para teclado.
+- **2026-07-17 (Seção de Funcionalidades Menuvem Style):** Desenvolvimento e publicação de abas interativas no CSS, JS e HTML de `index.html` (commit `4ec30e8`), atestando transbordo lateral elegante no mobile e suporte WCAG para teclado.
