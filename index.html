@@ -331,7 +331,7 @@
                 <!-- Grid de Planos -->
                 <div class="plans-grid">
                     <!-- Plano Bronze -->
-                    <div class="plan-card" id="plan-bronze">
+                    <div class="plan-card" id="plan-bronze" class="plan-card plan-wood">
                         <div>
                             <h4 class="plan-name">Plano 1</h4>
                             <p style="font-size: 0.8rem; color: var(--text-muted);">Ideal para negócios iniciantes.</p>
@@ -350,7 +350,7 @@
                     </div>
 
                     <!-- Plano Prata -->
-                    <div class="plan-card" id="plan-prata">
+                    <div class="plan-card" id="plan-prata" class="plan-card plan-gold">
                         <div>
                             <h4 class="plan-name">Plano 2</h4>
                             <p style="font-size: 0.8rem; color: var(--text-muted);">Perfeito para operações
@@ -370,7 +370,7 @@
                     </div>
 
                     <!-- Plano Ouro -->
-                    <div class="plan-card" id="plan-ouro">
+                    <div class="plan-card" id="plan-ouro" class="plan-card plan-diamond">
                         <div>
                             <h4 class="plan-name">Plano 3</h4>
                             <p style="font-size: 0.8rem; color: var(--text-muted);">Para restaurantes de alta
@@ -1206,16 +1206,16 @@ document.addEventListener('DOMContentLoaded', () => {
         if(p3) p3.style.maxWidth = '400px';
 
         function updatePlans(val) {
-            if(p1) p1.style.display = 'none';
-            if(p2) p2.style.display = 'none';
-            if(p3) p3.style.display = 'none';
+            if(p1) { p1.classList.remove('plan-card-featured'); p1.removeAttribute('data-badge'); }
+            if(p2) { p2.classList.remove('plan-card-featured'); p2.removeAttribute('data-badge'); }
+            if(p3) { p3.classList.remove('plan-card-featured'); p3.removeAttribute('data-badge'); }
 
             if(val <= 20000) {
-                if(p1) p1.style.display = 'block';
+                if(p1) { p1.classList.add('plan-card-featured'); p1.setAttribute('data-badge', 'Plano 1'); }
             } else if(val > 20000 && val <= 35000) {
-                if(p2) p2.style.display = 'block';
+                if(p2) { p2.classList.add('plan-card-featured'); p2.setAttribute('data-badge', 'Plano 2'); }
             } else if(val > 35000) {
-                if(p3) p3.style.display = 'block';
+                if(p3) { p3.classList.add('plan-card-featured'); p3.setAttribute('data-badge', 'Plano 3'); }
             }
         }
         

@@ -1708,3 +1708,33 @@ a {
 .delay-300 { transition-delay: 0.3s; }
 .delay-400 { transition-delay: 0.4s; }
 .delay-500 { transition-delay: 0.5s; }
+
+/* PLANOS VISUAL STYLES */
+.plan-card-featured[data-badge="Plano 1"]::after {
+    content: 'Recomendado';
+}
+.plan-card-featured[data-badge="Plano 2"]::after {
+    content: 'O mais escolhido';
+}
+.plan-card-featured[data-badge="Plano 3"]::after {
+    content: 'O mais profissional';
+}
+
+/* Custom borders using border-image with the generated pixel art */
+.plan-wood.plan-card-featured {
+    border: 8px solid transparent;
+    border-image: url('../img/border_wood.jpg') 30 stretch;
+    box-shadow: 0 10px 40px rgba(100, 255, 100, 0.15); /* subtil green glow */
+}
+
+.plan-gold.plan-card-featured {
+    border: 8px solid transparent;
+    border-image: url('../img/border_gold.jpg') 30 stretch;
+    box-shadow: 0 10px 40px rgba(255, 215, 0, 0.2); /* gold glow */
+}
+
+.plan-diamond.plan-card-featured {
+    border: 8px solid transparent;
+    border-image: url('../img/border_diamond.jpg') 30 stretch;
+    box-shadow: 0 10px 40px rgba(0, 191, 255, 0.25); /* diamond blue glow */
+}
