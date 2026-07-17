@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dúvidas Frequentes | Menuvem PB</title>
+    <link rel="stylesheet" href="css/style.css?v=2">
+    <style>
+        body { background-color: var(--bg-color); color: var(--text-primary); }
+        .duvidas-layout {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 120px 2rem 4rem 2rem;
+            min-height: calc(100vh - 80px);
+        }
+        .search-container {
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        .search-input {
+            width: 100%;
+            padding: 1rem 1rem 1rem 3rem;
+            font-size: 1.1rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        .search-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.2);
+        }
+        .search-icon {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+            pointer-events: none;
+        }
+        .no-results {
+            display: none;
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-muted);
+            background: var(--bg-card);
+            border-radius: 12px;
+            border: 1px dashed var(--border-color);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar" style="background: rgba(2, 2, 4, 0.95);">
+        <div class="container navbar-container">
+            <a href="index.html" class="logo">
+                Menuvem <span style="color:var(--primary);">. PB</span>
+            </a>
+            <a href="index.html" class="btn btn-outline" style="font-size: 0.9rem; padding: 0.5rem 1rem;">Voltar ao Início</a>
+        </div>
+    </nav>
+
+    <div class="duvidas-layout">
+        <div class="section-header reveal">
+            <span class="badge">Central de Ajuda</span>
+            <h2>Suas dúvidas, <span>respondidas</span>.</h2>
+            <p>Pesquise por palavras-chave para encontrar exatamente o que você procura.</p>
+        </div>
+
+        <div class="search-container reveal delay-100">
+            <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            <input type="text" id="faqSearchInput" class="search-input" placeholder="Ex: fidelidade, comissão, suporte...">
+        </div>
+
+        <div class="faq-grid" id="faqList">
+            <!-- FAQ 1 -->
+            <div class="faq-item reveal delay-200">
+                <button class="faq-question">
+                    <span>O sistema possui fidelidade ou multa se eu quiser cancelar?</span>
+                    <span class="faq-icon">▼</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Não. Todos os nossos planos são mensais recorrentes, sem qualquer fidelidade ou taxas de cancelamento. Você utiliza enquanto fizer sentido para o seu negócio e pode cancelar a qualquer momento.</p>
+                </div>
+            </div>
+
+            <!-- FAQ 2 -->
+            <div class="faq-item reveal delay-200">
+                <button class="faq-question">
+                    <span>A Menuvem cobra comissão pelas minhas vendas?</span>
+                    <span class="faq-icon">▼</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Absolutamente não. Ao contrário de plataformas como o iFood que cobram altas porcentagens em cada pedido, na Menuvem você paga apenas uma mensalidade fixa de acordo com seu plano. Todo o seu lucro fica com você.</p>
+                </div>
+            </div>
+
+            <!-- FAQ 3 -->
+            <div class="faq-item reveal delay-200">
+                <button class="faq-question">
+                    <span>Como funciona o suporte técnico regional?</span>
+                    <span class="faq-icon">▼</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Nosso suporte regional funciona de forma ágil e dedicada das **10h às 21h30 todos os dias** da semana (incluindo sábados, domingos e feriados) via acesso remoto ou chat.</p>
+                </div>
+            </div>
+
+            <!-- FAQ 4 -->
+            <div class="faq-item reveal delay-200">
+                <button class="faq-question">
+                    <span>Vocês ajudam a cadastrar o cardápio e personalizar o sistema?</span>
+                    <span class="faq-icon">▼</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Sim! Na Menuvem PB você não precisa de investimento inicial (R$ 0). Nós personalizamos a plataforma e montamos todo o seu cardápio e treinamos a sua equipe de forma 100% gratuita para você começar a operar sem trabalho.</p>
+                </div>
+            </div>
+
+            <!-- FAQ 5 -->
+            <div class="faq-item reveal delay-200">
+                <button class="faq-question">
+                    <span>Como eu faço para obter os 30 dias de teste grátis?</span>
+                    <span class="faq-icon">▼</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Para obter o bônus de 30 dias de gratuidade, você deve obrigatoriamente entrar em contato com o <strong>Suporte PB no WhatsApp (83) 9 8855-9423</strong> para aplicarmos o bônus logo após criar o cadastro da sua loja. Se você quiser ajuda para criar a sua conta, clique em "Cadastre-se" no topo para ver as 3 etapas de cadastro e ativação do seu bônus de forma simples. Ou solicite ajuda no nosso canal de Suporte pelo Whatsapp, estamos disponíveis para ajudar você.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="noResults" class="no-results">
+            <p>Nenhuma dúvida encontrada com esses termos. Tente pesquisar com outras palavras.</p>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const searchInput = document.getElementById('faqSearchInput');
+            const faqItems = document.querySelectorAll('.faq-item');
+            const noResults = document.getElementById('noResults');
+
+            // Handle URL search param if passed from index.html
+            const urlParams = new URLSearchParams(window.location.search);
+            const q = urlParams.get('q');
+            if (q) {
+                searchInput.value = q;
+                filterFaqs(q.toLowerCase());
+            }
+
+            searchInput.addEventListener('input', (e) => {
+                filterFaqs(e.target.value.toLowerCase());
+            });
+
+            function filterFaqs(term) {
+                let hasVisible = false;
+                
+                faqItems.forEach(item => {
+                    // search in title and answer text
+                    const text = item.textContent.toLowerCase();
+                    
+                    if (text.includes(term)) {
+                        item.style.display = 'block';
+                        hasVisible = true;
+                        
+                        // Automatically open if there's a search term
+                        if (term.length > 2 && !item.classList.contains('active')) {
+                            item.classList.add('active');
+                            const answer = item.querySelector('.faq-answer');
+                            if(answer) answer.style.maxHeight = answer.scrollHeight + "px";
+                        }
+                    } else {
+                        item.style.display = 'none';
+                        item.classList.remove('active');
+                        const answer = item.querySelector('.faq-answer');
+                        if(answer) answer.style.maxHeight = null;
+                    }
+                });
+
+                if (hasVisible || term === '') {
+                    noResults.style.display = 'none';
+                } else {
+                    noResults.style.display = 'block';
+                }
+            }
+        });
+    </script>
+</body>
+</html>
