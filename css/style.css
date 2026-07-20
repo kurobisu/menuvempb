@@ -1841,9 +1841,7 @@ a {
 }
 
 .btn-signup {
-    padding: 0.4rem 0.8rem;
-    font-size: 0.8rem;
-    white-space: nowrap;
+    display: none;
 }
 
 @media (min-width: 768px) {
@@ -1853,6 +1851,9 @@ a {
     .btn-login, .btn-signup {
         padding: 0.55rem 1.25rem;
         font-size: 0.85rem;
+    }
+    .btn-signup {
+        display: inline-flex;
     }
     .btn-login {
         background: none;
