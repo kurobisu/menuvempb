@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://menuvempb.com.br/entrada.html">
+    <meta property="og:title" content="Menuvem PB | Cardápio Digital e Gestor de Pedidos">
+    <meta property="og:description" content="Aumente o faturamento do seu restaurante na Paraíba com cardápio próprio sem comissão, personalização de cardápio inclusa, 30 dias grátis e suporte humano todos os dias.">
+    <meta property="og:image" content="https://menuvempb.com.br/img/menuvempb-LOGO-og.png">
+
+    <link rel="icon" type="image/svg+xml" href="img/menuvempb-LOGO.svg">
+    <title>Bem-vindo | Menuvem PB</title>
+
+    <link rel="stylesheet" href="css/style.css?v=5">
+    
+    <style>
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        .entrada-container {
+            width: 100%;
+            max-width: 900px;
+            padding: 2rem;
+            text-align: center;
+            z-index: 10;
+        }
+
+        .entrada-logo {
+            display: inline-block;
+            margin-bottom: 3rem;
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+        
+        .entrada-logo:hover {
+            transform: scale(1.05);
+        }
+
+        .entrada-logo .logo-text {
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            color: var(--text-primary);
+        }
+
+        .entrada-logo .logo-dot {
+            color: var(--primary);
+        }
+
+        .entrada-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            color: var(--text-primary);
+        }
+
+        .options-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .option-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 24px;
+            padding: 3rem 2rem;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .option-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
+            transition: all 0.6s ease;
+        }
+
+        .option-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+
+        .option-card:hover::before {
+            left: 100%;
+        }
+
+        .option-card.card-primary:hover {
+            border-color: var(--primary);
+            box-shadow: 0 20px 40px rgba(139, 92, 246, 0.2);
+        }
+        
+        .option-card.card-secondary:hover {
+            border-color: #3b82f6;
+            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.2);
+        }
+
+        .option-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-primary);
+            transition: all 0.3s ease;
+        }
+
+        .card-primary .option-icon {
+            background: rgba(139, 92, 246, 0.1);
+            color: var(--primary);
+        }
+
+        .card-secondary .option-icon {
+            background: rgba(59, 130, 246, 0.1);
+            color: #3b82f6;
+        }
+
+        .option-card:hover .option-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .option-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin: 0;
+        }
+
+        .option-desc {
+            font-size: 1rem;
+            color: var(--text-muted);
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        .option-btn {
+            margin-top: auto;
+            padding: 0.8rem 2rem;
+            border-radius: 2rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .card-primary .option-btn {
+            background: linear-gradient(135deg, var(--primary), #a224f8);
+            color: white;
+            border: none;
+        }
+        
+        .card-secondary .option-btn {
+            background: rgba(255,255,255,0.05);
+            color: white;
+            border: 1px solid var(--border-color);
+        }
+
+        .option-card:hover .option-btn {
+            transform: scale(1.05);
+        }
+
+        /* Particles effect background */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+            background: radial-gradient(circle at 50% 50%, rgba(139, 92, 246, 0.05) 0%, transparent 50%);
+        }
+
+        @media (max-width: 768px) {
+            .options-grid {
+                grid-template-columns: 1fr;
+            }
+            .entrada-title {
+                font-size: 1.5rem;
+            }
+            .option-card {
+                padding: 2rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="particles"></div>
+    
+    <div class="entrada-container">
+        <a href="index.html" class="entrada-logo reveal">
+            <span class="logo-text">Menuvem<span class="logo-dot">.</span>PB</span>
+        </a>
+
+        <h1 class="entrada-title reveal delay-100">Como podemos ajudar você hoje?</h1>
+
+        <div class="options-grid">
+            
+            <!-- Opção 1: Já sou cliente -->
+            <a href="https://painel.menuvem.com.br" class="option-card card-secondary reveal delay-200">
+                <div class="option-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                </div>
+                <h2 class="option-title">Já sou cliente</h2>
+                <p class="option-desc">Acesse sua conta para gerenciar seus pedidos, cardápio e relatórios.</p>
+                <div class="option-btn">Acessar o Painel</div>
+            </a>
+
+            <!-- Opção 2: Quero conhecer -->
+            <a href="index.html#planos" class="option-card card-primary reveal delay-300">
+                <div class="option-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                    </svg>
+                </div>
+                <h2 class="option-title">Quero conhecer</h2>
+                <p class="option-desc">Descubra como o Menuvem.PB pode transformar a gestão do seu restaurante.</p>
+                <div class="option-btn">Ver Planos Recomendados</div>
+            </a>
+
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Trigger reveal animations
+        document.addEventListener('DOMContentLoaded', () => {
+            const reveals = document.querySelectorAll('.reveal');
+            setTimeout(() => {
+                reveals.forEach(element => {
+                    element.classList.add('active');
+                });
+            }, 100);
+        });
+    </script>
+</body>
+</html>
