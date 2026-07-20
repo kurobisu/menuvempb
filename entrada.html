@@ -29,7 +29,16 @@
             overflow-x: hidden;
         }
 
-        .entrada-container {
+        
+            .top-left-logo {
+                top: 1rem;
+                left: 1rem;
+            }
+            .top-left-logo img {
+                height: 32px;
+            }
+
+            .entrada-container {
             width: 100%;
             max-width: 900px;
             padding: 2rem;
@@ -203,6 +212,15 @@
                 gap: 1rem;
             }
             
+            
+            .top-left-logo {
+                top: 1rem;
+                left: 1rem;
+            }
+            .top-left-logo img {
+                height: 32px;
+            }
+
             .entrada-container {
                 padding: 1.5rem 1rem;
             }
@@ -250,16 +268,33 @@
                 font-size: 0.95rem;
             }
         }
+    
+        .top-left-logo {
+            position: absolute;
+            top: 2rem;
+            left: 2rem;
+            z-index: 100;
+        }
+        
+        .top-left-logo img {
+            height: 45px;
+        }
+
     </style>
 
 </head>
 
 <body>
     <div class="particles"></div>
+
+    <a href="index.html" class="top-left-logo reveal">
+        <img src="img/menuvempb-LOGO.svg" alt="Menuvem PB">
+    </a>
+
     
     <div class="entrada-container">
         <a href="index.html" class="entrada-logo reveal">
-            <img src="img/menuvempb-LOGO.svg" alt="Menuvem PB" style="height: 48px;">
+            <span class="logo-text">Menuvem<span class="logo-dot">.</span>PB</span>
         </a>
 
         <h1 class="entrada-title reveal delay-100">Como podemos ajudar você hoje?</h1>
@@ -288,7 +323,7 @@
                 </div>
                 <h2 class="option-title">Quero conhecer</h2>
                 <p class="option-desc">Descubra como o Menuvem.PB pode transformar a gestão do seu restaurante.</p>
-                <div class="option-btn">Ver Planos Recomendados</div>
+                <div class="option-btn">Explorar Soluções</div>
             </a>
 
         </div>
