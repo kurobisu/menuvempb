@@ -1,0 +1,13 @@
+# Arquivos de script locais
+*.py
+
+# Dependências do Node (usados para testes automatizados)
+node_modules/
+package.json
+package-lock.json
+
+# Arquivos de sistema e cache
+.DS_Store
+Thumbs.db
+*.log
+.gemini/
