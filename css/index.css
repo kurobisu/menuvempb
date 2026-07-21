@@ -1,0 +1,262 @@
+﻿body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        
+            .top-left-logo {
+                top: 1rem;
+                left: 1rem;
+            }
+            .top-left-logo img {
+                height: 32px;
+            }
+
+            .entrada-container {
+            width: 100%;
+            max-width: 900px;
+            padding: 2rem;
+            text-align: center;
+            z-index: 10;
+        }
+
+        .entrada-logo {
+            display: inline-block;
+            margin-bottom: 3rem;
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+        
+        .entrada-logo:hover {
+            transform: scale(1.05);
+        }
+
+        .entrada-logo .logo-text {
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            color: var(--text-primary);
+        }
+
+        .entrada-logo .logo-dot {
+            color: var(--primary);
+        }
+
+        .entrada-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            color: var(--text-primary);
+        }
+
+        .options-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .option-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 24px;
+            padding: 3rem 2rem;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .option-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
+            transition: all 0.6s ease;
+        }
+
+        .option-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+
+        .option-card:hover::before {
+            left: 100%;
+        }
+
+        .option-card.card-primary:hover {
+            border-color: var(--primary);
+            box-shadow: 0 20px 40px rgba(139, 92, 246, 0.2);
+        }
+        
+        .option-card.card-secondary:hover {
+            border-color: #3b82f6;
+            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.2);
+        }
+
+        .option-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-primary);
+            transition: all 0.3s ease;
+        }
+
+        .card-primary .option-icon {
+            background: rgba(139, 92, 246, 0.1);
+            color: var(--primary);
+        }
+
+        .card-secondary .option-icon {
+            background: rgba(59, 130, 246, 0.1);
+            color: #3b82f6;
+        }
+
+        .option-card:hover .option-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .option-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin: 0;
+        }
+
+        .option-desc {
+            font-size: 1rem;
+            color: var(--text-muted);
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        .option-btn {
+            margin-top: auto;
+            padding: 0.8rem 2rem;
+            border-radius: 2rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .card-primary .option-btn {
+            background: linear-gradient(135deg, var(--primary), #a224f8);
+            color: white;
+            border: none;
+        }
+        
+        .card-secondary .option-btn {
+            background: rgba(255,255,255,0.05);
+            color: white;
+            border: 1px solid var(--border-color);
+        }
+
+        .option-card:hover .option-btn {
+            transform: scale(1.05);
+        }
+
+        /* Particles effect background */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+            background: radial-gradient(circle at 50% 50%, rgba(139, 92, 246, 0.05) 0%, transparent 50%);
+        }
+
+        
+        @media (max-width: 768px) {
+            .options-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            
+            .top-left-logo {
+                top: 1rem;
+                left: 1rem;
+            }
+            .top-left-logo img {
+                height: 32px;
+            }
+
+            .entrada-container {
+                padding: 1.5rem 1rem;
+            }
+            
+            .entrada-logo {
+                margin-bottom: 1.5rem;
+            }
+            
+            .entrada-logo img {
+                height: 36px !important;
+            }
+            
+            .entrada-title {
+                font-size: 1.4rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            .option-card {
+                padding: 1.2rem 1rem;
+                gap: 0.8rem;
+            }
+            
+            .option-icon {
+                width: 50px;
+                height: 50px;
+            }
+            
+            .option-icon svg {
+                width: 24px;
+                height: 24px;
+            }
+            
+            .option-title {
+                font-size: 1.2rem;
+            }
+            
+            .option-desc {
+                font-size: 0.9rem;
+                display: none; /* Oculta a descrição no mobile para economizar muito espaço vertical */
+            }
+            
+            .option-btn {
+                padding: 0.6rem 1.5rem;
+                width: 100%;
+                font-size: 0.95rem;
+            }
+        }
+    
+        .top-left-logo {
+            position: absolute;
+            top: 2rem;
+            left: 2rem;
+            z-index: 100;
+        }
+        
+        .top-left-logo img {
+            height: 45px;
+        }
+
