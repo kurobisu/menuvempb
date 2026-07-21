@@ -25,3 +25,33 @@
             display: inline-block !important;
         }
 
+
+/* Painel Video Responsive */
+.desktop-video {
+    display: block;
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    background: #0c0c16;
+}
+
+@media (max-width: 768px) {
+    .desktop-video {
+        display: none;
+    }
+}
+
+/* Painel Video Responsive - Mobile */
+.mobile-video {
+    display: none;
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    background: #0c0c16;
+}
+
+@media (max-width: 768px) {
+    .mobile-video {
+        display: block;
+    }
+}
