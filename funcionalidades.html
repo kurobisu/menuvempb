@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 
 <head>
@@ -58,7 +58,8 @@
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="transition: transform 0.2s;"><path d="M6 9l6 6 6-6"></path></svg>
                 </div>
                 <ul class="subcategory-list">
-                    <li class="subcategory-item active" data-target="delivery-proprio">Delivery Próprio Taxa R$ 0</li>
+                    <li class="subcategory-item active" data-target="delivery-proprio">Painel de Delivery</li>
+                    <li class="subcategory-item" data-target="gestao-de-cardapio">Gestão de Cardápio</li>
                     <li class="subcategory-item" data-target="fidelidade">Fidelidade & Cupons</li>
                     <li class="subcategory-item" data-target="integracao-ifood">Integração iFood & Aiqfome</li>
                     <li class="subcategory-item" data-target="pagamento-online">Pagamento Online Integrado</li>
@@ -111,13 +112,26 @@
             <!-- Content 1 -->
             <div class="func-detail active" id="delivery-proprio">
                 <span class="badge" style="background:rgba(217,70,239,0.1); border-color:rgba(217,70,239,0.2); color:#f472b6;">Cardápio & Delivery</span>
-                <h1>Delivery Próprio Taxa R$ 0</h1>
+                <h1>Painel de Delivery</h1>
                 <p>Tenha o seu próprio cardápio digital profissional, totalmente livre de taxas e comissões abusivas por pedido. Você vende mais e o lucro fica 100% no seu caixa.</p>
                 <ul class="func-feature-list">
                     <li>Link exclusivo com o nome do seu negócio (ex: seunome.pedir.online).</li>
                     <li>Cardápio intuitivo otimizado para aumentar a conversão no celular.</li>
                     <li>Atualização de preços, pausas de itens e promoções em tempo real.</li>
                     <li>Notificações automáticas no WhatsApp do cliente sobre o status do pedido.</li>
+                </ul>
+            </div>
+
+            <!-- Content 2: Gestão de Cardápio -->
+            <div class="func-detail" id="gestao-de-cardapio">
+                <span class="badge" style="background:rgba(217,70,239,0.1); border-color:rgba(217,70,239,0.2); color:#f472b6;">Cardápio & Delivery</span>
+                <h1>Gestão de Cardápio</h1>
+                <p>Gerencie seu cardápio com agilidade, controle em tempo real e integração inteligente de produtos, combos e estoque.</p>
+                <ul class="func-feature-list">
+                    <li><strong>Ativação e Desativação Instantânea:</strong> Ligue ou desligue produtos do cardápio a qualquer momento com resposta imediata para os clientes no site.</li>
+                    <li><strong>Criação Flexível de Produtos e Combos:</strong> Crie itens personalizados reutilizando sabores, adicionais e complementos cadastrados sem precisar recriar tudo do zero.</li>
+                    <li><strong>Estoque Interligado em Múltiplos Produtos:</strong> Vincule insumos e bebidas (como Coca-Cola Lata 350ml) ao estoque único. A venda de um combo baixa automaticamente a bebida individual do estoque central.</li>
+                    <li><strong>Sincronização e Pausa Automática:</strong> Se um produto for pausado manualmente ou o estoque zerar, ele é desativado instantaneamente de todas as promoções, ofertas e combos onde estiver presente.</li>
                 </ul>
             </div>
 
@@ -254,7 +268,9 @@
 
             // Check URL hash on load
             if(window.location.hash) {
-                const targetId = window.location.hash.substring(1); // remove '#'
+                let targetId = window.location.hash.substring(1); // remove '#'
+                if (targetId === 'delivery-proprio-taxa-r-0') targetId = 'delivery-proprio';
+                if (targetId === 'qr-code-na-mesa-balcao') targetId = 'cardapio-qr';
                 const targetItem = document.querySelector(`.subcategory-item[data-target="${targetId}"]`);
                 if(targetItem) {
                     targetItem.click();
