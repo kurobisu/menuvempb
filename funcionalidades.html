@@ -61,6 +61,7 @@
                     <li class="subcategory-item active" data-target="delivery-proprio">Painel de Delivery</li>
                     <li class="subcategory-item" data-target="gestao-de-cardapio">Gestão de Cardápio</li>
                     <li class="subcategory-item" data-target="fidelidade">Fidelidade & Cupons</li>
+                    <li class="subcategory-item" data-target="automacao-whatsapp">Automação no WhatsApp</li>
                     <li class="subcategory-item" data-target="integracao-ifood">Integração iFood & Aiqfome</li>
                     <li class="subcategory-item" data-target="pagamento-online">Pagamento Online Integrado</li>
                 </ul>
@@ -138,11 +139,24 @@
             <div class="func-detail" id="fidelidade">
                 <span class="badge" style="background:rgba(217,70,239,0.1); border-color:rgba(217,70,239,0.2); color:#f472b6;">Cardápio & Delivery</span>
                 <h1>Fidelidade & Cupons</h1>
-                <p>Mantenha seus clientes comprando sempre de você com nosso sistema automático de fidelização.</p>
+                <p>Engaje seus clientes e aumente a frequência de pedidos com nosso programa de pontos flexível e cupons promocionais altamente configuráveis.</p>
                 <ul class="func-feature-list">
-                    <li>Cashback automático (ex: 5% de volta na próxima compra).</li>
-                    <li>Criação de cupons promocionais (Desconto fixo, % ou Frete Grátis).</li>
-                    <li>Avisos via WhatsApp para recuperar clientes inativos há mais de 30 dias.</li>
+                    <li><strong>Programa de Pontos & Recompensas:</strong> O cliente ganha 1 ponto a cada R$ 1,00 gasto. O lojista transforma produtos existentes do cardápio em recompensas, podendo definir manualmente os pontos necessários ou usar o cálculo automático de 5% de retorno (ex: R$ 15,00 = 300 pontos).</li>
+                    <li><strong>Cupons com Desconto Fixo ou Percentual:</strong> Configure cupons em valor fixo (R$) ou porcentagem (%), com total controle sobre o nome do cupom exibido no site.</li>
+                    <li><strong>Regras de Uso e Limites Personalizáveis:</strong> Defina limites globais de utilização, limite individual por cliente (ou se pode ser reutilizado pelo mesmo cliente), além de restrições por dias da semana e faixas de horário específicas.</li>
+                    <li><strong>Integração com Comandas e Cardápio:</strong> Escolha se o cupom é válido para produtos específicos ou para todo o cardápio, e ative a impressão automática das informações do desconto nas comandas de produção.</li>
+                </ul>
+            </div>
+
+            <!-- Content: Automação no WhatsApp -->
+            <div class="func-detail" id="automacao-whatsapp">
+                <span class="badge" style="background:rgba(217,70,239,0.1); border-color:rgba(217,70,239,0.2); color:#f472b6;">Cardápio & Delivery</span>
+                <h1>Automação no WhatsApp</h1>
+                <p>A Menuvem disponibiliza diferentes métodos de automação para que o lojista escolha a opção mais alinhada à sua operação e orçamento.</p>
+                <ul class="func-feature-list">
+                    <li><strong>API Oficial da META (Recomendado):</strong> Somos parceiros oficiais da META. Oferece a melhor experiência, máxima estabilidade, segurança e zero risco de bloqueios. <em>(Sujeito às taxas de conversa da própria META).</em></li>
+                    <li><strong>Integração Z-API (Terceiros):</strong> Conexão via Z-API com investimento aproximado de R$ 100,00/mês. <em>(Nota: A Menuvem disponibiliza a integração técnica, mas não se responsabiliza por plataformas de terceiros).</em></li>
+                    <li><strong>Chatplug (Desenvolvido por NUC Tecnologia / Menuvem):</strong> Aplicação gratuita desenvolvida pela nossa equipe para automação de Chatbot no WhatsApp. Sem mensalidade, mas requer que a máquina/computador do cliente esteja ligada e conectada à internet. Por não ser API Oficial, está sujeita a instabilidades operacionais e pode solicitar reconexão via QR Code.</li>
                 </ul>
             </div>
             
@@ -271,6 +285,8 @@
                 let targetId = window.location.hash.substring(1); // remove '#'
                 if (targetId === 'delivery-proprio-taxa-r-0') targetId = 'delivery-proprio';
                 if (targetId === 'qr-code-na-mesa-balcao') targetId = 'cardapio-qr';
+                if (targetId === 'fidelidade-cupons') targetId = 'fidelidade';
+                if (targetId === 'automacao-no-whatsapp') targetId = 'automacao-whatsapp';
                 const targetItem = document.querySelector(`.subcategory-item[data-target="${targetId}"]`);
                 if(targetItem) {
                     targetItem.click();
