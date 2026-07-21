@@ -1,0 +1,7 @@
+{
+  "github.copilot.chat.commitMessageGeneration.instructions": [
+    {
+      "text": "Sempre escreva a mensagem de commit em Português do Brasil (pt-BR)."
+    }
+  ]
+}
