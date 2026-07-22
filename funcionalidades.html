@@ -51,6 +51,17 @@
                 <button id="closeSidebar" style="background:none; border:none; color:white; font-size:1.5rem; display:none; cursor:pointer;">&times;</button>
             </div>
 
+            <!-- Search Bar -->
+            <div class="search-container" style="margin-bottom: 1.5rem;">
+                <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                <input type="text" id="funcSearchInput" class="search-input" placeholder="Pesquisar módulo...">
+                <svg class="clear-icon" id="clearSearchBtn" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </div>
+            <div id="noResults" class="no-results" style="display:none; font-size: 0.9rem; margin-bottom: 1rem; color: var(--text-muted);">Nenhuma funcionalidade encontrada.</div>
+
             <!-- Category 1 -->
             <div class="category-group open">
                 <div class="category-title">
@@ -279,6 +290,71 @@
                 sidebar.classList.remove('open');
                 overlay.classList.remove('active');
             });
+
+            // Search Functionality
+            const searchInput = document.getElementById('funcSearchInput');
+            const clearSearchBtn = document.getElementById('clearSearchBtn');
+            const noResults = document.getElementById('noResults');
+            
+            function filterFuncs() {
+                const term = searchInput.value.toLowerCase().trim();
+                let hasVisibleItems = false;
+                
+                if (term.length > 0) {
+                    clearSearchBtn.style.display = 'block';
+                } else {
+                    clearSearchBtn.style.display = 'none';
+                }
+
+                categories.forEach(cat => {
+                    const group = cat.closest('.category-group');
+                    const itemsInGroup = group.querySelectorAll('.subcategory-item');
+                    let groupHasVisibleItems = false;
+
+                    itemsInGroup.forEach(item => {
+                        const targetId = item.getAttribute('data-target');
+                        const detailElement = document.getElementById(targetId);
+                        
+                        let matchText = item.textContent.toLowerCase();
+                        if (detailElement) {
+                            matchText += ' ' + detailElement.textContent.toLowerCase();
+                        }
+                        
+                        if (matchText.includes(term)) {
+                            item.style.display = 'block';
+                            groupHasVisibleItems = true;
+                            hasVisibleItems = true;
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+
+                    if (groupHasVisibleItems) {
+                        group.style.display = 'block';
+                        if (term.length > 0) {
+                            group.classList.add('open');
+                        }
+                    } else {
+                        group.style.display = 'none';
+                    }
+                });
+                
+                if (!hasVisibleItems && term.length > 0) {
+                    noResults.style.display = 'block';
+                } else {
+                    noResults.style.display = 'none';
+                }
+            }
+            
+            if(searchInput) {
+                searchInput.addEventListener('input', filterFuncs);
+                
+                clearSearchBtn.addEventListener('click', () => {
+                    searchInput.value = '';
+                    filterFuncs();
+                    searchInput.focus();
+                });
+            }
 
             // Check URL hash on load
             if(window.location.hash) {
