@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Press+Start+2P&family=Silkscreen:wght@400;700&display=swap');
 
 /* --- Reset & Base --- */
 *, *::before, *::after {
@@ -1933,3 +1933,144 @@ a {
 .btn-explore-plans:hover::before {
     left: 100%;
 }
+
+/* ===================================================
+   TCG PLAN CARDS (PIXEL ART)
+   =================================================== */
+
+.tcg-card {
+    position: relative;
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+    aspect-ratio: 2 / 3;
+    transition: transform 0.3s ease;
+    filter: drop-shadow(0 15px 30px rgba(0,0,0,0.5));
+    container-type: inline-size;
+}
+
+.tcg-card:hover {
+    transform: translateY(-10px) scale(1.02);
+}
+
+.tcg-background {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    image-rendering: pixelated;
+    pointer-events: none;
+}
+
+/* Área do Pergaminho / Texto */
+.tcg-content {
+    position: absolute;
+    /* Adjust these values to perfectly fit the parchment area of card-plano-1.png */
+    top: 55%;
+    bottom: 8%;
+    left: 12%;
+    right: 12%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    z-index: 2;
+    padding: 0.5rem;
+    gap: 3cqi; /* Fluid spacing */
+}
+
+.tcg-price-box {
+    margin-bottom: 0;
+}
+
+.tcg-currency {
+    font-family: 'Press Start 2P', cursive;
+    font-size: clamp(0.7rem, 4cqi, 1rem);
+    color: #1a0f07;
+}
+
+.tcg-price {
+    font-family: 'Press Start 2P', cursive;
+    font-size: clamp(1.5rem, 10cqi, 2.2rem);
+    color: #b91c1c; /* Dark red for emphasis */
+    text-shadow: 2px 2px 0px rgba(255, 255, 255, 0.4);
+    margin-left: 0.2rem;
+}
+
+.tcg-month {
+    font-family: 'Silkscreen', cursive;
+    font-size: clamp(0.6rem, 3.5cqi, 0.9rem);
+    color: #4a331c;
+    margin-left: 0.3rem;
+}
+
+/* Retro Button Animations & Effects */
+@keyframes retro-pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.03); box-shadow: inset -3px -3px 0px rgba(0,0,0,0.2), 3px 3px 0px #1a0f07, 0 0 15px rgba(250, 204, 21, 0.6); }
+    100% { transform: scale(1); }
+}
+
+.retro-btn {
+    font-family: 'Press Start 2P', cursive;
+    font-size: clamp(0.6rem, 3.5cqi, 0.8rem);
+    background-color: #facc15;
+    color: #1a0f07;
+    border: 3px solid #1a0f07;
+    border-radius: 4px;
+    padding: clamp(0.5rem, 3cqi, 1rem) clamp(0.5rem, 4cqi, 1.2rem);
+    cursor: pointer;
+    box-shadow: inset -3px -3px 0px rgba(0,0,0,0.2), 
+                3px 3px 0px #1a0f07;
+    text-transform: uppercase;
+    transition: all 0.1s;
+    width: 95%;
+    animation: retro-pulse 2s infinite ease-in-out;
+}
+
+.retro-btn:hover {
+    background-color: #fde047;
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: inset -3px -3px 0px rgba(0,0,0,0.1), 
+                5px 5px 0px #1a0f07;
+    animation: none; /* Stop pulsing on hover */
+}
+
+.retro-btn:active {
+    transform: translate(3px, 3px) scale(1);
+    box-shadow: inset -1px -1px 0px rgba(0,0,0,0.2), 
+                0px 0px 0px #1a0f07;
+}
+
+/* Specific Plan Colors */
+.retro-btn.prata { background-color: #94a3b8; }
+.retro-btn.ouro { background-color: #38bdf8; }
+
+.tcg-info-btn {
+    font-family: 'Silkscreen', cursive;
+    font-size: clamp(0.6rem, 3.5cqi, 0.9rem);
+    color: #fff;
+    background-color: #3b2818;
+    text-decoration: none;
+    padding: clamp(0.3rem, 2cqi, 0.6rem) clamp(0.5rem, 4cqi, 1rem);
+    border-radius: 4px;
+    font-weight: bold;
+    border: 2px solid #1a0f07;
+    transition: all 0.2s;
+    text-transform: uppercase;
+    box-shadow: 2px 2px 0px #1a0f07;
+}
+
+.tcg-info-btn:hover {
+    background-color: #5a3c24;
+    transform: translate(-1px, -1px);
+    box-shadow: 3px 3px 0px #1a0f07;
+}
+
+.tcg-info-btn:active {
+    transform: translate(2px, 2px);
+    box-shadow: 0px 0px 0px #1a0f07;
+}
+

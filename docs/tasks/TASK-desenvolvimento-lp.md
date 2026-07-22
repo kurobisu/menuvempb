@@ -1,4 +1,4 @@
-# TASK-desenvolvimento-lp: Desenvolvimento da Landing Page Regional (menuvempb.com)
+﻿# TASK-desenvolvimento-lp: Desenvolvimento da Landing Page Regional (menuvempb.com)
 
 ## Objetivos e Checklist
 - [x] Criação do Design System em `css/style.css` (Cores, Fontes, Grid, Efeitos Globais)
@@ -28,3 +28,4 @@
   * *Footer*: Razão social e domínio regional atualizados para `NUC Tecnologia - MenuvemPB` e `menuvempb.com.br`.
 - **2026-07-16 (Ajustes de Acessibilidade - Commit 71bbaa1):** Tooltip explicativo `(i)` na timeline de cadastro de etapas integrado com flexbox e `tabindex` para teclado.
 - **2026-07-17 (Mapeamento de Funcionalidades - Commit 4ec30e8):** Inserção de abas interativas no CSS, JS e HTML para navegação fluida de recursos e transbordo móvel otimizado com arraste horizontal suave.
+- **2026-07-21 (Expansão Funcionalidades):** Detalhamento de múltiplos módulos (Automação Whatsapp, Avantepay/Matera, Marketplaces/Open Delivery, etc) na página de funcionalidades. Implementação de tooltips interativos (ícone i) e barra de pesquisa lateral com filtragem em tempo real.
