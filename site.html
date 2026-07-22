@@ -126,8 +126,8 @@
             <!-- Dashboard Mockup Frame (Framer Style) -->
             <div class="hero-visual-wrapper reveal delay-400">
                 <div class="hero-mockup">
-                    <video class="desktop-video" src="media/menuvempb-video-pedidos-delivery-02-desktop.mp4" autoplay loop muted
-                        playsinline disablePictureInPicture preload="metadata"></video>
+                    <video class="desktop-video" src="media/menuvempb-video-pedidos-delivery-02-desktop.mp4" autoplay
+                        loop muted playsinline disablePictureInPicture preload="metadata"></video>
                     <video class="mobile-video" src="media/menuvempb-videofront-painel-mobile.mp4" autoplay loop muted
                         playsinline disablePictureInPicture preload="metadata"></video>
                 </div>
@@ -186,7 +186,7 @@
                         <img src="img/card-plano-1.png" class="tcg-background" alt="Carta Plano 1">
                         <div class="tcg-badge"
                             style="position:absolute; top:-15px; left:50%; transform:translateX(-50%); background:linear-gradient(90deg, #9333ea, #eab308); color:white; font-family:'Press Start 2P', cursive; font-size:0.55rem; padding:0.5rem 1rem; border-radius:20px; z-index:3; box-shadow:0 4px 10px rgba(0,0,0,0.5);">
-                            RECOMENDADO</div>
+                            INICIANTE</div>
                         <div class="tcg-content">
                             <div class="tcg-price-box">
                                 <span class="tcg-currency">R$</span>
@@ -207,7 +207,7 @@
                                 <span class="tcg-price" id="price-prata">227</span><span class="tcg-month">/mês</span>
                             </div>
                             <a href="https://wa.me/5583988559423?text=Ol%C3%A1!%20Gostaria%20de%20ativar%20meu%20b%C3%B4nus%20de%2030%20dias%20gr%C3%A1tis%20no%20Plano%202%20da%20Menuvem."
-                                target="_blank" class="retro-btn prata" style="text-decoration:none;">ATIVAR 30 DIAS</a>
+                                target="_blank" class="retro-btn" style="text-decoration:none;">ATIVAR 30 DIAS</a>
                             <a href="planos.html?plano=2" class="tcg-info-btn">+ INFO DETALHADA</a>
                         </div>
                     </div>
@@ -221,7 +221,7 @@
                                 <span class="tcg-price" id="price-ouro">267</span><span class="tcg-month">/mês</span>
                             </div>
                             <a href="https://wa.me/5583988559423?text=Ol%C3%A1!%20Gostaria%20de%20ativar%20meu%20b%C3%B4nus%20de%2030%20dias%20gr%C3%A1tis%20no%20Plano%203%20da%20Menuvem."
-                                target="_blank" class="retro-btn ouro" style="text-decoration:none;">ATIVAR 30 DIAS</a>
+                                target="_blank" class="retro-btn" style="text-decoration:none;">ATIVAR 30 DIAS</a>
                             <a href="planos.html?plano=3" class="tcg-info-btn">+ INFO DETALHADA</a>
                         </div>
                     </div>
@@ -1413,6 +1413,13 @@
 
             el.textContent = "";
             setTimeout(type, 300);
+            
+            // Toggle expanded class on menuvem-card-content p
+            document.querySelectorAll(".menuvem-card-content p").forEach(function(p) {
+                p.addEventListener("click", function() {
+                    this.classList.toggle("expanded");
+                });
+            });
         });
     </script>
 </body>

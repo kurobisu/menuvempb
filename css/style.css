@@ -1525,6 +1525,23 @@ a {
     font-size: 0.95rem;
     line-height: 1.6;
     text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    cursor: pointer;
+    transition: background-color 0.2s, padding 0.2s;
+    border-radius: 8px;
+    padding: 0.2rem 0; /* slight padding for hover effect */
+}
+
+.menuvem-card-content p:hover {
+    background-color: rgba(0,0,0,0.4);
+    padding: 0.2rem 0.5rem;
+}
+
+.menuvem-card-content p.expanded {
+    -webkit-line-clamp: unset;
 }
 
 @media (min-width: 768px) {
