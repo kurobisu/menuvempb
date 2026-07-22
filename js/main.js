@@ -162,32 +162,43 @@ function initPlansCalculator() {
             grid.style.alignItems = 'center';
         }
 
+        const allCards = [cardSecreto, cardBronze, cardPrata, cardOuro];
+
         if (faturamento === 1000) {
-            setFeaturedPlan(cardSecreto, 'Plano Secreto 🕵️‍♂️', [cardBronze, cardPrata, cardOuro]);
+            updateCoverflow(0, allCards);
         } else if (faturamento > 1000 && faturamento <= 20000) {
-            setFeaturedPlan(cardBronze, 'Plano 1', [cardSecreto, cardPrata, cardOuro]);
+            updateCoverflow(1, allCards);
         } else if (faturamento > 20000 && faturamento <= 35000) {
-            setFeaturedPlan(cardPrata, 'Plano 2', [cardSecreto, cardBronze, cardOuro]);
+            updateCoverflow(2, allCards);
         } else {
-            setFeaturedPlan(cardOuro, 'Plano 3', [cardSecreto, cardBronze, cardPrata]);
+            updateCoverflow(3, allCards);
         }
     }
     
-    function setFeaturedPlan(featuredCard, badgeText, secondaryCards) {
-        if (!featuredCard) return;
-        
-        featuredCard.style.display = 'flex';
-        featuredCard.style.width = '100%';
-        featuredCard.style.maxWidth = '400px';
-        featuredCard.classList.remove('plan-card-hidden');
-        featuredCard.classList.add('plan-card-featured');
-        featuredCard.setAttribute('data-badge', badgeText);
-        
-        secondaryCards.forEach(card => {
+    function updateCoverflow(activeIndex, cardsArray) {
+        cardsArray.forEach((card, idx) => {
             if (!card) return;
-            card.style.display = 'none';
-            card.classList.remove('plan-card-featured');
-            card.removeAttribute('data-badge');
+            
+            // Limpa estilos inline herdados do design antigo
+            card.style.display = '';
+            card.style.width = '';
+            card.style.maxWidth = '';
+            
+            // Remove as classes de estado antigas e novas
+            card.classList.remove('active', 'prev', 'next', 'far-prev', 'far-next', 'plan-card-featured', 'plan-card-hidden');
+            
+            // Adiciona as classes do Coverflow
+            if (idx === activeIndex) {
+                card.classList.add('active');
+            } else if (idx === activeIndex - 1) {
+                card.classList.add('prev');
+            } else if (idx === activeIndex + 1) {
+                card.classList.add('next');
+            } else if (idx < activeIndex - 1) {
+                card.classList.add('far-prev');
+            } else if (idx > activeIndex + 1) {
+                card.classList.add('far-next');
+            }
         });
     }
 
