@@ -2174,3 +2174,11 @@ a {
 .carousel-card.active .tcg-badge {
     opacity: 1;
 }
+
+/* Reduce massive gap between Pricing Carousel and Functionalities */
+#planos {
+    padding-bottom: 1rem !important;
+}
+#funcionalidades {
+    padding-top: 1rem !important;
+}
