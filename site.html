@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 
 <head>
@@ -279,11 +279,10 @@
             </div>
 
             <!-- Main Category Tabs -->
-            <div class="menuvem-tabs reveal delay-100" role="tablist">
+            <div class="menuvem-tabs reveal delay-100" role="tablist" style="display: flex; gap: 1rem; align-items: center; justify-content: center; flex-wrap: wrap;">
                 <button class="menuvem-tab-btn active" data-target="delivery">Cardápio & Delivery</button>
                 <button class="menuvem-tab-btn" data-target="pdv">Frente de Caixa (PDV)</button>
-                <button class="menuvem-tab-btn" data-target="estoque">Controle de Estoque</button>
-                <button class="menuvem-tab-btn" data-target="financeiro">Financeiro & Fiscal</button>
+                <a href="funcionalidades.html" class="menuvem-tab-btn glow-btn" style="text-decoration: none; padding-left: 2rem; padding-right: 2rem;">+ Funcionalidades</a>
             </div>
 
             <div class="menuvem-content reveal delay-200">
@@ -308,7 +307,7 @@
                                     </div>
                                     <div class="menuvem-card-overlay"></div>
                                     <div class="menuvem-card-content">
-                                        <h3><a href="funcionalidades.html#delivery-proprio-taxa-r-0"
+                                        <h3><a href="funcionalidades.html#delivery-proprio"
                                                 style="color: #fff; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem;"
                                                 title="Ver detalhes sobre Painel de Delivery">Painel de Delivery <svg
                                                     width="18" height="18" viewBox="0 0 24 24" fill="none"
@@ -371,13 +370,14 @@
                                     </div>
                                 </div>
                                 <div class="menuvem-card">
-                                    <div class="menuvem-card-bg"
-                                        data-bg-url="https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=800&q=80"
-                                        style="display: none;">
+                                    <div class="menuvem-card-bg">
+                                        <video src="media/menuvempb-video-whatsapp-api.mp4" autoplay loop muted
+                                            playsinline disablePictureInPicture
+                                            style="width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0;"></video>
                                     </div>
                                     <div class="menuvem-card-overlay"></div>
                                     <div class="menuvem-card-content">
-                                        <h3><a href="funcionalidades.html#automacao-no-whatsapp"
+                                        <h3><a href="funcionalidades.html#automacao-whatsapp"
                                                 style="color: #fff; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem;"
                                                 title="Ver detalhes sobre Automação no WhatsApp">Automação no WhatsApp
                                                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
@@ -407,19 +407,20 @@
                         <div class="menuvem-sidebar">
                             <button class="menuvem-sub-btn active" data-index="0">PDV e Vendas Rápidas</button>
                             <button class="menuvem-sub-btn" data-index="1">Mapa de Mesas & Comandas</button>
-                            <button class="menuvem-sub-btn" data-index="2">Tela KDS para Cozinha</button>
+                            <button class="menuvem-sub-btn" data-index="2">Gestão de Setores de Produção</button>
                             <button class="menuvem-sub-btn" data-index="3">Direcionamento de Impressão</button>
                         </div>
                         <div class="menuvem-carousel">
                             <div class="menuvem-carousel-track">
                                 <div class="menuvem-card active">
-                                    <div class="menuvem-card-bg"
-                                        data-bg-url="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=800&q=80"
-                                        style="display: none;">
+                                    <div class="menuvem-card-bg">
+                                        <video src="media/menuvempb-video-lancamentoPDV.mp4" autoplay loop muted
+                                            playsinline disablePictureInPicture
+                                            style="width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0;"></video>
                                     </div>
                                     <div class="menuvem-card-overlay"></div>
                                     <div class="menuvem-card-content">
-                                        <h3><a href="funcionalidades.html#pdv-e-vendas-rapidas"
+                                        <h3><a href="funcionalidades.html#pdv-agil"
                                                 style="color: #fff; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem;"
                                                 title="Ver detalhes sobre PDV e Vendas Rápidas">PDV e Vendas Rápidas
                                                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
@@ -435,13 +436,14 @@
                                     </div>
                                 </div>
                                 <div class="menuvem-card">
-                                    <div class="menuvem-card-bg"
-                                        data-bg-url="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80"
-                                        style="display: none;">
+                                    <div class="menuvem-card-bg">
+                                        <video src="media/menuvempb-video-pagamento-mesa.mp4" autoplay loop muted
+                                            playsinline disablePictureInPicture
+                                            style="width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0;"></video>
                                     </div>
                                     <div class="menuvem-card-overlay"></div>
                                     <div class="menuvem-card-content">
-                                        <h3><a href="funcionalidades.html#mapa-de-mesas-comandas"
+                                        <h3><a href="funcionalidades.html#mesas"
                                                 style="color: #fff; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem;"
                                                 title="Ver detalhes sobre Mapa de Mesas & Comandas">Mapa de Mesas &
                                                 Comandas <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
@@ -457,15 +459,16 @@
                                     </div>
                                 </div>
                                 <div class="menuvem-card">
-                                    <div class="menuvem-card-bg"
-                                        data-bg-url="https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&fit=crop&w=800&q=80"
-                                        style="display: none;">
+                                    <div class="menuvem-card-bg">
+                                        <video src="media/menuvempb-video-setores.mp4" autoplay loop muted
+                                            playsinline disablePictureInPicture
+                                            style="width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0;"></video>
                                     </div>
                                     <div class="menuvem-card-overlay"></div>
                                     <div class="menuvem-card-content">
-                                        <h3><a href="funcionalidades.html#tela-kds-para-cozinha"
+                                        <h3><a href="funcionalidades.html#kds"
                                                 style="color: #fff; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem;"
-                                                title="Ver detalhes sobre Tela KDS para Cozinha">Tela KDS para Cozinha
+                                                title="Ver detalhes sobre Gestão de Setores de Produção">Gestão de Setores de Produção
                                                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
                                                     stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                                     stroke-linejoin="round">
@@ -474,18 +477,19 @@
                                                     <polyline points="15 3 21 3 21 9"></polyline>
                                                     <line x1="10" y1="14" x2="21" y2="3"></line>
                                                 </svg></a></h3>
-                                        <p>Substitua papéis por telas intuitivas na cozinha, organizando pedidos em
-                                            ordem cronológica de preparo.</p>
+                                        <p>Acompanhe em qual setor e etapa cada pedido se encontra (preparando, pronto para entrega)
+                                            direto no painel principal.</p>
                                     </div>
                                 </div>
                                 <div class="menuvem-card">
-                                    <div class="menuvem-card-bg"
-                                        data-bg-url="https://images.unsplash.com/photo-1556740758-90de374c12ad?auto=format&fit=crop&w=800&q=80"
-                                        style="display: none;">
+                                    <div class="menuvem-card-bg">
+                                        <video src="media/menuvempb-video-pedido-delivery.mp4" autoplay loop muted
+                                            playsinline disablePictureInPicture
+                                            style="width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0;"></video>
                                     </div>
                                     <div class="menuvem-card-overlay"></div>
                                     <div class="menuvem-card-content">
-                                        <h3><a href="funcionalidades.html#direcionamento-de-impressao"
+                                        <h3><a href="funcionalidades.html#kds"
                                                 style="color: #fff; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem;"
                                                 title="Ver detalhes sobre Direcionamento de Impressão">Direcionamento de
                                                 Impressão <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
@@ -498,222 +502,6 @@
                                                 </svg></a></h3>
                                         <p>Envie pedidos de bebidas para o bar e de pratos para a cozinha
                                             automaticamente em impressoras separadas.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="menuvem-carousel-controls">
-                                <button class="menuvem-arrow prev" aria-label="Anterior">&lt;</button>
-                                <button class="menuvem-arrow next" aria-label="Próximo">&gt;</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Estoque Pane -->
-                <div class="menuvem-pane" id="pane-estoque">
-                    <div class="menuvem-layout">
-                        <div class="menuvem-sidebar">
-                            <button class="menuvem-sub-btn active" data-index="0">Baixa Automática de Insumos</button>
-                            <button class="menuvem-sub-btn" data-index="1">Ficha Técnica por Produto</button>
-                            <button class="menuvem-sub-btn" data-index="2">Alertas de Estoque Mínimo</button>
-                            <button class="menuvem-sub-btn" data-index="3">Entrada Automatizada (XML)</button>
-                        </div>
-                        <div class="menuvem-carousel">
-                            <div class="menuvem-carousel-track">
-                                <div class="menuvem-card active">
-                                    <div class="menuvem-card-bg"
-                                        data-bg-url="https://images.unsplash.com/photo-1586528116311-ad8ed7c663c0?auto=format&fit=crop&w=800&q=80"
-                                        style="display: none;">
-                                    </div>
-                                    <div class="menuvem-card-overlay"></div>
-                                    <div class="menuvem-card-content">
-                                        <h3><a href="funcionalidades.html#baixa-automatica-de-insumos"
-                                                style="color: #fff; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem;"
-                                                title="Ver detalhes sobre Baixa Automática de Insumos">Baixa Automática
-                                                de Insumos <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
-                                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                                    stroke-linejoin="round">
-                                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6">
-                                                    </path>
-                                                    <polyline points="15 3 21 3 21 9"></polyline>
-                                                    <line x1="10" y1="14" x2="21" y2="3"></line>
-                                                </svg></a></h3>
-                                        <p>O estoque é atualizado automaticamente a cada venda efetuada no PDV ou no
-                                            cardápio de delivery.</p>
-                                    </div>
-                                </div>
-                                <div class="menuvem-card">
-                                    <div class="menuvem-card-bg"
-                                        data-bg-url="https://images.unsplash.com/photo-1507914464562-6ff4ac29692f?auto=format&fit=crop&w=800&q=80"
-                                        style="display: none;">
-                                    </div>
-                                    <div class="menuvem-card-overlay"></div>
-                                    <div class="menuvem-card-content">
-                                        <h3><a href="funcionalidades.html#ficha-tecnica-por-produto"
-                                                style="color: #fff; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem;"
-                                                title="Ver detalhes sobre Ficha Técnica por Produto">Ficha Técnica por
-                                                Produto <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
-                                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                                    stroke-linejoin="round">
-                                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6">
-                                                    </path>
-                                                    <polyline points="15 3 21 3 21 9"></polyline>
-                                                    <line x1="10" y1="14" x2="21" y2="3"></line>
-                                                </svg></a></h3>
-                                        <p>Defina a quantidade exata de insumos (ex: gramas de carne) por prato e saiba
-                                            sua margem de lucro real.</p>
-                                    </div>
-                                </div>
-                                <div class="menuvem-card">
-                                    <div class="menuvem-card-bg"
-                                        data-bg-url="https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?auto=format&fit=crop&w=800&q=80"
-                                        style="display: none;">
-                                    </div>
-                                    <div class="menuvem-card-overlay"></div>
-                                    <div class="menuvem-card-content">
-                                        <h3><a href="funcionalidades.html#alertas-de-estoque-minimo"
-                                                style="color: #fff; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem;"
-                                                title="Ver detalhes sobre Alertas de Estoque Mínimo">Alertas de Estoque
-                                                Mínimo <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
-                                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                                    stroke-linejoin="round">
-                                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6">
-                                                    </path>
-                                                    <polyline points="15 3 21 3 21 9"></polyline>
-                                                    <line x1="10" y1="14" x2="21" y2="3"></line>
-                                                </svg></a></h3>
-                                        <p>Receba avisos inteligentes quando o estoque de ingredientes estratégicos
-                                            estiver abaixo do nível mínimo.</p>
-                                    </div>
-                                </div>
-                                <div class="menuvem-card">
-                                    <div class="menuvem-card-bg"
-                                        data-bg-url="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80"
-                                        style="display: none;">
-                                    </div>
-                                    <div class="menuvem-card-overlay"></div>
-                                    <div class="menuvem-card-content">
-                                        <h3><a href="funcionalidades.html#entrada-automatizada-xml"
-                                                style="color: #fff; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem;"
-                                                title="Ver detalhes sobre Entrada Automatizada (XML)">Entrada
-                                                Automatizada (XML) <svg width="18" height="18" viewBox="0 0 24 24"
-                                                    fill="none" stroke="currentColor" stroke-width="2"
-                                                    stroke-linecap="round" stroke-linejoin="round">
-                                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6">
-                                                    </path>
-                                                    <polyline points="15 3 21 3 21 9"></polyline>
-                                                    <line x1="10" y1="14" x2="21" y2="3"></line>
-                                                </svg></a></h3>
-                                        <p>Importe arquivos XML das notas dos seus fornecedores para atualizar custos e
-                                            quantidades sem digitação manual.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="menuvem-carousel-controls">
-                                <button class="menuvem-arrow prev" aria-label="Anterior">&lt;</button>
-                                <button class="menuvem-arrow next" aria-label="Próximo">&gt;</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Financeiro Pane -->
-                <div class="menuvem-pane" id="pane-financeiro">
-                    <div class="menuvem-layout">
-                        <div class="menuvem-sidebar">
-                            <button class="menuvem-sub-btn active" data-index="0">Fluxo de Caixa Consolidado</button>
-                            <button class="menuvem-sub-btn" data-index="1">Emissor NFC-e / NF-e</button>
-                            <button class="menuvem-sub-btn" data-index="2">Relatórios de Faturamento</button>
-                            <button class="menuvem-sub-btn" data-index="3">Conciliador de Adquirentes</button>
-                        </div>
-                        <div class="menuvem-carousel">
-                            <div class="menuvem-carousel-track">
-                                <div class="menuvem-card active">
-                                    <div class="menuvem-card-bg"
-                                        data-bg-url="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80"
-                                        style="display: none;">
-                                    </div>
-                                    <div class="menuvem-card-overlay"></div>
-                                    <div class="menuvem-card-content">
-                                        <h3><a href="funcionalidades.html#fluxo-de-caixa-consolidado"
-                                                style="color: #fff; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem;"
-                                                title="Ver detalhes sobre Fluxo de Caixa Consolidado">Fluxo de Caixa
-                                                Consolidado <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
-                                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                                    stroke-linejoin="round">
-                                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6">
-                                                    </path>
-                                                    <polyline points="15 3 21 3 21 9"></polyline>
-                                                    <line x1="10" y1="14" x2="21" y2="3"></line>
-                                                </svg></a></h3>
-                                        <p>Monitore contas a pagar, a receber e conciliação de cartões em um painel
-                                            visual unificado.</p>
-                                    </div>
-                                </div>
-                                <div class="menuvem-card">
-                                    <div class="menuvem-card-bg"
-                                        data-bg-url="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=800&q=80"
-                                        style="display: none;">
-                                    </div>
-                                    <div class="menuvem-card-overlay"></div>
-                                    <div class="menuvem-card-content">
-                                        <h3><a href="funcionalidades.html#emissor-nfc-e-nf-e"
-                                                style="color: #fff; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem;"
-                                                title="Ver detalhes sobre Emissor NFC-e / NF-e">Emissor NFC-e / NF-e
-                                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
-                                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                                    stroke-linejoin="round">
-                                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6">
-                                                    </path>
-                                                    <polyline points="15 3 21 3 21 9"></polyline>
-                                                    <line x1="10" y1="14" x2="21" y2="3"></line>
-                                                </svg></a></h3>
-                                        <p>Emissão fiscal nativa simplificada homologada pela SEFAZ-PB com contingência
-                                            para instabilidades de sinal.</p>
-                                    </div>
-                                </div>
-                                <div class="menuvem-card">
-                                    <div class="menuvem-card-bg"
-                                        data-bg-url="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80"
-                                        style="display: none;">
-                                    </div>
-                                    <div class="menuvem-card-overlay"></div>
-                                    <div class="menuvem-card-content">
-                                        <h3><a href="funcionalidades.html#relatorios-de-faturamento"
-                                                style="color: #fff; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem;"
-                                                title="Ver detalhes sobre Relatórios de Faturamento">Relatórios de
-                                                Faturamento <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
-                                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                                    stroke-linejoin="round">
-                                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6">
-                                                    </path>
-                                                    <polyline points="15 3 21 3 21 9"></polyline>
-                                                    <line x1="10" y1="14" x2="21" y2="3"></line>
-                                                </svg></a></h3>
-                                        <p>Dados ricos de produtos mais vendidos, margens de lucro, horários de pico e
-                                            ticket médio diário.</p>
-                                    </div>
-                                </div>
-                                <div class="menuvem-card">
-                                    <div class="menuvem-card-bg"
-                                        data-bg-url="https://images.unsplash.com/photo-1601597111158-2fceff292cdc?auto=format&fit=crop&w=800&q=80"
-                                        style="display: none;">
-                                    </div>
-                                    <div class="menuvem-card-overlay"></div>
-                                    <div class="menuvem-card-content">
-                                        <h3><a href="funcionalidades.html#conciliador-de-adquirentes"
-                                                style="color: #fff; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem;"
-                                                title="Ver detalhes sobre Conciliador de Adquirentes">Conciliador de
-                                                Adquirentes <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
-                                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                                    stroke-linejoin="round">
-                                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6">
-                                                    </path>
-                                                    <polyline points="15 3 21 3 21 9"></polyline>
-                                                    <line x1="10" y1="14" x2="21" y2="3"></line>
-                                                </svg></a></h3>
-                                        <p>Acompanhe as taxas de cartão cobradas pelas maquininhas e evite cobranças
-                                            indevidas de operadoras.</p>
                                     </div>
                                 </div>
                             </div>
@@ -1429,6 +1217,9 @@
 
 
 </html>
+
+
+
 
 
 
