@@ -1,4 +1,4 @@
-﻿body { background-color: var(--bg-color); color: var(--text-primary); }
+body { background-color: var(--bg-color); color: var(--text-primary); }
         .planos-layout {
             max-width: 800px;
             margin: 0 auto;
@@ -119,7 +119,7 @@
 /* TCG CAROUSEL STYLES (3D COVERFLOW) */
 .tcg-carousel-container {
     width: 100%;
-    max-width: 100vw;
+    max-width: 100%;
     margin: 0 auto 2rem auto;
     position: relative;
     overflow: hidden;
