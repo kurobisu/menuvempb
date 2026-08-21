@@ -55,3 +55,58 @@
         display: block;
     }
 }
+
+/* Botão de alternância manual Mobile/Desktop do vídeo do Hero (visível em qualquer tela) */
+.video-view-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 0 auto 0.75rem auto;
+    padding: 0.55rem 1.1rem;
+    background: rgba(100, 29, 222, 0.12);
+    border: 1px solid var(--border-hover);
+    border-radius: 9999px;
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.video-view-toggle:hover {
+    background: rgba(100, 29, 222, 0.22);
+    border-color: var(--primary);
+}
+
+.video-view-toggle[aria-pressed="true"] {
+    background: var(--accent-gradient);
+    border-color: transparent;
+    color: #ffffff;
+}
+
+/* Alternância forçada via JS: sobrepõe o padrão responsivo em qualquer largura de tela */
+.hero-mockup.force-desktop-video .desktop-video {
+    display: block !important;
+}
+
+.hero-mockup.force-desktop-video .mobile-video {
+    display: none !important;
+}
+
+.hero-mockup.force-mobile-video .mobile-video {
+    display: block !important;
+}
+
+.hero-mockup.force-mobile-video .desktop-video {
+    display: none !important;
+}
+
+/* Evita que o vídeo Mobile fique gigantesco ao ser exibido manualmente em telas largas */
+@media (min-width: 769px) {
+    .hero-mockup.force-mobile-video .mobile-video {
+        max-width: 320px;
+        margin: 0 auto;
+    }
+}
