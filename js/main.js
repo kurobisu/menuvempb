@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initPlansCalculator();
     initFaq();
     initMenuvemFunctionalities();
+    initVideoViewToggle();
 });
 
 /* --- Cabeçalho Dinâmico --- */
@@ -93,100 +94,69 @@ function initBentoSpotlight() {
     });
 }
 
-/* --- Calculadora de Planos Interativa --- */
+/* --- Carrossel de Planos Interativo --- */
 function initPlansCalculator() {
-    const slider = document.getElementById('faturamento-slider');
-    const display = document.getElementById('faturamento-val');
-    
     const cardSecreto = document.getElementById('plan-secreto');
     const cardBronze = document.getElementById('plan-bronze');
     const cardPrata = document.getElementById('plan-prata');
     const cardOuro = document.getElementById('plan-ouro');
-    
+
     const priceSecreto = document.getElementById('price-secreto');
     const priceBronze = document.getElementById('price-bronze');
     const pricePrata = document.getElementById('price-prata');
     const priceOuro = document.getElementById('price-ouro');
-    
+
     const addChatbot = document.getElementById('add-chatbot');
     const addTef = document.getElementById('add-tef');
     const addFiscal = document.getElementById('add-fiscal');
-    
-    if (!slider || !display) return;
+
+    const btnPrev = document.getElementById('btn-planos-prev');
+    const btnNext = document.getElementById('btn-planos-next');
+
+    const allCards = [cardSecreto, cardBronze, cardPrata, cardOuro];
+
+    if (!btnPrev || !btnNext || allCards.some(card => !card)) return;
 
     // Valores Base dos Planos
     const BASE_SECRETO = 100;
     const BASE_BRONZE = 167;
     const BASE_PRATA = 227;
     const BASE_OURO = 267;
-    
+
     // Custos dos Add-ons (Atualmente inclusos: R$ 0)
     const COST_CHATBOT = 0;
     const COST_TEF = 0;
     const COST_FISCAL = 0;
 
-    // Atualizar cálculo e estados
-    function updateCalculator() {
-        const faturamento = parseInt(slider.value, 10);
-        
-        // Atualiza o texto do faturamento no display formatado como moeda
-        if (faturamento >= 50000) {
-            display.textContent = 'Mais de R$ 50.000';
-        } else {
-            display.textContent = `R$ ${faturamento.toLocaleString('pt-BR')}`;
-        }
-        
-        // Calcula o custo dos add-ons ativos
+    // Inicia no Plano 1 (Iniciante); o Plano Secreto fica oculto à esquerda
+    // e só aparece quando o usuário navega para trás a partir dele.
+    let currentIndex = 1;
+
+    // Atualiza os preços exibidos com base nos add-ons ativos
+    function updatePrices() {
         let totalAddons = 0;
         if (addChatbot && addChatbot.classList.contains('addon-active')) totalAddons += COST_CHATBOT;
         if (addTef && addTef.classList.contains('addon-active')) totalAddons += COST_TEF;
         if (addFiscal && addFiscal.classList.contains('addon-active')) totalAddons += COST_FISCAL;
-        
-        // Preço final dos planos (Base + Add-ons)
+
         const finalSecreto = BASE_SECRETO + totalAddons;
         const finalBronze = BASE_BRONZE + totalAddons;
         const finalPrata = BASE_PRATA + totalAddons;
         const finalOuro = BASE_OURO + totalAddons;
-        
-        // Renderizar preços com transição de números
-        if(priceSecreto) animateValue(priceSecreto, parseInt(priceSecreto.textContent) || BASE_SECRETO, finalSecreto, 300);
+
+        if (priceSecreto) animateValue(priceSecreto, parseInt(priceSecreto.textContent) || BASE_SECRETO, finalSecreto, 300);
         animateValue(priceBronze, parseInt(priceBronze.textContent) || BASE_BRONZE, finalBronze, 300);
         animateValue(pricePrata, parseInt(pricePrata.textContent) || BASE_PRATA, finalPrata, 300);
         animateValue(priceOuro, parseInt(priceOuro.textContent) || BASE_OURO, finalOuro, 300);
-        
-        // Ajuste layout do grid para centralizar o card único
-        const grid = document.querySelector('.plans-grid');
-        if(grid) {
-            grid.style.display = 'flex';
-            grid.style.justifyContent = 'center';
-            grid.style.alignItems = 'center';
-        }
-
-        const allCards = [cardSecreto, cardBronze, cardPrata, cardOuro];
-
-        if (faturamento === 1000) {
-            updateCoverflow(0, allCards);
-        } else if (faturamento > 1000 && faturamento <= 20000) {
-            updateCoverflow(1, allCards);
-        } else if (faturamento > 20000 && faturamento <= 35000) {
-            updateCoverflow(2, allCards);
-        } else {
-            updateCoverflow(3, allCards);
-        }
     }
-    
-    function updateCoverflow(activeIndex, cardsArray) {
-        cardsArray.forEach((card, idx) => {
+
+    function updateCoverflow(activeIndex) {
+        allCards.forEach((card, idx) => {
             if (!card) return;
-            
-            // Limpa estilos inline herdados do design antigo
-            card.style.display = '';
-            card.style.width = '';
-            card.style.maxWidth = '';
-            
-            // Remove as classes de estado antigas e novas
-            card.classList.remove('active', 'prev', 'next', 'far-prev', 'far-next', 'plan-card-featured', 'plan-card-hidden');
-            
+
+            // Remove as classes de estado do Coverflow
+            card.classList.remove('active', 'prev', 'next', 'far-prev', 'far-next');
+
             // Adiciona as classes do Coverflow
             if (idx === activeIndex) {
                 card.classList.add('active');
@@ -223,26 +193,73 @@ function initPlansCalculator() {
         window.requestAnimationFrame(step);
     }
 
-    // Listeners do Slider
-    slider.addEventListener('input', updateCalculator);
-    
+    // Listeners das Setas (sem loop: para no Secreto à esquerda e no Ouro à direita)
+    btnPrev.addEventListener('click', () => {
+        currentIndex = Math.max(0, currentIndex - 1);
+        updateCoverflow(currentIndex);
+    });
+
+    btnNext.addEventListener('click', () => {
+        currentIndex = Math.min(allCards.length - 1, currentIndex + 1);
+        updateCoverflow(currentIndex);
+    });
+
+    // Arrastar/Deslizar os cards com o mouse ou toque (sem ficar preso nas setas)
+    const track = document.querySelector('#planos .tcg-carousel-track');
+    if (track) {
+        const DRAG_THRESHOLD = 50;
+        let startX = 0;
+        let dragging = false;
+
+        function onPointerMove(e) {
+            if (!dragging) return;
+            const deltaX = e.clientX - startX;
+
+            if (deltaX <= -DRAG_THRESHOLD) {
+                currentIndex = Math.min(allCards.length - 1, currentIndex + 1);
+                updateCoverflow(currentIndex);
+                endDrag();
+            } else if (deltaX >= DRAG_THRESHOLD) {
+                currentIndex = Math.max(0, currentIndex - 1);
+                updateCoverflow(currentIndex);
+                endDrag();
+            }
+        }
+
+        function endDrag() {
+            dragging = false;
+            track.classList.remove('dragging');
+            document.removeEventListener('pointermove', onPointerMove);
+            document.removeEventListener('pointerup', endDrag);
+        }
+
+        track.addEventListener('pointerdown', (e) => {
+            dragging = true;
+            startX = e.clientX;
+            track.classList.add('dragging');
+            document.addEventListener('pointermove', onPointerMove);
+            document.addEventListener('pointerup', endDrag);
+        });
+    }
+
     // Listeners dos Add-ons
     const addonCards = [
         { el: addChatbot, checkbox: document.getElementById('chk-chatbot') },
         { el: addTef, checkbox: document.getElementById('chk-tef') },
         { el: addFiscal, checkbox: document.getElementById('chk-fiscal') }
     ];
-    
+
     addonCards.forEach(item => {
         if (!item.el) return;
         item.el.addEventListener('click', () => {
             item.el.classList.toggle('addon-active');
-            updateCalculator();
+            updatePrices();
         });
     });
 
     // Setup Inicial
-    updateCalculator();
+    updateCoverflow(currentIndex);
+    updatePrices();
 }
 
 /* --- FAQ Acordeão --- */
@@ -340,4 +357,33 @@ function initMenuvemFunctionalities() {
             });
         }
     });
+}
+
+/* --- Alternância Manual Mobile/Desktop do Vídeo do Hero (em qualquer tamanho de tela) --- */
+function initVideoViewToggle() {
+    const toggleBtn = document.getElementById('video-view-toggle');
+    const heroMockup = document.getElementById('hero-mockup');
+    const label = toggleBtn ? toggleBtn.querySelector('span') : null;
+
+    if (!toggleBtn || !heroMockup || !label) return;
+
+    const LABEL_DESKTOP = 'Ver versão Desktop';
+    const LABEL_MOBILE = 'Ver versão Mobile';
+
+    // Ponto de partida: a mesma versão que a tela já exibiria por padrão
+    let showingDesktop = !window.matchMedia('(max-width: 768px)').matches;
+
+    function render() {
+        heroMockup.classList.toggle('force-desktop-video', showingDesktop);
+        heroMockup.classList.toggle('force-mobile-video', !showingDesktop);
+        toggleBtn.setAttribute('aria-pressed', String(showingDesktop));
+        label.textContent = showingDesktop ? LABEL_MOBILE : LABEL_DESKTOP;
+    }
+
+    toggleBtn.addEventListener('click', () => {
+        showingDesktop = !showingDesktop;
+        render();
+    });
+
+    render();
 }
