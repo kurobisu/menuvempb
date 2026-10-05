@@ -16,8 +16,14 @@
 
     <link rel="icon" type="image/png" href="img/menuvem-logo-simples.png">
     <title>Política de Privacidade | Menuvem PB</title>
-    <link rel="stylesheet" href="css/style.css?v=6">
-    <link rel="stylesheet" href="css/privacidade.css">
+    <!-- Fontes da marca: Bricolage Grotesque (títulos) + IBM Plex Sans (texto) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+
+    <link rel="stylesheet" href="css/marca.css?v=2">
+    <link rel="stylesheet" href="css/privacidade.css?v=2">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WMFHH39Q0N"></script>
     <script>
@@ -30,31 +36,41 @@
 </head>
 
 <body>
-    <!-- Navbar -->
-    <nav class="navbar" style="background: rgba(2, 2, 4, 0.95);">
-        <div class="container navbar-container">
-            <a href="index.html" class="logo">
-                <img src="img/menuvem-logo-simples.png" alt="Logo" height="24" style="margin-right: 4px;">
-                <span class="logo-text" style="display:flex; align-items:center;">Menuvem<span class="logo-dot">.</span>PB<img src="img/bandeiradaparaiba.png" alt="Bandeira PB" height="18" style="margin-left: 8px; border-radius:2px; box-shadow: 0 0 12px rgba(255, 255, 255, 0.8);"></span>
+    <header class="topo">
+        <div class="container">
+            <a href="index.html" class="marca" aria-label="Menuvem PB, página inicial">
+                <img src="img/marca/logo-completo-branco.svg" alt="Menuvem" width="69" height="46">
+                <span class="pilula">PB</span>
             </a>
-            <a href="index.html" class="back-link">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="19" y1="12" x2="5" y2="12"></line>
-                    <polyline points="12 19 5 12 12 5"></polyline>
-                </svg>
-                Voltar ao Início
-            </a>
+            <button class="botao-menu" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" aria-hidden="true"><path d="M4 7h16"></path><path d="M4 12h16"></path><path d="M4 17h16"></path></svg>
+            </button>
+            <nav class="menu" id="menu" aria-label="Principal">
+                <a href="planos.html">Planos</a>
+                <a href="funcionalidades.html">Funcionalidades</a>
+                <a href="index.html#suporte">Suporte</a>
+                <a href="duvidas.html">Dúvidas</a>
+                <a href="https://painel.menuvem.com.br" target="_blank" rel="noopener" class="entrar">Entrar</a>
+                <a href="https://wa.me/5583988559423?text=Ol%C3%A1!%20Gostaria%20de%20ativar%20meu%20b%C3%B4nus%20de%2030%20dias%20gr%C3%A1tis%20no%20sistema%20Menuvem."
+                    target="_blank" rel="noopener" class="btn btn-amarelo" id="topo-btn-teste">Testar 30 dias grátis</a>
+            </nav>
         </div>
-    </nav>
+    </header>
 
-    <main class="privacidade-layout">
-        <div class="section-header">
-            <span class="badge">Legal</span>
-            <h2>Política de <span>Privacidade</span></h2>
-            <p>App "Menuvem Tracking Toolkit"</p>
-        </div>
+    <main>
+        <section class="pagina-topo">
+            <div class="circulo"></div>
+            <div class="container">
+                <span class="pilula entrada" style="--i:0">Legal</span>
+                <h1 class="entrada" style="--i:1">Política de <span class="marcador">Privacidade</span></h1>
+                <p class="entrada" style="--i:2">App "Menuvem Tracking Toolkit"</p>
+            </div>
+        </section>
 
-        <div class="privacidade-card">
+        <section class="secao legal">
+            <div class="container">
+                <div class="privacidade-card">
             <p class="updated">Última atualização: 29 de setembro de 2026</p>
 
             <h3>1. Quem somos</h3>
@@ -111,14 +127,45 @@
                 versão vigente.
             </p>
         </div>
+            </div>
+        </section>
     </main>
 
-    <footer class="footer">
-        <div class="container footer-bottom" style="border-top: none; padding-top: 0; justify-content: center; flex-wrap: wrap; gap: 0.5rem 1.5rem;">
-            <div>&copy; 2026 <a href="https://nuctecnologia.com.br" target="_blank" rel="noopener">NUC Tecnologia</a> - CNPJ 24.922.727/0001-94</div>
-            <a href="privacidade">Política de Privacidade</a>
+    <footer class="rodape">
+        <div class="container">
+            <div class="rodape-grade">
+                <div class="rodape-marca">
+                    <img src="img/marca/logo-completo-branco.svg" alt="Menuvem" width="83" height="56" loading="lazy">
+                    <p>Cardápio digital e PDV para o seu negócio. Representante oficial da Menuvem.</p>
+                </div>
+                <nav aria-label="Menuvem">
+                    <h4>Menuvem</h4>
+                    <a href="planos.html">Planos e preços</a>
+                    <a href="funcionalidades.html">Funcionalidades</a>
+                    <a href="cadastro-etapas.html">Cadastre-se</a>
+                    <a href="duvidas.html">Dúvidas frequentes</a>
+                </nav>
+                <nav aria-label="Suporte">
+                    <h4>Suporte</h4>
+                    <a href="https://wa.me/5583988559423?text=Ol%C3%A1!%20Preciso%20de%20suporte%20no%20sistema%20Menuvem."
+                        target="_blank" rel="noopener">WhatsApp</a>
+                    <a href="https://t.me/menuvempb" target="_blank" rel="noopener">Telegram</a>
+                    <a href="https://painel.menuvem.com.br" target="_blank" rel="noopener">Entrar no painel</a>
+                </nav>
+                <nav aria-label="Legal">
+                    <h4>Legal</h4>
+                    <a href="privacidade">Política de Privacidade</a>
+                </nav>
+            </div>
+            <div class="rodape-base">
+                <span>© 2026 <a href="https://nuctecnologia.com.br" target="_blank" rel="noopener">NUC Tecnologia</a>
+                    · CNPJ 24.922.727/0001-94</span>
+                <span>menuvempb.com.br</span>
+            </div>
         </div>
     </footer>
+
+    <script src="js/site.js?v=3"></script>
 </body>
 
 </html>
