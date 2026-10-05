@@ -170,3 +170,8 @@ mark { background: rgba(255, 199, 0, .45); color: inherit; border-radius: 3px; p
     .modulo-cabeca h3 { font-size: 21px; }
     .pagamentos { grid-template-columns: minmax(0, 1fr); }
 }
+
+/* Cartão sozinho na linha (categoria com nº ímpar de cartões): lista em duas colunas */
+.modulo.duas-colunas .lista { display: block; columns: 2; column-gap: 32px; }
+.modulo.duas-colunas .lista li { break-inside: avoid; margin-bottom: 9px; }
+@media (max-width: 960px) { .modulo.duas-colunas .lista { columns: 1; } }
