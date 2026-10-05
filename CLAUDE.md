@@ -50,3 +50,4 @@ There is no lint or test tooling configured in this repo currently (`.gitignore`
 - No theme toggle — the site uses the official Menuvem brand identity (light/purple), not a dark theme.
 - Header and footer markup is duplicated in every page (no includes): change all pages together.
 - Content rules (decided by the owner): don't publish third-party fees/prices (payment fees, Z-API cost), TEF, service hours, support cities, or the Plano Secreto. Feature claims must come from `~/menuvempb-instagram/pesquisa/funcionalidades/BASE-DE-CONHECIMENTO.md` (items marked ✅).
+- Markdown para o dono ler ou responder (planos, propostas, perguntas): além de criar no repo (ex.: `docs/plans/`), crie um link simbólico em `~/Brain/Trabalho/menuvempb/Site MenuvemPB/` e cite-o no `00. Índice.md` dessa pasta, porque ele lê e responde pelo Obsidian.
