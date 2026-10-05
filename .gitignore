@@ -12,3 +12,6 @@ Thumbs.db
 *.log
 .gemini/
 .claude/
+
+# Logos originais dos clientes (só os selos gerados em img/clientes/*.webp vão pro site)
+img/clientes/originais/
