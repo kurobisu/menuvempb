@@ -1,79 +1,59 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Política de Privacidade — Atendimento Menuvem PB</title>
-<style>
-  :root{
-    --primary:#641DDE;
-    --secondary:#F2C200;
-    --ink:#0f172a;
-    --muted:#475569;
-    --line:#e2e8f0;
-    --bg:#f1f5f9;
-  }
-  *{box-sizing:border-box;}
-  body{
-    margin:0;
-    background:var(--bg);
-    color:var(--ink);
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-    line-height:1.65;
-  }
-  header{
-    background-color:var(--primary);
-    background-image:linear-gradient(135deg,#641DDE 0%,#8b3df0 55%,#F2C200 100%);
-    color:#fff;
-    padding:44px 20px 36px;
-    text-align:center;
-  }
-  header h1{margin:0;font-size:26px;font-weight:700;letter-spacing:-0.3px;}
-  header p{margin:8px 0 0;font-size:14px;color:#ede4fb;}
-  main{
-    max-width:720px;
-    margin:0 auto;
-    padding:32px 20px 64px;
-  }
-  .card{
-    background:#fff;
-    border-radius:14px;
-    padding:28px 32px;
-    box-shadow:0 1px 3px rgba(15,23,42,.06);
-  }
-  .updated{
-    font-size:13px;
-    color:#94a3b8;
-    margin:0 0 24px;
-  }
-  h2{
-    font-size:17px;
-    color:var(--primary);
-    margin:28px 0 10px;
-    border-top:1px solid var(--line);
-    padding-top:20px;
-  }
-  h2:first-of-type{border-top:none;padding-top:0;margin-top:0;}
-  p, li{font-size:15px;color:var(--muted);}
-  ul,ol{padding-left:20px;margin:8px 0;}
-  li{margin:4px 0;}
-  a{color:#641DDE;}
-  strong{color:var(--ink);}
-  footer{
-    text-align:center;
-    font-size:12px;
-    color:#94a3b8;
-    padding:0 20px 40px;
-  }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Política de Privacidade do atendimento da Menuvem PB: como tratamos os dados de quem fala com o nosso suporte.">
+    <link rel="icon" type="image/png" href="img/menuvem-logo-simples.png">
+    <title>Política de Privacidade — Atendimento Menuvem PB</title>
+
+    <!-- Fontes da marca: Bricolage Grotesque (títulos) + IBM Plex Sans (texto) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+
+    <link rel="stylesheet" href="css/marca.css?v=2">
+    <link rel="stylesheet" href="css/privacidade.css?v=2">
 </head>
+
 <body>
-  <header>
-    <h1>Menuvem PB — Atendimento</h1>
-    <p>Política de Privacidade</p>
-  </header>
-  <main>
-    <div class="card">
+    <header class="topo">
+        <div class="container">
+            <a href="index.html" class="marca" aria-label="Menuvem PB, página inicial">
+                <img src="img/marca/logo-completo-branco.svg" alt="Menuvem" width="69" height="46">
+                <span class="pilula">PB</span>
+            </a>
+            <button class="botao-menu" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" aria-hidden="true"><path d="M4 7h16"></path><path d="M4 12h16"></path><path d="M4 17h16"></path></svg>
+            </button>
+            <nav class="menu" id="menu" aria-label="Principal">
+                <a href="planos.html">Planos</a>
+                <a href="funcionalidades.html">Funcionalidades</a>
+                <a href="index.html#suporte">Suporte</a>
+                <a href="duvidas.html">Dúvidas</a>
+                <a href="https://painel.menuvem.com.br" target="_blank" rel="noopener" class="entrar">Entrar</a>
+                <a href="https://wa.me/5583988559423?text=Ol%C3%A1!%20Gostaria%20de%20ativar%20meu%20b%C3%B4nus%20de%2030%20dias%20gr%C3%A1tis%20no%20sistema%20Menuvem."
+                    target="_blank" rel="noopener" class="btn btn-amarelo" id="topo-btn-teste">Testar 30 dias grátis</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="pagina-topo">
+            <div class="circulo"></div>
+            <div class="container">
+                <span class="pilula entrada" style="--i:0">Legal</span>
+                <h1 class="entrada" style="--i:1">Política de <span class="marcador">Privacidade</span></h1>
+                <p class="entrada" style="--i:2">Atendimento Menuvem PB</p>
+            </div>
+        </section>
+
+        <section class="secao legal">
+            <div class="container">
+                <div class="privacidade-card">
       <p class="updated">Última atualização: 6 de setembro de 2026</p>
 
       <h2>1. Quem somos</h2>
@@ -159,10 +139,48 @@
         Dúvidas sobre esta política podem ser enviadas para
         <a href="mailto:clovisccavalcante.net@gmail.com">clovisccavalcante.net@gmail.com</a>.
       </p>
-    </div>
-  </main>
-  <footer>Menuvem PB — atendimento e suporte regional.</footer>
-  <!-- Chatwoot -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="rodape">
+        <div class="container">
+            <div class="rodape-grade">
+                <div class="rodape-marca">
+                    <img src="img/marca/logo-completo-branco.svg" alt="Menuvem" width="83" height="56" loading="lazy">
+                    <p>Cardápio digital e PDV para o seu negócio. Representante oficial da Menuvem.</p>
+                </div>
+                <nav aria-label="Menuvem">
+                    <h4>Menuvem</h4>
+                    <a href="planos.html">Planos e preços</a>
+                    <a href="funcionalidades.html">Funcionalidades</a>
+                    <a href="cadastro-etapas.html">Cadastre-se</a>
+                    <a href="duvidas.html">Dúvidas frequentes</a>
+                </nav>
+                <nav aria-label="Suporte">
+                    <h4>Suporte</h4>
+                    <a href="https://wa.me/5583988559423?text=Ol%C3%A1!%20Preciso%20de%20suporte%20no%20sistema%20Menuvem."
+                        target="_blank" rel="noopener">WhatsApp</a>
+                    <a href="https://t.me/menuvempb" target="_blank" rel="noopener">Telegram</a>
+                    <a href="https://painel.menuvem.com.br" target="_blank" rel="noopener">Entrar no painel</a>
+                </nav>
+                <nav aria-label="Legal">
+                    <h4>Legal</h4>
+                    <a href="privacidade">Política de Privacidade</a>
+                </nav>
+            </div>
+            <div class="rodape-base">
+                <span>© 2026 <a href="https://nuctecnologia.com.br" target="_blank" rel="noopener">NUC Tecnologia</a>
+                    · CNPJ 24.922.727/0001-94</span>
+                <span>menuvempb.com.br</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/site.js?v=3"></script>
+
+    <!-- Chatwoot -->
   <script>
     (function (d, t) {
       var BASE_URL = "https://crm.menuvempb.com.br";
@@ -180,4 +198,5 @@
     })(document, "script");
   </script>
 </body>
+
 </html>
