@@ -5,19 +5,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Menuvem PB - Passo a passo para cadastrar seu negócio e ativar seu bônus de 30 dias gratuitos.">
-    
+        content="Cadastre sua loja na Menuvem em 3 etapas e ative 30 dias grátis, sem cartão de crédito e sem fidelidade.">
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://menuvempb.com.br/cadastro-etapas.html">
-    <meta property="og:title" content="Como Funciona o Cadastro | Menuvem PB">
-    <meta property="og:description" content="Passo a passo para cadastrar seu negócio e ativar seu bônus de 30 dias gratuitos no Menuvem PB.">
+    <meta property="og:title" content="Como funciona o cadastro | Menuvem PB">
+    <meta property="og:description" content="Passo a passo para cadastrar seu negócio e ativar seus 30 dias grátis na Menuvem.">
     <meta property="og:image" content="https://menuvempb.com.br/img/menuvem-logo-simples.png">
 
     <link rel="icon" type="image/png" href="img/menuvem-logo-simples.png">
-    <title>[Cadastro] Passo a Passo | Menuvem PB</title>
-    <link rel="stylesheet" href="css/style.css?v=6">
-    <link rel="stylesheet" href="css/cadastro-etapas.css">
+    <title>Como funciona o cadastro | Menuvem PB</title>
+
+    <!-- Fontes da marca: Bricolage Grotesque (títulos) + IBM Plex Sans (texto) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+
+    <link rel="stylesheet" href="css/marca.css?v=2">
+    <link rel="stylesheet" href="css/cadastro-etapas.css?v=2">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WMFHH39Q0N"></script>
     <script>
@@ -30,123 +37,153 @@
 </head>
 
 <body>
-
-    <!-- Header / Nav -->
-    <header class="header">
+    <header class="topo">
         <div class="container">
-            <a href="index.html" class="logo" id="header-logo">
-                <img src="img/menuvem-logo-simples.png" alt="Logo" height="24" style="margin-right: 4px;">
-                <span class="logo-text" style="display:flex; align-items:center;">Menuvem<span class="logo-dot">.</span>PB<img src="img/bandeiradaparaiba.png" alt="Bandeira PB" height="18" style="margin-left: 8px; border-radius:2px; box-shadow: 0 0 12px rgba(255, 255, 255, 0.8);"></span>
+            <a href="index.html" class="marca" aria-label="Menuvem PB, página inicial">
+                <img src="img/marca/logo-completo-branco.svg" alt="Menuvem" width="69" height="46">
+                <span class="pilula">PB</span>
             </a>
-
-            <div class="nav-cta">
-                <a href="https://painel.menuvem.com.br" target="_blank" class="btn btn-secondary btn-login">
-                    Entrar no Painel
-                </a>
-            </div>
+            <button class="botao-menu" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" aria-hidden="true"><path d="M4 7h16"></path><path d="M4 12h16"></path><path d="M4 17h16"></path></svg>
+            </button>
+            <nav class="menu" id="menu" aria-label="Principal">
+                <a href="planos.html">Planos</a>
+                <a href="funcionalidades.html">Funcionalidades</a>
+                <a href="index.html#suporte">Suporte</a>
+                <a href="duvidas.html">Dúvidas</a>
+                <a href="https://painel.menuvem.com.br" target="_blank" rel="noopener" class="entrar">Entrar</a>
+                <a href="https://wa.me/5583988559423?text=Ol%C3%A1!%20Gostaria%20de%20ativar%20meu%20b%C3%B4nus%20de%2030%20dias%20gr%C3%A1tis%20no%20sistema%20Menuvem."
+                    target="_blank" rel="noopener" class="btn btn-amarelo" id="topo-btn-teste">Testar 30 dias grátis</a>
+            </nav>
         </div>
     </header>
 
-    <div style="height: 70px;"></div>
-
-    <main class="steps-container">
-        <a href="index.html" class="back-link" style="margin-bottom: 2rem;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="19" y1="12" x2="5" y2="12"></line>
-                <polyline points="12 19 5 12 12 5"></polyline>
-            </svg>
-            Voltar para o site
-        </a>
-
-        <div class="steps-header">
-            <span class="badge">Passo a Passo</span>
-            <h1>Como ativar sua conta <span>Menuvem PB</span></h1>
-            <p>Siga as 3 etapas abaixo para configurar seu estabelecimento e usufruir de 30 dias de gratuidade completa
-                sem cadastrar cartão de crédito e sem fidelidade.</p>
-        </div>
-
-        <div class="timeline">
-            <!-- Etapa 1 -->
-            <div class="timeline-item">
-                <div class="step-number">1</div>
-                <div class="step-content">
-                    <h3>Etapa 1: Cadastre os dados do seu Estabelecimento</h3>
-                    <p>Clique no botão abaixo para preencher as informações básicas do seu negócio (como nome da loja,
-                        telefone e endereço). Verifique no seu email e whatsapp e ative o seu cadastro.</p>
-                    <div class="step-cta-box">
-                        <a href="https://painel.menuvem.com.br/#/cadastro/23/clovis" target="_blank"
-                            class="btn btn-primary" style="font-size: 0.9rem; padding: 0.75rem 1.5rem;">
-                            Iniciar Cadastro do Estabelecimento
-                        </a>
-                    </div>
-                </div>
+    <main>
+        <section class="pagina-topo">
+            <div class="circulo"></div>
+            <div class="container">
+                <span class="pilula entrada" style="--i:0">Passo a passo</span>
+                <h1 class="entrada" style="--i:1">Sua loja no ar em <span class="marcador">3 etapas</span></h1>
+                <p class="entrada" style="--i:2">Cadastre o seu negócio e ative 30 dias grátis, sem cartão de crédito
+                    e sem fidelidade.</p>
             </div>
+        </section>
 
-            <!-- Etapa 2 -->
-            <div class="timeline-item">
-                <div class="step-number">2</div>
-                <div class="step-content">
-                    <h3>Etapa 2: Validação e Primeiro Login</h3>
-                    <p>Após preencher os dados, você receberá uma confirmação de conta por e-mail ou WhatsApp. O próximo
-                        passo é realizar o login no painel administrativo para verificar se o seu acesso está ativo e
-                        configurado corretamente.</p>
-                    <div class="step-cta-box">
-                        <a href="https://painel.menuvem.com.br" target="_blank" class="btn btn-secondary"
-                            style="font-size: 0.9rem; padding: 0.75rem 1.5rem;">
-                            Fazer Login no Painel
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Etapa 3 -->
-            <div class="timeline-item">
-                <div class="step-number">3</div>
-                <div class="step-content">
-                    <h3>Etapa 3: Liberação dos 30 Dias Gratuitos & Plano</h3>
-                    <p>Com o cadastro feito e o painel validado, entre em contato imediatamente com o nosso WhatsApp de
-                        Suporte PB. Nossa equipe irá aplicar o bônus de <strong>30 dias de gratuidade</strong> na sua
-                        conta e configurar o plano mensal de sua preferência (Plano 1, 2 ou 3) para começar a tarifar
-                        apenas após o período de teste, sem qualquer compromisso.</p>
-                    <div class="step-cta-box" style="display: flex; align-items: center; gap: 1rem; width: 100%;">
-                        <a href="https://wa.me/5583988559423?text=Ol%C3%A1!%20Realizei%20meu%20cadastro%20inicial%20e%20gostaria%20de%20ativar%20meu%20b%C3%B4nus%20de%2030%20dias%20gr%C3%A1tis%20da%20Menuvem."
-                            target="_blank" class="btn btn-primary"
-                            style="font-size: 0.9rem; padding: 0.75rem 1.5rem; flex-grow: 1; text-align: center;">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
-                                fill="currentColor" style="margin-right: 0.25rem;">
-                                <path
-                                    d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.504-5.727-1.465L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.967C16.588 2.022 14.12 1 11.66 1c-5.456 0-9.9 4.398-9.905 9.829-.001 1.765.485 3.488 1.408 5.093l-.999 3.648 3.843-.984zm11.23-6.842c-.303-.151-1.793-.884-2.071-.985-.278-.101-.48-.151-.681.151-.202.303-.781.985-.957 1.186-.177.202-.353.227-.656.075-.303-.151-1.28-.472-2.438-1.503-.9-.8-1.507-1.787-1.684-2.09-.177-.302-.018-.465.133-.614.136-.134.303-.353.454-.528.152-.177.202-.303.303-.505.101-.202.051-.378-.025-.528-.076-.151-.681-1.641-.933-2.246-.247-.591-.497-.512-.681-.512-.177-.008-.379-.008-.581-.008-.202 0-.531.075-.809.378-.278.302-1.061 1.037-1.061 2.531 0 1.493 1.087 2.936 1.238 3.138.152.202 2.138 3.262 5.177 4.57.722.311 1.286.497 1.726.637.725.23 1.385.197 1.906.12.581-.087 1.793-.73 2.046-1.437.252-.705.252-1.31.177-1.437-.076-.127-.278-.202-.581-.353z" />
-                            </svg>
-                            Falar com o Suporte e Ativar Gratuidade
-                        </a>
-
-                        <!-- Tooltip de Informações do Plano -->
-                        <div class="tooltip-container">
-                            <span class="tooltip-icon" tabindex="0" aria-haspopup="true"
-                                aria-label="Informações sobre ativação do plano">i</span>
-                            <div class="tooltip-text">
-                                <strong>Importante:</strong> Não escolha ou assine o plano sozinho no painel. A ativação
-                                da promoção de 30 dias gratuitos e a vinculação do plano devem ser feitas
-                                obrigatoriamente pela nossa equipe de suporte no WhatsApp.
+        <section class="secao etapas-secao">
+            <div class="container">
+                <ol class="etapas" id="etapas">
+                    <li class="etapa revelar">
+                        <span class="etapa-numero" aria-hidden="true">1</span>
+                        <div class="etapa-cartao">
+                            <div class="etapa-cabeca">
+                                <span class="etapa-icone"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l1.5-5h15L21 9"></path><path d="M3 9h18v2a3 3 0 0 1-6 0 3 3 0 0 1-6 0 3 3 0 0 1-6 0z"></path><path d="M5 13v7h14v-7"></path></svg></span>
+                                <div>
+                                    <span class="etapa-rotulo">Etapa 1</span>
+                                    <h2>Cadastre os dados do seu negócio</h2>
+                                </div>
                             </div>
+                            <p>Preencha as informações básicas da sua loja, como nome, telefone e endereço. Depois,
+                                confirme o cadastro pelo link que chega no seu e-mail ou WhatsApp.</p>
+                            <a href="https://painel.menuvem.com.br/#/cadastro/23/clovis" target="_blank" rel="noopener"
+                                class="btn btn-amarelo btn-brilho" id="cadastro-btn-iniciar">Iniciar cadastro<svg class="seta" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg></a>
                         </div>
-                    </div>
+                    </li>
+
+                    <li class="etapa revelar">
+                        <span class="etapa-numero" aria-hidden="true">2</span>
+                        <div class="etapa-cartao">
+                            <div class="etapa-cabeca">
+                                <span class="etapa-icone"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path><path d="M10 17l5-5-5-5"></path><path d="M15 12H3"></path></svg></span>
+                                <div>
+                                    <span class="etapa-rotulo">Etapa 2</span>
+                                    <h2>Confirme e faça o primeiro login</h2>
+                                </div>
+                            </div>
+                            <p>Com a conta confirmada, entre no painel administrativo pra ver se o seu acesso está
+                                ativo e funcionando.</p>
+                            <a href="https://painel.menuvem.com.br" target="_blank" rel="noopener"
+                                class="btn btn-contorno">Entrar no painel<svg class="seta" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg></a>
+                        </div>
+                    </li>
+
+                    <li class="etapa revelar">
+                        <span class="etapa-numero" aria-hidden="true">3</span>
+                        <div class="etapa-cartao destaque">
+                            <div class="etapa-cabeca">
+                                <span class="etapa-icone"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="8" width="18" height="4" rx="1"></rect><path d="M12 8v13"></path><path d="M19 12v9H5v-9"></path><path d="M7.5 8a2.5 2.5 0 0 1 0-5C11 3 12 8 12 8s1-5 4.5-5a2.5 2.5 0 0 1 0 5"></path></svg></span>
+                                <div>
+                                    <span class="etapa-rotulo">Etapa 3</span>
+                                    <h2>Ative os 30 dias grátis com o suporte</h2>
+                                </div>
+                            </div>
+                            <p>Chame o nosso suporte no WhatsApp. A gente aplica os <strong>30 dias grátis</strong>
+                                na sua conta e configura o plano que você escolher (Delivery Iniciante; Delivery,
+                                Balcão e Mesas; ou Negócios Consolidados). A cobrança só começa depois do teste.</p>
+                            <div class="aviso-importante" role="note">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 8v5"></path><path d="M12 16.5v.01"></path></svg>
+                                <span><strong>Importante:</strong> não escolha nem assine o plano sozinho no painel. A
+                                    ativação dos 30 dias grátis e do plano é feita pela nossa equipe, no WhatsApp.</span>
+                            </div>
+                            <a href="https://wa.me/5583988559423?text=Ol%C3%A1!%20Realizei%20meu%20cadastro%20inicial%20e%20gostaria%20de%20ativar%20meu%20b%C3%B4nus%20de%2030%20dias%20gr%C3%A1tis%20da%20Menuvem." target="_blank" rel="noopener" class="btn btn-amarelo btn-brilho"
+                                id="cadastro-btn-ativar"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.504-5.727-1.465L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.967C16.588 2.022 14.12 1 11.66 1c-5.456 0-9.9 4.398-9.905 9.829-.001 1.765.485 3.488 1.408 5.093l-.999 3.648 3.843-.984zm11.23-6.842c-.303-.151-1.793-.884-2.071-.985-.278-.101-.48-.151-.681.151-.202.303-.781.985-.957 1.186-.177.202-.353.227-.656.075-.303-.151-1.28-.472-2.438-1.503-.9-.8-1.507-1.787-1.684-2.09-.177-.302-.018-.465.133-.614.136-.134.303-.353.454-.528.152-.177.202-.303.303-.505.101-.202.051-.378-.025-.528-.076-.151-.681-1.641-.933-2.246-.247-.591-.497-.512-.681-.512-.177-.008-.379-.008-.581-.008-.202 0-.531.075-.809.378-.278.302-1.061 1.037-1.061 2.531 0 1.493 1.087 2.936 1.238 3.138.152.202 2.138 3.262 5.177 4.57.722.311 1.286.497 1.726.637.725.23 1.385.197 1.906.12.581-.087 1.793-.73 2.046-1.437.252-.705.252-1.31.177-1.437-.076-.127-.278-.202-.581-.353z"></path></svg>Ativar meus 30 dias grátis</a>
+                        </div>
+                    </li>
+                </ol>
+
+                <!-- Depois da ativação -->
+                <div class="depois revelar">
+                    <h2 class="titulo-depois">Depois da ativação, <span class="realce">a gente cuida do resto</span></h2>
+                    <ul class="depois-lista">
+                        <li><strong>Montamos o seu cardápio</strong><span>Configuramos a plataforma e cadastramos o cardápio pra você.</span></li>
+                        <li><strong>Treinamos a sua equipe</strong><span>Garçons e caixas, por videoconferência.</span></li>
+                        <li><strong>Suporte todos os dias</strong><span>Inclusive fins de semana, por chat e acesso remoto.</span></li>
+                    </ul>
                 </div>
+
+                <p class="ajuda-cadastro revelar">Travou em alguma etapa?
+                    <a href="https://wa.me/5583988559423?text=Ol%C3%A1!%20Preciso%20de%20ajuda%20para%20fazer%20o%20cadastro%20da%20minha%20loja%20na%20Menuvem." target="_blank" rel="noopener">Peça ajuda ao suporte no WhatsApp</a>
+                    ou veja as <a href="duvidas.html">dúvidas frequentes</a>.</p>
             </div>
-        </div>
+        </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container footer-bottom" style="border-top: none; padding-top: 0; justify-content: center;">
-            &copy; 2026 Menuvem Tecnologia Ltda. Todos os direitos reservados. Foco regional na Paraíba (menuvempb.com).
-            <a href="privacidade" style="margin-left: 1rem;">Política de Privacidade</a>
+    <footer class="rodape">
+        <div class="container">
+            <div class="rodape-grade">
+                <div class="rodape-marca">
+                    <img src="img/marca/logo-completo-branco.svg" alt="Menuvem" width="83" height="56" loading="lazy">
+                    <p>Cardápio digital e PDV para o seu negócio. Representante oficial da Menuvem.</p>
+                </div>
+                <nav aria-label="Menuvem">
+                    <h4>Menuvem</h4>
+                    <a href="planos.html">Planos e preços</a>
+                    <a href="funcionalidades.html">Funcionalidades</a>
+                    <a href="cadastro-etapas.html">Cadastre-se</a>
+                    <a href="duvidas.html">Dúvidas frequentes</a>
+                </nav>
+                <nav aria-label="Suporte">
+                    <h4>Suporte</h4>
+                    <a href="https://wa.me/5583988559423?text=Ol%C3%A1!%20Preciso%20de%20suporte%20no%20sistema%20Menuvem."
+                        target="_blank" rel="noopener">WhatsApp</a>
+                    <a href="https://t.me/menuvempb" target="_blank" rel="noopener">Telegram</a>
+                    <a href="https://painel.menuvem.com.br" target="_blank" rel="noopener">Entrar no painel</a>
+                </nav>
+                <nav aria-label="Legal">
+                    <h4>Legal</h4>
+                    <a href="privacidade">Política de Privacidade</a>
+                </nav>
+            </div>
+            <div class="rodape-base">
+                <span>© 2026 <a href="https://nuctecnologia.com.br" target="_blank" rel="noopener">NUC Tecnologia</a>
+                    · CNPJ 24.922.727/0001-94</span>
+                <span>menuvempb.com.br</span>
+            </div>
         </div>
     </footer>
 
-    <!-- Script -->
-    <script src="js/main.js?v=8"></script>
+    <script src="js/site.js?v=3"></script>
+    <script src="js/cadastro.js?v=1"></script>
 
     <!-- Chatwoot -->
     <script>
@@ -168,5 +205,3 @@
 </body>
 
 </html>
-
-
