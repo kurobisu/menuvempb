@@ -127,14 +127,47 @@ a { color: inherit; }
 .btn-contorno { color: var(--roxo-profundo); border-color: var(--roxo-profundo); background: transparent; }
 .btn-contorno:hover { background: var(--lavanda); }
 
+/* Link pra uma página dedicada ("Comparar os planos", "Ver todas as dúvidas"):
+   pílula com borda e seta num círculo amarelo, pra não passar por texto comum */
 .link-seta {
-    color: var(--roxo);
-    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 8px 8px 20px;
+    border: 2px solid var(--roxo);
+    border-radius: 999px;
+    background: var(--branco);
+    color: var(--roxo-profundo);
+    font-family: var(--fonte-titulo);
+    font-weight: 800;
     font-size: 16px;
+    line-height: 1.2;
     text-decoration: none;
-    padding: 12px 0;
+    white-space: nowrap;
+    box-shadow: 0 6px 18px rgba(116, 24, 228, .12);
+    transition: background-color .25s ease, color .25s ease, box-shadow .25s ease, transform .25s cubic-bezier(.2, .8, .2, 1);
 }
-.link-seta:hover { text-decoration: underline; }
+.link-seta-icone {
+    flex: 0 0 auto;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--amarelo);
+    color: var(--roxo-profundo);
+    animation: chamar-seta 3.2s ease-in-out infinite;
+    transition: transform .25s cubic-bezier(.2, .8, .2, 1);
+}
+/* empurrãozinho periódico na direção da seta */
+@keyframes chamar-seta { 0%, 78%, 100% { transform: translateX(0); } 86% { transform: translateX(5px); } 93% { transform: translateX(-1px); } }
+@keyframes chamar-seta-baixo { 0%, 78%, 100% { transform: translateY(0); } 86% { transform: translateY(5px); } 93% { transform: translateY(-1px); } }
+.link-seta-baixo .link-seta-icone { animation-name: chamar-seta-baixo; }
+.link-seta:hover { background: var(--roxo); color: var(--branco); transform: translateY(-2px); box-shadow: 0 12px 26px rgba(116, 24, 228, .28); }
+.link-seta:hover .link-seta-icone { animation: none; transform: translateX(4px) scale(1.06); }
+.link-seta-baixo:hover .link-seta-icone { transform: translateY(3px) scale(1.06); }
+.link-seta:focus-visible { outline: 3px solid var(--amarelo); outline-offset: 3px; }
 
 .circulo { position: absolute; border-radius: 50%; background: var(--roxo-medio); pointer-events: none; }
 
@@ -420,7 +453,7 @@ section { position: relative; }
 }
 .incluso div { display: flex; flex-direction: column; gap: 4px; flex: 1 1 420px; }
 .incluso strong { font-family: var(--fonte-titulo); font-weight: 800; font-size: 17px; color: var(--roxo-profundo); }
-.incluso span { font-size: 15px; color: var(--texto); }
+.incluso div > span { font-size: 15px; color: var(--texto); }
 
 /* ---------- Dúvidas ---------- */
 .duvidas { background: var(--branco); }
@@ -546,6 +579,7 @@ section { position: relative; }
     .perguntas summary { font-size: 17px; }
     .chamada .acoes .btn { width: 100%; }
     .barra-cta { display: block; }
+    .link-seta { white-space: normal; font-size: 15px; }
     .preco strong { font-size: 52px; }
     .pagina-topo { padding: 48px 0 112px; }
     .pagina-topo p { font-size: 17px; }
@@ -553,7 +587,7 @@ section { position: relative; }
 
 @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
-    .btn-brilho::after, .plano.destaque::after, .plano.destaque .selo, .pilula-viva .ponto::after { animation: none; }
+    .btn-brilho::after, .plano.destaque::after, .plano.destaque .selo, .pilula-viva .ponto::after, .link-seta-icone { animation: none; }
     .entrada { animation: none; opacity: 1; transform: none; }
     .marcador { animation: none; background-size: 100% 0.1em; }
     .realce { transition: none; background-size: 100% 100%; }
