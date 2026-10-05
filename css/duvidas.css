@@ -1,64 +1,131 @@
-﻿body { background-color: var(--bg-color); color: var(--text-primary); }
-        .duvidas-layout {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 120px 2rem 4rem 2rem;
-            min-height: calc(100vh - 80px);
-        }
-        .search-container {
-            margin-bottom: 3rem;
-            position: relative;
-        }
-        .search-input {
-            width: 100%;
-            padding: 1rem 3rem 1rem 3rem;
-            font-size: 1.1rem;
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            color: white;
-            transition: all 0.3s ease;
-        }
-        .search-input:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.2);
-        }
-        .search-icon {
-            position: absolute;
-            left: 1rem;
-            top: 50%;
-            transform: translateY(-50%);
-            color: var(--text-muted);
-            pointer-events: none;
-        }
-        .no-results {
-            display: none;
-            text-align: center;
-            padding: 2rem;
-            color: var(--text-muted);
-            background: var(--bg-card);
-            border-radius: 12px;
-            border: 1px dashed var(--border-color);
-        }
-    
-        .clear-icon {
-            position: absolute;
-            right: 1rem;
-            top: 50%;
-            transform: translateY(-50%);
-            color: rgba(255, 255, 255, 0.7);
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            cursor: pointer;
-            display: none;
-            transition: all 0.2s;
-            padding: 4px;
-            z-index: 10;
-        }
-        .clear-icon:hover {
-            color: white;
-            background: rgba(255, 255, 255, 0.2);
-            transform: translateY(-50%) scale(1.1);
-        }
+/* Página de Dúvidas — só o que é exclusivo dela (a base comum está em css/marca.css) */
 
+.duvidas-pagina { background: var(--lavanda); padding-top: 0; }
+.duvidas-pagina .container { max-width: 880px; gap: 28px; }
+
+/* Busca sobe por cima da faixa roxa do topo */
+.busca {
+    position: relative;
+    margin-top: -36px;
+    display: flex;
+    align-items: center;
+    background: var(--branco);
+    border: 2px solid transparent;
+    border-radius: 18px;
+    box-shadow: 0 20px 44px rgba(75, 15, 165, .16);
+    transition: border-color .2s ease, box-shadow .2s ease;
+}
+.busca:focus-within { border-color: var(--roxo); box-shadow: 0 0 0 5px rgba(116, 24, 228, .14), 0 20px 44px rgba(75, 15, 165, .16); }
+.busca-icone { position: absolute; left: 22px; color: var(--roxo); pointer-events: none; }
+.busca input {
+    flex: 1 1 auto;
+    min-width: 0;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    padding: 22px 56px 22px 60px;
+    font-family: var(--fonte-texto);
+    font-size: 18px;
+    color: var(--tinta);
+}
+.busca input::placeholder { color: #A39CB8; }
+.busca input::-webkit-search-cancel-button { display: none; }
+.busca-limpar {
+    position: absolute;
+    right: 10px;
+    width: 44px;
+    height: 44px;
+    border: 0;
+    border-radius: 12px;
+    background: var(--lavanda);
+    color: var(--roxo);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.busca-limpar[hidden] { display: none; }
+
+/* Filtros por assunto */
+.filtros { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
+.filtro {
+    border: 1px solid var(--borda);
+    background: var(--branco);
+    color: var(--roxo-profundo);
+    font-family: var(--fonte-texto);
+    font-weight: 600;
+    font-size: 15px;
+    padding: 10px 18px;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background-color .2s ease, color .2s ease, border-color .2s ease, transform .2s ease;
+}
+.filtro:hover { border-color: #CDBDF3; transform: translateY(-1px); }
+.filtro[aria-pressed="true"] { background: var(--roxo-profundo); border-color: var(--roxo-profundo); color: var(--branco); }
+.filtro:focus-visible { outline: 3px solid var(--amarelo); outline-offset: 2px; }
+.resultado-busca { margin: -8px 0 0; text-align: center; font-size: 14px; color: var(--texto-suave); min-height: 1.4em; }
+
+/* Grupos */
+.grupo-duvidas { display: flex; flex-direction: column; gap: 14px; }
+.grupo-duvidas[hidden] { display: none; }
+.titulo-grupo-duvidas {
+    margin: 12px 0 0;
+    font-family: var(--fonte-titulo);
+    font-weight: 800;
+    font-size: 14px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--roxo);
+}
+.duvidas-pagina .perguntas details { background: var(--branco); }
+.duvidas-pagina .perguntas details[hidden] { display: none; }
+.perguntas p a { color: var(--roxo); font-weight: 600; }
+mark { background: rgba(255, 199, 0, .45); color: inherit; border-radius: 3px; padding: 0 1px; }
+
+/* Sem resultado */
+.sem-resultado {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    padding: 36px 24px;
+    background: var(--branco);
+    border: 1px dashed #CDBDF3;
+    border-radius: 20px;
+}
+.sem-resultado[hidden] { display: none; }
+.sem-resultado strong { font-family: var(--fonte-titulo); font-weight: 800; font-size: 20px; color: var(--roxo-profundo); }
+.sem-resultado span { color: var(--texto); }
+.sem-resultado .btn { margin-top: 8px; font-size: 16px; }
+
+/* Não achou? */
+.nao-achou {
+    margin-top: 28px;
+    background: var(--roxo-profundo);
+    border-radius: 24px;
+    padding: 30px 32px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    position: relative;
+    overflow: hidden;
+}
+.nao-achou > div:first-child { display: flex; flex-direction: column; gap: 4px; flex: 1 1 320px; }
+.nao-achou strong { font-family: var(--fonte-titulo); font-weight: 800; font-size: 22px; color: var(--branco); }
+.nao-achou span { color: var(--lilas); font-size: 15px; }
+.nao-achou .acoes { display: flex; flex-wrap: wrap; gap: 10px; }
+.nao-achou .btn { font-size: 15px; padding: 13px 20px; border-radius: 12px; }
+
+@media (max-width: 640px) {
+    .busca { margin-top: -30px; }
+    .busca input { font-size: 16px; padding: 18px 52px 18px 52px; }
+    .busca-icone { left: 18px; }
+    .filtros { justify-content: flex-start; flex-wrap: nowrap; overflow-x: auto; margin: 0 -16px; padding: 2px 16px 6px; scrollbar-width: none; }
+    .filtros::-webkit-scrollbar { display: none; }
+    .filtro { flex: 0 0 auto; }
+    .nao-achou { padding: 26px 22px; }
+    .nao-achou .acoes, .nao-achou .btn { width: 100%; }
+}

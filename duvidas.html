@@ -4,19 +4,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Tire suas dúvidas sobre o Menuvem PB. Respostas para perguntas frequentes sobre planos, funcionalidades, suporte e muito mais.">
-    
+    <meta name="description"
+        content="Tire suas dúvidas sobre a Menuvem: planos, 30 dias grátis, comissão, cardápio, integrações com iFood e apps de delivery, e suporte todos os dias.">
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://menuvempb.com.br/duvidas.html">
-    <meta property="og:title" content="Dúvidas Frequentes | Menuvem PB">
-    <meta property="og:description" content="Tire suas dúvidas sobre o Menuvem PB. Respostas para perguntas frequentes sobre planos, funcionalidades, suporte e muito mais.">
+    <meta property="og:title" content="Dúvidas frequentes | Menuvem PB">
+    <meta property="og:description"
+        content="Planos, 30 dias grátis, comissão, integrações e suporte: as respostas que os lojistas mais procuram.">
     <meta property="og:image" content="https://menuvempb.com.br/img/menuvem-logo-simples.png">
 
     <link rel="icon" type="image/png" href="img/menuvem-logo-simples.png">
-    <title>[FAQ] Dúvidas Frequentes | Menuvem PB</title>
-    <link rel="stylesheet" href="css/style.css?v=6">
-    <link rel="stylesheet" href="css/duvidas.css">
+    <title>Dúvidas frequentes | Menuvem PB</title>
+
+    <!-- Fontes da marca: Bricolage Grotesque (títulos) + IBM Plex Sans (texto) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+
+    <link rel="stylesheet" href="css/marca.css?v=2">
+    <link rel="stylesheet" href="css/duvidas.css?v=2">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WMFHH39Q0N"></script>
     <script>
@@ -29,169 +38,207 @@
 </head>
 
 <body>
-    <!-- Navbar -->
-    <nav class="navbar" style="background: rgba(2, 2, 4, 0.95);">
-        <div class="container navbar-container">
-            <a href="index.html" class="logo">
-                <img src="img/menuvem-logo-simples.png" alt="Logo" height="24" style="margin-right: 4px;">
-                <span class="logo-text" style="display:flex; align-items:center;">Menuvem<span class="logo-dot">.</span>PB<img src="img/bandeiradaparaiba.png" alt="Bandeira PB" height="18" style="margin-left: 8px; border-radius:2px; box-shadow: 0 0 12px rgba(255, 255, 255, 0.8);"></span>
+    <header class="topo">
+        <div class="container">
+            <a href="index.html" class="marca" aria-label="Menuvem PB, página inicial">
+                <img src="img/marca/logo-completo-branco.svg" alt="Menuvem" width="69" height="46">
+                <span class="pilula">PB</span>
             </a>
-            <a href="index.html" class="back-link">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="19" y1="12" x2="5" y2="12"></line>
-                    <polyline points="12 19 5 12 12 5"></polyline>
-                </svg>
-                Voltar ao Início
-            </a>
+            <button class="botao-menu" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" aria-hidden="true"><path d="M4 7h16"></path><path d="M4 12h16"></path><path d="M4 17h16"></path></svg>
+            </button>
+            <nav class="menu" id="menu" aria-label="Principal">
+                <a href="planos.html">Planos</a>
+                <a href="funcionalidades.html">Funcionalidades</a>
+                <a href="index.html#suporte">Suporte</a>
+                <a href="duvidas.html" aria-current="page">Dúvidas</a>
+                <a href="https://painel.menuvem.com.br" target="_blank" rel="noopener" class="entrar">Entrar</a>
+                <a href="https://wa.me/5583988559423?text=Ol%C3%A1!%20Gostaria%20de%20ativar%20meu%20b%C3%B4nus%20de%2030%20dias%20gr%C3%A1tis%20no%20sistema%20Menuvem."
+                    target="_blank" rel="noopener" class="btn btn-amarelo" id="topo-btn-teste">Testar 30 dias grátis</a>
+            </nav>
         </div>
-    </nav>
+    </header>
 
-    <div class="duvidas-layout">
-        <div class="section-header reveal">
-            <span class="badge">Central de Ajuda</span>
-            <h2>Suas dúvidas, <span>respondidas</span>.</h2>
-            <p>Pesquise por palavras-chave para encontrar exatamente o que você procura.</p>
-        </div>
+    <main>
+        <!-- Topo da página com a busca -->
+        <section class="pagina-topo">
+            <div class="circulo"></div>
+            <div class="container">
+                <span class="pilula entrada" style="--i:0">Central de ajuda</span>
+                <h1 class="entrada" style="--i:1">Suas dúvidas, <span class="marcador">respondidas</span></h1>
+                <p class="entrada" style="--i:2">Pesquise por uma palavra ou escolha um assunto.</p>
+            </div>
+        </section>
 
-        <div class="search-container reveal delay-100">
-            <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-            <input type="text" id="faqSearchInput" class="search-input" placeholder="Ex: fidelidade, comissão, suporte...">
-            <svg class="clear-icon" id="clearSearchBtn" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="18" y1="6" x2="6" y2="18"></line>
-                <line x1="6" y1="6" x2="18" y2="18"></line>
-            </svg>
-        </div>
+        <section class="secao duvidas duvidas-pagina">
+            <div class="container">
+                <div class="busca entrada" style="--i:3" role="search">
+                    <label for="busca-duvidas" class="sr-only">Pesquisar dúvidas</label>
+                    <svg class="busca-icone" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-4-4"></path></svg>
+                    <input type="search" id="busca-duvidas" placeholder="Ex.: fidelidade, comissão, iFood, impressora…" autocomplete="off">
+                    <button type="button" class="busca-limpar" aria-label="Limpar busca" hidden>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12"></path><path d="M18 6L6 18"></path></svg>
+                    </button>
+                </div>
 
-        <div class="faq-grid" id="faqList">
-            <!-- FAQ 1 -->
-            <div class="faq-item reveal delay-200">
-                <button class="faq-question">
-                    <span>O sistema possui fidelidade ou multa se eu quiser cancelar?</span>
-                    <span class="faq-icon">▼</span>
-                </button>
-                <div class="faq-answer">
-                    <p>Não. Todos os nossos planos são mensais recorrentes, sem qualquer fidelidade ou taxas de cancelamento. Você utiliza enquanto fizer sentido para o seu negócio e pode cancelar a qualquer momento.</p>
+                <div class="filtros" role="group" aria-label="Filtrar por assunto">
+                    <button type="button" class="filtro" data-filtro="" aria-pressed="true">Todas</button>
+                    <button type="button" class="filtro" data-filtro="comecar" aria-pressed="false">Começando</button>
+                    <button type="button" class="filtro" data-filtro="planos" aria-pressed="false">Planos e pagamento</button>
+                    <button type="button" class="filtro" data-filtro="recursos" aria-pressed="false">Recursos</button>
+                    <button type="button" class="filtro" data-filtro="suporte" aria-pressed="false">Suporte</button>
+                </div>
+                <p class="resultado-busca" aria-live="polite"></p>
+
+                <div class="grupo-duvidas revelar" data-categoria="comecar">
+                    <h2 class="titulo-grupo-duvidas">Começando</h2>
+                    <div class="perguntas">
+                        <details>
+                            <summary><span>Como eu faço para ganhar os 30 dias grátis?</span></summary>
+                            <p>Faça o cadastro da sua loja e depois chame o nosso suporte no WhatsApp: é por lá que a gente aplica os 30 dias grátis na sua conta. Não precisa de cartão. Se quiser, veja <a href="cadastro-etapas.html">as 3 etapas do cadastro</a> ou peça ajuda ao suporte pra criar a conta.</p>
+                        </details>
+                        <details>
+                            <summary><span>Vocês montam meu cardápio e personalizam o sistema?</span></summary>
+                            <p>Sim. Personalizamos a plataforma, cadastramos o seu cardápio e treinamos a sua equipe sem custo. Investimento inicial R$ 0: você só precisa vender.</p>
+                        </details>
+                        <details>
+                            <summary><span>Preciso de algum equipamento específico?</span></summary>
+                            <p>Não. O sistema funciona no computador, no tablet ou no celular, e você acompanha o seu negócio de qualquer lugar.</p>
+                        </details>
+                        <details>
+                            <summary><span>Como é o treinamento da minha equipe?</span></summary>
+                            <p>A implantação e o treinamento de garçons e caixas são feitos 100% online, por videoconferência. É mais rápido e você começa a operar sem esperar visita.</p>
+                        </details>
+                    </div>
+                </div>
+                <div class="grupo-duvidas revelar" data-categoria="planos">
+                    <h2 class="titulo-grupo-duvidas">Planos e pagamento</h2>
+                    <div class="perguntas">
+                        <details>
+                            <summary><span>Tem fidelidade ou multa se eu quiser cancelar?</span></summary>
+                            <p>Não. Os planos são mensais, sem fidelidade e sem taxa de cancelamento. Você usa enquanto fizer sentido pro seu negócio e pode cancelar quando quiser.</p>
+                        </details>
+                        <details>
+                            <summary><span>A Menuvem cobra comissão pelas minhas vendas?</span></summary>
+                            <p>Não. Diferente dos marketplaces, que ficam com uma porcentagem de cada pedido, na Menuvem você paga só a mensalidade fixa do seu plano. O lucro do pedido fica todo com você.</p>
+                        </details>
+                        <details>
+                            <summary><span>Quanto custa e qual a diferença entre os planos?</span></summary>
+                            <p>Os planos custam R$ 167, R$ 227 e R$ 267 por mês. O Delivery Iniciante cobre o delivery e a retirada; o Delivery, Balcão e Mesas acrescenta o salão, as mesas e o app do garçom; o Negócios Consolidados acrescenta o monitor de produção por setores. Veja <a href="planos.html#comparar">a comparação completa</a>.</p>
+                        </details>
+                        <details>
+                            <summary><span>Posso trocar de plano depois?</span></summary>
+                            <p>Pode. Se o seu negócio crescer ou mudar, é só falar com o suporte que a gente ajusta o plano.</p>
+                        </details>
+                        <details>
+                            <summary><span>Tem cobrança escondida ou aumento de mensalidade?</span></summary>
+                            <p>Não. Sem letras miúdas: sem aumento repentino de mensalidade e sem cobranças extras escondidas na sua fatura.</p>
+                        </details>
+                        <details>
+                            <summary><span>A emissão de nota fiscal tem limite?</span></summary>
+                            <p>Não. Nos três planos a emissão de NFC-e e NF-e é ilimitada, sem custo por nota.</p>
+                        </details>
+                    </div>
+                </div>
+                <div class="grupo-duvidas revelar" data-categoria="recursos">
+                    <h2 class="titulo-grupo-duvidas">Recursos</h2>
+                    <div class="perguntas">
+                        <details>
+                            <summary><span>Recebo os pedidos do iFood e de outros apps no mesmo lugar?</span></summary>
+                            <p>Sim. Os pedidos do iFood, Keeta, 99Food e Aiqfome chegam no mesmo painel dos pedidos do seu cardápio próprio. Menos telas, menos confusão.</p>
+                        </details>
+                        <details>
+                            <summary><span>Posso receber pagamento online?</span></summary>
+                            <p>Pode. O cardápio aceita pagamento online por Pix e cartão. As taxas do pagamento online você consulta com o nosso suporte.</p>
+                        </details>
+                        <details>
+                            <summary><span>O cliente recebe aviso do pedido no WhatsApp?</span></summary>
+                            <p>Sim. O cliente recebe a confirmação e o andamento do pedido direto no WhatsApp dele.</p>
+                        </details>
+                        <details>
+                            <summary><span>Tem programa de fidelidade?</span></summary>
+                            <p>Tem. Você cria um programa de pontos com resgate de produtos e cupons com regras por horário e limite de uso, pro cliente voltar mais vezes.</p>
+                        </details>
+                    </div>
+                </div>
+                <div class="grupo-duvidas revelar" data-categoria="suporte">
+                    <h2 class="titulo-grupo-duvidas">Suporte</h2>
+                    <div class="perguntas">
+                        <details>
+                            <summary><span>Como funciona o suporte?</span></summary>
+                            <p>Atendemos todos os dias da semana, inclusive sábados, domingos e feriados, pelo chat e por acesso remoto.</p>
+                        </details>
+                        <details>
+                            <summary><span>O suporte resolve problema com impressora?</span></summary>
+                            <p>Resolve. Dúvidas e problemas com impressora são atendidos por acesso remoto: a gente entra no seu computador e resolve junto com você.</p>
+                        </details>
+                    </div>
+                </div>
+
+                <div class="sem-resultado" hidden>
+                    <strong>Não achamos nada com essa busca.</strong>
+                    <span>Tente outra palavra ou pergunte direto pro nosso suporte.</span>
+                    <a href="https://wa.me/5583988559423?text=Ol%C3%A1!%20Tenho%20uma%20d%C3%BAvida%20sobre%20a%20Menuvem." target="_blank" rel="noopener" class="btn btn-roxo">Perguntar no WhatsApp<svg class="seta" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg></a>
+                </div>
+
+                <!-- Não achou? -->
+                <div class="nao-achou revelar">
+                    <div>
+                        <strong>Não achou o que procurava?</strong>
+                        <span>Fale com a gente. Atendemos todos os dias, inclusive fins de semana.</span>
+                    </div>
+                    <div class="acoes">
+                        <a href="https://wa.me/5583988559423?text=Ol%C3%A1!%20Tenho%20uma%20d%C3%BAvida%20sobre%20a%20Menuvem." target="_blank" rel="noopener" class="btn btn-amarelo">WhatsApp<svg class="seta" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg></a>
+                        <a href="https://t.me/menuvempb" target="_blank" rel="noopener" class="btn btn-contorno-claro">Telegram</a>
+                    </div>
                 </div>
             </div>
+        </section>
+    </main>
 
-            <!-- FAQ 2 -->
-            <div class="faq-item reveal delay-200">
-                <button class="faq-question">
-                    <span>A Menuvem cobra comissão pelas minhas vendas?</span>
-                    <span class="faq-icon">▼</span>
-                </button>
-                <div class="faq-answer">
-                    <p>Absolutamente não. Ao contrário de plataformas como o iFood que cobram altas porcentagens em cada pedido, na Menuvem você paga apenas uma mensalidade fixa de acordo com seu plano. Todo o seu lucro fica com você.</p>
+    <footer class="rodape">
+        <div class="container">
+            <div class="rodape-grade">
+                <div class="rodape-marca">
+                    <img src="img/marca/logo-completo-branco.svg" alt="Menuvem" width="83" height="56" loading="lazy">
+                    <p>Cardápio digital e PDV para o seu negócio. Representante oficial da Menuvem.</p>
                 </div>
+                <nav aria-label="Menuvem">
+                    <h4>Menuvem</h4>
+                    <a href="planos.html">Planos e preços</a>
+                    <a href="funcionalidades.html">Funcionalidades</a>
+                    <a href="cadastro-etapas.html">Cadastre-se</a>
+                    <a href="duvidas.html">Dúvidas frequentes</a>
+                </nav>
+                <nav aria-label="Suporte">
+                    <h4>Suporte</h4>
+                    <a href="https://wa.me/5583988559423?text=Ol%C3%A1!%20Preciso%20de%20suporte%20no%20sistema%20Menuvem."
+                        target="_blank" rel="noopener">WhatsApp</a>
+                    <a href="https://t.me/menuvempb" target="_blank" rel="noopener">Telegram</a>
+                    <a href="https://painel.menuvem.com.br" target="_blank" rel="noopener">Entrar no painel</a>
+                </nav>
+                <nav aria-label="Legal">
+                    <h4>Legal</h4>
+                    <a href="privacidade">Política de Privacidade</a>
+                </nav>
             </div>
-
-            <!-- FAQ 3 -->
-            <div class="faq-item reveal delay-200">
-                <button class="faq-question">
-                    <span>Como funciona o suporte técnico regional?</span>
-                    <span class="faq-icon">▼</span>
-                </button>
-                <div class="faq-answer">
-                    <p>Nosso suporte regional funciona de forma ágil e dedicada das <strong>10h às 21h30 todos os dias</strong> da semana (incluindo sábados, domingos e feriados) via acesso remoto ou chat.</p>
-                </div>
-            </div>
-
-            <!-- FAQ 4 -->
-            <div class="faq-item reveal delay-200">
-                <button class="faq-question">
-                    <span>Vocês ajudam a cadastrar o cardápio e personalizar o sistema?</span>
-                    <span class="faq-icon">▼</span>
-                </button>
-                <div class="faq-answer">
-                    <p>Sim! Na Menuvem PB você não precisa de investimento inicial (R$ 0). Nós personalizamos a plataforma e montamos todo o seu cardápio e treinamos a sua equipe de forma 100% gratuita para você começar a operar sem trabalho.</p>
-                </div>
-            </div>
-
-            <!-- FAQ 5 -->
-            <div class="faq-item reveal delay-200">
-                <button class="faq-question">
-                    <span>Como eu faço para obter os 30 dias de teste grátis?</span>
-                    <span class="faq-icon">▼</span>
-                </button>
-                <div class="faq-answer">
-                    <p>Para obter o bônus de 30 dias de gratuidade, você deve obrigatoriamente entrar em contato com o <strong>Suporte PB no WhatsApp (83) 9 8855-9423</strong> para aplicarmos o bônus logo após criar o cadastro da sua loja. Se você quiser ajuda para criar a sua conta, clique em "Cadastre-se" no topo para ver as 3 etapas de cadastro e ativação do seu bônus de forma simples. Ou solicite ajuda no nosso canal de Suporte pelo Whatsapp, estamos disponíveis para ajudar você.</p>
-                </div>
+            <div class="rodape-base">
+                <span>© 2026 <a href="https://nuctecnologia.com.br" target="_blank" rel="noopener">NUC Tecnologia</a>
+                    · CNPJ 24.922.727/0001-94</span>
+                <span>menuvempb.com.br</span>
             </div>
         </div>
+    </footer>
 
-        <div id="noResults" class="no-results">
-            <p>Nenhuma dúvida encontrada com esses termos. Tente pesquisar com outras palavras.</p>
-        </div>
+    <!-- Barra de CTA no celular (aparece depois do topo da página) -->
+    <div class="barra-cta" aria-hidden="true">
+        <a href="https://wa.me/5583988559423?text=Ol%C3%A1!%20Gostaria%20de%20ativar%20meu%20b%C3%B4nus%20de%2030%20dias%20gr%C3%A1tis%20no%20sistema%20Menuvem." target="_blank" rel="noopener" class="btn btn-amarelo btn-brilho" tabindex="-1">Testar 30 dias grátis<svg class="seta" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg></a>
     </div>
 
-    <script src="js/main.js?v=8"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const searchInput = document.getElementById('faqSearchInput');
-            const clearBtn = document.getElementById('clearSearchBtn');
-            
-            clearBtn.addEventListener('click', () => {
-                searchInput.value = '';
-                searchInput.focus();
-                clearBtn.style.display = 'none';
-                filterFaqs('');
-            });
+    <script src="js/site.js?v=3"></script>
+    <script src="js/duvidas.js?v=2"></script>
 
-            const faqItems = document.querySelectorAll('.faq-item');
-            const noResults = document.getElementById('noResults');
-
-            // Handle URL search param if passed from index.html
-            const urlParams = new URLSearchParams(window.location.search);
-            const q = urlParams.get('q');
-            if (q) {
-                searchInput.value = q;
-                clearBtn.style.display = 'block';
-                filterFaqs(q.toLowerCase());
-            }
-
-            searchInput.addEventListener('input', (e) => {
-                const val = e.target.value;
-                if (val.trim().length > 0) {
-                    clearBtn.style.display = 'block';
-                } else {
-                    clearBtn.style.display = 'none';
-                }
-                filterFaqs(val.toLowerCase());
-            });
-
-            function filterFaqs(term) {
-                let hasVisible = false;
-                
-                faqItems.forEach(item => {
-                    // search in title and answer text
-                    const text = item.textContent.toLowerCase();
-                    
-                    if (text.includes(term)) {
-                        item.style.display = 'block';
-                        hasVisible = true;
-                        
-                        // Automatically open if there's a search term
-                        if (term.length > 2 && !item.classList.contains('faq-item-active')) {
-                            item.classList.add('faq-item-active');
-                            const answer = item.querySelector('.faq-answer');
-                            if(answer) answer.style.maxHeight = answer.scrollHeight + "px";
-                        }
-                    } else {
-                        item.style.display = 'none';
-                        item.classList.remove('faq-item-active');
-                        const answer = item.querySelector('.faq-answer');
-                        if(answer) answer.style.maxHeight = null;
-                    }
-                });
-
-                if (hasVisible || term === '') {
-                    noResults.style.display = 'none';
-                } else {
-                    noResults.style.display = 'block';
-                }
-            }
-        });
-    </script>
     <!-- Chatwoot -->
     <script>
         (function (d, t) {
@@ -210,7 +257,5 @@
         })(document, "script");
     </script>
 </body>
+
 </html>
-
-
-
