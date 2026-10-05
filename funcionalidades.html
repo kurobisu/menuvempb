@@ -4,20 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Explore as funcionalidades do Menuvem PB. Soluções completas como QR Code na mesa, delivery sem comissão, automação no WhatsApp e integração com PDV.">
-    
+    <meta name="description" content="Conheça as funcionalidades da Menuvem: cardápio digital sem comissão, PDV, mesas e QR Code, integração com iFood e apps de delivery, pagamento online, fidelidade, estoque e nota fiscal.">
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://menuvempb.com.br/funcionalidades.html">
     <meta property="og:title" content="Funcionalidades | Menuvem PB">
-    <meta property="og:description" content="Explore as funcionalidades do Menuvem PB. Soluções completas como QR Code na mesa, delivery sem comissão e muito mais.">
+    <meta property="og:description" content="Cardápio digital sem comissão, PDV, mesas, integrações, pagamento online, fidelidade, estoque e nota fiscal num só painel.">
     <meta property="og:image" content="https://menuvempb.com.br/img/menuvem-logo-simples.png">
 
     <link rel="icon" type="image/png" href="img/menuvem-logo-simples.png">
-    <title>[Funcionalidades] Recursos e Módulos | Menuvem PB</title>
-    <link rel="stylesheet" href="css/style.css?v=2">
+    <title>Funcionalidades | Menuvem PB</title>
 
-    <link rel="stylesheet" href="css/funcionalidades.css">
+    <!-- Fontes da marca: Bricolage Grotesque (títulos) + IBM Plex Sans (texto) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+
+    <link rel="stylesheet" href="css/marca.css?v=2">
+    <link rel="stylesheet" href="css/funcionalidades.css?v=3">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WMFHH39Q0N"></script>
     <script>
@@ -30,448 +36,436 @@
 </head>
 
 <body>
-    <!-- Navbar (Simplified for this page) -->
-    <nav class="navbar" style="background: rgba(2, 2, 4, 0.95);">
-        <div class="container navbar-container">
-            <a href="index.html" class="logo">
-                <img src="img/menuvem-logo-simples.png" alt="Logo" height="24" style="margin-right: 4px;">
-                <span class="logo-text" style="display:flex; align-items:center;">Menuvem<span class="logo-dot">.</span>PB<img src="img/bandeiradaparaiba.png" alt="Bandeira PB" height="18" style="margin-left: 8px; border-radius:2px; box-shadow: 0 0 12px rgba(255, 255, 255, 0.8);"></span>
+    <header class="topo">
+        <div class="container">
+            <a href="index.html" class="marca" aria-label="Menuvem PB, página inicial">
+                <img src="img/marca/logo-completo-branco.svg" alt="Menuvem" width="69" height="46">
+                <span class="pilula">PB</span>
             </a>
-            <a href="index.html" class="back-link">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="19" y1="12" x2="5" y2="12"></line>
-                    <polyline points="12 19 5 12 12 5"></polyline>
-                </svg>
-                Voltar ao Início
-            </a>
+            <button class="botao-menu" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" aria-hidden="true"><path d="M4 7h16"></path><path d="M4 12h16"></path><path d="M4 17h16"></path></svg>
+            </button>
+            <nav class="menu" id="menu" aria-label="Principal">
+                <a href="planos.html">Planos</a>
+                <a href="funcionalidades.html" aria-current="page">Funcionalidades</a>
+                <a href="index.html#suporte">Suporte</a>
+                <a href="duvidas.html">Dúvidas</a>
+                <a href="https://painel.menuvem.com.br" target="_blank" rel="noopener" class="entrar">Entrar</a>
+                <a href="https://wa.me/5583988559423?text=Ol%C3%A1!%20Gostaria%20de%20ativar%20meu%20b%C3%B4nus%20de%2030%20dias%20gr%C3%A1tis%20no%20sistema%20Menuvem."
+                    target="_blank" rel="noopener" class="btn btn-amarelo" id="topo-btn-teste">Testar 30 dias grátis</a>
+            </nav>
         </div>
-    </nav>
+    </header>
 
-    <button class="mobile-menu-toggle" id="mobileToggle">
-        <span>Selecione uma Funcionalidade</span>
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"></path></svg>
-    </button>
-    <div class="sidebar-overlay" id="sidebarOverlay"></div>
-
-    <div class="func-layout">
-        <!-- Sidebar Navigation -->
-        <aside class="func-sidebar" id="funcSidebar">
-            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 2rem;">
-                <h3 style="font-family: var(--font-title); font-size: 1.2rem;">Módulos</h3>
-                <button id="closeSidebar" style="background:none; border:none; color:white; font-size:1.5rem; display:none; cursor:pointer;">&times;</button>
+    <main>
+        <section class="pagina-topo">
+            <div class="circulo"></div>
+            <div class="container">
+                <span class="pilula entrada" style="--i:0">Funcionalidades</span>
+                <h1 class="entrada" style="--i:1">Tudo que o seu negócio precisa, <span class="marcador">num só painel</span></h1>
+                <p class="entrada" style="--i:2">18 módulos pra vender mais no delivery, atender melhor no salão e
+                    organizar o financeiro. Escolha um assunto ou pesquise.</p>
             </div>
+        </section>
 
-            <!-- Search Bar -->
-            <div class="search-container" style="margin-bottom: 1.5rem;">
-                <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-                <input type="text" id="funcSearchInput" class="search-input" placeholder="Pesquisar módulo...">
-                <svg class="clear-icon" id="clearSearchBtn" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="18" y1="6" x2="6" y2="18"></line>
-                    <line x1="6" y1="6" x2="18" y2="18"></line>
-                </svg>
-            </div>
-            <div id="noResults" class="no-results" style="display:none; font-size: 0.9rem; margin-bottom: 1rem; color: var(--text-muted);">Nenhuma funcionalidade encontrada.</div>
-
-            <!-- Category 1 -->
-            <div class="category-group open">
-                <div class="category-title">
-                    Delivery & Cardápio
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="transition: transform 0.2s;"><path d="M6 9l6 6 6-6"></path></svg>
+        <!-- Barra fixa: assuntos e busca -->
+        <div class="barra-catalogo">
+            <div class="container">
+                <nav class="chips-categorias" aria-label="Assuntos">
+                    <a href="#cat-delivery" class="chip-categoria" data-cat="delivery">Delivery e Cardápio</a><a href="#cat-salao" class="chip-categoria" data-cat="salao">Salão e Frente de Caixa</a><a href="#cat-gestao" class="chip-categoria" data-cat="gestao">Gestão, Financeiro e Fiscal</a>
+                </nav>
+                <div class="busca-catalogo" role="search">
+                    <label for="busca-modulos" class="sr-only">Pesquisar funcionalidade</label>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-4-4"></path></svg>
+                    <input type="search" id="busca-modulos" placeholder="Pesquisar (ex.: iFood, mesa, estoque)" autocomplete="off">
                 </div>
-                <ul class="subcategory-list">
-                    <li class="subcategory-item active" data-target="delivery-proprio">Painel de Delivery</li>
-                    <li class="subcategory-item" data-target="gestao-de-cardapio">Gestão de Cardápio</li>
-                    <li class="subcategory-item" data-target="fidelidade">Fidelidade & Cupons</li>
-                    <li class="subcategory-item" data-target="automacao-whatsapp">Automação no WhatsApp</li>
-                    <li class="subcategory-item" data-target="integracao-ifood">Integração iFood, 99Food, Keeta & Aiqfome</li>
-                    <li class="subcategory-item" data-target="pagamento-online">Pagamento Online Integrado</li>
-                </ul>
             </div>
+        </div>
+        <p class="resultado-modulos container" aria-live="polite"></p>
 
-            <!-- Category 2 -->
-            <div class="category-group">
-                <div class="category-title">
-                    Frente de Caixa (PDV)
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="transition: transform 0.2s;"><path d="M6 9l6 6 6-6"></path></svg>
-                </div>
-                <ul class="subcategory-list">
-                    <li class="subcategory-item" data-target="pdv-agil">PDV Ágil (Balcão)</li>
-                    <li class="subcategory-item" data-target="mesas">Controle de Mesas</li>
-                    <li class="subcategory-item" data-target="kds">Gestão de Setores de Produção</li>
-                    <li class="subcategory-item" data-target="cardapio-qr">Cardápio QR Code na Mesa</li>
-                </ul>
-            </div>
-            
-            <!-- Category 3 -->
-            <div class="category-group">
-                <div class="category-title">
-                    Controle de Estoque
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="transition: transform 0.2s;"><path d="M6 9l6 6 6-6"></path></svg>
-                </div>
-                <ul class="subcategory-list">
-                    
-                    <li class="subcategory-item" data-target="estoque-minimo">Alerta de Estoque Mínimo</li>
-                    <li class="subcategory-item" data-target="inventario">Relatórios de Inventário</li>
-                </ul>
-            </div>
-
-            <!-- Category 4 -->
-            <div class="category-group">
-                <div class="category-title">
-                    Financeiro & Fiscal
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="transition: transform 0.2s;"><path d="M6 9l6 6 6-6"></path></svg>
-                </div>
-                <ul class="subcategory-list">
-                    <li class="subcategory-item" data-target="emissao-fiscal">Emissão NFC-e Automática</li>
-                    <li class="subcategory-item" data-target="carteira">Carteira Digital (Fiado e Pré-pago)</li>
-                    <li class="subcategory-item" data-target="fechamento-caixa">Fechamento de Caixa Cego</li>
-                    <li class="subcategory-item" data-target="dre">Relatórios de DRE e Vendas</li>
-                </ul>
-            </div>
-        </aside>
-
-        <!-- Main Content Area -->
-        <main class="func-main" id="funcMain">
-            <!-- Content 1 -->
-            <div class="func-detail active" id="delivery-proprio">
-                <span class="badge" style="background:rgba(217,70,239,0.1); border-color:rgba(217,70,239,0.2); color:#f472b6;">Cardápio & Delivery</span>
-                <h1>Painel de Delivery</h1>
-                <p>Tenha o seu próprio cardápio digital profissional, totalmente livre de taxas e comissões abusivas por pedido. Você vende mais e o lucro fica 100% no seu caixa.</p>
-                <ul class="func-feature-list">
-                    <li>Link exclusivo com o nome do seu negócio (ex: seunome.pedir.online).</li>
-                    <li>Cardápio intuitivo otimizado para aumentar a conversão no celular.</li>
-                    <li>Atualização de preços, pausas de itens e promoções em tempo real.</li>
-                    <li>Notificações automáticas no WhatsApp do cliente sobre o status do pedido.</li>
-                </ul>
-            </div>
-
-            <!-- Content 2: Gestão de Cardápio -->
-            <div class="func-detail" id="gestao-de-cardapio">
-                <span class="badge" style="background:rgba(217,70,239,0.1); border-color:rgba(217,70,239,0.2); color:#f472b6;">Cardápio & Delivery</span>
-                <h1>Gestão de Cardápio</h1>
-                <p>Gerencie seu cardápio com agilidade, controle em tempo real e integração inteligente de produtos, combos e estoque.</p>
-                <ul class="func-feature-list">
-                    <li><strong>Ativação e Desativação Instantânea:</strong> Ligue ou desligue produtos do cardápio a qualquer momento com resposta imediata para os clientes no site.</li>
-                    <li><strong>Criação Flexível de Produtos e Combos:</strong> Crie itens personalizados reutilizando sabores, adicionais e complementos cadastrados sem precisar recriar tudo do zero.</li>
-                    <li><strong>Estoque Interligado em Múltiplos Produtos:</strong> Vincule insumos e bebidas (como Coca-Cola Lata 350ml) ao estoque único. A venda de um combo baixa automaticamente a bebida individual do estoque central.</li>
-                    <li><strong>Sincronização e Pausa Automática:</strong> Se um produto for pausado manualmente ou o estoque zerar, ele é desativado instantaneamente de todas as promoções, ofertas e combos onde estiver presente.</li>
-                </ul>
-            </div>
-
-            <div class="func-detail" id="fidelidade">
-                <span class="badge" style="background:rgba(217,70,239,0.1); border-color:rgba(217,70,239,0.2); color:#f472b6;">Cardápio & Delivery</span>
-                <h1>Fidelidade & Cupons</h1>
-                <p>Engaje seus clientes e aumente a frequência de pedidos com nosso programa de pontos flexível e cupons promocionais altamente configuráveis.</p>
-                <ul class="func-feature-list">
-                    <li><strong>Programa de Pontos & Recompensas:</strong> O cliente ganha 1 ponto a cada R$ 1,00 gasto. O lojista transforma produtos existentes do cardápio em recompensas, podendo definir manualmente os pontos necessários ou usar o cálculo automático de 5% de retorno (ex: R$ 15,00 = 300 pontos).</li>
-                </ul>
-            </div>
-
-            <div class="func-detail" id="automacao-whatsapp">
-                <span class="badge" style="background:rgba(217,70,239,0.1); border-color:rgba(217,70,239,0.2); color:#f472b6;">Cardápio & Delivery</span>
-                <h1>Automação no WhatsApp</h1>
-                <p>A Menuvem disponibiliza diferentes métodos de automação para que o lojista escolha a opção mais alinhada à sua operação e orçamento.</p>
-                <ul class="func-feature-list">
-                    <li><strong>API Oficial da META (Recomendado):</strong> Somos parceiros oficiais da META. Oferece a melhor experiência, máxima estabilidade, segurança e zero risco de bloqueios. <em>(Sujeito às taxas de conversa da própria META).</em></li>
-                    <li><strong>Integração Z-API (Terceiros):</strong> Conexão via Z-API com investimento aproximado de R$ 100,00/mês. <em>(Nota: A Menuvem disponibiliza a integração técnica, mas não se responsabiliza por plataformas de terceiros).</em></li>
-                    <li><strong>Chatplug (Desenvolvido por NUC Tecnologia / Menuvem):</strong> Aplicação gratuita desenvolvida pela nossa equipe para automação de Chatbot no WhatsApp. Sem mensalidade, mas requer que a máquina/computador do cliente esteja ligada e conectada à internet. Por não ser API Oficial, está sujeita a instabilidades operacionais e pode solicitar reconexão via QR Code.</li>
-                </ul>
-            </div>
-            
-            <div class="func-detail" id="integracao-ifood">
-                <span class="badge" style="background:rgba(217,70,239,0.1); border-color:rgba(217,70,239,0.2); color:#f472b6;">Cardápio & Delivery</span>
-                <h1>Integração iFood, 99Food, Keeta & Aiqfome</h1>
-                <p>Centralize a gestão de todos os seus pedidos de aplicativos parceiros (iFood, 99Food, Keeta e Aiqfome) em uma única tela no seu sistema.</p>
-                <ul class="func-feature-list">
-                    <li><strong>Gestão Centralizada de Pedidos:</strong> Pedidos do iFood, 99Food, Keeta e Aiqfome caem diretamente no PDV Menuvem para aceite e acompanhamento de entrega.</li>
-                    <li><strong>Impressão Automática de Comandas:</strong> Envio automático dos pedidos para impressão nas impressoras da cozinha por setor de produção.</li>
-                    <li><strong>Importante (Gestão Exclusiva de Pedidos):</strong> As integrações com iFood, 99Food, Keeta e Aiqfome destinam-se exclusivamente à gestão e recepção de pedidos no PDV. O sistema não realiza a sincronização de cardápios ou alteração automática de preços nos aplicativos de terceiros.</li>
-                </ul>
-            </div>
-
-            <!-- Content: Pagamento Online Integrado -->
-            <div class="func-detail" id="pagamento-online">
-                <span class="badge" style="background:rgba(217,70,239,0.1); border-color:rgba(217,70,239,0.2); color:#f472b6;">Cardápio & Delivery</span>
-                <h1>Pagamento Online Integrado</h1>
-                <p>Receba pagamentos com total praticidade e segurança direto no cardápio digital, com aprovação em tempo real e antifraude integrado.</p>
-                <p style="font-size:0.9rem; opacity:0.85;">Pix e cartão online com <strong>conciliação automática</strong>: você não precisa de maquininha. Disponível para estabelecimentos com CNPJ (quem recebe em CPF usa o Pix com confirmação manual). A Menuvem não cobra taxa por transação; as taxas informadas são bancárias, dos parceiros de pagamento.</p>
-                
-                <!-- Método 1: PIX Dinâmico -->
-                <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 1.5rem; margin-top: 1.5rem;">
-                    <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem;">
-                        <h3 style="font-size: 1.25rem; color: #34d399; margin: 0; display: flex; align-items: center; gap: 0.5rem;">
-                            ⚡ PIX Dinâmico (Conciliação Automática)
-                        </h3>
-                        <span style="background: rgba(52, 211, 153, 0.15); border: 1px solid rgba(52, 211, 153, 0.3); color: #34d399; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.75rem; font-weight: 700;">Aprovação Instantânea</span>
+        <div class="catalogo">
+            <section class="categoria" id="cat-delivery" aria-labelledby="titulo-delivery">
+                <div class="container">
+                    <div class="categoria-cabeca revelar">
+                        <span class="categoria-icone"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16"></path><path d="M4 12h16"></path><path d="M4 18h10"></path></svg></span>
+                        <h2 id="titulo-delivery">Delivery e Cardápio</h2>
+                        <span class="categoria-conta">7 módulos</span>
                     </div>
-                    <p style="color: #e4e4e7; margin-bottom: 1rem; line-height: 1.5;">
-                        Com esse serviço, o pedido <strong>só chegará para você quando o valor for conferido de forma automática e garantido como PAGO pelo banco</strong>. Chega de comprovantes falsos ou dores de cabeça! Se precisar de suporte, nossa equipe está pronta para te atender.
-                    </p>
-                    <ul class="func-feature-list" style="margin-bottom: 1rem;">
-                        <li><strong>Taxa por Pedido Pago:</strong> Apenas <strong>R$ 0,59</strong> (taxa bancária) por pedido aprovado via cardápio.</li>
-                        <li><strong>Saque a Qualquer Momento:</strong> O valor fica disponível para saque a qualquer momento sem prazo mínimo! Cada solicitação de saque (de quantia ilimitada) custa apenas <strong>R$ 0,30</strong> (taxa bancária). Você acumula o valor que desejar e saca quando quiser.</li>
-                        <li><strong>Painel AvantePay Exclusivo:</strong> Você recebe acesso ao painel AvantePay para gerenciar todas as transações, efetuar saques e realizar cancelamentos (cancelamentos possuem taxa bancária de R$ 0,30).</li>
-                        <li><strong>Aviso Importante sobre Cancelamentos:</strong> Cancelar o pedido no Painel de Pedidos da Menuvem <em>não estorna o valor automaticamente ao cliente</em>. Para efetuar o estorno bancário, basta realizar o procedimento no Painel AvantePay (nossa equipe de Suporte pode te auxiliar sempre que precisar).</li>
-                    </ul>
-                    <div style="background: rgba(234, 179, 8, 0.1); border-left: 4px solid #eab308; padding: 0.75rem 1rem; border-radius: 4px; font-size: 0.85rem; color: #fef08a; margin-top: 1rem;">
-                        ⚠️ <strong>Requisito de Ativação:</strong> Função disponível <strong>APENAS para Contas Bancárias de Pessoa Jurídica (PJ)</strong>. O prazo de cadastro e ativação é de até 7 dias úteis após o envio dos documentos necessários.
-                    </div>
-                    
-                    <!-- Destaque Segurança Matera -->
-                    <div style="margin-top: 1.25rem; padding-top: 1rem; border-top: 1px dashed rgba(255,255,255,0.1); display: flex; align-items: flex-start; gap: 0.75rem;">
-                        <span style="font-size: 1.5rem;">🛡️</span>
-                        <div>
-                            <strong style="color: #ffffff; font-size: 0.9rem;">Parceiro de Infraestrutura: Matera</strong>
-                            <p style="font-size: 0.82rem; color: #a1a1aa; margin-top: 0.25rem; line-height: 1.4;">
-                                O PIX Dinâmico é operado em parceria com a <strong>Matera</strong>, líder nacional em tecnologia de infraestrutura bancária que processa bilhões de reais diariamente com segurança nível bancário, criptografia ponta a ponta e integração oficial ao Banco Central.
-                            </p>
+                    <div class="modulos">
+                    <article class="modulo revelar com-midia" id="delivery-proprio" data-categoria="delivery">
+                        <div class="modulo-texto">
+                            <div class="modulo-cabeca"><h3>Cardápio digital próprio</h3></div>
+                            <p class="modulo-resumo">Seu próprio cardápio digital profissional, sem comissão por pedido. Você vende mais e o lucro fica todo no seu caixa.</p>
+                            <ul class="lista">
+                                <li><span>Link exclusivo com o nome do seu negócio (ex.: seunome.pedir.online).</span></li>
+                                <li><span>Cardápio pensado pro celular, rápido de navegar e de fechar o pedido.</span></li>
+                                <li><span>Preços, pausas de itens e promoções atualizados em tempo real.</span></li>
+                                <li><span>Produtos em destaque num carrossel logo no topo do cardápio.</span></li>
+                                <li><span>Link direto pra um produto: o cliente já cai com ele aberto.</span></li>
+                                <li><span>Botão de WhatsApp que abre a conversa com a loja com mensagem pronta.</span></li>
+                            </ul>
                         </div>
-                    </div>
-                </div>
-
-                <!-- Método 2: Crédito Online -->
-                <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 1.5rem; margin-top: 1.5rem;">
-                    <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem;">
-                        <h3 style="font-size: 1.25rem; color: #60a5fa; margin: 0; display: flex; align-items: center; gap: 0.5rem;">
-                            💳 Crédito Online (Cartão de Crédito)
-                        </h3>
-                        <span style="background: rgba(96, 165, 250, 0.15); border: 1px solid rgba(96, 165, 250, 0.3); color: #60a5fa; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.75rem; font-weight: 700;">Proteção Antifraude</span>
-                    </div>
-                    <p style="color: #e4e4e7; margin-bottom: 1rem; line-height: 1.5;">
-                        Permita que seus clientes paguem diretamente pelo cartão de crédito no site com máxima conversão e total segurança contra fraudes.
-                    </p>
-                    <ul class="func-feature-list" style="margin-bottom: 1rem;">
-                        <li><strong>Crédito em 30 dias:</strong> Taxa de <strong>3,3% + R$ 0,27</strong> por transação (inclui proteção antifraude).</li>
-                        <li><strong>Crédito em 2 dias úteis:</strong> Taxa de <strong>4,8% + R$ 0,27</strong> por transação (inclui proteção antifraude) — <em>sujeito a aprovação prévia</em>.</li>
-                    </ul>
-                    
-                    <!-- Destaque Segurança Braspag -->
-                    <div style="margin-top: 1.25rem; padding-top: 1rem; border-top: 1px dashed rgba(255,255,255,0.1); display: flex; align-items: flex-start; gap: 0.75rem;">
-                        <span style="font-size: 1.5rem;">🔒</span>
-                        <div>
-                            <strong style="color: #ffffff; font-size: 0.9rem;">Parceiro de Processamento: Braspag (Grupo Cielo)</strong>
-                            <p style="font-size: 0.82rem; color: #a1a1aa; margin-top: 0.25rem; line-height: 1.4;">
-                                O processamento de crédito online é realizado via <strong>Braspag</strong>, a maior gateway de pagamentos da América Latina e pertencente ao grupo <strong>Cielo</strong>. Conta com certificação máxima de segurança internacional PCI-DSS e inteligência antifraude em tempo real.
-                            </p>
+                        <div class="modulo-midia">
+                            <div class="tela">
+                                <video data-src="media/menuvempb-video-pedido-delivery.mp4" poster="img/funcionalidades/pedido-delivery.webp" muted loop playsinline disablepictureinpicture preload="none" aria-label="Painel de pedidos do delivery"></video>
+                            </div>
+                            <span class="legenda-midia">Dados ilustrativos</span>
                         </div>
+                    </article>
+
+                    <article class="modulo revelar com-midia" id="gestao-de-cardapio" data-categoria="delivery">
+                        <div class="modulo-texto">
+                            <div class="modulo-cabeca"><h3>Gestão de cardápio</h3></div>
+                            <p class="modulo-resumo">Monte o cardápio do seu jeito e mantenha tudo sincronizado: produtos, combos, complementos e estoque.</p>
+                            <ul class="lista">
+                                <li><span>Ligue ou desligue produtos na hora, com resposta imediata no cardápio do cliente.</span></li>
+                                <li><span>Combos e produtos personalizados reaproveitando sabores, adicionais e complementos já cadastrados.</span></li>
+                                <li><span>Estoque interligado: a venda de um combo baixa a bebida do estoque central.</span></li>
+                                <li><span>Pausou ou zerou o estoque? O item sai de todas as promoções e combos em que aparece.</span></li>
+                                <li><span>Grades de horário por categoria (ex.: a categoria "Almoço" só aparece no horário do almoço).</span></li>
+                                <li><span>Pizza meio a meio cobrada pela média, pelo sabor mais caro ou por um valor fixo.</span></li>
+                                <li><span>Quatro modelos de exibição do produto, com selo de promoção, preço riscado e "Serve X pessoas".</span></li>
+                            </ul>
+                        </div>
+                        <div class="modulo-midia">
+                            <div class="tela">
+                                <video data-src="media/menuvempb-video-cardapio-exemplo.mp4" poster="img/funcionalidades/cardapio-exemplo.webp" muted loop playsinline disablepictureinpicture preload="none" aria-label="Gestão do cardápio no painel"></video>
+                            </div>
+                            <span class="legenda-midia">Dados ilustrativos</span>
+                        </div>
+                    </article>
+
+                    <article class="modulo revelar" id="fidelidade" data-categoria="delivery">
+                        <div class="modulo-texto">
+                            <div class="modulo-cabeca"><h3>Fidelidade e cupons</h3></div>
+                            <p class="modulo-resumo">Faça o cliente voltar mais vezes com programa de pontos e cupons bem configuráveis.</p>
+                            <ul class="lista">
+                                <li><span>O cliente ganha 1 ponto a cada R$ 1,00 gasto em produtos.</span></li>
+                                <li><span>Você transforma produtos do cardápio em recompensas, com os pontos definidos por você ou calculados automaticamente (5% de retorno).</span></li>
+                                <li><span>Cupons de valor fixo ou percentual, com pedido mínimo, teto de desconto, validade e dias da semana.</span></li>
+                                <li><span>Limite de usos e escolha dos produtos participantes; o cupom pode sair impresso na comanda.</span></li>
+                                <li><span>Relatório de cupons: pedidos, desconto concedido e ticket médio de cada campanha.</span></li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="modulo revelar" id="automacao-whatsapp" data-categoria="delivery">
+                        <div class="modulo-texto">
+                            <div class="modulo-cabeca"><h3>Automação no WhatsApp</h3></div>
+                            <p class="modulo-resumo">O cliente recebe a confirmação e o andamento do pedido direto no WhatsApp. Você escolhe o formato que combina com a sua operação.</p>
+                            <ul class="lista">
+                                <li><span><strong>WhatsApp Oficial (recomendado):</strong> somos parceiros oficiais da Meta. Mais estabilidade e segurança, sem risco de bloqueio. O custo das mensagens é da própria Meta, não da Menuvem.</span></li>
+                                <li><span><strong>Chatplug:</strong> aplicativo gratuito desenvolvido pela NUC Tecnologia / Menuvem, bom pra quem está começando. Funciona com o computador da loja ligado e conectado; por não ser a API oficial, pode pedir reconexão por QR Code.</span></li>
+                                <li><span><strong>Integração Z-API (terceiros):</strong> conexão via Z-API, com valores sob consulta, direto com a Z-API. A Menuvem disponibiliza a integração técnica, mas não responde pela plataforma de terceiros.</span></li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="modulo revelar" id="integracao-ifood" data-categoria="delivery">
+                        <div class="modulo-texto">
+                            <div class="modulo-cabeca"><h3>iFood, 99Food, Keeta e Aiqfome</h3></div>
+                            <p class="modulo-resumo">Os pedidos dos aplicativos chegam na mesma tela dos pedidos do seu cardápio próprio. Menos telas, menos confusão.</p>
+                            <ul class="lista">
+                                <li><span>Pedidos do iFood, 99Food, Keeta e Aiqfome caem direto no painel para aceite e acompanhamento.</span></li>
+                                <li><span>Impressão automática das comandas nas impressoras de cada setor de produção.</span></li>
+                                <li><span><strong>Importante:</strong> a integração cuida da recepção e da gestão dos pedidos. O sistema não sincroniza o cardápio nem altera preços dentro dos aplicativos.</span></li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="modulo revelar" id="entregadores" data-categoria="delivery">
+                        <div class="modulo-texto">
+                            <div class="modulo-cabeca"><h3>Entregas e entregadores</h3></div>
+                            <p class="modulo-resumo">Acompanhe cada entrega e acerte as contas com os entregadores sem planilha.</p>
+                            <ul class="lista">
+                                <li><span>App do entregador: o motoboy marca "Saiu para entrega" e "Entregue" e vê os próprios relatórios de repasse.</span></li>
+                                <li><span>Painel de monitoramento das entregas em andamento.</span></li>
+                                <li><span>Cinco formatos de acerto por entregador: sem acerto, diária fixa, percentual da entrega, taxa fixa por entrega ou valor definido na hora.</span></li>
+                                <li><span>Integração com cooperativas de entregadores (como a Moovery), com a taxa calculada automaticamente.</span></li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="modulo revelar largo" id="pagamento-online" data-categoria="delivery">
+                        <div class="modulo-texto">
+                            <div class="modulo-cabeca"><h3>Pagamento online integrado</h3></div>
+                            <p class="modulo-resumo">Pix e cartão online com conciliação automática, direto no cardápio: você não precisa de maquininha. A Menuvem não cobra taxa por transação; as taxas são dos parceiros de pagamento e você consulta com o nosso suporte.</p>
+                            <ul class="lista">
+                                <li><span>Pix com QR Code e "copia e cola" gerados automaticamente com o valor do pedido, sem custo (o lojista confere o depósito).</span></li>
+                                <li><span>Taxa ou desconto por forma de pagamento, configurado por você.</span></li>
+                                <li><span>Troco calculado na finalização: o cliente informa com quanto vai pagar.</span></li>
+                            </ul>
+                            <div class="pagamentos">
+                                <div class="pagamento">
+                                    <span class="pagamento-tag">Pix dinâmico · aprovação instantânea</span>
+                                    <p>O pedido só chega pra você depois que o banco confirma o pagamento. Chega de comprovante falso.</p>
+                                    <ul>
+                                        <li>Conciliação automática: você não precisa conferir comprovante.</li>
+                                        <li>Saque quando quiser, sem prazo mínimo.</li>
+                                        <li>Painel AvantePay pra acompanhar as transações e fazer os saques.</li>
+                                    </ul>
+                                    <small>Operado em parceria com a Matera, com integração oficial ao Banco Central.</small>
+                                </div>
+                                <div class="pagamento">
+                                    <span class="pagamento-tag">Cartão de crédito online · antifraude</span>
+                                    <p>O cliente paga com cartão direto no cardápio, com proteção antifraude em tempo real.</p>
+                                    <ul>
+                                        <li>Proteção antifraude inclusa em cada transação.</li>
+                                        <li>O valor cai direto na conta cadastrada.</li>
+                                    </ul>
+                                    <small>Processado pela Braspag (grupo Cielo), com certificação PCI-DSS.</small>
+                                </div>
+                            </div>
+                            <p class="requisito"><strong>Requisito:</strong> Pix dinâmico e cartão online são para contas de pessoa jurídica (CNPJ). A ativação leva até 7 dias úteis depois do envio dos documentos. Quem recebe em CPF usa o Pix com confirmação manual.</p>
+                        </div>
+                    </article>
                     </div>
                 </div>
-            </div>
+            </section>
+            <section class="categoria" id="cat-salao" aria-labelledby="titulo-salao">
+                <div class="container">
+                    <div class="categoria-cabeca revelar">
+                        <span class="categoria-icone"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"></rect><path d="M8 20h8"></path><path d="M12 16v4"></path></svg></span>
+                        <h2 id="titulo-salao">Salão e Frente de Caixa</h2>
+                        <span class="categoria-conta">5 módulos</span>
+                    </div>
+                    <div class="modulos">
+                    <article class="modulo revelar com-midia" id="pdv-agil" data-categoria="salao">
+                        <div class="modulo-texto">
+                            <div class="modulo-cabeca"><h3>PDV no balcão</h3></div>
+                            <p class="modulo-resumo">Venda rápida no balcão, sem fila: lançamento de pedidos, pagamentos e caixa na mesma tela.</p>
+                            <ul class="lista">
+                                <li><span>Busca de produtos por código, nome ou categoria.</span></li>
+                                <li><span>Fechamento em dinheiro, Pix ou cartão.</span></li>
+                                <li><span>Repetir um pedido anterior do cliente com poucos cliques.</span></li>
+                                <li><span>Venda por peso (quilograma) no balcão.</span></li>
+                            </ul>
+                        </div>
+                        <div class="modulo-midia">
+                            <div class="tela">
+                                <video data-src="media/menuvempb-video-lancamentoPDV.mp4" poster="img/funcionalidades/lancamentoPDV.webp" muted loop playsinline disablepictureinpicture preload="none" aria-label="Lançamento de pedido no PDV"></video>
+                            </div>
+                            <span class="legenda-midia">Dados ilustrativos</span>
+                        </div>
+                    </article>
 
-            <div class="func-detail" id="pdv-agil">
-                <span class="badge" style="background:rgba(100, 29, 222, 0.1); border-color:rgba(100, 29, 222, 0.2); color:#a78bfa;">Frente de Caixa (PDV)</span>
-                <h1>PDV Ágil (Balcão)</h1>
-                <p>Um sistema de vendas ultrarrápido projetado para não gerar filas. Faça pedidos com 3 cliques.</p>
-                <ul class="func-feature-list">
-                    <li>Busca rápida de produtos por código, nome ou categoria.</li>
-                    <li>Fechamento rápido em dinheiro, PIX integrado ou cartão.</li>
-                    <li>Integração total com balanças e gavetas de dinheiro.</li>
-                </ul>
-            </div>
+                    <article class="modulo revelar com-midia" id="mesas" data-categoria="salao">
+                        <div class="modulo-texto">
+                            <div class="modulo-cabeca"><h3>Controle de mesas</h3><span class="tag-plano">Balcão e Mesas</span></div>
+                            <p class="modulo-resumo">Sem papel e sem erro no salão: acompanhe o consumo de cada mesa em tempo real.</p>
+                            <ul class="lista">
+                                <li><span>Mapa do salão com o status e o tempo de cada mesa.</span></li>
+                                <li><span>Divisão de conta entre os clientes da mesa e transferência de itens entre mesas.</span></li>
+                                <li><span>Fluxo livre: o garçom nomeia a mesa como quiser (um nome ou um código), sem limite fixo de mesas.</span></li>
+                                <li><span>App do garçom pra lançar os pedidos direto da mesa.</span></li>
+                            </ul>
+                        </div>
+                        <div class="modulo-midia">
+                            <div class="tela">
+                                <video data-src="media/menuvempb-video-pagamento-mesa.mp4" poster="img/funcionalidades/pagamento-mesa.webp" muted loop playsinline disablepictureinpicture preload="none" aria-label="Mapa de mesas com pagamento"></video>
+                            </div>
+                            <span class="legenda-midia">Dados ilustrativos</span>
+                        </div>
+                    </article>
 
-            <div class="func-detail" id="mesas">
-                <span class="badge" style="background:rgba(100, 29, 222, 0.1); border-color:rgba(100, 29, 222, 0.2); color:#a78bfa;">Frente de Caixa (PDV)</span>
-                <h1>Controle de Mesas</h1>
-                <p>Elimine o papel e evite erros no salão. Acompanhe o consumo de cada cliente em tempo real.</p>
-                <ul class="func-feature-list">
-                    <li>Mapa visual do salão com status de tempo de mesa.</li>
-                    <li>Divisão de conta exata entre os clientes da mesa.</li>
-                    <li>Transferência de itens entre mesas de forma simplificada.</li>
-                    <li><strong>Fluxo livre:</strong> o garçom pode nomear a mesa como quiser (ex.: um nome ou um código), sem limite fixo de mesas.</li>
-                    <li>Disponível a partir do Plano 2.</li>
-                </ul>
-            </div>
-            
-            <div class="func-detail" id="carteira">
-                <span class="badge" style="background:rgba(59,130,246,0.1); border-color:rgba(59,130,246,0.2); color:#60a5fa;">Financeiro & Fiscal</span>
-                <h1>Carteira Digital (Fiado e Pré-pago)</h1>
-                <p>Venda no fiado ou com saldo antecipado sem caderninho. Só os clientes que você autorizar podem usar.</p>
-                <ul class="func-feature-list">
-                    <li><strong>Fiado e pré-pago ao mesmo tempo:</strong> ative em poucos cliques e defina o limite ou o saldo de cada cliente.</li>
-                    <li><strong>Você escolhe quem usa:</strong> a Carteira não é liberada para qualquer cliente, só para quem você autorizar (com o número de WhatsApp validado).</li>
-                    <li><strong>Relatórios e limites:</strong> o sistema registra os pedidos, controla o limite e gera os relatórios. A cobrança continua sendo feita por você.</li>
-                    <li><strong>Contratantes:</strong> empresas podem ter contrato de crédito (pré ou pós-pago) para os funcionários vinculados pedirem na sua loja.</li>
-                    <li>Disponível a partir do Plano 2.</li>
-                </ul>
-            </div>
+                    <article class="modulo revelar com-midia" id="kds" data-categoria="salao">
+                        <div class="modulo-texto">
+                            <div class="modulo-cabeca"><h3>Setores de produção (KDS)</h3><span class="tag-plano">Monitor no Negócios Consolidados</span></div>
+                            <p class="modulo-resumo">Cada pedido vai pro setor certo, e a cozinha acompanha a produção numa tela.</p>
+                            <ul class="lista">
+                                <li><span>Cada produto tem o seu setor (ex.: Geral, Massas, Bebidas) e sai impresso na impressora daquele setor.</span></li>
+                                <li><span>Monitor de produção com as etapas Lançado, Produzindo e Feito.</span></li>
+                                <li><span>O pizzaiolo vê só as massas; o gerente pode ver tudo agrupado numa tela só.</span></li>
+                            </ul>
+                        </div>
+                        <div class="modulo-midia">
+                            <div class="tela">
+                                <video data-src="media/menuvempb-video-setores.mp4" poster="img/funcionalidades/setores.webp" muted loop playsinline disablepictureinpicture preload="none" aria-label="Monitor de produção por setores"></video>
+                            </div>
+                            <span class="legenda-midia">Dados ilustrativos</span>
+                        </div>
+                    </article>
 
-            <div class="func-detail" id="emissao-fiscal">
-                <span class="badge" style="background:rgba(59,130,246,0.1); border-color:rgba(59,130,246,0.2); color:#60a5fa;">Financeiro & Fiscal</span>
-                <h1>Emissão NFC-e & NF-e Automática</h1>
-                <p>Emita notas fiscais do consumidor (NFC-e) e notas fiscais eletrônicas (NF-e) diretamente pelo sistema com integração oficial na SEFAZ.</p>
-                <ul class="func-feature-list">
-                    <li><strong>Suporte a NFC-e e NF-e:</strong> Emissão ágil e simplificada no momento da venda ou no fechamento do pedido.</li>
-                    <li><strong>Planos 1, 2 e 3 (Iniciante, O Mais Escolhido e Negócios Consolidados):</strong> <span style="color:#f59e0b; font-weight:700; background:rgba(245, 158, 11, 0.15); padding:2px 8px; border-radius:4px; border:1px solid rgba(245, 158, 11, 0.3); font-size:0.85rem;">EMISSÃO ILIMITADA ✨</span> (sem qualquer limite de notas mensais).</li>
-                </ul>
-            </div>
+                    <article class="modulo revelar" id="cardapio-qr" data-categoria="salao">
+                        <div class="modulo-texto">
+                            <div class="modulo-cabeca"><h3>Cardápio por QR Code na mesa</h3><span class="tag-plano">Balcão e Mesas</span></div>
+                            <p class="modulo-resumo">O cliente escaneia o QR Code da mesa e faz o pedido pelo próprio celular.</p>
+                            <ul class="lista">
+                                <li><span>QR Code próprio pra cada mesa.</span></li>
+                                <li><span>Impressão em impressora térmica de 80 mm (mais legível) ou 48 mm.</span></li>
+                                <li><span>No primeiro pedido o cliente confirma o número de WhatsApp com um código.</span></li>
+                            </ul>
+                        </div>
+                    </article>
 
-            <!-- Default fallback for others -->
-            <div class="func-detail" id="default-info">
-                <span class="badge">Funcionalidade</span>
-                <h1>Mais detalhes</h1>
-                <p>Esta funcionalidade ajuda você a operar de forma mais ágil, garantindo que o tempo gasto seja investido na estratégia do seu negócio.</p>
-                <ul class="func-feature-list">
-                    <li>Fácil implementação e uso imediato.</li>
-                    <li>Sincronizado automaticamente com os demais módulos.</li>
-                    <li>Acesso remoto de qualquer lugar pelo celular do gestor.</li>
-                </ul>
+                    <article class="modulo revelar" id="painel-senhas" data-categoria="salao">
+                        <div class="modulo-texto">
+                            <div class="modulo-cabeca"><h3>Painel de senhas na TV</h3></div>
+                            <p class="modulo-resumo">Uma tela pra TV da loja que chama a senha do pedido pronto.</p>
+                            <ul class="lista">
+                                <li><span>Chamada de senha na TV quando o pedido fica pronto.</span></li>
+                                <li><span>Carrossel de propagandas escolhidas por você entre uma chamada e outra.</span></li>
+                                <li><span>Cada loja tem o seu endereço de painel.</span></li>
+                            </ul>
+                        </div>
+                    </article>
+                    </div>
+                </div>
+            </section>
+            <section class="categoria" id="cat-gestao" aria-labelledby="titulo-gestao">
+                <div class="container">
+                    <div class="categoria-cabeca revelar">
+                        <span class="categoria-icone"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"></path><path d="M7 15l4-4 3 3 5-6"></path></svg></span>
+                        <h2 id="titulo-gestao">Gestão, Financeiro e Fiscal</h2>
+                        <span class="categoria-conta">6 módulos</span>
+                    </div>
+                    <div class="modulos">
+                    <article class="modulo revelar" id="estoque-minimo" data-categoria="gestao"><span id="inventario" class="ancora"></span>
+                        <div class="modulo-texto">
+                            <div class="modulo-cabeca"><h3>Controle de estoque</h3></div>
+                            <p class="modulo-resumo">O estoque se atualiza sozinho a cada venda.</p>
+                            <ul class="lista">
+                                <li><span>Baixa automática a cada pedido, e o item volta pro estoque se o pedido for cancelado.</span></li>
+                                <li><span>Produto com estoque zerado é desativado automaticamente do cardápio.</span></li>
+                                <li><span>Um mesmo insumo pode ser usado por vários produtos e combos.</span></li>
+                                <li><span>Alerta de estoque mínimo.</span></li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="modulo revelar" id="emissao-fiscal" data-categoria="gestao">
+                        <div class="modulo-texto">
+                            <div class="modulo-cabeca"><h3>Nota fiscal NFC-e e NF-e</h3></div>
+                            <p class="modulo-resumo">Emita notas direto do pedido, com integração oficial à SEFAZ.</p>
+                            <ul class="lista">
+                                <li><span>NFC-e e NF-e emitidas a partir do próprio pedido.</span></li>
+                                <li><span>Emissão ilimitada nos três planos, sem custo por nota.</span></li>
+                                <li><span>Aviso quando o certificado digital está perto de vencer.</span></li>
+                                <li><span>Endereço do cadastro, da entrega ou um exclusivo pra nota.</span></li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="modulo revelar" id="carteira" data-categoria="gestao">
+                        <div class="modulo-texto">
+                            <div class="modulo-cabeca"><h3>Carteira digital (fiado e pré-pago)</h3><span class="tag-plano">Balcão e Mesas</span></div>
+                            <p class="modulo-resumo">Venda no fiado ou com saldo antecipado, sem caderninho. Só pra quem você autorizar.</p>
+                            <ul class="lista">
+                                <li><span>Fiado e pré-pago ao mesmo tempo, ativados em poucos cliques, com limite ou saldo por cliente.</span></li>
+                                <li><span>Só clientes autorizados por você e com o WhatsApp validado podem usar.</span></li>
+                                <li><span>O sistema registra os pedidos, controla o limite e gera os relatórios; a cobrança continua sendo feita por você.</span></li>
+                                <li><span>Empresas contratantes: o crédito (pré ou pós-pago) da empresa vale pros funcionários vinculados.</span></li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="modulo revelar" id="fechamento-caixa" data-categoria="gestao">
+                        <div class="modulo-texto">
+                            <div class="modulo-cabeca"><h3>Caixa e fechamento cego</h3></div>
+                            <p class="modulo-resumo">Feche o caixa sem dor de cabeça e com segurança.</p>
+                            <ul class="lista">
+                                <li><span>Fechamento cego: a contagem do dinheiro é feita sem ver o valor esperado.</span></li>
+                                <li><span>Revisão da frente de caixa com a conferência do que entrou em cada forma de pagamento.</span></li>
+                                <li><span>Alterar um pagamento no caixa exige permissão ou a senha do administrador.</span></li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="modulo revelar" id="dre" data-categoria="gestao">
+                        <div class="modulo-texto">
+                            <div class="modulo-cabeca"><h3>Financeiro e relatórios</h3></div>
+                            <p class="modulo-resumo">Os números do seu negócio organizados, do dia ao ano.</p>
+                            <ul class="lista">
+                                <li><span>Relatórios diários, mensais e anuais de vendas.</span></li>
+                                <li><span>DRE com plano de contas padrão, que você pode ajustar às contas da sua loja.</span></li>
+                                <li><span>Resultado por categoria com exportação.</span></li>
+                                <li><span>Dia operacional: você define a hora em que o dia de vendas "vira", pra quem fecha depois da meia-noite.</span></li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="modulo revelar" id="permissoes" data-categoria="gestao">
+                        <div class="modulo-texto">
+                            <div class="modulo-cabeca"><h3>Usuários e permissões</h3></div>
+                            <p class="modulo-resumo">Cada pessoa da equipe acessa só o que precisa.</p>
+                            <ul class="lista">
+                                <li><span>Usuário temporário por link, que expira no prazo que você escolher (ótimo pra garçom de fim de semana).</span></li>
+                                <li><span>Convite por e-mail para a equipe fixa.</span></li>
+                                <li><span>Perfis personalizados com as permissões de cada função.</span></li>
+                                <li><span>Comissão configurável por pessoa.</span></li>
+                            </ul>
+                        </div>
+                    </article>
+                    </div>
+                </div>
+            </section>
+            <div class="container">
+                <div class="sem-modulo" hidden>
+                    <strong>Nenhuma funcionalidade com essa busca.</strong>
+                    <span>Tente outra palavra ou pergunte pro nosso suporte se a Menuvem faz o que você precisa.</span>
+                    <a href="https://wa.me/5583988559423?text=Ol%C3%A1!%20Queria%20saber%20se%20a%20Menuvem%20tem%20uma%20funcionalidade." target="_blank" rel="noopener" class="btn btn-roxo">Perguntar no WhatsApp<svg class="seta" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg></a>
+                </div>
             </div>
-        </main>
+        </div>
+
+        <!-- Chamada final -->
+        <section class="secao chamada">
+            <div class="circulo"></div>
+            <div class="container revelar">
+                <span class="pilula">30 dias grátis</span>
+                <h2>Veja tudo isso funcionando no seu negócio</h2>
+                <p>Sem cartão, sem compromisso. A gente monta seu cardápio e treina sua equipe.</p>
+                <div class="acoes">
+                    <a href="https://wa.me/5583988559423?text=Ol%C3%A1!%20Gostaria%20de%20ativar%20meu%20b%C3%B4nus%20de%2030%20dias%20gr%C3%A1tis%20no%20sistema%20Menuvem." target="_blank" rel="noopener" class="btn btn-amarelo btn-brilho">Testar 30 dias grátis<svg class="seta" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg></a>
+                    <a href="planos.html" class="btn btn-contorno-claro">Ver planos e preços</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="rodape">
+        <div class="container">
+            <div class="rodape-grade">
+                <div class="rodape-marca">
+                    <img src="img/marca/logo-completo-branco.svg" alt="Menuvem" width="83" height="56" loading="lazy">
+                    <p>Cardápio digital e PDV para o seu negócio. Representante oficial da Menuvem.</p>
+                </div>
+                <nav aria-label="Menuvem">
+                    <h4>Menuvem</h4>
+                    <a href="planos.html">Planos e preços</a>
+                    <a href="funcionalidades.html">Funcionalidades</a>
+                    <a href="cadastro-etapas.html">Cadastre-se</a>
+                    <a href="duvidas.html">Dúvidas frequentes</a>
+                </nav>
+                <nav aria-label="Suporte">
+                    <h4>Suporte</h4>
+                    <a href="https://wa.me/5583988559423?text=Ol%C3%A1!%20Preciso%20de%20suporte%20no%20sistema%20Menuvem."
+                        target="_blank" rel="noopener">WhatsApp</a>
+                    <a href="https://t.me/menuvempb" target="_blank" rel="noopener">Telegram</a>
+                    <a href="https://painel.menuvem.com.br" target="_blank" rel="noopener">Entrar no painel</a>
+                </nav>
+                <nav aria-label="Legal">
+                    <h4>Legal</h4>
+                    <a href="privacidade">Política de Privacidade</a>
+                </nav>
+            </div>
+            <div class="rodape-base">
+                <span>© 2026 <a href="https://nuctecnologia.com.br" target="_blank" rel="noopener">NUC Tecnologia</a>
+                    · CNPJ 24.922.727/0001-94</span>
+                <span>menuvempb.com.br</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Barra de CTA no celular (aparece depois do topo da página) -->
+    <div class="barra-cta" aria-hidden="true">
+        <a href="https://wa.me/5583988559423?text=Ol%C3%A1!%20Gostaria%20de%20ativar%20meu%20b%C3%B4nus%20de%2030%20dias%20gr%C3%A1tis%20no%20sistema%20Menuvem." target="_blank" rel="noopener" class="btn btn-amarelo btn-brilho" tabindex="-1">Testar 30 dias grátis<svg class="seta" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg></a>
     </div>
 
-    <!-- Scripts -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const categories = document.querySelectorAll('.category-title');
-            const items = document.querySelectorAll('.subcategory-item');
-            const details = document.querySelectorAll('.func-detail');
-            const mobileToggle = document.getElementById('mobileToggle');
-            const sidebar = document.getElementById('funcSidebar');
-            const overlay = document.getElementById('sidebarOverlay');
-            const closeSidebar = document.getElementById('closeSidebar');
+    <script src="js/site.js?v=3"></script>
+    <script src="js/funcionalidades.js?v=1"></script>
 
-            // Open/Close Categories
-            categories.forEach(cat => {
-                cat.addEventListener('click', () => {
-                    cat.parentElement.classList.toggle('open');
-                });
-            });
-
-            // Select item logic
-            items.forEach(item => {
-                item.addEventListener('click', () => {
-                    // Update active state in menu
-                    items.forEach(i => i.classList.remove('active'));
-                    item.classList.add('active');
-
-                    // Show corresponding detail
-                    const targetId = item.getAttribute('data-target');
-                    let found = false;
-                    
-                    details.forEach(detail => {
-                        detail.classList.remove('active');
-                        if(detail.id === targetId) {
-                            detail.classList.add('active');
-                            found = true;
-                        }
-                    });
-
-                    // fallback if content not filled yet
-                    if(!found) {
-                        const def = document.getElementById('default-info');
-                        def.classList.add('active');
-                        def.querySelector('h1').textContent = item.textContent;
-                    }
-
-                    // Update mobile toggle text
-                    mobileToggle.querySelector('span').textContent = item.textContent;
-
-                    // Close mobile sidebar
-                    if(window.innerWidth <= 992) {
-                        sidebar.classList.remove('open');
-                        overlay.classList.remove('active');
-                    }
-                });
-            });
-
-            // Mobile sidebar toggles
-            mobileToggle.addEventListener('click', () => {
-                sidebar.classList.add('open');
-                overlay.classList.add('active');
-                closeSidebar.style.display = 'block';
-            });
-
-            overlay.addEventListener('click', () => {
-                sidebar.classList.remove('open');
-                overlay.classList.remove('active');
-            });
-
-            closeSidebar.addEventListener('click', () => {
-                sidebar.classList.remove('open');
-                overlay.classList.remove('active');
-            });
-
-            // Search Functionality
-            const searchInput = document.getElementById('funcSearchInput');
-            const clearSearchBtn = document.getElementById('clearSearchBtn');
-            const noResults = document.getElementById('noResults');
-            
-            function filterFuncs() {
-                const term = searchInput.value.toLowerCase().trim();
-                let hasVisibleItems = false;
-                
-                if (term.length > 0) {
-                    clearSearchBtn.style.display = 'block';
-                } else {
-                    clearSearchBtn.style.display = 'none';
-                }
-
-                categories.forEach(cat => {
-                    const group = cat.closest('.category-group');
-                    const itemsInGroup = group.querySelectorAll('.subcategory-item');
-                    let groupHasVisibleItems = false;
-
-                    itemsInGroup.forEach(item => {
-                        const targetId = item.getAttribute('data-target');
-                        const detailElement = document.getElementById(targetId);
-                        
-                        let matchText = item.textContent.toLowerCase();
-                        if (detailElement) {
-                            matchText += ' ' + detailElement.textContent.toLowerCase();
-                        }
-                        
-                        if (matchText.includes(term)) {
-                            item.style.display = 'block';
-                            groupHasVisibleItems = true;
-                            hasVisibleItems = true;
-                        } else {
-                            item.style.display = 'none';
-                        }
-                    });
-
-                    if (groupHasVisibleItems) {
-                        group.style.display = 'block';
-                        if (term.length > 0) {
-                            group.classList.add('open');
-                        }
-                    } else {
-                        group.style.display = 'none';
-                    }
-                });
-                
-                if (!hasVisibleItems && term.length > 0) {
-                    noResults.style.display = 'block';
-                } else {
-                    noResults.style.display = 'none';
-                }
-            }
-            
-            if(searchInput) {
-                searchInput.addEventListener('input', filterFuncs);
-                
-                clearSearchBtn.addEventListener('click', () => {
-                    searchInput.value = '';
-                    filterFuncs();
-                    searchInput.focus();
-                });
-            }
-
-            // Check URL hash on load
-            if(window.location.hash) {
-                let targetId = window.location.hash.substring(1); // remove '#'
-                if (targetId === 'delivery-proprio-taxa-r-0') targetId = 'delivery-proprio';
-                if (targetId === 'qr-code-na-mesa-balcao') targetId = 'cardapio-qr';
-                if (targetId === 'fidelidade-cupons') targetId = 'fidelidade';
-                if (targetId === 'automacao-no-whatsapp') targetId = 'automacao-whatsapp';
-                const targetItem = document.querySelector(`.subcategory-item[data-target="${targetId}"]`);
-                if(targetItem) {
-                    targetItem.click();
-                    // Ensure parent is open
-                    targetItem.closest('.category-group').classList.add('open');
-                }
-            }
-        });
-    </script>
     <!-- Chatwoot -->
     <script>
         (function (d, t) {
@@ -490,9 +484,5 @@
         })(document, "script");
     </script>
 </body>
+
 </html>
-
-
-
-
-
