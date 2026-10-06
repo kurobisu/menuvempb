@@ -46,10 +46,28 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     // mantém o chip ativo visível na faixa (celular)
     const faixa = document.querySelector('.chips-categorias');
+    // (só rola quando o chip ativo está fora da área visível da faixa; posições medidas em relação à faixa)
     new MutationObserver(() => {
         const ativo = faixa.querySelector('.ativo');
-        if (ativo) faixa.scrollTo({ left: ativo.offsetLeft - 16, behavior: reduzido ? 'auto' : 'smooth' });
+        if (!ativo || faixa.scrollWidth <= faixa.clientWidth) return;
+        const caixa = faixa.getBoundingClientRect();
+        const chip = ativo.getBoundingClientRect();
+        const margem = 24;
+        let destino = null;
+        if (chip.left < caixa.left + margem) destino = faixa.scrollLeft - (caixa.left + margem - chip.left);
+        else if (chip.right > caixa.right - margem) destino = faixa.scrollLeft + (chip.right - (caixa.right - margem));
+        if (destino !== null) faixa.scrollTo({ left: Math.max(0, destino), behavior: reduzido ? 'auto' : 'smooth' });
     }).observe(faixa, { subtree: true, attributes: true, attributeFilter: ['class'] });
+
+    // esmaecido nas bordas só quando há mais chips escondidos daquele lado
+    const bordas = () => {
+        const sobra = faixa.scrollWidth - faixa.clientWidth;
+        faixa.classList.toggle('tem-esquerda', faixa.scrollLeft > 4);
+        faixa.classList.toggle('tem-direita', sobra > 4 && faixa.scrollLeft < sobra - 4);
+    };
+    bordas();
+    faixa.addEventListener('scroll', bordas, { passive: true });
+    window.addEventListener('resize', bordas);
 
     // ---- Busca ----
     const normalizar = t => t.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
