@@ -123,3 +123,43 @@
     .tem, .nao-tem { width: 22px; height: 22px; }
     .tem svg, .nao-tem svg { width: 12px; height: 12px; }
 }
+
+/* Olho "ver mais" ao lado de cada recurso da tabela */
+.recurso-nome { display: inline-flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.ver-mais { position: relative; display: inline-flex; }
+.ver-mais-botao {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; padding: 0; border: 0; border-radius: 50%;
+    background: transparent; color: #A9A3BD; cursor: pointer;
+    transition: color .2s ease, background-color .2s ease;
+}
+.ver-mais-botao:hover, .ver-mais.aberto .ver-mais-botao { color: var(--roxo); background: var(--lavanda); }
+.ver-mais-botao:focus-visible { outline: 2px solid var(--roxo); outline-offset: 1px; }
+.ver-mais-balao {
+    position: absolute; left: -6px; bottom: calc(100% + 8px); z-index: 4;
+    display: inline-flex; align-items: center; gap: 6px; white-space: nowrap;
+    padding: 9px 14px; border-radius: 999px;
+    background: var(--roxo-profundo); color: var(--branco);
+    font-size: 13px; font-weight: 600; text-decoration: none;
+    box-shadow: 0 10px 24px rgba(43, 35, 64, .25);
+    opacity: 0; visibility: hidden; transform: translateY(4px);
+    transition: opacity .2s ease, transform .2s ease, visibility .2s, background-color .2s ease;
+}
+.ver-mais-balao::after {
+    content: ""; position: absolute; top: 100%; left: 13px;
+    border: 6px solid transparent; border-top-color: var(--roxo-profundo);
+}
+.ver-mais-balao:hover { background: var(--roxo); }
+.ver-mais.aberto .ver-mais-balao { opacity: 1; visibility: visible; transform: none; }
+
+/* Linha em realce ("Toda novidade da plataforma") */
+.tabela-planos tbody tr.realce-linha { background: #FFF8DC; }
+.tabela-planos tbody tr.realce-linha:hover { background: #FFF4CC; }
+.tabela-planos tbody tr.realce-linha th { color: var(--roxo-profundo); font-weight: 700; }
+.tabela-planos tbody tr.realce-linha th .recurso-nome::before {
+    content: ""; width: 18px; height: 18px; flex: 0 0 auto;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23FFC700' stroke='%234B0FA5' stroke-width='1.2' stroke-linejoin='round'%3E%3Cpath d='M12 2l2.6 6.6L21 11l-6.4 2.4L12 20l-2.6-6.6L3 11l6.4-2.4z'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+.cab-plano .preco-antigo { font-size: 13px; color: var(--texto-suave); }
+thead th.destaque .cab-plano .preco-antigo { color: var(--lilas-suave); }

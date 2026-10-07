@@ -354,7 +354,8 @@ section { position: relative; }
     opacity: 0;
 }
 .plano-completo[hidden] { display: none; }
-.planos-grade.comparando .lista { display: none; }
+.plano.comparando .lista { display: none; }
+.planos-grade.tem-aberto { align-items: start; }
 .plano-completo.aberto { grid-template-rows: 1fr; opacity: 1; }
 .plano-completo > div { overflow: hidden; min-height: 0; }
 .grupo { padding-top: 14px; border-top: 1px dashed var(--borda); margin-top: 4px; }
@@ -428,6 +429,33 @@ section { position: relative; }
 .plano.destaque .plano-nome p,
 .plano.destaque .preco .mes { color: var(--lilas-suave); }
 .plano.destaque .gratis { background: var(--amarelo); color: var(--roxo-profundo); }
+/* Dica ("i") do selo de 30 dias grátis: abre no hover, no foco e no toque */
+.gratis { position: relative; display: inline-flex; align-items: center; gap: 6px; }
+.dica {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 20px; height: 20px; margin: -2px -4px -2px 0; padding: 0;
+    border: 0; border-radius: 50%; background: transparent; color: inherit;
+    cursor: help; opacity: .75; transition: opacity .2s ease, background .2s ease;
+}
+.dica:hover, .dica:focus-visible { opacity: 1; background: rgba(75, 15, 165, .1); }
+.dica:focus-visible { outline: 2px solid var(--roxo); outline-offset: 1px; }
+.dica-balao {
+    position: absolute; left: 0; bottom: calc(100% + 10px); z-index: 5;
+    width: max-content; max-width: 250px;
+    padding: 10px 12px; border-radius: 10px;
+    background: var(--roxo-profundo); color: var(--branco);
+    font-size: 13px; font-weight: 500; line-height: 1.45;
+    box-shadow: 0 12px 28px rgba(43, 35, 64, .22);
+    opacity: 0; visibility: hidden; transform: translateY(4px); pointer-events: none;
+    transition: opacity .2s ease, transform .2s ease, visibility .2s;
+}
+.dica-balao::after {
+    content: ""; position: absolute; top: 100%; left: 18px;
+    border: 6px solid transparent; border-top-color: var(--roxo-profundo);
+}
+.gratis:hover .dica-balao, .dica:focus + .dica-balao { opacity: 1; visibility: visible; transform: none; }
+.plano.destaque .dica-balao { background: var(--branco); color: var(--roxo-profundo); }
+.plano.destaque .dica-balao::after { border-top-color: var(--branco); }
 .plano.destaque .lista,
 .plano.destaque .grupo li { color: var(--lilas); }
 .plano.destaque .lista li::before,
@@ -593,3 +621,47 @@ section { position: relative; }
     .realce { transition: none; background-size: 100% 100%; }
     .revelar { opacity: 1; transform: none; transition: none; }
 }
+
+/* Item em realce nos planos ("Toda novidade da plataforma") */
+.lista li.realce-item,
+.grupo li.realce-item {
+    margin: 2px -8px 0;
+    padding: 8px 10px;
+    border-radius: 12px;
+    background: #FFF4CC;
+    color: var(--roxo-profundo);
+    font-weight: 700;
+    box-shadow: inset 0 0 0 1.5px rgba(255, 199, 0, .9);
+}
+.lista li.realce-item::before,
+.grupo li.realce-item::before {
+    background-color: var(--amarelo);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%234B0FA5'%3E%3Cpath d='M12 2l2.6 6.6L21 11l-6.4 2.4L12 20l-2.6-6.6L3 11l6.4-2.4z'/%3E%3C/svg%3E");
+    animation: brilhar-realce 2.4s ease-in-out infinite;
+}
+.grupo li.realce-item .novo { background: var(--roxo-profundo); color: var(--amarelo); }
+.plano.destaque .lista li.realce-item, .plano.destaque .grupo li.realce-item { color: var(--roxo-profundo); }
+@keyframes brilhar-realce { 0%, 100% { transform: scale(1) rotate(0); } 50% { transform: scale(1.15) rotate(20deg); } }
+@media (prefers-reduced-motion: reduce) { .lista li.realce-item::before, .grupo li.realce-item::before { animation: none; } }
+
+/* Promoção sazonal (Black Friday): aplicada pelo initPromo() */
+.promo-linha { display: flex; align-items: center; gap: 10px; margin-bottom: -10px; }
+.promo-selo {
+    font-family: var(--fonte-titulo); font-weight: 800; font-size: 13px; letter-spacing: .02em;
+    color: var(--amarelo); background: #14072E; padding: 5px 10px; border-radius: 8px;
+}
+.promo-linha s { font-size: 16px; font-weight: 600; color: var(--texto-suave); }
+.preco .centavos { font-size: .45em; letter-spacing: 0; vertical-align: top; margin-left: 1px; }
+.promo-nota { margin: -14px 0 0; font-size: 13px; color: var(--texto-suave); }
+.plano.destaque .promo-selo { background: var(--amarelo); color: var(--roxo-profundo); }
+.plano.destaque .promo-linha s, .plano.destaque .promo-nota { color: var(--lilas-suave); }
+
+/* Letras miúdas recortadas, estilo cupom, dentro de uma resposta */
+.corte-cupom {
+    display: flex; gap: 10px; align-items: flex-start;
+    margin-top: 14px; padding: 12px 14px;
+    border: 1.5px dashed #CDBDF3; border-radius: 12px;
+    background: var(--lavanda);
+    font-size: 12.5px; line-height: 1.5; color: var(--texto-suave);
+}
+.corte-cupom svg { flex: 0 0 auto; margin-top: 1px; color: var(--roxo); transform: rotate(-90deg); }
