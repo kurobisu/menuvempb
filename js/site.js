@@ -9,6 +9,8 @@ document.addEventListener('DOMContentLoaded', () => {
     initDuvidas();
     initRevelar();
     initBarraCta();
+    initCookies();
+    initRastreio();
 });
 
 const SEM_MOVIMENTO = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -328,4 +330,70 @@ function initBarraCta() {
         atualizar();
     });
     fim.forEach(el => obsFim.observe(el));
+}
+
+/* ---------- Cookies (LGPD): aviso discreto; o Pixel e a medição do Google só depois do aceite ---------- */
+const CHAVE_COOKIES = 'menuvem-cookies';
+
+function lerCookies() {
+    try { return localStorage.getItem(CHAVE_COOKIES); } catch (e) { return null; }
+}
+
+function decidirCookies(escolha) {
+    try { localStorage.setItem(CHAVE_COOKIES, escolha); } catch (e) { /* sem armazenamento, o aviso volta na próxima página */ }
+    if (escolha !== 'aceito') return;
+    if (window.gtag) gtag('consent', 'update', { analytics_storage: 'granted' });
+    if (window.mpbCarregaPixel) window.mpbCarregaPixel();
+}
+
+function initCookies() {
+    if (lerCookies()) return;
+    const aviso = document.createElement('div');
+    aviso.className = 'cookies';
+    aviso.setAttribute('role', 'region');
+    aviso.setAttribute('aria-label', 'Aviso de cookies');
+    aviso.innerHTML = `
+        <p>Usamos cookies pra medir as visitas e melhorar o site. <a href="privacidade.html">Saiba mais</a></p>
+        <div class="cookies-acoes">
+            <button type="button" class="cookies-recusar" data-escolha="recusado">Recusar</button>
+            <button type="button" class="cookies-aceitar" data-escolha="aceito">Aceitar</button>
+        </div>`;
+    aviso.addEventListener('click', e => {
+        const botao = e.target.closest('[data-escolha]');
+        if (!botao) return;
+        decidirCookies(botao.dataset.escolha);
+        aviso.remove();
+        document.body.classList.remove('com-cookies');
+    });
+    document.body.classList.add('com-cookies');
+    document.body.appendChild(aviso);
+}
+
+/* ---------- Pixel da Meta: contato pelo WhatsApp/Telegram e início do cadastro (sem dados pessoais) ---------- */
+function rastrear(evento, dados) {
+    if (!window.fbq) return; // sem aceite de cookies, o Pixel não carrega
+    fbq('track', evento, dados, { eventID: `${evento}-${Date.now()}-${Math.random().toString(36).slice(2, 8)}` });
+}
+
+function valorDoPlano(plano) {
+    const valor = parseFloat(plano.querySelector('.preco strong').textContent.replace(/\s/g, '').replace(',', '.'));
+    return Number.isFinite(valor) ? valor : undefined;
+}
+
+function initRastreio() {
+    document.addEventListener('click', e => {
+        const link = e.target.closest('a[href]');
+        if (!link) return;
+        const href = link.getAttribute('href');
+        if (/^https:\/\/(wa\.me|t\.me)\//.test(href)) {
+            rastrear('Contact', {});
+        } else if (href.startsWith('https://painel.menuvem.com.br/#/cadastro')) {
+            const plano = link.closest('.plano[data-plano]');
+            rastrear('InitiateCheckout', {
+                content_name: plano ? `Plano ${plano.dataset.plano}` : 'Cadastro',
+                currency: 'BRL',
+                value: plano ? valorDoPlano(plano) : undefined,
+            });
+        }
+    });
 }
