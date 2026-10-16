@@ -129,6 +129,7 @@ function initPlanos() {
         const grupos = RECURSOS.map(({ grupo, itens }) => {
             const linhas = itens.map(({ nome, plano, destaque }) => {
                 const tem = plano <= n;
+                if (destaque && !tem) return ''; // item em realce só aparece no plano que tem
                 const novo = tem && n > 1 && plano === n ? '<span class="novo">Novo</span>' : '';
                 const leitor = tem ? '' : '<span class="sr-only"> (não incluso)</span>';
                 return `<li class="${tem ? '' : 'nao'}${destaque ? ' realce-item' : ''}">${nome}${leitor}${novo}</li>`;

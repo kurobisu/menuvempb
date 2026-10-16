@@ -665,3 +665,5 @@ section { position: relative; }
     font-size: 12.5px; line-height: 1.5; color: var(--texto-suave);
 }
 .corte-cupom svg { flex: 0 0 auto; margin-top: 1px; color: var(--roxo); transform: rotate(-90deg); }
+.corte-cupom a { color: var(--roxo); font-weight: 600; text-decoration: underline; text-underline-offset: 2px; }
+.corte-cupom a:hover { color: var(--roxo-profundo); }
