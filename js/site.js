@@ -369,10 +369,14 @@ function initCookies() {
     document.body.appendChild(aviso);
 }
 
-/* ---------- Pixel da Meta: contato pelo WhatsApp/Telegram e início do cadastro (sem dados pessoais) ---------- */
+/* ---------- Medição: GA4 (modo de consentimento) e Pixel da Meta (só com aceite de cookies); sem dados pessoais ---------- */
 function rastrear(evento, dados) {
     if (!window.fbq) return; // sem aceite de cookies, o Pixel não carrega
     fbq('track', evento, dados, { eventID: `${evento}-${Date.now()}-${Math.random().toString(36).slice(2, 8)}` });
+}
+
+function rastrearGA(evento, dados) {
+    if (window.gtag) gtag('event', evento, dados);
 }
 
 function valorDoPlano(plano) {
@@ -386,14 +390,23 @@ function initRastreio() {
         if (!link) return;
         const href = link.getAttribute('href');
         if (/^https:\/\/(wa\.me|t\.me)\//.test(href)) {
+            rastrearGA('contato', { canal: href.includes('wa.me') ? 'whatsapp' : 'telegram', pagina: location.pathname });
             rastrear('Contact', {});
         } else if (href.startsWith('https://painel.menuvem.com.br/#/cadastro')) {
             const plano = link.closest('.plano[data-plano]');
+            rastrearGA('escolher_plano', {
+                plano: plano ? plano.dataset.plano : 'nenhum',
+                plano_nome: plano ? plano.dataset.curto : 'Cadastro',
+                valor: plano ? valorDoPlano(plano) : undefined,
+                pagina: location.pathname,
+            });
             rastrear('InitiateCheckout', {
                 content_name: plano ? `Plano ${plano.dataset.plano}` : 'Cadastro',
                 currency: 'BRL',
                 value: plano ? valorDoPlano(plano) : undefined,
             });
+        } else if (link.id === 'cadastro-btn-iniciar') {
+            rastrearGA('cadastro_etapas_escolher', { pagina: location.pathname });
         }
     });
 }
