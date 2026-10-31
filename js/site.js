@@ -341,13 +341,38 @@ function lerCookies() {
 
 function decidirCookies(escolha) {
     try { localStorage.setItem(CHAVE_COOKIES, escolha); } catch (e) { /* sem armazenamento, o aviso volta na próxima página */ }
+    window.mpbDecidiuCookies = true;
+    if (window.mpbContar) mpbContar('cookies', escolha);
+    consentimentoClarity(escolha === 'aceito');
     if (escolha !== 'aceito') return;
     if (window.gtag) gtag('consent', 'update', { analytics_storage: 'granted' });
     if (window.mpbCarregaPixel) window.mpbCarregaPixel();
 }
 
+/* ---------- Microsoft Clarity (gravação de sessão e mapa de cliques) ----------
+   Roda sempre no modo sem cookies; o consentimento "granted" só vem depois do aceite.
+   Para ativar: informe o ID do projeto abaixo e deixe o cookie desligado em Settings > Setup no painel do Clarity. */
+const CLARITY_ID = 'z6cijs8f1l';
+
+function consentimentoClarity(aceito) {
+    if (!window.clarity) return;
+    clarity('consentv2', { ad_Storage: 'denied', analytics_Storage: aceito ? 'granted' : 'denied' });
+}
+
+function initClarity() {
+    if (!CLARITY_ID) return;
+    document.querySelectorAll('input, textarea, select').forEach(el => el.setAttribute('data-clarity-mask', 'True'));
+    (function (c, l, a, r, i, t, y) {
+        c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments); };
+        t = l.createElement(r); t.async = 1; t.src = 'https://www.clarity.ms/tag/' + i;
+        y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+    })(window, document, 'clarity', 'script', CLARITY_ID);
+    consentimentoClarity(lerCookies() === 'aceito');
+}
+
 function initCookies() {
-    if (lerCookies()) return;
+    initClarity();
+    if (lerCookies()) { window.mpbDecidiuCookies = true; return; }
     const aviso = document.createElement('div');
     aviso.className = 'cookies';
     aviso.setAttribute('role', 'region');
@@ -390,10 +415,12 @@ function initRastreio() {
         if (!link) return;
         const href = link.getAttribute('href');
         if (/^https:\/\/(wa\.me|t\.me)\//.test(href)) {
+            if (window.mpbContar) mpbContar('contato', href.includes('wa.me') ? 'whatsapp' : 'telegram');
             rastrearGA('contato', { canal: href.includes('wa.me') ? 'whatsapp' : 'telegram', pagina: location.pathname });
             rastrear('Contact', {});
         } else if (href.startsWith('https://painel.menuvem.com.br/#/cadastro')) {
             const plano = link.closest('.plano[data-plano]');
+            if (window.mpbContar) mpbContar('escolher_plano', plano ? plano.dataset.plano : 'nenhum');
             rastrearGA('escolher_plano', {
                 plano: plano ? plano.dataset.plano : 'nenhum',
                 plano_nome: plano ? plano.dataset.curto : 'Cadastro',
@@ -406,6 +433,7 @@ function initRastreio() {
                 value: plano ? valorDoPlano(plano) : undefined,
             });
         } else if (link.id === 'cadastro-btn-iniciar') {
+            if (window.mpbContar) mpbContar('cadastro_etapas');
             rastrearGA('cadastro_etapas_escolher', { pagina: location.pathname });
         }
     });
