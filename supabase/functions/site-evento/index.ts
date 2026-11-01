@@ -27,9 +27,9 @@ function limitado(chave: string): boolean {
   return ++j.n > 40;
 }
 
-const limpa = (v: unknown, max: number): string | null => {
+const limpa = (v: unknown, max: number, extra = ''): string | null => {
   if (typeof v !== 'string') return null;
-  const t = v.trim().slice(0, max).replace(/[^\w\-.+ ]/g, '');
+  const t = v.trim().slice(0, max).replace(new RegExp(`[^\\w\\-.+ ${extra}]`, 'g'), '');
   return t || null;
 };
 
@@ -58,7 +58,7 @@ Deno.serve(async (req) => {
 
   const evento = String(b.evento ?? '');
   const visita = String(b.visita ?? '');
-  const pagina = limpa(b.pagina, 60);
+  const pagina = limpa(b.pagina, 60, '/');
   const detalhe = String(b.detalhe ?? '');
   if (!EVENTOS.has(evento) || !/^[a-z0-9]{8,24}$/.test(visita) || !pagina) return new Response(null, { status: 400, headers: cors });
   if (evento in DETALHES ? !DETALHES[evento].test(detalhe) : detalhe !== '') return new Response(null, { status: 400, headers: cors });
