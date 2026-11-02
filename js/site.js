@@ -90,7 +90,7 @@ const RECURSOS = [
    `mes` começa em 0 (10 = novembro); vale do dia 1 até o último dia do mês.
    Prévia fora do mês: abra localhost com ?promo (só funciona no localhost). */
 const PROMOS = [
-    { nome: 'Black Friday', mes: 10, fim: '30/11', descontos: { 2: 10, 3: 15 } },
+    { nome: 'Mês Black', mes: 10, fim: '30/11', precos: { 2: 197, 3: 227 } },
 ];
 
 function promoAtiva() {
@@ -102,20 +102,17 @@ function promoAtiva() {
 function initPromo() {
     const promo = promoAtiva();
     if (!promo) return;
-    const reais = v => v.toFixed(2).replace('.', ',');
     document.querySelectorAll('.plano[data-plano]').forEach(cartao => {
-        const desconto = promo.descontos[cartao.dataset.plano];
+        const novo = promo.precos[cartao.dataset.plano];
         const preco = cartao.querySelector('.preco strong');
-        if (!desconto || !preco) return;
+        if (!novo || !preco) return;
         const base = Number(preco.textContent.trim());
-        const [inteiro, centavos] = reais(base * (1 - desconto / 100)).split(',');
+        const desconto = Math.round((1 - novo / base) * 100);
         cartao.dataset.precoAntigo = base;
         cartao.classList.add('em-promo');
-        preco.innerHTML = `${inteiro}<span class="centavos">,${centavos}</span>`;
+        preco.textContent = novo;
         cartao.querySelector('.preco').insertAdjacentHTML('beforebegin',
-            `<div class="promo-linha"><span class="promo-selo">${promo.nome} −${desconto}%</span><s>R$ ${base}</s></div>`);
-        cartao.querySelector('.preco').insertAdjacentHTML('afterend',
-            `<p class="promo-nota">no 1º ano, escolhendo o plano até ${promo.fim}</p>`);
+            `<div class="promo-linha"><span class="promo-selo" tabindex="0" role="note" data-dica="No 1º ano, escolhendo o plano até ${promo.fim}">${promo.nome} −${desconto}%</span><s>R$ ${base}</s></div>`);
     });
     document.querySelectorAll('[data-promo]').forEach(el => { el.hidden = false; });
 }
