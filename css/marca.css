@@ -407,6 +407,7 @@ section { position: relative; }
 }
 @property --giro { syntax: "<angle>"; initial-value: 0deg; inherits: false; }
 @keyframes girar-borda { to { --giro: 360deg; } }
+.plano.destaque a.selo { text-decoration: none; }
 .plano.destaque .selo {
     position: absolute;
     top: -15px;
@@ -591,6 +592,7 @@ section { position: relative; }
     }
     .menu.aberto { display: flex; }
     .menu .btn { margin: 8px 0 0; }
+    .menu .entrar { font-size: 14px; color: var(--lilas-suave); opacity: .8; }
     .planos-grade { grid-template-columns: minmax(0, 1fr); max-width: 520px; margin: 0 auto; width: 100%; gap: 32px; }
     .plano.destaque, .plano.destaque.revelar.visivel { transform: none; }
     .plano.destaque { order: -1; }
