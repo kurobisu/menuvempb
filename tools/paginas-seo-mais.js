@@ -233,6 +233,18 @@ module.exports = ({ p, lista, passos, cards, aviso, video, videoV }) => [
                 ['Nota fiscal', 'NFC-e e NF-e ilimitadas. <a href="nota-fiscal-restaurante.html">Ver</a>.'],
                 ['Drivers de impressora', 'Downloads por modelo. <a href="drivers.html">Ver</a>.'],
             ])],
+            ['Conheça o cliente e a equipe', cards([
+                ['WhatsApp para restaurante', 'Status do pedido pelo WhatsApp Oficial. <a href="whatsapp-restaurante.html">Ver</a>.'],
+                ['Clientes e fiado digital', 'Base de clientes e carteira. <a href="clientes-fiado-carteira.html">Ver</a>.'],
+                ['Avaliações e anúncios', 'Ouça o cliente e meça os anúncios. <a href="avaliacoes-e-anuncios.html">Ver</a>.'],
+                ['Equipe, permissões e comissão', 'Acesso por pessoa e acerto da equipe. <a href="equipe-permissoes-comissao.html">Ver</a>.'],
+            ])],
+            ['Controle o negócio', cards([
+                ['Financeiro e fechamento de caixa', 'Fluxo de caixa, DRE e caixa cego. <a href="financeiro-restaurante.html">Ver</a>.'],
+                ['Relatórios de vendas', 'Do dia ao ano, por bairro e produto. <a href="relatorios-de-vendas.html">Ver</a>.'],
+                ['Controle de estoque', 'Baixa automática a cada pedido. <a href="controle-de-estoque.html">Ver</a>.'],
+                ['Painel de senhas na TV', 'Chame a senha no balcão. <a href="painel-de-senhas-tv.html">Ver</a>.'],
+            ])],
         ],
         faq: [
             ['Por onde começo?', 'Pelo teste grátis de 30 dias. A equipe monta o cardápio e configura o resto com você, online.'],

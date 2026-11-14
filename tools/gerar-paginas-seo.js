@@ -34,6 +34,14 @@ const LINKS = {
     entregadores: ['gestao-entregadores.html', 'Gestão de entregadores'],
     fidelidade: ['fidelidade-cupons-delivery.html', 'Fidelidade e cupons'],
     nota: ['nota-fiscal-restaurante.html', 'Nota fiscal para restaurante'],
+    whatsapp: ['whatsapp-restaurante.html', 'WhatsApp para restaurante'],
+    estoque: ['controle-de-estoque.html', 'Controle de estoque'],
+    senhas: ['painel-de-senhas-tv.html', 'Painel de senhas na TV'],
+    anuncios: ['avaliacoes-e-anuncios.html', 'Avaliações e anúncios'],
+    clientes: ['clientes-fiado-carteira.html', 'Clientes e fiado digital'],
+    equipe: ['equipe-permissoes-comissao.html', 'Equipe, permissões e comissão'],
+    financeiro: ['financeiro-restaurante.html', 'Financeiro e fechamento de caixa'],
+    relatorios: ['relatorios-de-vendas.html', 'Relatórios de vendas'],
     solucoes: ['solucoes.html', 'Todas as soluções'],
     drivers: ['drivers.html', 'Drivers de impressora térmica'],
     funcionalidades: ['funcionalidades.html', 'Todas as funcionalidades'],
@@ -264,6 +272,7 @@ const PAGINAS = [
 ];
 
 PAGINAS.push(...require('./paginas-seo-mais.js')({ p, lista, passos, cards, aviso, video, videoV }));
+PAGINAS.push(...require('./paginas-seo-modulos.js')({ p, lista, passos, cards, aviso, video, videoV }));
 
 // ---------- montagem ----------
 const head = base.slice(0, base.indexOf('</head>'))
