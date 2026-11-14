@@ -217,7 +217,7 @@ html.modal-aberto { overflow: hidden; }
 .download-nome { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 10px; min-width: 0; }
 .download-nome strong { flex: 1 1 100%; font-size: 15px; font-weight: 600; color: var(--tinta); overflow-wrap: anywhere; }
 .download-nome span { font-size: 13px; color: var(--texto-suave); }
-.download-nome .tag-oficial, .download-nome .tag-drive { font-weight: 600; padding: 2px 8px; border-radius: 6px; }
+.download-nome .tag-oficial, .download-nome .tag-drive, .download-nome .tag-naooficial, .download-nome .tag-recomendado { font-weight: 600; padding: 2px 8px; border-radius: 6px; }
 .download-nome .tag-oficial { color: #0E6B3F; background: #DDF5E8; }
 .download-nome .tag-drive { color: var(--roxo-profundo); background: var(--lilas); }
 .download .btn { font-size: 15px; padding: 11px 18px; border-radius: 12px; }
@@ -237,3 +237,87 @@ html.modal-aberto { overflow: hidden; }
     .download-tipo { grid-column: 1 / -1; justify-self: start; }
 }
 @media (prefers-reduced-motion: reduce) { .modal-driver[open], .modal-driver::backdrop, .download { animation: none; } }
+
+/* FAQ da página (também alimenta o FAQPage em JSON-LD) */
+.faq-driver { margin-top: 56px; }
+.faq-driver h2 { margin: 0 0 18px; font-family: var(--fonte-titulo); font-weight: 800; font-size: clamp(22px, 3vw, 30px); letter-spacing: -.01em; color: var(--roxo-profundo); }
+.faq-item { background: var(--branco); border: 1.5px solid var(--borda); border-radius: 14px; margin-bottom: 10px; }
+.faq-item summary { cursor: pointer; padding: 16px 20px; font-weight: 600; color: var(--roxo-profundo); list-style: none; display: flex; justify-content: space-between; gap: 16px; }
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after { content: "+"; font-size: 22px; line-height: 1; color: var(--roxo); }
+.faq-item[open] summary::after { content: "–"; }
+.faq-item summary:focus-visible { outline: 3px solid var(--amarelo); outline-offset: 2px; border-radius: 14px; }
+.faq-item p { margin: 0; padding: 0 20px 18px; line-height: 1.6; color: var(--texto-suave); }
+
+/* Botão (i): leva à página própria do modelo */
+.modal-info {
+    position: absolute; top: 14px; right: 62px; z-index: 2; width: 40px; height: 40px; border-radius: 12px;
+    background: rgba(255, 255, 255, .16); color: var(--branco); display: flex; align-items: center; justify-content: center;
+    transition: background-color .2s ease, transform .2s ease;
+}
+.modal-info:hover { background: var(--amarelo); color: var(--roxo-profundo); transform: translateY(-2px); }
+.modal-info:focus-visible { outline: 3px solid var(--amarelo); outline-offset: 2px; }
+@media (max-width: 560px) { .modal-info { right: 58px; } }
+
+/* "Ainda não é cliente?": chamada em destaque */
+.chip-cliente {
+    align-self: flex-start; display: inline-flex; gap: 6px; flex-wrap: wrap; margin-top: 10px; padding: 10px 16px; border-radius: 12px;
+    background: var(--amarelo); color: var(--roxo-profundo); font-size: 15px; text-decoration: none;
+    box-shadow: 0 6px 18px rgba(255, 199, 0, .28); transition: transform .2s ease, box-shadow .2s ease;
+}
+.chip-cliente b { font-family: var(--fonte-titulo); font-weight: 800; }
+.chip-cliente:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(255, 199, 0, .4); }
+.chip-cliente:focus-visible { outline: 3px solid var(--branco); outline-offset: 2px; }
+
+/* Página própria de cada modelo (driver-*.html) */
+.migalhas { font-size: 14px; color: var(--lilas); margin-bottom: 12px; }
+.migalhas a { color: var(--amarelo); }
+.modelo-ficha { margin-top: 36px; display: flex; flex-wrap: wrap; gap: 24px; align-items: center; margin-bottom: 20px; }
+.modelo-foto { width: 200px; aspect-ratio: 4 / 3; border-radius: 18px; background: linear-gradient(160deg, #F1ECFD, #E4DAFB); display: flex; align-items: center; justify-content: center; padding: 12px; }
+.modelo-foto img { max-width: 100%; max-height: 100%; object-fit: contain; }
+.modelo-dados { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px 28px; flex: 1 1 320px; }
+.modelo-dados li { display: flex; flex-direction: column; gap: 2px; }
+.modelo-dados b { font-size: 13px; text-transform: uppercase; letter-spacing: .06em; color: var(--roxo-medio); }
+.modelo-dados span { font-weight: 600; color: var(--roxo-profundo); }
+.modelo-so { margin: 28px 0 12px; font-family: var(--fonte-titulo); font-weight: 800; font-size: clamp(20px, 2.6vw, 26px); color: var(--roxo-profundo); }
+.driver-variantes.grande li { font-size: 14.5px; padding: 0; }
+.driver-variantes.grande a { display: block; padding: 7px 14px; color: inherit; text-decoration: none; }
+.driver-variantes.grande li:hover { background: var(--amarelo); }
+.voltar-lista { margin: 28px 0; }
+
+/* Selo "Não oficial": tom âmbar suave, avisa sem alarmar */
+.tag-naooficial {
+    display: inline-flex; align-items: center; gap: 4px; font-size: 12px; font-weight: 600; line-height: 1.2;
+    color: #7A4B00; background: #FFF1CC; border: 1px solid #F6D98A; padding: 2px 8px; border-radius: 6px; cursor: help; white-space: nowrap;
+}
+.driver-marca + .tag-naooficial { margin-left: 8px; vertical-align: 2px; }
+.modal-aviso {
+    display: flex; gap: 10px; align-items: flex-start; margin: 0; padding: 10px 14px; border-radius: 10px;
+    background: #FFF7E0; border: 1px solid #F6D98A; color: #6B4300; font-size: 14px; line-height: 1.45;
+}
+.modal-aviso svg { flex: none; margin-top: 2px; color: #B87800; }
+
+/* Blocos "Mais usadas" e "Outras impressoras" */
+.drivers-pagina #grade-drivers { display: flex; flex-direction: column; gap: 40px; }
+.grupo-titulo { margin: 0 0 18px; font-family: var(--fonte-titulo); font-weight: 800; font-size: clamp(22px, 3vw, 30px); letter-spacing: -.01em; color: var(--roxo-profundo); }
+.grupo-drivers[hidden] { display: none; }
+
+/* Selo postal "Marca recomendada" no canto do card */
+.driver-selo {
+    position: absolute; top: 10px; right: 10px; z-index: 3; width: 78px; height: 96px; transform: rotate(5deg);
+    filter: drop-shadow(0 6px 10px rgba(75, 15, 165, .28)); transition: transform .3s ease; pointer-events: auto;
+}
+.driver-selo svg { display: block; }
+.driver:hover .driver-selo { transform: rotate(-2deg) scale(1.05); }
+.variante.recomendada { border-color: var(--amarelo); }
+@media (max-width: 560px) { .driver-selo { width: 64px; height: 79px; } .driver-selo svg { width: 64px; height: 79px; } }
+@media (prefers-reduced-motion: reduce) { .driver-selo { transition: none; } }
+.selo-texto { align-self: flex-start; padding: 6px 14px; border-radius: 999px; background: var(--amarelo); color: var(--roxo-profundo); font-family: var(--fonte-titulo); font-weight: 800; font-size: 14px; }
+.download-nome .tag-recomendado { color: var(--roxo-profundo); background: var(--amarelo); font-weight: 800; }
+.download-nota { display: block; flex-basis: 100%; margin-top: 2px; font-style: normal; font-size: 13.5px; line-height: 1.4; color: var(--texto-suave); }
+
+/* Ícones nas abas de sistema e nos botões de loja */
+.aba-so { --aba-fundo: var(--branco); display: inline-flex; align-items: center; gap: 8px; }
+.aba-so[aria-selected="true"] { --aba-fundo: var(--roxo-profundo); }
+.aba-so .ico-so { flex: none; }
+.btn-loja svg { flex: none; }

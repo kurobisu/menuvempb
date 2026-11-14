@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /plano-secreto.html
+
+Sitemap: https://menuvempb.com.br/sitemap.xml
