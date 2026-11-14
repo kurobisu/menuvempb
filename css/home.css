@@ -279,6 +279,47 @@
     .contato { padding: 26px 22px; }
 }
 
+/* Chamada para a página de drivers (dentro do Suporte): impressora imprimindo uma comanda */
+.drivers-chamada {
+    grid-column: 1 / -1; display: grid; grid-template-columns: 220px minmax(0, 1fr) auto; gap: 32px; align-items: center;
+    padding: 28px 36px; border-radius: 28px; text-decoration: none; position: relative; overflow: hidden;
+    background: linear-gradient(135deg, rgba(255, 255, 255, .13), rgba(255, 255, 255, .05));
+    border: 1.5px solid rgba(255, 255, 255, .22); box-shadow: 0 24px 60px rgba(20, 4, 60, .35);
+    transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease;
+}
+.drivers-chamada::before { content: ""; position: absolute; width: 320px; height: 320px; left: -90px; top: -120px; border-radius: 50%; background: rgba(255, 199, 0, .12); }
+.drivers-chamada:hover { transform: translateY(-4px); border-color: var(--amarelo); box-shadow: 0 30px 70px rgba(20, 4, 60, .45); }
+.drivers-chamada:focus-visible { outline: 3px solid var(--amarelo); outline-offset: 4px; }
+.impressora-anim { position: relative; width: 100%; height: auto; display: block; overflow: visible; }
+.drivers-texto { position: relative; display: flex; flex-direction: column; gap: 8px; }
+.drivers-texto .sobretitulo { color: var(--amarelo); }
+.drivers-texto h3 { margin: 0; font-family: var(--fonte-titulo); font-weight: 800; font-size: clamp(24px, 3vw, 32px); line-height: 1.1; letter-spacing: -.01em; color: var(--branco); }
+.drivers-texto p { margin: 0; font-size: 16px; color: var(--lilas); max-width: 52ch; }
+.drivers-chips { list-style: none; margin: 6px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.drivers-chips li { font-size: 13px; font-weight: 600; color: var(--branco); background: rgba(255, 255, 255, .12); border: 1px solid rgba(255, 255, 255, .2); padding: 4px 12px; border-radius: 999px; }
+.drivers-botao { position: relative; white-space: nowrap; }
+.drivers-chamada:hover .drivers-botao .seta { transform: translateX(4px); }
+.recibo { animation: imprimir 7s cubic-bezier(.45, .05, .35, 1) infinite; }
+@keyframes imprimir {
+    0%, 6% { transform: translateY(0); opacity: 1; }
+    52% { transform: translateY(-100px); }
+    84% { transform: translateY(-100px); opacity: 1; }
+    94% { transform: translateY(-106px); opacity: 0; }
+    95% { transform: translateY(0); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+.led { animation: piscar 1s steps(2, jump-none) infinite; }
+@keyframes piscar { 0% { opacity: 1; } 50% { opacity: .25; } 100% { opacity: 1; } }
+@media (max-width: 860px) {
+    .drivers-chamada { grid-template-columns: minmax(0, 1fr); justify-items: start; padding: 24px 22px; gap: 20px; }
+    .impressora-anim { max-width: 190px; margin: 0 auto; }
+    .drivers-botao { width: 100%; justify-content: center; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .recibo { animation: none; transform: translateY(-80px); }
+    .led { animation: none; }
+    .drivers-chamada { transition: none; }
+}
 @media (prefers-reduced-motion: reduce) {
     .celular-tela img, .celular, .faixa-trilho, .tag-lojas, .tag-lojas::after { animation: none; }
     .faixas { -webkit-mask-image: none; mask-image: none; }
