@@ -531,7 +531,7 @@ section { position: relative; }
 /* ---------- Rodapé ---------- */
 .rodape { background: var(--roxo-noite); color: var(--lilas-suave); }
 .rodape .container { padding-top: 64px; padding-bottom: 32px; display: flex; flex-direction: column; gap: 40px; }
-.rodape-grade { display: grid; grid-template-columns: 1.4fr repeat(3, minmax(0, 1fr)); gap: 32px; }
+.rodape-grade { display: grid; grid-template-columns: 1.3fr repeat(4, minmax(0, 1fr)); gap: 28px; }
 .rodape-marca { display: flex; flex-direction: column; gap: 14px; }
 .rodape-marca img { height: 56px; width: auto; align-self: flex-start; }
 .rodape-marca p { margin: 0; font-size: 14px; line-height: 1.55; max-width: 300px; }

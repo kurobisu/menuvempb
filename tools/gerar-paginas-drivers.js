@@ -125,7 +125,9 @@ const gerar = d => {
         </section>
     </main>
 `;
-    fs.writeFileSync(path.join(raiz, arq), `${h}</head>\n\n<body>\n    ${cabecalho}\n${corpo}\n    ${rodape}${fim}`);
+    const html = `${h}</head>\n\n<body>\n    ${cabecalho}\n${corpo}\n    ${rodape}${fim}`;
+    const alvo = path.join(raiz, arq);
+    if (!fs.existsSync(alvo) || fs.readFileSync(alvo, 'utf8') !== html) fs.writeFileSync(alvo, html);
     return arq;
 };
 
@@ -133,8 +135,5 @@ const gerar = d => {
 const arquivos = DRIVERS.map(gerar);
 fs.readdirSync(raiz).filter(f => /^driver-.*\.html$/.test(f) && !arquivos.includes(f)).forEach(f => fs.unlinkSync(path.join(raiz, f)));
 
-const fixas = ['', 'planos.html', 'funcionalidades.html', 'duvidas.html', 'cadastro-etapas.html', 'drivers.html'];
-const urls = [...fixas, ...arquivos];
-fs.writeFileSync(path.join(raiz, 'sitemap.xml'), '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
-    urls.map(u => `  <url><loc>${SITE}/${u}</loc><lastmod>${HOJE}</lastmod></url>\n`).join('') + '</urlset>\n');
-console.log(arquivos.length + ' páginas de modelo + sitemap com ' + urls.length + ' URLs');
+const total = require('./sitemap')();
+console.log(arquivos.length + ' páginas de modelo + sitemap com ' + total + ' URLs');
