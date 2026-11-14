@@ -15,7 +15,7 @@ module.exports = ({ p, lista, passos, cards, aviso, video }) => [
                 ['Chatplug', 'Aplicativo gratuito da Menuvem, bom para quem está começando. Funciona com o computador da loja ligado e conectado e, por não ser a API oficial, pode pedir reconexão por QR Code.'],
                 ['Integração Z-API', 'Conexão técnica com a Z-API, plataforma de terceiros. Os valores são combinados direto com ela.'],
             ])],
-            ['O que o cliente recebe', lista([
+            ['O que o cliente recebe', video('whatsapp-status', 'WhatsApp Oficial: forma de envio, status do pedido escolhidos por você e prévia da mensagem.', 'Vídeo da configuração do WhatsApp Oficial da Menuvem') + lista([
                 'A mensagem de status do pedido, enviada automaticamente conforme o pedido anda.',
                 'Se você quiser, modelos de mensagem próprios, inclusive para marketing (o custo das mensagens é o da Meta).',
                 'No cardápio, um botão que abre a conversa com a loja, já com uma mensagem pronta.',
@@ -43,7 +43,7 @@ module.exports = ({ p, lista, passos, cards, aviso, video }) => [
         h1: 'Controle de <span class="marcador">estoque</span> que acompanha as vendas',
         intro: 'O estoque se atualiza a cada pedido e o cardápio para de oferecer o que acabou, sem ninguém precisar lembrar.',
         secoes: [
-            ['O que acontece com o estoque', cards([
+            ['O que acontece com o estoque', video('estoque-produto', 'No produto, a chave Controlar estoque baixa a quantidade a cada pedido.', 'Vídeo do controle de estoque no cadastro de produto da Menuvem') + cards([
                 ['Baixa automática', 'A cada pedido, a quantidade do produto diminui sozinha.'],
                 ['Volta se cancelar', 'Se o pedido for cancelado, o item volta para o estoque.'],
                 ['Zerou, saiu do cardápio', 'O produto com estoque zerado é desativado automaticamente, e o cliente não pede o que não existe.'],
@@ -75,10 +75,11 @@ module.exports = ({ p, lista, passos, cards, aviso, video }) => [
         h1: 'Painel de <span class="marcador">senhas</span> na TV da loja',
         intro: 'Uma tela para a TV do balcão que chama a senha quando o pedido fica pronto e ainda divulga as suas promoções.',
         secoes: [
-            ['Como funciona', lista([
+            ['Como funciona', video('painel-senhas', 'Atendimento local por senhas: geração da senha e carrossel de propaganda do painel da TV.', 'Vídeo da configuração do painel de senhas da Menuvem') + lista([
                 'Quando o pedido fica pronto, a senha é chamada na TV.',
                 'Entre uma chamada e outra roda um carrossel de propagandas escolhidas por você.',
                 'Cada loja tem o seu próprio endereço de painel, que você abre no navegador da TV.',
+                'A senha pode ser sequencial (1, 2, 3...) ou sorteada de 001 a 999.',
             ])],
             ['Para quem faz sentido', cards([
                 ['Lanchonete e hamburgueria', 'O cliente espera o pedido no balcão e vê a senha na TV, sem gritar nome.'],
