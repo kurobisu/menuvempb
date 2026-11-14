@@ -42,6 +42,8 @@ const LINKS = {
     equipe: ['equipe-permissoes-comissao.html', 'Equipe, permissões e comissão'],
     financeiro: ['financeiro-restaurante.html', 'Financeiro e fechamento de caixa'],
     relatorios: ['relatorios-de-vendas.html', 'Relatórios de vendas'],
+    segmentos: ['segmentos.html', 'Soluções por tipo de negócio'],
+    guias: ['guias.html', 'Guias para delivery e salão'],
     solucoes: ['solucoes.html', 'Todas as soluções'],
     drivers: ['drivers.html', 'Drivers de impressora térmica'],
     funcionalidades: ['funcionalidades.html', 'Todas as funcionalidades'],
@@ -273,6 +275,8 @@ const PAGINAS = [
 
 PAGINAS.push(...require('./paginas-seo-mais.js')({ p, lista, passos, cards, aviso, video, videoV }));
 PAGINAS.push(...require('./paginas-seo-modulos.js')({ p, lista, passos, cards, aviso, video, videoV }));
+PAGINAS.push(...require('./paginas-seo-segmentos.js')({ p, lista, passos, cards, aviso }));
+PAGINAS.push(...require('./paginas-seo-guias.js')({ p, lista, passos, cards, aviso }));
 
 // ---------- montagem ----------
 const head = base.slice(0, base.indexOf('</head>'))

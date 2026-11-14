@@ -245,6 +245,10 @@ module.exports = ({ p, lista, passos, cards, aviso, video, videoV }) => [
                 ['Controle de estoque', 'Baixa automática a cada pedido. <a href="controle-de-estoque.html">Ver</a>.'],
                 ['Painel de senhas na TV', 'Chame a senha no balcão. <a href="painel-de-senhas-tv.html">Ver</a>.'],
             ])],
+            ['Para o seu tipo de negócio e para aprender', cards([
+                ['Soluções por segmento', 'Pizzaria, hamburgueria, lanchonete, açaí, marmitaria, bar, doceria e restaurante. <a href="segmentos.html">Ver</a>.'],
+                ['Guias práticos', 'Cardápio, taxa de entrega, fidelização, cozinha e delivery próprio. <a href="guias.html">Ler</a>.'],
+            ])],
         ],
         faq: [
             ['Por onde começo?', 'Pelo teste grátis de 30 dias. A equipe monta o cardápio e configura o resto com você, online.'],
