@@ -182,3 +182,7 @@ mark { background: rgba(255, 199, 0, .45); color: inherit; border-radius: 3px; p
 .modulo.duas-colunas .lista { display: block; columns: 2; column-gap: 32px; }
 .modulo.duas-colunas .lista li { break-inside: avoid; margin-bottom: 9px; }
 @media (max-width: 960px) { .modulo.duas-colunas .lista { columns: 1; } }
+
+/* atalho de cada módulo para a sua página de solução */
+.modulo-link { align-self: flex-start; margin-top: 4px; font-weight: 700; font-size: 15px; color: var(--roxo); text-decoration: none; border-bottom: 2px solid var(--amarelo); padding-bottom: 2px; }
+.modulo-link:hover, .modulo-link:focus-visible { color: var(--roxo-profundo); }

@@ -1,7 +1,7 @@
 /* Segunda leva de páginas de SEO (mesas, KDS, impressão, entregadores, fidelidade, nota fiscal) + índice de soluções.
    Carregado por gerar-paginas-seo.js. Fatos só da BASE-DE-CONHECIMENTO (✅). Sem taxas de terceiros, sem concorrentes,
    sem promessa de "comandas" (em construção), sem créditos de nota fiscal, sem rastreio que o cliente final veja. */
-module.exports = ({ p, lista, passos, cards, aviso, video }) => [
+module.exports = ({ p, lista, passos, cards, aviso, video, videoV }) => [
     {
         arq: 'mesas-qr-code-garcom.html', nome: 'Mesas e garçom digital',
         titulo: 'Controle de Mesas e Garçom Digital com QR Code | Menuvem PB',
@@ -11,6 +11,7 @@ module.exports = ({ p, lista, passos, cards, aviso, video }) => [
         intro: 'O garçom lança o pedido da mesa pelo celular, o cliente pode pedir pelo QR Code e o salão inteiro fica num painel só. Para bares, restaurantes e lanchonetes com atendimento na mesa.',
         secoes: [
             ['Veja o controle de mesas funcionando', video('mesas-controle', 'Painel de mesas: lançar pedido, dividir a conta, registrar o pagamento e juntar mesas.', 'Vídeo do painel de mesas da Menuvem com destaques nos botões', true) + p('Cada mesa mostra o que já foi consumido, o que foi pago e o que ainda está pendente. Tudo atualizado na hora, para o caixa e para o salão.')],
+            ['Lance o pedido da mesa', video('pedido-mesa', 'Novo pedido de mesa: número da mesa, produto com opções e observação e salvar.', 'Vídeo do painel da Menuvem lançando um pedido de mesa', true) + p('Informe a mesa, escolha o produto com as opções e a observação (como "sem cebola") e salve. O pedido aparece na mesa na hora.')],
             ['O que você resolve com o painel de mesas', cards([
                 ['Garçom lança pelo celular', 'O pedido vai direto para a cozinha ou para o bar. A mesa pode ter qualquer nome ou código, como "12" ou "Varanda 3", sem limite fixo de mesas.'],
                 ['Juntar mesas e dividir a conta', 'Grupo que cresceu? Junte as mesas. Hora de pagar? Divida a conta e registre cada pagamento.'],
@@ -107,13 +108,14 @@ module.exports = ({ p, lista, passos, cards, aviso, video }) => [
         intro: 'Distribua os pedidos, acompanhe cada entrega e feche o acerto com o motoboy num lugar só. O entregador usa um aplicativo web no celular.',
         secoes: [
             ['Veja a Central de Entregas', video('entrega-central', 'Central de Entregas: entregadores com cor própria, pedidos por situação e visão em lista ou mapa.', 'Vídeo da Central de Entregas da Menuvem') + p('Cada entregador ganha uma cor e os pedidos ficam separados em disponíveis, atribuídos e em entrega.')],
+            ['Do pedido ao motoboy, no mapa', video('entrega-mapa', 'Pedidos em preparo na lista e no mapa, envio a um entregador e acompanhamento dos pedidos atribuídos.', 'Vídeo da Central de Entregas da Menuvem com o mapa e a atribuição ao motoboy') + p('Cada pedido em preparo vira um pino no mapa. Envie o pedido ao entregador escolhido e acompanhe os que já estão com ele.')],
             ['O que a Central de Entregas faz', cards([
                 ['Atribuir o pedido ao motoboy', 'Pelo ícone de moto no pedido, ou escolhendo vários pedidos de uma vez e indicando o entregador.'],
                 ['Lista ou mapa', 'Alterne entre a visão em lista e a visão em mapa para acompanhar as entregas.'],
                 ['Pedidos sem dono', 'Se você permitir, o próprio entregador pega no aplicativo os pedidos que ainda não têm entregador.'],
                 ['Acerto com o entregador', 'Cada entregador pode ter o seu formato: sem acerto, valor fixo por diária, percentual da entrega, taxa fixa por entrega ou valor definido na hora.'],
             ])],
-            ['O aplicativo do entregador', lista([
+            ['O aplicativo do entregador', videoV('entregador-app', 'Aplicativo do entregador: pegar pedidos, ver o pedido no mapa, abrir a rota e marcar a saída para entrega.', 'Vídeo do aplicativo do entregador da Menuvem no celular') + lista([
                 'Abre no navegador do celular e pode ser instalado na tela inicial: o entregador entra com o celular e a senha do cadastro.',
                 'Ele vê os pedidos disponíveis, os que são dele e os que estão em entrega.',
                 'Muda o status do pedido para "Saiu para entrega" e "Entregue".',

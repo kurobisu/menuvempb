@@ -45,7 +45,11 @@
 .sol-lightbox { position: fixed; inset: 0; z-index: 2147483000; background: #0E0626; display: flex; align-items: center; justify-content: center; }
 .sol-lightbox video { max-width: 100vw; max-height: 100vh; background: #000; }
 .sol-fechar { position: absolute; top: 10px; right: 10px; width: 48px; height: 48px; border-radius: 50%; border: 2px solid var(--amarelo); background: var(--roxo-profundo); color: #fff; font-size: 30px; line-height: 1; cursor: pointer; z-index: 2; }
+/* vídeo gravado só em tela de celular: sempre vertical, em qualquer largura */
+.sol-video.vertical { max-width: 360px; }
+.sol-video.vertical video { aspect-ratio: 540 / 1168; }
 @media (max-width: 640px) {
+  .sol-video.vertical { margin-left: auto; margin-right: auto; }
   .sol-ampliar { display: inline-block; }
   .sol-video.real video { aspect-ratio: 540 / 1168; width: auto; max-width: 100%; max-height: 78vh; margin: 0 auto; }
 }

@@ -18,6 +18,7 @@ const lista = itens => `<ul class="sol-lista">${itens.map(i => `<li>${i}</li>`).
 const passos = itens => `<ol class="sol-passos">${itens.map(([t, d], i) => `<li><span class="n">${i + 1}</span><div><strong>${t}</strong><span>${d}</span></div></li>`).join('')}</ol>`;
 const cards = itens => `<div class="sol-grade">${itens.map(([t, d]) => `<article class="sol-card"><h3>${t}</h3><p>${d}</p></article>`).join('')}</div>`;
 const aviso = t => `<p class="sol-aviso">${t}</p>`;
+const videoV = (n, legenda, alt) => `<figure class="sol-video vertical"><video autoplay muted loop playsinline preload="metadata" width="540" height="1168" poster="img/demos/${n}-m-poster.jpg" aria-label="${esc(alt)}"><source src="img/demos/${n}-m.mp4" type="video/mp4"><source src="img/demos/${n}-m.webm" type="video/webm"></video><figcaption>${legenda} <em>Exemplo ilustrativo, com nomes e valores fictícios.</em></figcaption></figure>`;
 const video = (n, legenda, alt, movel) => `<figure class="sol-video${movel ? ' real' : ''}"><video autoplay muted loop playsinline preload="metadata" width="1366" height="768" poster="img/demos/${n}-poster.jpg" aria-label="${esc(alt)}">${movel ? `<source media="(max-width: 640px)" src="img/demos/${n}-m.mp4" type="video/mp4"><source media="(max-width: 640px)" src="img/demos/${n}-m.webm" type="video/webm">` : ''}<source src="img/demos/${n}.mp4" type="video/mp4"><source src="img/demos/${n}.webm" type="video/webm"></video>${movel ? '' : '<button type="button" class="sol-ampliar" aria-label="Ampliar o vídeo em tela cheia">Ampliar vídeo</button>'}<figcaption>${legenda} <em>Exemplo ilustrativo, com nomes e valores fictícios.</em></figcaption></figure>`;
 
 const LINKS = {
@@ -54,6 +55,7 @@ const PAGINAS = [
                 ['A gente monta e configura com você', 'Cardápio, formas de pagamento e impressora, tudo online, por vídeo e acesso remoto.'],
                 ['Você divulga o link e o QR Code', 'No Instagram, no WhatsApp, na vitrine e nas mesas. Os pedidos chegam no seu painel.'],
             ])],
+            ['Pedido por telefone ou balcão? Lance no painel', video('pedido-delivery', 'Novo pedido de delivery: produto com opções e observação, dados do cliente, endereço no mapa e taxa de entrega calculada.', 'Vídeo do painel da Menuvem lançando um pedido de delivery', true) + p('Escolha os produtos com as opções e a observação do cliente, informe o nome, o celular e o endereço, e o painel calcula a taxa de entrega pela área atendida. Depois é só salvar e avançar o pedido para "Em preparo".')],
             ['O que o seu cliente encontra', cards([
                 ['Pedido pelo celular', 'O cliente abre o link ou lê o QR Code e faz o pedido no navegador, sem instalar aplicativo.'],
                 ['Produtos que se montam', 'Pizza meio a meio com a cobrança que você escolher (média, maior valor ou valor fixo), complementos, sabores limitados ou ilimitados e preços por faixa.'],
@@ -261,12 +263,12 @@ const PAGINAS = [
     },
 ];
 
-PAGINAS.push(...require('./paginas-seo-mais.js')({ p, lista, passos, cards, aviso, video }));
+PAGINAS.push(...require('./paginas-seo-mais.js')({ p, lista, passos, cards, aviso, video, videoV }));
 
 // ---------- montagem ----------
 const head = base.slice(0, base.indexOf('</head>'))
     .replace(/\s*<link rel="stylesheet" href="css\/(duvidas|drivers)\.css[^>]*>/g, '')
-    .replace('<link rel="stylesheet" href="css/marca.css', '<link rel="stylesheet" href="css/solucoes.css?v=4">\n    <link rel="stylesheet" href="css/marca.css');
+    .replace('<link rel="stylesheet" href="css/marca.css', '<link rel="stylesheet" href="css/solucoes.css?v=5">\n    <link rel="stylesheet" href="css/marca.css');
 const cabecalho = base.slice(base.indexOf('<header class="topo">'), base.indexOf('</header>') + 9);
 const rodape = base.slice(base.indexOf('<footer class="rodape">'), base.indexOf('<script src="js/drivers-dados.js'));
 const fim = base.slice(base.indexOf('<!-- Chatwoot -->'));
