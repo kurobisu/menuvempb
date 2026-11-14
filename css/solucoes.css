@@ -34,3 +34,22 @@
 .sol-relacionadas a:hover { background: var(--amarelo); border-color: var(--amarelo); }
 @media (max-width: 640px) { .sol-pagina .container { gap: 44px; } .pagina-topo .acoes .btn { width: 100%; } }
 @media (prefers-reduced-motion: reduce) { .sol-card { transition: none; } }
+
+/* Mini vídeos de demonstração (substituem GIFs: leves, sem som, em laço) */
+.sol-video { margin: 0 0 20px; max-width: 880px; }
+.sol-video video { display: block; width: 100%; height: auto; aspect-ratio: 1366 / 768; border-radius: 18px; border: 1.5px solid var(--borda); background: #EDEBF5; box-shadow: 0 18px 44px rgba(75, 15, 165, .16); }
+.sol-video figcaption { margin-top: 10px; font-size: 14px; line-height: 1.5; color: var(--texto-suave); }
+.sol-video figcaption em { display: block; font-style: normal; font-size: 13px; opacity: .8; }
+.sol-ampliar { display: none; margin-top: 10px; padding: 10px 18px; border-radius: 999px; border: 1.5px solid var(--roxo); background: var(--branco); color: var(--roxo-profundo); font: 700 15px/1 var(--fonte-texto, inherit); cursor: pointer; }
+.sol-ampliar:focus-visible, .sol-fechar:focus-visible { outline: 3px solid var(--amarelo); outline-offset: 2px; }
+.sol-lightbox { position: fixed; inset: 0; z-index: 2147483000; background: #0E0626; display: flex; align-items: center; justify-content: center; }
+.sol-lightbox video { max-width: 100vw; max-height: 100vh; background: #000; }
+.sol-fechar { position: absolute; top: 10px; right: 10px; width: 48px; height: 48px; border-radius: 50%; border: 2px solid var(--amarelo); background: var(--roxo-profundo); color: #fff; font-size: 30px; line-height: 1; cursor: pointer; z-index: 2; }
+@media (max-width: 640px) {
+  .sol-ampliar { display: inline-block; }
+  .sol-video.real video { aspect-ratio: 540 / 1168; width: auto; max-width: 100%; max-height: 78vh; margin: 0 auto; }
+}
+@media (max-width: 640px) and (orientation: portrait) {
+  /* vídeo de computador em tela cheia: gira 90° para ocupar a altura do celular em pé */
+  .sol-lightbox video { position: absolute; top: 50%; left: 50%; width: 100vh; height: 100vw; max-width: none; max-height: none; object-fit: contain; transform: translate(-50%, -50%) rotate(90deg); }
+}

@@ -18,6 +18,7 @@ const lista = itens => `<ul class="sol-lista">${itens.map(i => `<li>${i}</li>`).
 const passos = itens => `<ol class="sol-passos">${itens.map(([t, d], i) => `<li><span class="n">${i + 1}</span><div><strong>${t}</strong><span>${d}</span></div></li>`).join('')}</ol>`;
 const cards = itens => `<div class="sol-grade">${itens.map(([t, d]) => `<article class="sol-card"><h3>${t}</h3><p>${d}</p></article>`).join('')}</div>`;
 const aviso = t => `<p class="sol-aviso">${t}</p>`;
+const video = (n, legenda, alt, movel) => `<figure class="sol-video${movel ? ' real' : ''}"><video autoplay muted loop playsinline preload="metadata" width="1366" height="768" poster="img/demos/${n}-poster.jpg" aria-label="${esc(alt)}">${movel ? `<source media="(max-width: 640px)" src="img/demos/${n}-m.mp4" type="video/mp4"><source media="(max-width: 640px)" src="img/demos/${n}-m.webm" type="video/webm">` : ''}<source src="img/demos/${n}.mp4" type="video/mp4"><source src="img/demos/${n}.webm" type="video/webm"></video>${movel ? '' : '<button type="button" class="sol-ampliar" aria-label="Ampliar o vídeo em tela cheia">Ampliar vídeo</button>'}<figcaption>${legenda} <em>Exemplo ilustrativo, com nomes e valores fictícios.</em></figcaption></figure>`;
 
 const LINKS = {
     cardapio: ['cardapio-digital.html', 'Cardápio digital com QR Code'],
@@ -26,6 +27,13 @@ const LINKS = {
     pdv: ['pdv-restaurante.html', 'PDV e frente de caixa'],
     pagamento: ['pagamento-online-mercado-pago.html', 'Pix e cartão online com Mercado Pago'],
     paraiba: ['paraiba.html', 'Menuvem na Paraíba'],
+    mesas: ['mesas-qr-code-garcom.html', 'Mesas e garçom digital'],
+    kds: ['kds-cozinha.html', 'KDS: monitor da cozinha'],
+    impressao: ['impressao-automatica.html', 'Impressão automática de comanda'],
+    entregadores: ['gestao-entregadores.html', 'Gestão de entregadores'],
+    fidelidade: ['fidelidade-cupons-delivery.html', 'Fidelidade e cupons'],
+    nota: ['nota-fiscal-restaurante.html', 'Nota fiscal para restaurante'],
+    solucoes: ['solucoes.html', 'Todas as soluções'],
     drivers: ['drivers.html', 'Drivers de impressora térmica'],
     funcionalidades: ['funcionalidades.html', 'Todas as funcionalidades'],
     planos: ['planos.html', 'Planos e preços'],
@@ -253,10 +261,12 @@ const PAGINAS = [
     },
 ];
 
+PAGINAS.push(...require('./paginas-seo-mais.js')({ p, lista, passos, cards, aviso, video }));
+
 // ---------- montagem ----------
 const head = base.slice(0, base.indexOf('</head>'))
     .replace(/\s*<link rel="stylesheet" href="css\/(duvidas|drivers)\.css[^>]*>/g, '')
-    .replace('<link rel="stylesheet" href="css/marca.css', '<link rel="stylesheet" href="css/solucoes.css?v=1">\n    <link rel="stylesheet" href="css/marca.css');
+    .replace('<link rel="stylesheet" href="css/marca.css', '<link rel="stylesheet" href="css/solucoes.css?v=4">\n    <link rel="stylesheet" href="css/marca.css');
 const cabecalho = base.slice(base.indexOf('<header class="topo">'), base.indexOf('</header>') + 9);
 const rodape = base.slice(base.indexOf('<footer class="rodape">'), base.indexOf('<script src="js/drivers-dados.js'));
 const fim = base.slice(base.indexOf('<!-- Chatwoot -->'));
@@ -322,6 +332,32 @@ const gerar = pg => {
             </div>
         </section>
     </main>
+    <script>
+    (function () {
+        var v = document.querySelectorAll('.sol-video video'); if (!v.length) return;
+        var reduz = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+        v.forEach(function (el) { if (reduz) { el.removeAttribute('autoplay'); el.setAttribute('controls', ''); el.pause(); } });
+        if (!reduz && 'IntersectionObserver' in window) {
+            var io = new IntersectionObserver(function (es) { es.forEach(function (e) { var el = e.target; if (e.isIntersecting) { var r = el.play(); if (r && r.catch) r.catch(function () {}); } else el.pause(); }); }, { threshold: .35 });
+            v.forEach(function (el) { io.observe(el); });
+        }
+        /* Ampliar (celular): telas só de computador abrem o vídeo inteiro em tela cheia, girado para a horizontal */
+        document.querySelectorAll('.sol-ampliar').forEach(function (b) {
+            b.addEventListener('click', function () {
+                var orig = b.parentNode.querySelector('video');
+                var o = document.createElement('div'); o.className = 'sol-lightbox';
+                var c = document.createElement('video'); c.muted = true; c.loop = true; c.autoplay = true; c.playsInline = true; c.setAttribute('controls', '');
+                c.innerHTML = orig.innerHTML; c.setAttribute('poster', orig.getAttribute('poster') || '');
+                var x = document.createElement('button'); x.type = 'button'; x.className = 'sol-fechar'; x.setAttribute('aria-label', 'Fechar'); x.textContent = '×';
+                o.appendChild(c); o.appendChild(x); document.body.appendChild(o); document.body.style.overflow = 'hidden';
+                var p = c.play(); if (p && p.catch) p.catch(function () {});
+                function fechar() { o.remove(); document.body.style.overflow = ''; document.removeEventListener('keydown', tecla); }
+                function tecla(e) { if (e.key === 'Escape') fechar(); }
+                x.addEventListener('click', fechar); document.addEventListener('keydown', tecla);
+            });
+        });
+    })();
+    </script>
 `;
     const html = `${h}</head>\n\n<body>\n    ${cabecalho}\n${corpo}\n    ${rodape}${fim}`;
     const alvo = path.join(raiz, pg.arq);

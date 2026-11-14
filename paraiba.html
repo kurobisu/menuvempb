@@ -28,7 +28,7 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
 
-    <link rel="stylesheet" href="css/solucoes.css?v=1">
+    <link rel="stylesheet" href="css/solucoes.css?v=4">
     <link rel="stylesheet" href="css/marca.css?v=14">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Menuvem PB","item":"https://menuvempb.com.br/"},{"@type":"ListItem","position":2,"name":"Menuvem na Paraíba","item":"https://menuvempb.com.br/paraiba.html"}]}</script>
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","@id":"https://menuvempb.com.br/paraiba.html#pagina","url":"https://menuvempb.com.br/paraiba.html","name":"Sistema para Restaurantes na Paraíba","description":"Menuvem PB, representante oficial da Menuvem na Paraíba: cardápio digital, PDV e delivery sem comissão, com implantação e suporte online. 30 dias grátis.","inLanguage":"pt-BR","isPartOf":{"@type":"WebSite","name":"Menuvem PB","url":"https://menuvempb.com.br/"},"about":{"@type":"SoftwareApplication","name":"Menuvem","applicationCategory":"BusinessApplication","operatingSystem":"Web"}}</script>
@@ -128,6 +128,32 @@
             </div>
         </section>
     </main>
+    <script>
+    (function () {
+        var v = document.querySelectorAll('.sol-video video'); if (!v.length) return;
+        var reduz = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+        v.forEach(function (el) { if (reduz) { el.removeAttribute('autoplay'); el.setAttribute('controls', ''); el.pause(); } });
+        if (!reduz && 'IntersectionObserver' in window) {
+            var io = new IntersectionObserver(function (es) { es.forEach(function (e) { var el = e.target; if (e.isIntersecting) { var r = el.play(); if (r && r.catch) r.catch(function () {}); } else el.pause(); }); }, { threshold: .35 });
+            v.forEach(function (el) { io.observe(el); });
+        }
+        /* Ampliar (celular): telas só de computador abrem o vídeo inteiro em tela cheia, girado para a horizontal */
+        document.querySelectorAll('.sol-ampliar').forEach(function (b) {
+            b.addEventListener('click', function () {
+                var orig = b.parentNode.querySelector('video');
+                var o = document.createElement('div'); o.className = 'sol-lightbox';
+                var c = document.createElement('video'); c.muted = true; c.loop = true; c.autoplay = true; c.playsInline = true; c.setAttribute('controls', '');
+                c.innerHTML = orig.innerHTML; c.setAttribute('poster', orig.getAttribute('poster') || '');
+                var x = document.createElement('button'); x.type = 'button'; x.className = 'sol-fechar'; x.setAttribute('aria-label', 'Fechar'); x.textContent = '×';
+                o.appendChild(c); o.appendChild(x); document.body.appendChild(o); document.body.style.overflow = 'hidden';
+                var p = c.play(); if (p && p.catch) p.catch(function () {});
+                function fechar() { o.remove(); document.body.style.overflow = ''; document.removeEventListener('keydown', tecla); }
+                function tecla(e) { if (e.key === 'Escape') fechar(); }
+                x.addEventListener('click', fechar); document.addEventListener('keydown', tecla);
+            });
+        });
+    })();
+    </script>
 
     <footer class="rodape">
         <div class="container">
@@ -152,6 +178,7 @@
                     <a href="pdv-restaurante.html">PDV para restaurante</a>
                     <a href="pagamento-online-mercado-pago.html">Pagamento com Mercado Pago</a>
                     <a href="paraiba.html">Menuvem na Paraíba</a>
+                    <a href="solucoes.html">Todas as soluções</a>
                 </nav>
                 <nav aria-label="Suporte">
                     <h4>Suporte</h4>
