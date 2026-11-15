@@ -16,3 +16,7 @@ Thumbs.db
 # Logos originais dos clientes (só os selos gerados em img/clientes/*.webp vão pro site)
 img/clientes/originais/
 supabase/.temp/
+
+# Notas internas (ficam só no computador, fora do repositório público)
+docs/
+CLAUDE.md
