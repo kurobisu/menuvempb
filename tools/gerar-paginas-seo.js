@@ -312,7 +312,7 @@ const gerar = pg => {
         <section class="pagina-topo">
             <div class="circulo"></div>
             <div class="container">
-                <nav class="migalhas" aria-label="Você está em"><a href="index.html">Início</a> <span aria-hidden="true">/</span> <span>${esc(pg.nome)}</span></nav>
+                <nav class="migalhas" aria-label="Você está em"><a href="/">Início</a> <span aria-hidden="true">/</span> <span>${esc(pg.nome)}</span></nav>
                 <h1 class="entrada" style="--i:1">${pg.h1}</h1>
                 <p class="entrada" style="--i:2">${pg.intro}</p>
                 <div class="acoes entrada" style="--i:3">
